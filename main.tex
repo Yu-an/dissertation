@@ -1,0 +1,205 @@
+% -*- mode: latex; coding: utf-8; fill-column: 72; -*-
+% !BIB TS-program = biber
+% !BIB program = biber
+\documentclass[12pt]{umd-thesis}
+
+\usepackage{graphicx}
+\graphicspath{{images/}}
+
+\usepackage{amssymb}
+\usepackage{siunitx}
+\sisetup{output-exponent-marker=\ensuremath{\mathrm{e}}}
+\usepackage{multirow}
+
+\usepackage[american]{babel}
+
+\usepackage{csquotes}
+
+\usepackage[
+  backend=biber, style=unified,
+  maxcitenames=3, maxbibnames=99]{biblatex}
+\addbibresource{references.bib}
+% just use a colon as the \postnotedelim
+\renewcommand{\postnotedelim}{\addcolon}
+\DeclareFieldFormat{postnote}{#1}
+% use the Oxford comma
+\DeclareDelimFormat{finalnamedelim}{%
+  \ifnumgreater{\value{liststop}}{2}{\finalandcomma}{}%
+  \addspace\&\space}
+% a more sensible way to display the DOI
+\DeclareFieldFormat{doi}{%
+  \textsc{doi}:
+  \ifhyperref
+  {\href{http://dx.doi.org/#1}{\nolinkurl{#1}}}
+  {\nolinkurl{#1}}}
+%quirks of Yu'an:
+\newcommand{\citealt}[1]{\cite{#1}}
+
+
+
+%\usepackage{fontspec}
+% \setmainfont[
+%   Ligatures={TeX, Common},
+%   UprightFont = *-Regular,
+%   BoldFont = *-Semibold,
+%   ItalicFont = *-Italic,
+%   BoldItalicFont = *-SemiboldItalic]{AGaramondPro}
+%\setmainfont{CMU Serif Roman}
+%%%%%%%%%seem to be a problem only for TexLive
+%\font\nullfont=cmr10
+
+%%for diagrams/ trees
+\usepackage{tikz}
+\usepackage{qtree}
+\usepackage{tikz-qtree}
+\usepackage{pifont} %to crossout movement path 
+\usetikzlibrary{arrows,shapes, automata, positioning}
+\usetikzlibrary{bayesnet}
+\newcommand{\cmark}{\ding{51}}%checkmark
+\newcommand{\xmark}{\ding{55}}%xmark
+
+\usepackage{adjustbox}
+\usepackage[mode=tex]{standalone}
+
+\usepackage{xcolor}
+\definecolor{darkred}{HTML}{B22613}
+\definecolor{mygreen}{HTML}{C8DE9C}
+
+\usepackage{gb4e}
+\noautomath
+
+\usepackage[colorlinks]{hyperref}
+\hypersetup{%
+  linkcolor=darkred,
+  citecolor=black,
+  urlcolor=cyan}
+
+%%%%%%%%%%%%%%%%%%%%%%glossing
+\usepackage{textglos}
+\usepackage[
+  block,
+  nohypertypes={main} % option to pass to glossaries package 
+]{leipzig}
+\newleipzig{dou}{dou}{adverbial quantifier}
+\newleipzig{sfp}{sfp}{sentence final particle}
+\newleipzig{asp}{asp}{aspect marker}
+\newleipzig{qpart}{q}{question particle}
+\newleipzig{cl}{cl}{classifier}
+\makeglossaries
+\newacronym{PMC}{PMC}{Principle of Minimal Compliance}
+
+%%%%%%%%%%%%%%%%%%%%%personalized commands
+\usepackage{verbatim}
+\usepackage{float}
+%gb4e hack
+\newcommand{\bex}[1]{\begin{exe}\ex \label{#1}}
+\newcommand{\eex}{\end{exe}}
+\newcommand{\bxl}{\begin{xlist}\ex}
+\newcommand{\exl}{\end{xlist}}
+
+% semantics
+\newcommand{\sv}[1]{\left\llbracket#1\right\rrbracket} % [[ ... ]]
+\newcommand{\typ}[1]{\left\langle#1\right\rangle} 
+
+%commands for style
+\newcommand{\tit}[1]{\textit{#1}}
+\newcommand{\tbf}[1]{\textbf{#1}}
+\newcommand{\tsc}[1]{\textsc{#1}}
+\newcommand{\tun}[1]{\underline{#1}}
+
+%words
+\newcommand{\ba}{\textit{ba}}
+\newcommand{\ma}{\textit{ma}}
+\newcommand{\twh}{\textit{wh}}
+\newcommand{\dou}{\textit{dou}}
+\newcommand{\twhi}{\textit{wh}-indefinite}
+\newcommand{\hypos}{pragmatic syntactic bootstrapping hypothesis}
+\newcommand{\diis}{declaratives, interrogatives, and imperatives}
+\newcommand{\distlearner}{syntactically informed distributional learner}
+\newcommand{\praglearner}{syntactically and pragmatically informed distributional learner}
+\newcommand{\dlearnerabbr}{SID}
+\newcommand{\plearnerabbr}{SPID}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%title pages
+\title{Learning to identify interrogatives and questions}
+\author{Yu'an Yang}
+\date{2022}
+
+\cochair{%
+  title={Professor}, name={Jeffrey Lidz}, department={Linguistics}}
+\chair{%
+  title={Professor}, name={Valentine Hacquard}, department={Linguistics}}
+\committee{%
+  {title={Professor}, name={Yi Ting Huang}, role={Dean's Representative}},
+  {title={Professor}, name={Naomi Feldman}, role={}},
+  {title={Professor}, name={Alexander Williams}, role={}},
+  {title={Dr.}, name={Daniel Goodhue}, role={}}}
+
+
+
+\begin{document}
+%%%%%%%%%%remember to delete!!!
+\pagecolor{mygreen}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%front matters
+\frontmatter
+
+\begin{abstract}
+  \input{frontmatter/abstract}
+\end{abstract}
+
+\maketitlepage
+
+\makecopyrightpage
+
+\begin{preface}
+
+\end{preface}
+
+\begin{acknowledgments}
+  \input{frontmatter/acknowledgments}
+\end{acknowledgments}
+
+\tableofcontents\clearpage
+\listoftables\clearpage
+\listoffigures\clearpage
+\begin{abbreviations}
+  \renewcommand{\glossarysection}[2][]{}
+  \printglossary[nonumberlist]
+\end{abbreviations}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% main text
+\mainmatter
+\include{mainmatter/chap1}
+\include{mainmatter/chap2}
+\include{mainmatter/chap3}
+\include{mainmatter/chap4}
+\include{mainmatter/chap5}
+\include{mainmatter/chap6}
+%%%%%%!!!!!!!!!Remember to delete!!!!!!!!!!!!
+%\include{mainmatter/resources}
+
+
+%\begin{appendices}
+%  \include{mainmatter/simple-2}
+%\end{appendices}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\backmatter
+
+\printbibliography
+
+\end{document}
+
+% Local Variables:
+% TeX-engine: xetex
+% LaTeX-biblatex-use-Biber: t
+% TeX-master: t
+% End:

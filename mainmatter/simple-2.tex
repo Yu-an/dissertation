@@ -1,0 +1,244 @@
+
+\chapter{Inferring Clause Type from Syntax, Prosody, Speech Act}
+\label{appx:eng-model-dir}
+
+\begin{figure}[H]
+\begin{center}
+\begin{tikzpicture}
+\node[obs] (a) {$A_{i}$};
+\node[latent, below=of a] (c) {$C_{i}$};
+\node[obs, below=of c, xshift=-0.6cm] (s) {$\vec{S_{i}}$};
+\node[obs, below=of c, xshift=0.6cm] (l) {$L_{i}$};
+%\node[latent, right=of l] (lambda) {$\lambda^{c}$};
+%\node[obs, right=of lambda] (eta) {$\eta$};
+\node[latent, right=of c] (phi) {$\phi^{a}$};
+\node[obs, right=of phi] (beta) {$\beta$};
+%\node[latent, left=of s] (delta) {$\delta^{c}$};
+%\node[obs, left=of delta] (gamma) {$\gamma$};
+
+\edge {phi, a}{c};
+\edge {c}{s};
+\edge {beta}{phi};
+%\edge {gamma}{delta};
+\edge {c}{l};
+%\edge {eta}{lambda};
+
+
+\plate {avalue}{(phi)}{$A$};
+%\plate {cvalue}{(delta)}{$C$};
+\plate {fvalue}{(s)}{$F$};
+\plate {nutt}{(a)(c)(s)(l)(fvalue)}{$N$};
+\end{tikzpicture}
+\end{center}
+\caption{Hierarchical model}\label{fig:appx-baseline}
+\end{figure}
+
+Variables:
+\begin{itemize}
+\item A: Speech Act, four values: Assertion, Question, Request/Command, other%\\
+%$ a \sim \mbox{Multinomial}(\vec{\theta})$;\\
+%$\vec{\theta} \sim \mbox{Dir}(\alpha)$
+\item C: Clause Type, four values: declarative, interrogative, imperative, other\\
+$ c \sim \mbox{Multinomial}(\vec{\phi^{a}})$;\\
+$\vec{\phi^{a}} \sim \mbox{Dir}(\beta)$
+\item $\vec{S}$: Syntactic features, feature bundle; 
+the value of each feature $F$ is $S^{(F)}$ \\
+$s^{(F)} \sim \mbox{Bernoulli}(\delta^{c})$ \\
+$\delta\sim \mbox{Beta}(\gamma)$
+\item $L$: Intonation; rise or otherwise\\
+$l\sim\mbox{Bernoulli}(\lambda^{c}) $\\
+$\lambda^{c}\sim\mbox{Beta}(\eta)$
+%\item $\vec{R}$: proportion of looks before, during, and after an utterance\\
+%$\vec{R_{i}} \sim \mbox{MVN}(\mu_{A}, \Sigma_{A})$ 
+\end{itemize}
+
+%For utterances \{1, \ldots, n\}:
+%\begin{equation}
+%P(C | A, S) = P(S|C) P(C) P(C|A) 
+%\end{equation}
+
+\begin{figure}[H]
+\begin{center}
+\begin{tikzpicture}
+\node[obs] (a) {$A_{i}$};
+\node[latent, below=of a] (c) {$C_{i}$};
+\node[obs, below=of c, xshift=-0.6cm] (s) {$\vec{S_{i}}$};
+\node[obs, below=of c, xshift=0.6cm] (l) {$L_{i}$};
+\node[latent, right=of l] (lambda) {$\lambda^{c}$};
+\node[obs, right=of lambda] (eta) {$\eta$};
+\node[latent, right=of c] (phi) {$\phi^{a}$};
+\node[obs, right=of phi] (beta) {$\beta$};
+\node[latent, left=of s] (delta) {$\delta^{c}$};
+\node[obs, left=of delta] (gamma) {$\gamma$};
+
+\edge {phi, a}{c};
+\edge {delta, c}{s};
+\edge {beta}{phi};
+\edge {gamma}{delta};
+\edge {c,lambda}{l};
+\edge {eta}{lambda};
+
+
+\plate {nutt}{(a)(c)(s)(l)}{$N$};
+\plate {avalue}{(phi)}{$A$};
+\plate {cvalue}{(delta)}{$C$};
+\plate {fvalue}{(gamma)(delta)(s)(cvalue)}{$F$};
+\end{tikzpicture}
+\end{center}
+\caption{Hierarchical model with all parameters specified}\label{fg:model}
+\end{figure}
+
+\subsection{Notations}
+\begin{itemize}
+\item $c_{i}$: value of variable $C$ for utterance $i$
+\item $c_{-i}$: value of variable $C$ for utterances other than $i$
+\item $\vec{c}$: value of variable $C$ for all utterances
+%\item $c_{i}'$: all possible values of $c$
+\item $S_{i}$: values of all syntactic features for $i$
+\item $s^{(F)}_{i}$: the value of syntactic feature $s^{F}$ for $i$
+\item $l_{i}$: value of variable $L$ for utterance $i$ (rise or otherwise)
+\item $n$: total number of utterances
+\item $n_{c_{i}}$: number of observations where $c=c_{i}$
+\item $n^{(c_{i}, F)}_{s_{i}}$ is the number of observations where the value of feature $s^{F} = s^{F}_{i}$ and $c = c_{i}$ 
+\item $n^{(F)}_{c_{i}}$ is the number of total observations of feature $s^{F}$ so far when $c = c_{i}$. 
+\item $n^{c_{i}}_{l_{i}}$: the number of observations where $L = l_{i}$ and $c = c_{i}$
+\end{itemize}
+
+\subsection{Sampling C}
+\begin{equation}
+p(c_{i}| c_{-i}, \vec{a}, \beta, \vec{S_{i}}, \delta, \gamma, l_{i}, \lambda, \eta) = \frac{p(\vec{S_{i}}| \vec{c}, \delta, \gamma)\ p(l_{i} |\vec{c},\lambda, \eta)\ p(c_{i}|\beta, c_{-i}, \vec{a})}{\Sigma_{c_{i}'}p(\vec{S_{i}}| \vec{c'}, \delta, \gamma)\ p(l_{i} |\vec{c'},\lambda, \eta)\ p(c_{i}'|\beta, c_{-i}, \vec{a})}
+\end{equation}
+
+\subsubsection{Likelihood}
+Each syntactic feature $s^{(F)}\sim \mbox{Bernoulli}(\delta_{c})$. Assume that $n^{(F)}_{s_{i}}$ is the number of observations where $s^{(F)}_{i}=s_{i}$ when $c=c_{i}$, and $n_{c_{i}}$ is the number of total observations of $s^{(F)}$ when $c=c_{i}$. The feature superscript $(F)$ is omitted from line 4 forward for simplicity.
+
+\begin{equation}
+\begin{split}\label{p(s|c)}
+p(\vec{S_{i}}| \vec{c}, \delta, \gamma) = & \prod_{F} p(s^{(F)}_{i}|\vec{c}^{(F)}, \delta, \gamma)\\%split to each feature of S
+= &\prod_{F}\int p(s^{(F)}_{i}|c_{i}^{(F)}, \delta^{(F)}_{c_{i}}, \gamma^{(F)})\ p(\delta^{(F)}_{c_{i}}|c^{(F)}_{-i}, s^{(F)}_{-i},\gamma^{(F)}) d\delta_{c_{i}}\\%predicative posterior distribution
+=& \prod_{F}\int \prod_{k} \delta^{1^{s_{i}=k}}_{k}%expand p(s_{i})
+\prod_{k} \delta_{k}^{\gamma_{k}-1}  %expand p(delta)
+\frac{\Gamma(\sum_{k}(\gamma_{k}))}{\prod_{k}(\Gamma(\gamma_{k}))}%normalizing constant for p(delta)
+d\delta_{c_{i}} \\ 
+=& \prod_{F} \frac{\Gamma(\sum_{k}(\gamma_{k}))}{\prod_{k}(\Gamma(\gamma_{k}))}%move the normalizing constant 
+\int \prod_{k}\delta_{k}^{1^{s_{i}=k}+\gamma_{k}-1}d\delta_{c_{i}} %combine the two deltas and (1-delta)s
+\end{split}
+\end{equation}
+
+\noindent The last term could be solved by adding a constant to create the PDF of the following Beta distribution (with parameter $\gamma_{k}+1^{s_{i}=k} $):
+\begin{equation}
+\begin{split}
+&p(\delta_{c_{i}}|\gamma_{k}+1^{s_{i}=k})\\
+=&\int \prod_{k}\delta_{k}^{1^{s_{i}=k}+\gamma_{k}-1}%delta terms
+\frac{\Gamma(\sum_{k}(\gamma_{k}+1^{s_{i}=k}))}{\prod_{k}(\Gamma(\gamma_{k}+1^{s_{i}=k}))}%normalizing constant with new parameter
+d\delta_{c_{i}}
+\end{split}
+\end{equation}
+
+
+Therefore Equation (\ref{p(s|c)}) can be rewritten as:
+\begin{equation}
+\begin{split}
+p(\vec{S_{i}}| \vec{c}, \delta, \gamma)
+= & \prod_{F} \frac{\Gamma(\sum_{k}(\gamma_{k}))}{\prod_{k}(\Gamma(\gamma_{k}))}%normalizing constant 
+\int \prod_{k}\delta_{k}^{1^{s_{i}=k}+\gamma_{k}-1}d\delta_{c_{i}}\\
+=&\prod_{F} \frac{\Gamma(\sum_{k}(\gamma_{k}))}{\prod_{k}(\Gamma(\gamma_{k}))}%old NC
+\frac{\prod_{k}(\Gamma(\gamma_{k}+1^{s_{i}=k}))}{\Gamma(\sum_{k}(\gamma_{k}+1^{s_{i}=k}))} %1/new NC
+\int \prod_{k}\delta_{k}^{1^{s_{i}=k}+\gamma_{k}-1}
+\frac{\Gamma(\sum_{k}(\gamma_{k}+1^{s_{i}=k}))}{\prod_{k}(\Gamma(\gamma_{k}+1^{s_{i}=k}))}%pdf of Beta(gamma+1^{si=k})
+d\delta_{c_{i}}\\
+=&\prod_{F} \frac{\Gamma(\sum_{k}(\gamma_{k}))}{\prod_{k}(\Gamma(\gamma_{k}))}%old NC
+\frac{\prod_{k}(\Gamma(\gamma_{k}+1^{s_{i}=k}))}{\Gamma(\sum_{k}(\gamma_{k}+1^{s_{i}=k}))}\\ %1/new NC
+=&\prod_{F}\frac{\Gamma(\sum_{k}(\gamma_{k}))}{\Gamma(\gamma_{s_{i}})\prod_{k\neq s_{i}}(\Gamma(\gamma_{k}))}%old NC
+\frac{\Gamma(\gamma_{s_{i}}+1)\prod_{k\neq s_{i}}(\Gamma(\gamma_{k}))}{\Gamma(\sum_{k}(\gamma_{k})+1)}\\%separate out k from s_{i}
+=&\prod_{F}\frac{\gamma_{s_{i}}}{\sum_{k}(\gamma_{k})}\\%reduce
+=&\prod_{F}\frac{\gamma_{0}+n_{s_{i}}}{(r_{0}+n_{s_{i}})(r_{0}+n_{c_{i}}-n_{s_{i}})}\\%update function
+=& \prod_{F}\frac{\gamma_{0}+n_{s^{F, c_{i}}_{i}}}{2r_{0}+n^{F}_{c_{i}}}
+\end{split}
+\end{equation}
+
+Similarly for L:
+\begin{equation}
+\begin{split}
+p(l_{i} |\vec{c},\lambda, \eta) &= \frac{\eta_{l_{i}}}{\sum_{k}{\eta_{k}}}\\
+&= \frac{\eta_{0}+n_{l_{i}}^{c_{i}}}{2\eta_{0}+n_{c_{i}}}
+\end{split}
+\end{equation}
+
+\subsubsection{Prior}
+Assume $\beta_{k}$ is the value of $\beta$ for when $c = k$, $n_{c_{i}}$ as the number of observations of $c=c_{i}$ so far, and  $n_{c_{i}}^{(k)}$ is the number of observations of other values of $c$ 
+%p(c_{i}|\phi_{a_{i}},a_{i}) = \prod_{k}\phi_{a_{i}} 
+
+\begin{equation}
+\begin{split}
+ p(c_{i}|\phi_{a_{i}} ,\beta, c_{-i},  \vec{a})  =& \int p(c_{i}|\phi_{a_{i}}, \beta) p(\phi_{a_{i}}| c_{-i}, \beta)d\phi_{a_{i}} \\
+= & \int \prod_{k}\ \phi_{k}^{1^{c_{i}=k}}\ \frac{\Gamma(\sum_{k}\beta_{k})}{\prod_{k}(\Gamma(\beta_{k}))}\prod_{k} \phi_{k}^{\beta_{k}-1}d\phi\\
+= & \ \frac{\Gamma(\sum_{k}\beta_{k})}{\prod_{k}(\Gamma(\beta_{k}))} %dirchlet
+\frac{\prod_{k\neq c_{i}}\Gamma(\beta_{k})\Gamma (\beta_{c_{i}}+1)}{\Gamma(\sum_{k}\beta_{k} +1)} \, %norm constant^{-1}
+\int \prod_{k\neq c_{i}} \phi_{k}^{\beta_{k}-1} \phi_{c_{i}}^{\beta_{c_{i}}}\ %integral
+\frac{\Gamma(\sum_{k}\beta_{k}+1)}{\prod_{k\neq c_{i}} (\Gamma(\beta_{k}) \Gamma(\beta_{c_{i}}+1))} d\phi\\%norm constant inside and out
+= &  \frac{\Gamma(\sum_{k}\beta_{k})}{\prod_{k}(\Gamma\beta_{k})}\ %dirchlet
+\frac{\prod_{k\neq c_{i}}\Gamma(\beta_{k})\Gamma (\beta_{c_{i}}+1)}{\Gamma(\sum_{k}\beta_{k} +1)} \, %norm constant^{-1}
+\int \prod_{k\neq c_{i}} \phi_{k}^{\beta_{k}-1} \phi_{c_{i}}^{\beta_{c_{i}}}%integral
+\frac{\Gamma(\sum_{k}\beta_{k} +1)}{\prod_{k\neq c_{i}} (\Gamma(\beta_{k}) \Gamma(\beta_{c_{i}}+1))} \  %norm constant
+d\phi\\
+=&\frac{\Gamma(\sum_{k}\beta_{k})}{\prod_{k}(\Gamma\beta_{k})}%dirchlet 
+\frac{\prod_{k\neq c_{i}} (\Gamma(\beta_{k}) \Gamma(\beta_{c_{i}}+1)}{\Gamma(\sum_{k}\beta_{k}+1)} \\%reduction
+= &\frac{\beta_{c_{i}}}{\sum_{k}(\beta_{k})}\\
+= & \frac{\beta_{0}+n_{c_{i}}^{a_{i}}}{\sum_{k}(\beta_{0}+n^{(k,a_{i})}_{c_{i}})}\\
+= & \frac{\beta_{0}+n_{c_{i}}^{a_{i}}}{4\beta_{0}+n_{a_{i}}}
+\end{split}
+\end{equation}
+
+
+%\begin{comment}
+\subsubsection{Posterior distribution of $c$}
+The posterior probability distribution of $c$ of value $i$ is calculated by computing the product of the prior of $c$ given every other variables and the likelihood, and normalized by dividing the sum of the posterior of $c$ of every value
+
+\begin{equation}\label{postC}
+\begin{split}
+p(c_{i}| c_{-i}, \vec{a}, \beta, \vec{S_{i}}, \delta, \gamma, l_{i}, \lambda, \eta) = &
+\frac{p(\vec{S_{i}}| \vec{c}, \delta, \gamma)\ p(l_{i} |\vec{c},\lambda, \eta)\ p(c_{i}|\beta, c_{-i}, \vec{a})}{\Sigma_{c_{i}'}p(\vec{S_{i}}| \vec{c'}, \delta, \gamma)\ p(l_{i} |\vec{c'},\lambda, \eta)\ p(c_{i}'|\beta, c_{-i}, \vec{a})}\\
+=& \frac{ \prod_{F}\frac{\gamma_{0}+n_{s^{F, c_{i}}_{i}}}{2r_{0}+n_{c^{F}_{i}}}%S
+\frac{\eta_{0}+n_{l_{i}}^{c_{i}}}{2\eta_{0}+n_{c_{i}}}%L
+\frac{\beta_{0}+n_{c_{i}}^{a_{i}}}{4\beta_{0}+n_{a_{i}}}%C
+}%分子
+{\sum_{c'_{i}}\prod_{F}\frac{\gamma_{0}+n^{F, c'_{i}}_{s_{i}}}{2r_{0}+n^{F}_{c'_{i}}}%S
+\frac{\eta_{0}+n_{l_{i}}^{c'_{i}}}{2\eta_{0}+n_{c'_{i}}}%L
+\frac{\beta_{0}+n_{c'_{i}}^{a_{i}}}{4\beta_{0}+n_{a_{i}}} %C
+}%分母
+\end{split}
+\end{equation}
+%\end{comment}
+
+\subsection{Pseudo-code for Gibbs Sampling}
+
+Input: speech acts $a_{k}$ and values of $\vec{S_{k}}$ for each utterance\\
+Output: clause type assignment $c_{k}$ and counts $n_{c_{i}}, n_{s_{i}}$\\
+Initialization: randomly assign values to $c$\\
+For each iteration, do:  
+\begin{enumerate}
+\item For each $i$ from range $(0,N)$, do:
+\item speechact $\leftarrow$ $a[i]$
+\item clausetype$\leftarrow$ $c[i]$ 
+%\item synfeatures$\leftarrow$ $\vec{S}[i]$ 
+\item For each value $k$ of $c$, do:
+$n_{c_{i}} -= 1$, $n^{k}_{c_{i}} -=1$
+\begin{enumerate}
+\item For each feature $f$ from range$(0, (|\vec{S}|)$:
+\begin{enumerate}
+\item $n_{c_{i}^{f}} -= 1$, $n_{s_{i}^{f}} -= 1$
+\item calculate  $p(c_{i}| c_{-i}, \vec{a}, \vec{S_{i}}, \beta )$ with equation (\ref{postC})
+\item clausetype $\leftarrow$ sample from $ p(c_{i}| c_{-i}, \vec{a}, \vec{S_{i}}, \beta )$
+\item $c[i]\leftarrow$ clausetype
+\item $n_{c_{i}^{f}} += 1$, $n_{s_{i}^{f}} += 1$
+\end{enumerate}
+\item $n_{c_{i}} += 1$, $n^{k}_{c_{i}} +=1$
+\end{enumerate}
+\item return $c, n_{c}, n_{s}$
+\end{enumerate}
+
+
+
+
+
