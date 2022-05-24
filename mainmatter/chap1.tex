@@ -58,7 +58,7 @@ That’s Elmo!
 
 But this feature [\textpm int] is an abstract feature and thus cannot be directly read off from the surface string, so the learner is left with the task of inferring which feature is on $C^{0}$ from surface form. To achieve this, they need to find the right way to cluster of sentences in the language. In other words, when given a new sentence (\ref{ex:intro:cluster-base}), they should be able to put it in the same clause type category as (\ref{ex:intro:cluster}a) and not (\ref{ex:intro:cluster}b). I will refer to this problem as the \tbf{clustering problem}. 
 
-Solving this problem isn't straightforward, as clause type features of $C^{0}$ do not have one-to-one mapping with morpho-syntactic features. For example, as discussed above, the [+int] feature of $C^{0}$ in English is usually associated with the raising of auxiliaries, resulting in subject-aux inversion. But in embedded clauses, [+int] does not trigger the raising of auxiliaries, and consequently, we won't see subject-auxiliary inversion in these interrogative clauses: 
+Solving this problem isn't straightforward, as clause type features of $C^{0}$ do not have a one-to-one mapping with morpho-syntactic properties in the surface form of sentences. For example, as discussed above, the [+int] feature of $C^{0}$ in English is usually associated with the raising of auxiliaries, resulting in subject-aux inversion. But in embedded clauses, [+int] does not trigger the raising of auxiliaries, and consequently, we won't see subject-auxiliary inversion in these interrogative clauses: 
 
 \bex{ex:intro:eng-embed}
 Mary wonders \tun{whether Ann can hug Elmo.}
@@ -72,7 +72,7 @@ Ann can hug Elmo.
 As shown in (\ref{ex:intro:eng-embed}), the auxiliary \tit{can} and subject \tit{Ann} of the embedded interrogative have the same word order as the matrix declarative sentence (\ref{ex:intro:eng-can}a).
 
 
-Conversely, the feature typically associated with [+int] could also appear in other settings. For example, [+int] in Mandarin could be expressed by having a \twh-phrase in the sentence. But, [$-$int] sentences could also have \twh-phrases, where these phrases are interpreted as indefinites like English \tit{any/a}. As a result, a string like (\ref{ex:intro:m-whamb}) could be either an interrogative (interpretation a) or a declarative (interpretation b). 
+Conversely, some morpho-syntactic properties typically associated with [+int] could also appear in other settings. For example, [+int] in Mandarin could be expressed by having a \twh-phrase in the sentence. But, [$-$int] sentences could also have \twh-phrases, where these phrases are interpreted as indefinites like English \tit{any/a}. As a result, a string like (\ref{ex:intro:m-whamb}) could be either an interrogative (interpretation a) or a declarative (interpretation b). 
 
 
 \bex{ex:intro:m-whamb}
@@ -82,10 +82,12 @@ a.	``What didn’t Xiaoxiao eat?''	\hfill Interrogative \twh\\
 b.	``Xiaoxiao didn’t eat anything.''		\hfill Indefinite \twh
 \eex
 
-Moreover, learners have to learn their language-specific way that [+int] are expressed. A case in point: in English, the subject and verb switch their canonical order in interrogatives, but Mandarin employs sentence final particles for interrogatives. 
+Therefore, learners need to infer the abstract clause type feature of sentences, but they might not see the morpho-syntactic properties typically associated with clause type feature, or the property that they do see misaligns with the actual clause type feature of the sentence.
+
+Another related problem is that, learners have to learn their language-specific way that [+int] are expressed. A case in point: in English, the subject and verb switch their canonical order in interrogatives (\ref{ex:intro:intro}a-b), but Mandarin employs sentence final particles for interrogatives (\ref{ex:intro:man}a-b).  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
-In the principle and parameter approach, a way to solve this cross-linguistic variation problem is to propose specific parameters that [+int] can be related to in all languages. In these proposals, learners are given choices for how to type a clause (i.e. assign [+int] or [-int] to $C^{0}$) by setting the value of a parameter. For example, \textcite{cheng1991} proposes the Clause Typing Hypothesis:
+In the principle and parameter approach, a way to solve this cross-linguistic variation problem is to propose a parameter that covers all the variations. The learners are given choices for how to type a clause (i.e. assign [+int] or [-int] to $C^{0}$) by setting the value of a parameter. For example, \textcite{cheng1991} proposes the Clause Typing Hypothesis:
 
 \begin{quote}
 Every clause needs to be typed. In the case of typing a \twh-question, either a \twh-particle in $C^{0}$ is used or else fronting of a \twh-word to the Spec of $C^{0}$ is used, thereby typing a clause through $C^{0}$ by Spec-head agreement. \hfill \textcite[p.29]{cheng1991}
@@ -100,12 +102,15 @@ Who can Ann hug?
 \eex
 \bex{ex:intro:cheng-man}
 \gll
-Ann neng baobao shui ne\\
+Ann neng baobao shui (ne)\\
 Ann can hug who \Sfp\\
 \trans ``Who can Ann hug?''
 \eex
 
-Putting aside the controversy about \twh-particles (cf. \cite{bruening2007wh, yangyang2018}), Cheng associates a particular learning strategy to clause typing with this hypothesis: since languages have two ways of realizing [+int], learners identify the abstract clause type feature by observing whether their language allows \twh-particles. 
+%Putting aside the controversy about \twh-particles (cf. \cite{bruening2007wh, yangyang2018}), 
+As \twh-particles are optional in many in situ languages, Cheng associates a particular learning strategy with this hypothesis: learners use the presence of polar question particle (e.g. \tit{ma} in Mandarin) to learn
+
+since languages have two ways of realizing [+int], learners identify the abstract clause type feature by observing whether their language allows \twh-particles. 
 
 
 In this dissertation, we explore a different way of solving the clustering problem, namely whether they can use their ability to track the distribution of certain features. Specifically, learners need to use pragmatic information (i.e. the speech act of the sentence), in conjunction with observations of distributions of morpho-syntactic features in the surface form of sentences, to infer clause type clusterings. We will return to this hypothesis later. 
