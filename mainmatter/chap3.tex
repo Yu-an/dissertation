@@ -190,9 +190,9 @@ Generally, infants have been shown to track distributional properties of various
 
 \tsc{$\pm$ Subj-aux inversion:} By 18 months, infants can recognize whether there is an auxiliary in the sentence, and are sensitive to the relative word order between the auxiliary and the sentential subject. As mentioned above, well before they turn 18 months old, infants can already use preceding auxiliaries to categorize a novel word into the verb category (e.g. \cite{peterson2006aux, mintz2006verb}), suggesting that they understand the relation between auxiliaries and verbs. Additionally, as mentioned above, 12-month-olds can already detect subject-auxiliary inversion (\cite{geffenmintz2015wordorder}, cf. \cite{erreich1984,ambridge2006auxinvert}); with both word order and prosodic cues, even 7-month-olds are able to detect the difference between polar interrogatives and declaratives (\cite{geffenmintz2011}). We therefore assume that infants are able to detect whether there is an auxiliary in the sentence, and further they are able to detect whether the subject is preceding or following the auxiliary.
 
-\tsc{$\pm$ Sentence-initial \twh{}:} \textcite{perkinslidz2021wh} shows that 18-month-olds, but not younger infants, begin to represent the sentence-initial \tit{which NP} as the head of a long-distance dependency. These results are suggestive, but we do not yet have evidence for the full range of \twh-phrases. In order to be conservative, we do not assume that infants have full-fledged knowledge of \twh{}. However, infants at this age are shown to have the ability to tease apart functional from content words based on their acoustic and phonological properties (\cite{shi1999func,shi2014functional}), and it is reasonable to assume that they could  \twh{s} as functional items (\cite{perkins2019}). Therefore, we will still treat \twh{} as unknown to 18-month-olds, but they are unknown \emph{functional} items (UFI), following \textcite{perkins2019}.\footnote{Note that \textcite{perkins2019} models what happens before 18 months, as her experiment narrows down the developmental window to 18 months old. Moreover, while her experiment only tests \tit{which}, there are some studies suggesting that 18-month-olds can understand \tit{what}, \tit{who}, and \tit{where} . Thus assuming that all \twh-items are unknown functional items might be too conservative. In the future, I plan to see if loosening this assumption (e.g. assume that some \twh-items are known) will boost the performance of the \dlearnerabbr{}.} We can also assume that 18-month-olds can keep track of the position of these UFIs in the sentence, whether they are clause-initial, middle, or end. So they could detect whether is a clause-initial UFI. 
+\tsc{$\pm$ Sentence-initial \twh{}:} \textcite{perkinslidz2021wh} shows that 18-month-olds, but not younger infants, begin to represent the sentence-initial \tit{which NP} as the head of a long-distance dependency. These results are suggestive, but we do not yet have evidence for the full range of \twh-phrases. In order to be conservative, we do not assume that infants have full-fledged knowledge of \twh{}. However, infants at this age are shown to have the ability to tease apart functional from content words based on their acoustic and phonological properties (\cite{shi1999func,shi2014functional}), and it is reasonable to assume that they could  \twh{s} as functional items (\cite{perkins2019}). Therefore, we will still treat \twh{} as unknown to 18-month-olds, but they are unknown \emph{functional} items (UFI), following \textcite{perkins2019}.\footnote{Note that \textcite{perkins2019} models what happens before 18 months, as her experiment narrows down the developmental window to 18 months old. Moreover, while her experiment only tests \tit{which}, there are some studies suggesting that 18-month-olds can understand \tit{what}, \tit{who}, and \tit{where} . Thus assuming that all \twh-items are unknown functional items might be too conservative. In the future, I plan to see if loosening this assumption (e.g. assume that some \twh-items are known) will boost the performance of the \dlearnerabbr{}.} We can also assume that 18-month-olds can keep track of the position of these UFIs in a sentence, so we can code \twh-items as sentence-initial UFIs. 
 
-\tsc{Complementizer:} So far, we do not have evidence for infants' knowledge of complementizers at this age, but again they might be able to categorize complementizers as functional items. So these are treated as UFIs as well.\footnote{ Other functional items that we do not have evidence for 18-month-olds include quantifiers, focus particles, or certain conjuntors such as \tit{because}. I assume that these are UFIs as well. } %Similarly, we 
+\tsc{Complementizer:} So far, we do not have evidence for infants' knowledge of complementizers at this age, but again they might be able to categorize complementizers as functional items. So these are treated as UFIs as well.\footnote{ Other functional items that we do not have evidence for 18-month-olds include quantifiers, focus particles, or certain conjuntors such as \tit{because}. I assume that these are UFIs as well. } Since infants can identify verbs, we assume that they can track that certain UFIs occur post-verbally. 
 
 
 %Table~\ref{} summarises our assumptions about 18-month-olds' knowledge of the set of formal features that associated with clause typing.
@@ -277,6 +277,55 @@ Can you put that down?
 
 As reviewed in the last section, infants at 18 months old might have knowledge of certain morpho-syntactic features. In particular, infants might have knowledge of the subject of a sentence, its position in the sentence (whether in canonical pre-verbal position or inverted), verbs and various functional elements associated with verbs such as auxiliaries and some verbal morphology. Infants might not have a separate category for all the \twh-items, but they might be able to still classify them as functional elements, as they may know the distinction between functional and content elements. We therefore put \twh-items, quantifiers, connectives (except for \tit{and}), and focus particles in one category ``unknown functional item (UFI),'' and we annotated its position in a sentence: sentence initial, sentence-medial but before the verb, or after the verb. Each sentence was annotated with whether or not a specific feature is present. Table~\ref{tab:eng-cl:formal-schema} summarizes the features we annotated and their examples.  
 
+
+
+\begin{table}[H]
+    \centering
+\begin{tabular}{l|l } 
+\hline
+Feature  & Examples\\ 
+\hline \hline
+\multirow{2}{*}{$\pm$ \tsc{verb} }&
+($+$) \tbf{Find} Elmo! \hfill Clause\\
+
+&($-$) Elmo! \hfill Fragment
+\\ 
+\hline
+\multirow{2}{*}{\tsc{$\pm$ subject} }&
+($+$) \tbf{I}'ll take it. \hfill [$-$imp]\\
+
+&($-$) Take it. \hfill [+imp]
+\\
+\hline
+\multirow{2}{*}{\tsc{$\pm$ verb suffix} }&
+($+$) Nobody feel\tbf{s} good huh? \hfill [$-$imp] \\
+
+&($-$) Find Elmo! \hfill [+imp]
+\\ 
+\hline
+\multirow{2}{*}{\tsc{$\pm$ subj-aux inversion} } & 
+($+$) \tbf{Can you} find the ladybug? \hfill [+int]\\
+
+&($-$) I can take it. \hfill [$-$int]
+\\ 
+\hline
+\multirow{2}{*}{\tsc{$\pm$ sentence-initial \twh{} }} & 
+($+$) \tbf{What} did you find? \hfill [+int]\\
+
+&($-$) I found it. \hfill [$-$int] \\
+\hline
+\multirow{2}{*}{\tsc{complementizer} } & 
+($+$) I know \tbf{whether} it's wrong. \hfill [+int]\\
+
+&($-$) I know that it's wrong.\hfill [$-$int]
+\\
+\hline
+\end{tabular}
+
+\caption{Morph-syntactic features and their associated clause types}
+\label{tab:engcl:grammar}
+
+\end{table}
 
 \begin{table}[H]
     \centering
