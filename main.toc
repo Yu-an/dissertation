@@ -10,18 +10,14 @@
 \contentsline {section}{\numberline {1.2}The problems with speech act}{5}{section.1.2}%
 \contentsline {section}{\numberline {1.3}Pragmatic syntactic bootstrapping hypothesis}{7}{section.1.3}%
 \contentsline {section}{\numberline {1.4}Discussion and roadmap}{8}{section.1.4}%
-\contentsline {chapter}{\chapternumberline {2}Background}{10}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Theories of speech act and clause type}{10}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Clause type}{10}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Speech act}{11}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Complication: the role of prosody}{18}{subsection.2.1.3}%
-\contentsline {section}{\numberline {2.2}Acquisition of speech acts and clause types}{18}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Knowledge about speech acts}{18}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Interrogatives and questions in early language acquisition}{19}{subsection.2.2.2}%
-\contentsline {section}{\numberline {2.3}Speech acts and clause types in English}{22}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Pragmatics of questions}{22}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Interrogatives in English and Mandarin}{23}{subsection.2.3.2}%
-\contentsline {subsubsection}{\numberline {2.3.2.1}Prosodic Features}{25}{subsubsection.2.3.2.1}%
+\contentsline {chapter}{\chapternumberline {2}Background}{11}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Theories of speech act and clause type}{11}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Clause type}{11}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Speech act}{12}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Complication: the role of prosody}{19}{subsection.2.1.3}%
+\contentsline {section}{\numberline {2.2}Acquisition of speech acts and clause types}{20}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Early communicative abilities}{20}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Early knowledge of clause types and speech acts}{22}{subsection.2.2.2}%
 \contentsline {chapter}{\chapternumberline {3}Learning to identify clause types in English}{27}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Background}{28}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Two learners}{28}{subsection.3.1.1}%
@@ -57,14 +53,15 @@
 \contentsline {chapter}{\chapternumberline {4}Learning to identify clause types in Mandarin}{76}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Background}{76}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Clause types in Mandarin}{76}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Mandarin-acquiring children's knowledge of clause types}{76}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}Roadmap of the chapter}{76}{subsection.4.1.3}%
-\contentsline {section}{\numberline {4.2}Corpus study}{76}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Models}{76}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}The syntactically informed distributional learner{}}{76}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}The syntactically and pragmatically informed distributional learner{}}{76}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Manipulating ratio of noise in pragmatic information}{76}{subsection.4.3.3}%
-\contentsline {section}{\numberline {4.4}Discussion}{76}{section.4.4}%
-\contentsline {chapter}{\chapternumberline {5}Learning speech act categories}{77}{chapter.5}%
-\contentsline {chapter}{\chapternumberline {6}Conclusion and discussion}{78}{chapter.6}%
-\contentsline {chapter}{Bibliography}{79}{section*.7}%
+\contentsline {subsection}{\numberline {4.1.2}Interrogatives in English and Mandarin}{76}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Mandarin-acquiring children's knowledge of clause types}{78}{subsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.1.4}Roadmap of the chapter}{78}{subsection.4.1.4}%
+\contentsline {section}{\numberline {4.2}Corpus study}{78}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Models}{78}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}The syntactically informed distributional learner{}}{78}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}The syntactically and pragmatically informed distributional learner{}}{78}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Manipulating ratio of noise in pragmatic information}{78}{subsection.4.3.3}%
+\contentsline {section}{\numberline {4.4}Discussion}{78}{section.4.4}%
+\contentsline {chapter}{\chapternumberline {5}Learning speech act categories}{79}{chapter.5}%
+\contentsline {chapter}{\chapternumberline {6}Conclusion and discussion}{80}{chapter.6}%
+\contentsline {chapter}{Bibliography}{81}{section*.7}%
