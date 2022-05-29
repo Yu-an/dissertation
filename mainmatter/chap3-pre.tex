@@ -498,37 +498,6 @@ We will start with the distributional learner that only uses morpho-syntactic fe
 
 Our distributional learner assumes that the formal features observed in a given sentence are generated because the sentence belongs to one of three clause types. Figure~\ref{fig:baseline-unplate} illustrates the core idea of this model. The distributional learner assumes that a speaker generates a sentence in the following way: they first decide what clause type to use, and then decide which morpho-syntactic features need to present in the sentence given this clause type. The task of the learner is then to infer which category this sentence belongs to (i.e. the value of variable $C$, which cannot be directly observed) from the set of formal features $\vec{S}$ present/absent in the sentence (i.e. the value of Subject variable, Verb Morphology variable, subject-auxiliary inversion variable, etc., which can be directly observed and thus represented by shaded circles in the figure). The formal features included in $\vec{S}$ were the same as the set of formal features in Table~\ref{tab:eng-cl:formal-schema} in Section~\ref{sec:engcl:corpus:schema}.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{figures/baseline-update.jpg}
-    \caption{An illustration of the distributional learner}
-    \label{fig:baseline-unplate}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
-\begin{tikzpicture}
-\node[latent] (c) {$C_{i}$};
-\node[obs, below=of c, xshift=-0.6cm] (s) {$\vec{S_{i}}$};
-\node[latent, left=of c] (phi) {$\phi^{a}$};
-\node[const, left=of phi] (beta) {$\beta$};
-\node[latent, left=of s] (delta) {$\delta^{c}$};
-\node[const, left=of delta] (gamma) {$\gamma$};
-
-
-\edge {phi}{c};
-\edge {delta, c}{s};
-\edge {beta}{phi};
-\edge {gamma}{delta};
-
-
-\plate {nutt}{(c)(s)}{$N$};
-\plate {cvalue}{(delta)}{$C$};
-\plate {fvalue}{(gamma)(delta)(s)(cvalue)}{$F$};
-\end{tikzpicture}
-\end{center}
-\caption{Distributional learner}\label{fig:baseline-model}
-\end{figure}
 
 As we assume each morpho-syntactic feature follows the Bernoulli distribution, we can simplify our graph with a plate notation, with the plate $F$ representing the number of morpho-syntactic variables that the learner keeps track of (i.e. the variable $S$ repeats $F$ times). Each $S$ takes the value $1$ if the feature is present in the sentence, and $0$ otherwise. The probabilistic graphic model in Figure~\ref{fig:baseline-model} specifies the parameters and hyper-parameters of each variable with a plate notation. This learner assumes that each sentence is generated in the following way: the speaker chooses to use a certain clause type $C$, and then uses a set of morpho-syntactic features $\vec{S}$ (the number of features is $F$) to express this clause type. This process iterates $N$ times, $N$ being the number of sentences in the learner’s input. While the learner can observe the values assigned to $\vec{S}$ (represented by a shaded circle), they have to infer the value of $C$, namely their goal is to infer which clause type the speaker picked from the distribution of morpho-syntactic features of the sentence. Besides inferring the clause type of the current sentence, zooming out to the whole set of input sentences, the learner also tries to infer the probability distribution of all clause types in the input, as represented by the variable $\phi$ outside the plate $N$. Similarly, they also try to infer the probability distribution of the morpho-syntactic features ($\delta$) for each clause type across all input sentences. Namely, across all input sentences, for each clause type chosen by the speaker, how likely we would see a given feature present in the sentence. 
 
@@ -537,25 +506,6 @@ To put differently, the random variable $S$ is dependent on the random latent va
 
 Here is a summary of the variables in the model, their meaning and distribution:
 
-\begin{table}[H]
-    \centering
-    \begin{tabular}{c|l}
-    \hline
-    \hline
-        C &  Clause Type, multinomial variable with 3 values\\
-        & $ c \sim  \mbox{Multinomial}(\vec{\phi^{a}})$;\\
-        &$\vec{\phi^{a}} \sim \mbox{Dir}(\beta)$\\
-\hline
-        $\vec{S}$ &  Morpho-syntactic features, feature bundle; \\
-        & See Table~\ref{tab:eng-cl:formal-schema} for the full list of features included \\
-        & $s^{(F)} \sim \mbox{Bernoulli}(\delta^{c})$ \\
-        &$\delta\sim \mbox{Beta}(\gamma)$\\
-    \hline
-    \hline
-    \end{tabular}
-    \caption{Variables, their distribution, and explanation}
-    \label{tab:baseline-variables}
-\end{table}
 
 
 
@@ -586,10 +536,6 @@ Additionally, this learner serves as the baseline for our pragmatic syntactic bo
 \subsubsection{Results}
 \label{sec:engcl:model:baseline:results}
 
-The data for this model were taken from the annotated dataset reported in the last section. The relevant features included in the model are: the presence/absence of subject, verb, verb morphology, auxiliary, subject-auxiliary inversion, sentence-initial unknown functional items, non-sentence-initial but pre-verbal unknown functional items, and post-verbal unknown functional items. We further filtered out sentences without verbs, as these fragments might not contain information about clauses, and it is possible that learners could make the distinction already at this age. The true labels of clause type were used to evaluate the performance of the model. As the learner needs to learn from sentences about clause-level properties, instead of one-noun utterances or utterances of only injectives, we eliminated from the dataset sentences that do not contain a verb or an auxiliary. In total, $3923$  sentences were fed into the model.
-
-
-% \begin{figure}[H]
 %     \centering
 %     \includegraphics[width=0.5\textwidth]{figures/baseline-rand.jpg}
 %     \caption{Performance of the model over 10 iterations measured by rand score}
@@ -704,36 +650,6 @@ Similar to the distributional learner, the pragmatic distributional learner is a
 
 
 
-\begin{figure}[H]
-\begin{center}
-\begin{tikzpicture}
-\node[obs] (a) {$A_{i}$};
-\node[latent, left=of a] (theta) {$\theta$};
-\node[const, left=of theta] (alpha) {$\alpha$};
-\node[latent, below=of a] (c) {$C_{i}$};
-\node[obs, below=of c, xshift=-0.6cm] (s) {$\vec{S_{i}}$};
-\node[latent, left=of c] (phi) {$\phi^{a}$};
-\node[const, left=of phi] (beta) {$\beta$};
-\node[latent, left=of s] (delta) {$\delta^{c}$};
-\node[const, left=of delta] (gamma) {$\gamma$};
-
-\edge {theta}{a};
-\edge {alpha}{theta};
-\edge {phi, a}{c};
-\edge {delta, c}{s};
-\edge {beta}{phi};
-\edge {gamma}{delta};
-
-
-\plate {nutt}{(a)(c)(s)}{$N$};
-\plate {avalue}{(phi)}{$A$};
-\plate {cvalue}{(delta)}{$C$};
-\plate {fvalue}{(gamma)(delta)(s)(cvalue)}{$F$};
-\end{tikzpicture}
-\end{center}
-\caption{Pragmatic distributional learner}\label{fig:target-model}
-\end{figure}
-
 Figure~\ref{fig:target-model} shows the graphical model of the learner. The model assumes that the latent variable $C$ depends on the value of an observed variable $A$. This variable $A$ follows a multi-nominal distribution with parameter $\theta$, representing the probability distribution of each speech act in the input. The parameter for $C$ is still $\phi$, but this time $\phi$ is indexed to values of $A$, namely for each speech act, the distribution over different clause types might be different. Similar to the distributional learner, morpho-syntactic features are again represented by $\vec{S}$, which contains a set of formal features (the same ones as in the distributional learner). $\vec{S}$ is dependent on $C$ and the parameter $\delta$. 
 
 This learner's task is to infer the category $C$ of each sentence with the observed surface formal features, as well as the speech act information. In this section, we assume that the learner has access to the speech act information. Here our goal is to simply test the idea that if the learner is given data about the function of a clause, will its performance in solving the clustering problem improve.
@@ -746,30 +662,6 @@ Besides trying to infer the value of $C$ for each utterance, the learner also ne
 
 Here is a summary of the variables in the model, their meaning and distribution:
 
-\begin{table}[H]
-    \centering
-    \begin{tabular}{c|l}
-    \hline
-    \hline
-    
-        A & Speech Act, four values: Assertion, Question, Request/Command, other\\
-        & $ a \sim \mbox{Multinomial}(\vec{\theta})$;\\
-        & $\vec{\theta} \sim \mbox{Dir}(\alpha)$\\
-\hline
-        C &  Clause Type, multinomial variable with 3 values\\
-        & $ c \sim  \mbox{Multinomial}(\vec{\phi^{a}})$;\\
-        &$\vec{\phi^{a}} \sim \mbox{Dir}(\beta)$\\
-\hline
-        $\vec{S}$ &  Syntactic features, feature bundle; \\
-        & the value of each feature $F$ is $S^{(F)}$ \\
-        & $s^{(F)} \sim \mbox{Bernoulli}(\delta^{c})$ \\
-        &$\delta\sim \mbox{Beta}(\gamma)$\\
-    \hline
-    \hline
-    \end{tabular}
-    \caption{Variables in the pragmatic distributional learner, their distributions, and explanations}
-    \label{tab:target-variables}
-\end{table}
 
 
 \subsubsection{Inference}
@@ -929,64 +821,10 @@ I again adopt the Gibbs sampling method to infer the parameter values, same as f
 \subsubsection{Results}
 \label{sec:engcl:model:noisy:results}
 
-Figure~\ref{fig:noisy-rand-compare} shows the performance of the pragmatic distributional learner when the speech act contains 0-100\% noise. As can be seen, the learner outperforms the distributional learner up until there is around 85\% of noise in speech act. This suggests that speech act information is helpful for learners to cluster sentences, and even deprecated speech act information will still help the learner.  
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{figures/noisy-rand-compare.jpg}
-    \caption{Compare the performance of pragmatic distributional learners taking different levels of noisy speech act information; dotted marks the rand score of the distributional learner}
-    \label{fig:noisy-rand-compare}
-\end{figure}
-
-Looking at the learner at maximum noise level, we can see that the model fails to identify a cluster for declaratives (Figutre~\ref{fig:noisy100-heatmap}. Similar to the distributional learner, the cluster for imperatives also have declaratives (\ref{fig:noisy100-heatrev}). 
-
-
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/noisy100-heatmap.jpg}
-    \caption{The proportion of \diis{} in each of the three clusters (100\% noise in speech act information) }
-    \label{fig:noisy100-heatmap}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/noisy100-heatrev.jpg}
-    \caption{The proportion of actual \diis{} clustered in one category}
-    \label{fig:noisy100-heatrev}
-\end{figure}
-
-Looking at the distribution of syntactic features, we can see that the model has the same problem as the distributional learner. Cluster $0$, which should be the imperative cluster, still have sentences that have subjects. 
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{figures/noisy100-syncluster.jpg}
-    \caption{The number of sentences with/without certain formal features in each cluster (Cluster 0 $\sim$ Interrogatives, Cluster 1 $\sim$ Imperatives, Cluster 2 $\sim$ Declaratives), darker colors represent the number of sentences with the feature.}
-    \label{fig:noisy100-syncluster}
-\end{figure}
-
-
-
 
 \subsection{Interim Discussion}
 \label{sec:engcl:model:disc}
 In summary, the speech act information is very tolerant of noises. The pragmatic distribution learner consistently outperforms the distributional learner, and only drops when the noise in speech act reaches 85\%. 
 
 These results suggest that pragmatic information is crucial to the learner, not just to solve the labeling problem, but also to help with clustering. 
-
-\section{Discussion}
-\label{sec:engcl:discussion}
-
-In this chapter, we looked at how learners might learn to categorize sentences. We first examined the patterns in parents' input, and see that parents use clause types systematically, and that the three clause types are predominantly mapped to their canonical functions (declaratives to assertions, interrogatives to questions, imperatives to requests/commands). The three clause types are also used systematically, with their formal features consistently present in the input sentences. 
-
-We then address the question of how infants might succeed at the clustering task. Specifically, do they need pragmatic information to solve the clustering problem? Given the fact that clause types are formal categories, it is at first glance reasonable to assume that infants are able to identify the main clause types with formal features only. We build two learners, the distributional learner and the pragmatic distributional learners to probe this question. The distributional learner learns clause typing from formal features only, but the pragmatic distributional learner also has access to the speech act information. We find that the pragmatic distributional learner outperforms the distributional learner, suggesting that pragmatic information is necessary, even for clustering. We then manipulated the level of noise in speech act, to see how tolerant this information source can be. Turns out, even if the pragmatic distributional learner is given speech act information with 85\% of noise, they still outperforms the distributional learner. 
-
-From these results, we conclude that pragmatics is essential for learning clause typing. Infants learn how to cluster sentences into clause types by observing the formal features of the sentences, together with speech act information.
-
-Our next question is then, what about other languages? As we have discussed in Chapter~\ref{chap:litreview}, languages differ in the formal features of each clause type, and learners need to discover the correlation from input. The distributional learner for English still have some success with clustering, identifying interrogative clauses. However, maybe the formal features are not as informative in other languages. In the next chapter, we will turn to Mandarin learners, and test the two learners with Mandarin input data. 
-
-Another question remains is that, how does the pragmatic distributional learner identify speech act information? While it is indisputable that information from clause type should be necessary, are there any non-clause type information about speech act in their everyday interaction with parents? In Chapter~\ref{chap:eng-sp}, we will turn to the learning of speech acts from non-clause type information.
-
-
-
 
