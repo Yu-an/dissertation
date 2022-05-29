@@ -120,7 +120,7 @@ Be quiet!
 \eex
 
 
-In sum, declaratives ([-int] feature in $C$) in English are the unmarked clause type; interrogatives ([+int] in $C$) are associated with subject-auxiliary inversion, presence of clause-initial \twh-phrases, presence of complementizer \tit{whether}; imperatives ([imp] in $C$) are marked by using verb stems, and absence of sentential subjects or have second person pronouns as subjects. So to successfully infer the clause type categories, learners have to pay attention to morpho-syntactic features like the presence or absence of the sentential subject, the form of the verb, the position of the auxiliary, the presence or absence of \twh-phrases in clause-initial position, the choice of complementizers in the surface form of sentences. Table~\ref{tab:engcl:grammar} summaries the morpho-syntactic features and their associated clause types:
+In sum, declaratives ([$-$int, $-$imp] feature in $C$) in English are the unmarked clause type; interrogatives ([+int] in $C$) are associated with subject-auxiliary inversion, presence of clause-initial \twh-phrases, presence of complementizer \tit{whether}; imperatives ([+imp] in $C$) are marked by using verb stems, and absence of sentential subjects or have second person pronouns as subjects. So to successfully infer the clause type categories, learners have to pay attention to morpho-syntactic features like the presence or absence of the sentential subject, the form of the verb, the position of the auxiliary, the presence or absence of \twh-phrases in clause-initial position, the choice of complementizers in the surface form of sentences. Table~\ref{tab:engcl:grammar} summaries the morpho-syntactic features and their associated clause types:
 
 
 \begin{table}[H]
@@ -203,175 +203,157 @@ In summary, apart from clause-initial \twh-phrases (which we assume will be perc
 
 \section{Corpus study}
 \label{sec:engcl:corpus}
-To understand how infants figure out clause types and speech acts, we first need to establish what kind of information is present in the input. Specifically, we need to know the morpho-syntactic features of parents’ sentences, and in what contexts parents use different speech acts. For example, how available is word order as a cue to interrogativity in English-speaking parents’ speech? Are interrogative sentences associated with similar prosodic features? Do word order and prosodic features jointly correlate with interrogativity? Are there any correlations between the formal properties like syntactic and prosodic features of parents’ interrogative and their functional properties? In this section, I’ll report findings from the corpus study on parental input to English-speaking infants. 
+To understand how infants figure out clause types and speech acts, we first need to establish what kind of information is available in the input. In this section, I’ll report findings from the corpus study on parental input to English-speaking infants. 
 
 
 \subsection{Corpus and Methods}
 \label{sec:engcl:corpus:methods}
 %%%%PAST TENSE
-This study used data from the Providence sub-corpora (\cite{ProvidenceCorpus}) from CHILDES (\cite{CHILDES}), which contains conversations between 6 children and parents recorded between 2002-2005 in Providence, RI. We selected this particular corpus because it covers children’s interaction with parents at the critical age that we are interested in ($\leq$ 18 months old). Additionally, it contains transcripts, audio, and video data, providing us with an opportunity to not only look at the morpho-syntax of parents’ sentences, but also their prosodic information, and even parents’ behavior accompanying each utterance. Parent-child interaction data from five typically developing children in this corpus were included in this study: Alex, Lily, Naima, Violet, and William. %For each session, we used the transcript to annotate  
+This study used data from the Providence sub-corpora (\cite{ProvidenceCorpus}) from CHILDES (\cite{CHILDES}), which consists of parent-child interactions from 6 families recorded between 2002-2005 in Providence, RI. We selected this particular corpus because it covers children’s interaction with parents at the critical age that we are interested in ($\leq$ 18 months old). Additionally, it contains transcripts, audio, and video data, providing us with an opportunity to not only look at the morpho-syntax of parents’ sentences, but also their prosodic information, and even parents’ behavior accompanying each utterance. Parent-child interaction data from five typically developing children in this corpus were included in this study: Alex, Lily, Naima, Violet, and William. %For each session, we used the transcript to annotate  
 
-We sampled 500 conversational turns from each session with the annotation schema detailed in the next section. For the clause type and speech act information, each transcript was annotated by two annotators and compared for differences. In cases of disagreement, the two annotators would have a discussion, and if the difference cannot be resolved, a third person would be consulted. To annotate the speech act information, annotators were asked to look at 20 utterances before and 2 utterances after the current utterance in the conversation, as well as consulting the videos for contextual information. For the morpho-syntactic features, initial annotation was generated by a script (\textcolor{red}{url}) using the morphological tagging provided by CHILDES, and then manually corrected. 
+We sampled 500 conversational turns from each session with the annotation schema detailed in the next section.\footnote{The full annotation schema can be accessed here: \url{https://github.com/Yu-an/annotation_tool/blob/main/schema.pdf}} For the clause type and speech act information, each annotator completed a subset of transcripts (20\% were double annotated, mean cohen's $\kappa$ = 0.84, range 0.8-0.91, `almost perfect’ per Landis and Koch's (\cite*{landis1977iaa}) descriptive division). To annotate the speech act information, annotators were asked to look at 20 utterances before and 2 utterances after the current utterance in the conversation, as well as consulting the videos for contextual information. If the annotator could not decide with contextual information, a second person would be consulted, and if still unclear, the utterance would be eliminated.For the morpho-syntactic features, initial annotation was generated by a script (\textcolor{red}{url}) using the morphological tagging provided by CHILDES, and then manually corrected. 
 
-In total, we annotated 9147 utterances. We will return to the video and audio part of the annotation process in Chapter~\ref{chap:eng-sp}.
+In total, 9147 utterances were annotated. We will return to the video and audio part of the annotation process in Chapter~\ref{chap:eng-sp}.
 
 
 
 
 \subsection{Annotation schema}
 \label{sec:engcl:corpus:schema}
-%As results from our corpus study would serve as input and gold standard for our models, . Our annotation schema is hence designed to capture the syntactic and prosodic features of interrogatives and their uses in the discourse. In this section, we will detail our annotation schema at each level. 
-%will be coded by examining the utterance in isolation and thus in the absence of any information about the surrounding discourse. Functional features will be coded based on a combination of discourse information, the audio recordings, and the video recordings, as explained in greater detail in Section 3.2.3.  Two annotators will code the data independently and then compare for reliability. Disagreements will be settled by the two annotators by assessing the data together and, if necessary, consulting a third annotator. If a new feature category is identified as necessary, both coders will again annotate the data independently and compare for reliability. The full annotation schema can be accessed here.
 
 \subsubsection{Clause Type}
 
-All sentences were annotated with clause type information: declarative (\ref{eng-cl:annt:cl}a), interrogative (\ref{eng-cl:annt:cl}b), or imperative (\ref{eng-cl:annt:cl}c). Two other categories were included: Fragment and Ambiguous. In cases where the utterance only contains a noun or an injective without verbs like (\ref{eng-cl:annt:frag}), the utterance was annotated as a Fragment. In some cases, the sentence does not contain enough information to decide the clause type categories, and will thus be labelled as Ambiguous. For example, sentences like (\ref{eng-cl:annt:cl}d) could either be a case of pro-drop from the declarative sentence \tit{you want to get down}, or it could be a case of left-edge ellipsis from the polar interrogative \tit{do you want to get down}. Note that it is in principle possible to distinguish pro-drop from left-edge ellipsis; for example (\ref{eng-cl:annt:disamb}a) has to be a case of left-edge ellipsis from \tit{are you coming}, and (\ref{eng-cl:annt:disamb}b) is a case of pro-drop from \tit{I went to the store yesterday}. As the sentence in (\ref{eng-cl:annt:frag}) does not contain these morphological clues for us to make the distinction, it will be classified as Ambiguous.
+All sentences were annotated with clause type information: declarative (\ref{ex:engcl:annt:cl:decl}), interrogative (\ref{ex:engcl:annt:cl:int}), or imperative (\ref{ex:engcl:annt:cl:imp}). Minor clause types like exclamatives were annotated as Other (\ref{ex:engcl:annt:cl:other}), as our primary interest is on the three major clause types (and we do not have evidence for 18-month-olds' understanding of minor clause types). Two other categories were also included: Fragments and Ambiguous cases. In cases where the utterance only contains a noun or an injective without verbs like (\ref{ex:engcl:annt:cl:frag}), the utterance was annotated as a Fragment. 
 
-\bex{eng-cl:annt:cl}	
+\bex{ex:engcl:annt:cl}	
 Clause type
 \bxl
-\label{eng-cl:annt:decl}
+\label{ex:engcl:annt:cl:decl}
 It’s all twisted. \hfill Declarative
-\ex \label{eng-cl:annt:int} What happened?	\hfill Interrogative
-\ex \label{eng-cl:annt:imp} Throw it.\hfill Imperative
-\ex \label{eng-cl:annt:frag}	Elmo!\hfill	Fragment
-\ex \label{eng-cl:annt:amb} Wanna get down?	\hfill Ambiguous
+\ex \label{ex:engcl:annt:cl:int} What happened?	\hfill Interrogative
+\ex \label{ex:engcl:annt:cl:imp} Throw it.\hfill Imperative
+\ex \label{ex:engcl:annt:cl:other} What a nice day! \hfill Other
+\ex \label{ex:engcl:annt:cl:frag}	Elmo!\hfill	Fragment
+\ex \label{ex:engcl:annt:cl:amb} Wanna get down?	\hfill Ambiguous
 \exl
 \eex
 
-\bex{eng-cl:annt:disamb}
-\bxl{} You coming?\hfill Left edge ellipsis; interrogative
-\ex went to the store yesterday. \hfill	Pro-drop; declarative
+Ambiguous cases are sentences that do not contain enough information to decide the clause type categories. For example, sentences like (\ref{ex:engcl:annt:cl:amb}) could either be a case of ellipsis from the declarative sentence \tit{you want to get down}, or ellipsis from the polar interrogative \tit{do you want to get down}. In both cases, there is no overt morphological marking on the verb \tit{want}, so after going through the ellipsis operation, the two sentences would end up with the same surface form. If the verb has overt suffix, however, the two possibilities would give rise to different surface forms. For example,(\ref{ex:engcl:annt:disamb:dec}) has to be a case of left-edge ellipsis from polar interrogative \tit{are you coming}, and cannot be from a declarative sentence like \tit{you come}, as ellipsis the latter would not give us the \tit{-ing} morpheme on the verb. For the same reason, (\ref{ex:engcl:annt:disamb:int}) cannot be elided from polar interrogative \tit{Did you go to the store yesterday}. Thus, the two sentences in (\ref{ex:engcl:annt:disamb}) were annotated as interrogative and declarative respectively, but (\ref{ex:engcl:annt:cl:amb}) was annotated as Ambiguous.
+
+\bex{ex:engcl:annt:disamb}
+\bxl\label{ex:engcl:annt:disamb:dec} Coming? \\
+\cmark \tit{Are you coming?}\\
+\xmark \tit{You come?}
+\ex \label{ex:engcl:annt:disamb:int} Went to the store yesterday? \\
+\cmark \tit{You went to the store yesterday?}\\
+\xmark \tit{Did you go to the store yesterday?}
 \exl
 \eex
 
-Interrogatives will be further divided into subcategories as polar, \twh, and disjunctive interrogatives:
+Interrogatives were further divided into subcategories as polar (\ref{ex:engcl:annt:subI:pol}), \twh{} (\ref{ex:engcl:annt:subI:wh}), and disjunctive interrogatives (\ref{ex:engcl:annt:subI:disj}):
 
-\bex{eng-cl:annt:subI}	Sub-types of interrogatives
-\bxl{}
+\bex{ex:engcl:annt:subI}	Sub-types of interrogatives
+\bxl\label{ex:engcl:annt:subI:pol}
 Is that a big bird shovel? \hfill	Polar interrogative
-\ex	Who is that?\hfill	\twh-interrogative
-\ex	Do you want water or juice? \hfill Disjunctive interrogative
+\ex\label{ex:engcl:annt:subI:wh}	Who is that?\hfill	\twh-interrogative
+\ex\label{ex:engcl:annt:subI:disj}	Do you want water or juice? \hfill Disjunctive interrogative
 \exl
 \eex
 
 \subsubsection{Speech Act}
 
-Three major speech acts categories are labelled: assertions, questions, requests/commands:\footnote{The distinction between requests and commands are subtle, and often involves the calculation of the social hierarchy between conversational partners. As parents hold authority over the child, even if the parent intend an utterance to be a request, it could be perceived by the child as a command. Therefore, we do not make a distinction in this study.}
+Three major speech acts categories. assertions, questions, requests/commands were labeled;\footnote{The distinction between requests and commands can be subtle, and often involves the calculation of the social hierarchy between conversational partners. As parents hold authority over the child, even if the parent intend an utterance to be a request, it could be perceived by the child as a command. Therefore, I did not make a distinction in this dissertation.} Minor speech act categories such as exclamatives and greetings were labeled as Other:
 
-\bex{eng-cl:annt:sp}
-\bxl{} It’s all twisted!\hfill	Assertion
-\ex Is that the postman?\hfill		Question
-\ex Throw it!	\hfill		Request/command
+\bex{ex:engcl:annt:sp}
+\bxl\label{ex:engcl:annt:sp:a} It’s all twisted!\hfill	Assertion
+\ex\label{ex:engcl:annt:sp:q} Is that the postman?\hfill		Question
+\ex\label{ex:engcl:annt:sp:r} Throw it!	\hfill		Request/command
+\ex \label{ex:engcl:annt:sp:o} Good morning! \hfill Other
 \exl
 \eex
 
-As discussed in the last chapter, in many cases, one clause can used to perform both a primary speech act, and a secondary indirect speech act. For this study, we labelled the primary act performed by the utterance. For example, (\ref{eng-cl:annt:indirect}) performs a primary act of questioning and an indirect act of making a request. For these cases, the indirect speech act was annotated.
+As discussed in the last chapter, while the three major clause types are associated with the three major speech acts in most cases, there are some mismatching cases. For example, (\ref{ex:engcl:annt:indirect}) is a polar interrogative, but the non-literal (i.e. indirect speech act in Searle's (\cite*{searle1975indirect}) terminology) act of the utterance is to make a request. We labeled the non-literal (indirect) speech act (i.e. request) for these cases.
 
-\bex{eng-cl:annt:indirect}
+\bex{ex:engcl:annt:indirect}
 Can you put that down?
 \eex 
 
+Another common misalignment cases are rising declaratives like (\ref{ex:engcl:annt:rd}). As discussed in the last chapter, scholars debate on whether to label these cases as declaratives (\cite{gunlogson2008,  farkasroelofsen2017}). 
+
+\bex{ex:engcl:annt:rd}
+She's nine?
+\eex
+
+Additionally, speakers could be using these rising declaratives to make an assertion or raising a question, which is sometimes argued to be correlated with different prosodic contours (\cite{jeong2018}, cf. \cite{goodhue2021rd}), as in (\ref{ex:engcl:annt:rd-cont}):
+
+\bex{ex:engcl:annt:rd-cont}
+\bxl
+\label{ex:engcl:annt:rd:a}
+\tit{S is enrolling his daughter in a summer camp program with the camp organizer A.}\\
+S: I want to sign her up for Spanish classes in the mornings, and rock climbing in the afternoons.\\
+A: Okay, there are limited places in each activity based on age group, and some of the age groups have already filled up for rock climbing. How old is your daughter?\\
+\tbf{S: She’s nine$\nearrow$}
+\ex 
+ \label{ex:engcl:annt:rd:q}
+\tit{S and A are on their way to a birthday party for the daughter of A’s friend. They stop at a store to get a birthday card. As they are both scanning the display for a card for the correct age, S is trying to remember how old the girl has just turned, and he thinks he remembers A telling him that she just turned nine, but he wants to confirm it.}\\
+\tbf{S: She’s nine$\nearrow$}
+\exl
+\hspace*{\fill}\hfill ex. (12-13), \cite[p.955]{goodhue2021rd}
+\eex
+
+In (\ref{ex:engcl:annt:rd:a}), the speaker uses the rising declarative to primarily answer a question, proposing to add the proposition \tit{she's nine} to the common ground of the conversation. Even though there is an additional effect associated with the utterance (something to the effect of ``Is there still room in the 9-year-old’s rock climbing group?''), it's not the main goal of the utterance. In (\ref{ex:engcl:annt:rd:q}), the speaker uses the utterance to elicit a confirmation from the addressee regarding the age of the birthday girl, so the main goal is to solicit responses, similar to that of questions. In this dissertation, I followed \textcite{goodhue2021rd} in classifying the form of (\ref{ex:engcl:annt:rd}) as declaratives, and depending on the contextual information, labeled cases like (\ref{ex:engcl:annt:rd:q}) as assertions and (\ref{ex:engcl:annt:rd:a}) as questions. We will come back to the prosody aspect in Chapter~\ref{chap:eng-sp}.
+
 \subsubsection{Formal features}
 
-As reviewed in the last section, infants at 18 months old might have knowledge of certain morpho-syntactic features. In particular, infants might have knowledge of the subject of a sentence, its position in the sentence (whether in canonical pre-verbal position or inverted), verbs and various functional elements associated with verbs such as auxiliaries and some verbal morphology. Infants might not have a separate category for all the \twh-items, but they might be able to still classify them as functional elements, as they may know the distinction between functional and content elements. We therefore put \twh-items, quantifiers, connectives (except for \tit{and}), and focus particles in one category ``unknown functional item (UFI),'' and we annotated its position in a sentence: sentence initial, sentence-medial but before the verb, or after the verb. Each sentence was annotated with whether or not a specific feature is present. Table~\ref{tab:eng-cl:formal-schema} summarizes the features we annotated and their examples.  
+As reviewed in the last two sections, infants at 18 months old can perceive many morpho-syntactic cues related to clause typing in Table~\ref{tab:engcl:grammar}. In particular, infants at this age can detect whether there is a verb in the sentence, whether the verb has suffixes; whether there is subject in the sentence, and its position in the sentence (whether in canonical pre-verbal position or inverted with an auxiliary), and whether there is an auxiliary in the sentence. Infants might not be able to identify all the \twh-items or complementizers at this age, but they might be able to classify them as functional elements, as they may know the distinction between functional and content elements. We therefore put \twh-items, quantifiers, connectives (except for \tit{and}), and focus particles in one category ``unknown functional item (UFI),'' and annotated its position in a sentence: sentence initial, sentence-medial but before the verb, or after the verb. Each sentence was annotated with whether or not a specific cue is present. Table~\ref{tab:eng-cl:formal-schema} summarizes the features we annotated and their examples.  
 
-
-
-\begin{table}[H]
-    \centering
-\begin{tabular}{l|l } 
-\hline
-Feature  & Examples\\ 
-\hline \hline
-\multirow{2}{*}{$\pm$ \tsc{verb} }&
-($+$) \tbf{Find} Elmo! \hfill Clause\\
-
-&($-$) Elmo! \hfill Fragment
-\\ 
-\hline
-\multirow{2}{*}{\tsc{$\pm$ subject} }&
-($+$) \tbf{I}'ll take it. \hfill [$-$imp]\\
-
-&($-$) Take it. \hfill [+imp]
-\\
-\hline
-\multirow{2}{*}{\tsc{$\pm$ verb suffix} }&
-($+$) Nobody feel\tbf{s} good huh? \hfill [$-$imp] \\
-
-&($-$) Find Elmo! \hfill [+imp]
-\\ 
-\hline
-\multirow{2}{*}{\tsc{$\pm$ subj-aux inversion} } & 
-($+$) \tbf{Can you} find the ladybug? \hfill [+int]\\
-
-&($-$) I can take it. \hfill [$-$int]
-\\ 
-\hline
-\multirow{2}{*}{\tsc{$\pm$ sentence-initial \twh{} }} & 
-($+$) \tbf{What} did you find? \hfill [+int]\\
-
-&($-$) I found it. \hfill [$-$int] \\
-\hline
-\multirow{2}{*}{\tsc{complementizer} } & 
-($+$) I know \tbf{whether} it's wrong. \hfill [+int]\\
-
-&($-$) I know that it's wrong.\hfill [$-$int]
-\\
-\hline
-\end{tabular}
-
-\caption{Morph-syntactic features and their associated clause types}
-\label{tab:engcl:grammar}
-
-\end{table}
 
 \begin{table}[H]
     \centering
 \begin{tabular}{r|l } 
 \hline
-Feature Name & Examples\\ 
+& Examples\\ 
 \hline \hline
-\multirow{2}{*}{Subject} & 
-($+$) \tbf{I}'ll take it.\\
-&($-$) Take it. \hfill
-\\
-\hline
-\multirow{2}{*}{Verb} & 
+\multirow{2}{*}{\textpm Verb} & 
 ($+$) \tbf{Find} Elmo! \\
 
 &($-$) Elmo! 
 \\ 
 \hline
-\multirow{2}{*}{Verb Morphology} & 
+\multirow{2}{*}{\textpm Subject} & 
+($+$) \tbf{I}'ll take it.\\
+&($-$) Take it. \hfill
+\\
+\hline
+\multirow{2}{*}{\textpm Verb Suffix} & 
 ($+$) Nobody feel\tbf{s} good huh?\\
 
 &($-$) Find Elmo! 
 \\ 
 \hline
-\multirow{2}{*}{Auxilary} & 
+\multirow{2}{*}{\textpm Auxiliary} & 
 ($+$) \tbf{Can} you find it? \\
 
 & ($-$) I found it! 
 \\ 
 \hline
-\multirow{2}{*}{Subject-auxiliary inversion} & 
+\multirow{2}{*}{\textpm Subj-aux inversion} & 
 ($+$) \tbf{Can you} find the ladybug?\\ %\hfill \tcb{Interrogative}
 
 &($-$) I can take it. %\hfill\tcr{Declarative}
 \\ 
 \hline
-\multirow{2}{*}{Sentence-initial UFI}& 
+\multirow{2}{*}{\textpm Sentence-initial UFI}& 
 ($+$) \tbf{What} did you find?\\ %\hfill \tcb{Interrogative}
 
 &($-$) I can take it.\\
 \hline
-\multirow{2}{*}{Pre-verbal UFI}&
+\multirow{2}{*}{\textpm Pre-verbal UFI}&
 ($+$) Raccoon \tbf{only} comes out at night.\\
 
 &($-$) I can take it.\\
 \hline
-\multirow{2}{*}{Post-verbal UFI} & 
+\multirow{2}{*}{\textpm Post-verbal UFI} & 
 ($+$) I know \tbf{what}'s wrong.\\
 
 &($-$ I know you can do it.
@@ -379,9 +361,8 @@ Feature Name & Examples\\
 \hline
 \end{tabular}
 
-\caption{Formal features and their examples included in the corpus study}
+\caption{Morpho-syntactic cues and their examples}
 \label{tab:eng-cl:formal-schema}
-
 \end{table}
 
 
@@ -393,7 +374,7 @@ Feature Name & Examples\\
 
 
 \subsubsection{Overview}
-With the schema given above, an annotated dataset consisted of 9047 utterances was created. As we are primarily interested in the form and function of parents' sentences in this chapter, we excluded children's utterances and uninterpretable utterances from the dataset (as children's vocalization might change the pragmatics of the conversation, we will return to them in Chapter~\ref{chap:eng-sp}). Overall, 7039 utterances were analyzed.  Figure~\ref{fig:real-cldist} shows the distribution of clause types in the dataset. Declarative clauses are the most frequent clause type, followed by interrogatives and imperatives. 
+With the schema given above, an annotated dataset consisted of 9047 utterances was created. As we are primarily interested in the form and function of parents' sentences in this chapter, we excluded children's utterances and uninterpretable utterances from the dataset. Overall, 7039 utterances were analyzed.  Figure~\ref{fig:real-cldist} shows the distribution of clause types in the dataset. Declarative clauses are the most frequent clause type, followed by interrogatives and imperatives. 
 
 
 \begin{figure}[H]
@@ -414,7 +395,7 @@ Zooming in on interrogatives, \twh-interrogatives are more frequent than polar i
 \end{figure}
 
 
-As shown in Figure~\ref{fig:real-clsp} and \ref{fig:real-spcl}, the mapping between speech acts and clause types are in fact quite straightforward. The majority of declaratives are used to express assertive force; the majority of interrogatives are used to express question force; and the majority of imperatives are used to express command/request force. 
+As shown in Figure~\ref{fig:real-clsp} and \ref{fig:real-spcl}, the three major clause types are mostly used for their canonical functions. The majority of declaratives are used to express assertive force; the majority of interrogatives are used to express question force; and the majority of imperatives are used to express command/request force. 
 
 \begin{figure}[H]
     \centering
@@ -444,7 +425,7 @@ And you’re gonna do some coloring.\hfill		Mother of Violet, Session: 010407
 \exl
 \eex 
 
-Declarative and imperative sentences used as questions all are predominantly marked with final rise intonation. We will return to the prosodic features of each clause type in Chapter~\ref{chap:eng-sp}.
+Declarative and imperative sentences used as questions  are predominantly marked with final rise intonation. We will return to the prosodic features of each clause type in Chapter~\ref{chap:eng-sp}.
 
 %, as in (\ref{eng-cl:dec-rise}a-b), or have embedded interrogatives (\ref{eng-cl:dec-rise}c):
 \begin{comment}
@@ -468,16 +449,15 @@ Try this again?			\hfill Mother of William, Session 010605
 
 
 
-Turning to the speech acts of these interrogatives, Figure~\ref{fig:real-subIsp} shows the proportion of speech acts that polar and \twh-interrogatives expressed. The only two examples of disjunctive interrogatives were used both as questions, and thus not graphed in the figure. Polar interrogatives were used to express speech acts than \twh-interrogatives: around 18\% of polar interrogatives were used to indirectly raise requests like in (xx), or indirectly making an assertion like in (xx):
-
-\bex{eng-cl:int-asst}
-Polar-interrogatives as assertions:
-\bxl{}
+Turning to the speech acts of these interrogatives, Figure~\ref{fig:real-subIsp} shows the proportion of speech acts that polar and \twh-interrogatives express. The only two examples of disjunctive interrogatives were used both as questions, and thus not graphed in the figure. Polar interrogatives are used to express more types of speech acts than \twh-interrogatives: around 18\% of polar interrogatives were used for indirect requests like in (\ref{ex:engcl:int-req}) or assertions like in (\ref{ex:engcl:int-asst}):
+\bex{ex:engcl:int-req}
+Can you give Mommy the ball? \hfill Mother of William, Session: 010412
+\eex
+\bex{ex:engcl:int-asst}
 Doesn’t he have sharp teeth?	\hfill	Mother of Lily, Session: 010611
-\exl
 \eex
 
-Few \twh-interrogatives were used as non-question. We found 4 cases of \twh-interrogatives used to indirectly make a request (\ref{eng-cl:wh-req}), and indirectly making assertions by way of asking rhetorical questions (\ref{eng-cl:wh-asst}):\footnote{We did also find sentences with \tit{how about/what about} (see Rawlins and Bledin 2021), but the majority of these sentences do not come with a verb and were considered fragments (\ref{eng-cl:howabout-frag}). But we also found one case of \tit{how about} interrogative with a verb (\ref{eng-cl:howabout-int}), and the primary intention of the utterance is to make a request. 
+Few \twh-interrogatives are used as non-question. We found 4 cases of \twh-interrogatives used to indirectly make a request (\ref{eng-cl:wh-req}), and indirectly making assertions by way of asking rhetorical questions (\ref{eng-cl:wh-asst}):\footnote{We did also find sentences with \tit{how about/what about} (Rawlins and Bledin~2021), but the majority of these sentences do not come with a verb and were considered fragments (\ref{eng-cl:howabout-frag}). But we also found one case of \tit{how about} interrogative with a verb (\ref{eng-cl:howabout-int}), and the primary intention of the utterance is to make a request. 
 
 \begin{xlisti}
 \ex \label{eng-cl:howabout-frag} How about this one?	\hfill	Mother of Alex Session 010512
@@ -487,10 +467,7 @@ Few \twh-interrogatives were used as non-question. We found 4 cases of \twh-inte
 
 
 \bex{eng-cl:wh-req}
-\twh-interrogatives as requests
-\bxl{}
 Why don’t you turn around.	\hfill Mother of William, Session 010619
-\exl
 \eex
 \bex{eng-cl:wh-asst}
 \twh-interrogatives as assertions
@@ -501,13 +478,11 @@ Who doesn’t love cheese?\hfill	Mother of Lily, Session: 010117
 \eex
 
 
+In sum, clause types are typically used for their canonical function, suggesting that having speech act information could be more helpful than hurtful to categorize clauses into relevant clause types.
 
-
-\subsubsection{Morpho-syntactic features}
-\label{sec:eng-cl:corpus:formal}
-We now turn to the question of how parents use each clause type, namely the formal features of each clause type. We therefore exclude fragment utterances that only contain a noun (\tit{Birdie!}), interjective (\tit{Oh}). In total, 3923 sentences were included in the analysis.
-
-The distribution of the morpho-syntactic features listed in Table~\ref{tab:eng-cl:formal-schema} across different clause types is shown in Figure~\ref{fig:real-syncluster}. The x-axis of the figure represents the counts of sentences, and the eight morpho-syntactic features are listed along the y-axis. Each graph is split in the middle: to the left of the line, bars with darker colors represent the counts of declarative, interrogative, or imperative sentences with this specific feature, and to the right, bars with lighter colors represents the number of sentences without this feature. 
+\subsubsection{Morpho-syntactic cues}
+\label{sec:engcl:corpus:formal}
+We now turn to the formal cues of each clause type, as reviewed in Section~\ref{sec:engcl:bg:grammar}. In this analysis, we excluded fragment utterances that only contain a noun (\tit{Birdie!}) or an interjective (\tit{Oh}). In total, 3923 sentences were included in the analysis. The distribution of the morpho-syntactic cues listed in Table~\ref{tab:eng-cl:formal-schema} across different clause types is shown in Figure~\ref{fig:real-syncluster}. %The x-axis of the figure represents the counts of sentences, and the eight morpho-syntactic features are listed along the y-axis. Each graph is split in the middle: to the left of the line, bars with darker colors represent the counts of declarative, interrogative, or imperative sentences with this specific feature, and to the right, bars with lighter colors represents the number of sentences without this feature. 
 
 
 
@@ -516,71 +491,69 @@ The distribution of the morpho-syntactic features listed in Table~\ref{tab:eng-c
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{figures/real-syncluster.jpg}
-    \caption{The number of sentences with/without certain formal features in each clause type; darker color represents the number of sentences with this feature }
+    \caption{Number of sentences with/without various formal cues in each clause type; darker color represents number of sentences with the cue, lighter color, number of sentences without the cue }
     \label{fig:real-syncluster}
 \end{figure}
 
-We can see that parents use the clause types rather systematically: the majority of declaratives and interrogatives are marked by the presence of subjects, as opposed to imperatives; the majority of interrogatives are marked by subjects following the auxiliary or the main verb, contrary to imperatives and declaratives; verbs in imperatives are not marked by having morphological marking on the main predicate. 
+We can see that the three main clause types have different formal profiles in the input, but the general pattern aligns with the properties of [\textpm int] and [\textpm imp] discussed in Section~\ref{sec:engcl:bg:grammar}: interrogativity is associated with subject-auxiliary inversion and sentence-initial \twh{} (i.e. an unknown functional item for infants); [+imp] is associated with the lack of verb suffixes (i.e. the use of bare verb stems) and subjects; declaratives, the default clause type, are associated with the presence of subjects and verb suffixes, and the lack of subject-auxiliary inversion and clause-initial UFIs. 
 
-Three logistic regression models with each of the clause type as the dependent variable and the 8 morpho-syntactic features (the presence/absence of verbs and unknown functional item at preverbal position were excluded due to extremely low variance) as independent variables were performed, and the results are summarized in Table~\ref{tab:engcl:real-synstats}:
+From these results, we can see that the formal signatures of each clause type is consistently present in the input: auxiliary-inversion for interrogatives and the lack of subjects and verb suffixes for imperatives. But how informative are these cues to clause typing? What about the speech act information? In the next section, I train two logistic regression models with actual clause type labels (i.e. the supervised learning method in machine learning terms) to see how well the models find statistical regularities related to clause typing in the data. 
 
+% However, we do see some features that might not matter for clause typing are also present, such as the presence of subjects in declaratives and interrogatives. 
 
-\begin{table}[H]
-\begin{center}
-\begin{tabular}{r|l|l|l}
-\hline
- & Declaratives   & Interrogatives   & Imperatives \\
- & $\beta$  & $\beta$  & $\beta$ \\
- \hline\hline
-constant & -1.7*** & -4.91*** & 1.21*** \\
-\hline
-Subject & 3.35*** & 1.08*** & -4.61*** \\
-\hline
-Verb Morphology & 1.01*** & 0.21  & -2.02*** \\
-\hline
-Auxiliary & 0.09  & 0.67*** & $-0.53{\cdot}$ \\
-\hline
-Subject-Aux Inversion & -4.2*** & 4.87*** & -1.52*** \\
-\hline
-Sentence-initial UFI & -2.59*** & 3.99*** & -2.38*** \\
-\hline
-Post-verbal UFI & -0.44  & -0.23  & $1.12{\cdot}$ \\
-\hline \hline
-\end{tabular}
-\end{center}
-\caption{Results from the three logistic regression models with each of the clause type as the dependent variable and the morpho-syntactic features as independent variables; asterisks represent the significance level: 0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘$\cdot$’ 0.1 ‘ ’ 1}
-\label{tab:engcl:real-synstats}
-\end{table}%
-
-From these results, we can see that the formal signatures of each clause type is consistently present in the input: auxiliary-inversion for interrogatives, the lack of auxiliary-inversion for declaratives, and lack of subject and verb morphology for imperatives. However, we do see some features that might not matter for clause typing are also present, such as the presence of subjects in declaratives and interrogatives. 
-
-\subsubsection{Supervised learning models}
+\subsubsection{Informativeness of syntactic and pragmatic cues}
 \label{sec:engcl:corpus:supervised}
+In the previous section, we see that in parents' speech to 18-month-olds, the three clause types are mostly mapped to their canonical functions, and that they have different morpho-syntactic profiles as expected. In this section, I evaluate the informativeness of syntactic and pragmatic cues by comparing two supervised learning models. Different from our models simulating the \dlearnerabbr{} learner and the \plearnerabbr{} learner, these two supervised models were trained on a subset of our annotated dataset with clause type labels given as input (hence the term ``supervised''). After the training phase, these models were tested on the part of data they have not seen, to see how well they could use the statistical regularities discovered in the training data to predict clause type labels. 
 
-The logistic regression models can be understood as supervised learning process.
-Comparing two learners, one using only formal distributional features, and one also using speech act information, shows how well information from formal features predicts clause type, compared to a combination of formal and pragmatic features. Being supervised learners, these two models had access to the actual clause type labels in their training data. As shown in Figure~\ref{fig:super-compare-rand}, the supervised learner with speech act information outperforms the one with only morpho-syntactic information, but the results from the two models were fairly close.
+The supervised \dlearnerabbr{} learner uses morpho-syntactic cues as predictors for clause typing, while the supervised \plearnerabbr{} uses both morpho-syntactic and speech act information. Both are multinomial logistic regression models trained on 90\% of the annotated dataset, with clause type categories as dependent variable (declarative as the baseline), and a set of morpho-syntactic cues as predictors. As discussed in Section~\ref{sec:engcl:bg:grammar}, [+int] is associated with the presence of cues (e.g. auxiliary inversion, clause-initial \twh{}, complementizer), while [+imp] is associated with the absence of cues (e.g. verb suffix, subject). So the set of syntactic predictors in our models were [-subject, $-$verb suffix, +auxiliary, +subj-aux inversion, +clause-initial UFI,+pre-verbal UFI, +post-verbal UFI]. We then calculated the rand score of both models to evaluate their performance. Rand score is normally used to measure the similarity between two data clusterings (\cite{rand1971}), calculated by taking all pairs of samples and counting ones that are assigned to the same or different clusters in the predicted and true clusterings:
+
+$$ \mbox{RI} =\frac{ \mbox{number of agreeing pairs}}{ \mbox{number of pairs}} $$
+
+
+The performance of the two models over 10 iterations is shown in Figure~\ref{fig:super-compare-rand}. Overall, the supervised \praglearner{} outperforms the supervised \distlearner{}, suggesting that the speech act information provides additional information for clause typing.
 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{figures/super-compare-rand.jpg}
-    \caption{Comparing the two supervised learners by rand score (performance over 10 iterations)}
+    \includegraphics[width=0.6\textwidth]{figures/super-compare-rand-name.jpg}
+    \caption{Comparing the two supervised models by rand score (performance over 10 iterations)}
     \label{fig:super-compare-rand}
 \end{figure}
 
-Of course, these two models do not reflect \tit{how} infants learn clause typing, as they were given clause type information. A more realistic model for infant language learning would be unsupervised model where they discover the clustering of sentences. Nevertheless, the supervised learners are useful as an estimate of how informative formal and speech act features are for the task of inferring clause type.
 
-In the next section, we will compare two \tit{unsupervised} learners that have to learn clause type categories without being trained on data annotated with the true clause type labels, which more closely mimics the learning process of language learning by infants. The \tit{distributional learner} has access to only formal features, whereas the \tit{pragmatic distributional learner} also has access to the speech act of a sentence. As we will see, in an unsupervised setting, speech act information provides a huge improvement in learners' performance.
+%Both models found the same morpho-syntactic regularities the coefficients the two models assigned to the morpho-syntactic predictors 
+
+Our next question is how well the models know the morpho-syntactic makeup of each clause type. This can be inferred from the coefficients that the two models assign to the morpho-syntacitc predictors. As declarative clauses were used as the baseline, the coefficients should be interpreted as how much a specific morpho-syntactic cue contribute to the increase/decrease in the log odds of the sentence being classified as interrogative/imperative vs. declarative (i.e. if a sentence has a morpho-syntactic cue, how likely will it have the feature [+int] or [+imp] as opposed to the default clause type [-int, -imp]). For our purposes, significance was calculated using a two-tail $z$-test. Details of the models, coefficients, and $p$-values are reported in Appendix~\ref{appx:engcl}. Table~\ref{tab:engcl:corpus:formal} summarizes the morpho-syntactic profile of each clause type.
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{c|p{10cm}}
+\hline
+Clause Type Feature & Morpho-syntactic cues\\
+\hline \hline
+Interrogatives (+int) & +auxiliary, +subject-auxiliary inversion, +sentence-initial UFI\\
+\hline
+Imperatives (+imp) & $-$subject, $-$verb suffix\\
+\hline \hline
+\end{tabular}
+\end{center}
+\caption{Morpho-syntactic cues associated with interrogatives and imperatives compared to declaratives}
+\label{tab:engcl:corpus:formal}
+\end{table}%
 
 
+As seen from the table, compared to declaratives, interrogatives are more likely to have subject-auxiliary inversions and sentence-initial UFIs, imperatives are more likely to have null subjects and bare verb stems, as expected. Some associations were less expected. For example, [+int] is associated with [+auxiliary], which is not predicted by our theory of clause typing in English. But this in fact reflects another formal property of English [+int], namely \tit{do}-support. Since \tit{do} is optional in declaratives and imperatives, but necessary in interrogatives, it is not surprising that auxiliaries appear more often in interrogatives. 
+
+%A more realistic model for infant language learning would be unsupervised model where they discover the clustering of sentences. Nevertheless, the supervised learners are useful as an estimate of how informative formal and speech act features are for the task of inferring clause type.
+
+Of course, these two models do not reflect \tit{how} infants learn clause typing, as they were given clause type information. They are useful, however, for measuring how informative the syntactic and pragmatic cues in parents' input are for identifying the clause type feature of a sentence. Results of these two models suggest that the information needed for clause typing is present in the input. In the next section, we will get one step closer to infant language learning by removing the actual clause type labels from training, as infants are not given these labels. I ask whether a learner that expects three clause type categories would be able to solve the clustering problem discussed in Chapter~\ref{chap:introduction} on the basis of morpho-syntactic cues alone. I then ask whether adding in speech act information would help. Finally, as speech act information is likely not perceived veridically (e.g. due to developing pragmatic skills at this age), I ask how much pragmatics learners need to learn clause type categories. 
+
+\begin{comment}
 \subsection{Interim Discussion}
 \label{sec:engcl:corpus:disc}
 Our corpus study provides a quantitative description of how parents use different clause types. We can see that while there are some noises, parents do use each clause type to express their canonical speech act, and each speech act is expressed by their canonical clause type. While indirect speech act exists in the dataset, their proportion is relatively low. Additionally, each clause type is systematically marked by their signature morpho-syntactic features. Interrogatives are significantly correlated with the presence of subject-initial unknown function item (e.g. \twh{}) and the auxiliary preceding the sentence subject, declaratives are correlated with the absence of these two features, and imperatives are correlated with the absence of subjects and verb morphology.  
 
-
-
-%In the next section, we will turn to \tit{how} infants might use the information in their input to learn clause type clustering.
-
+\end{comment}
 
 
 \section{Modeling the learning of clause types}

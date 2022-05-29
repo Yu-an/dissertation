@@ -1,8 +1,37 @@
 % -*- mode: latex; coding: utf-8; fill-column: 72; -*-
 
-\chapter{~\ref{}}%
-\label{}
+\chapter{Clause Types and Speech Acts in English}%
+\label{appx:engcl}
 
+Three logistic regression models with each of the clause type as the dependent variable and the 8 morpho-syntactic features (the presence/absence of verbs and unknown functional item at preverbal position were excluded due to extremely low variance) as independent variables were performed, and the results are summarized in Table~\ref{tab:engcl:real-synstats}:
+
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{r|l|l|l}
+\hline
+ & Declaratives   & Interrogatives   & Imperatives \\
+ & $\beta$  & $\beta$  & $\beta$ \\
+ \hline\hline
+constant & -1.7*** & -4.91*** & 1.21*** \\
+\hline
+Subject & 3.35*** & 1.08*** & -4.61*** \\
+\hline
+Verb Morphology & 1.01*** & 0.21  & -2.02*** \\
+\hline
+Auxiliary & 0.09  & 0.67*** & $-0.53{\cdot}$ \\
+\hline
+Subject-Aux Inversion & -4.2*** & 4.87*** & -1.52*** \\
+\hline
+Sentence-initial UFI & -2.59*** & 3.99*** & -2.38*** \\
+\hline
+Post-verbal UFI & -0.44  & -0.23  & $1.12{\cdot}$ \\
+\hline \hline
+\end{tabular}
+\end{center}
+\caption{Results from the three logistic regression models with each of the clause type as the dependent variable and the morpho-syntactic features as independent variables; asterisks represent the significance level: 0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘$\cdot$’ 0.1 ‘ ’ 1}
+\label{tab:engcl:real-synstats}
+\end{table}%
 
 
 % Local Variables:

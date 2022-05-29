@@ -4,9 +4,6 @@
 \section{Background}
 \subsection{Clause types in Mandarin}
 
-
-\subsection{Interrogatives in English and Mandarin}\label{bg:syn}
-	
 \noindent While all languages have interrogative clauses, the formal features associated with this clause type vary. 
 \noindent Mandarin interrogatives have different formal features than English interrogatives. For \twh-interrogatives, Mandarin \twh-phrases (\citealt{huang1982, cheng1991} among many others) do not need to be fronted to clause-initial position. Compare the declarative sentence in (\ref{bg-syn:dec-man}) with the \twh-interrogative in (\ref{bg-syn:wh-man}), the \twh-phrase \tit{shenme} occurs in the same position in the interrogative (\ref{bg-syn:wh-man}) as the noun phrase \tit{zaocan} in (\ref{bg-syn:dec-man}). 
 
@@ -79,6 +76,43 @@ b.	(Obviously) Xiaoxiao ate breakfast!\\
 
 \noindent 
 The sentences in (\ref{bg-syn:ambwh}) and (\ref{bg-syn:ambma}) can be read as either questions or assertions. Thus, observing the \twh{} \tit{shenme} or sentence final \ma{} is not sufficient for a learner to determine the clause type. Learners must rely on additional cues from the context or prosody to determine the correct interpretation. In (\ref{bg-syn:ambwh}), when the context is compatible with both readings, assigning prosodic prominence (normally associated with focus) to the \twh-phrase is indicative of the interpretation as a question; in (\ref{bg-syn:ambma}), the question reading is associated with rising intonation, whereas the assertion reading is associated with falling intonation. 
+
+
+Based on our discussion on Mandarin interrogatives in Section 2, we do not expect a word order difference between interrogatives and declaratives in Mandarin; instead, interrogativity is indicated by the use of markers such as sentence final particle \ma{}, A-not-A construction, \twh{}. Therefore, instead of coding the word order of the sentence, we will annotate whether or not the clause has an interrogative marker. As mentioned in Section~\ref{sec:bg}, besides \ma{}, SFPs are generally compatible with all clause types. For example, the A-not-A interrogative in (\ref{code-man:intanota}) contains the SFP \tit{a}, but this particle can be used in declaratives and imperatives as well (\citealt{chao1968, lithompson}). However, data from our pilot study suggests that SFPs are frequently found in interrogative clauses: among the 68 sentences with an SFP, 86\% are interrogatives like (\ref{code-man:intanota}). Although the particle \tit{a} is not by itself indicative of interrogativity, children may be able to exploit a correlation between sentence final particles and interrogativity to learn new question markers. That is, if they encounter an utterance like (\ref{code-man:intanota}) and have not yet learned A-not-A to be a polar interrogative indicator, the presence of the SFP \tit{a} could nudge them in the right direction. As of yet, this is an untested hypothesis, but if the pattern shown in the pilot is replicated in a bigger sample, further research will benefit from having this coding in the dataset produced by this project.
+
+
+\bex{code-man:intanota}
+\gll Ni	\tun{you}	watuji	\tun{mei-you}	a?	\\
+You have	excavator	{\Neg{}	have}	\Sfp\\
+``Do you have an excavator?'' \hfill \tsc{A-not-A}
+\eex
+
+
+
+In addition to the features mentioned above, we will also annotate a set of other morpho-syntactic features following \cite{perkins2019} as input into our model in Study 3. These are relevant properties of subjects, verbs and functional words that infants are known to represent prior to 18-months of age (Table~\ref{tb:syn}). Each feature is annotated as 1 if present, and 0 otherwise.
+
+\vspace{-4ex}
+\begin{table}[H]
+\caption{Syntactic features}
+\vspace{-2.5ex}
+\begin{center}
+\begin{tabular}{c|p{7cm}|p{7cm}}
+ \hline
+  \hline
+ & English & Mandarin \\
+ \hline
+Subject & Subject of known verb is overt in canonical subject position; sentence-initial; preceded by an auxiliary; preceded by another noun (e.g. topic NP) & Subject of known verb is overt in canonical subject position; preceded by another noun (e.g. topic NP) \\
+\hline
+Verb & Known verb is first verb in sentence; followed by direct object;  followed by a preposition or particle; has \tit{-ed, -en, -ing, -s}, or irregular morphology; verb is preceded by \tit{to, be, have, get}, or \tit{do}  & Known verb is first verb in sentence; followed by direct object; followed by an aspect marker or preceded by \tit{zai} \\
+ \hline
+Other & unknown function word sentence-initially, sentence medially before verb, sentence-medially after verb, or sentence-finally & unknown function word sentence medially before verb, sentence-medially after verb; unknown function word sentence-finally \\
+ \hline \hline
+\end{tabular}
+\end{center}
+\label{tb:syn}
+\end{table}%
+\vspace{-4ex}
+
 
 
 
