@@ -6,20 +6,44 @@
 
 \subsection{Clause type}
 \label{sec:bg:theory:clause}
-\cite{sz1985speechact} propose the following way to quantify clause types of a language: ``The sentence types of a language form a system, in at least two senses: there are sets of corresponding sentences, the members of which differ only in belonging to different types, second, the types are mutually exclusive, no sentence being simultaneously of two different types'' (p. 158), and that ``When there's a regular association of form and the speaker's use of sentences, we will speak of the form-use pair as a sentence type'' (p.156).
+When we ask how children learn to identify clause types, what do we mean by clause types? While many use the term to loosely refer to grammatically defined classes of sentences, which may include sentence types like actives and passives, here I use the term to specifically refer to the way of grouping sentences grammatically that make reference to the force of a sentence. 
 
+\cite{sz1985speechact} propose that: ``The sentence types of a language form a system, in at least two senses: there are sets of corresponding sentences, the members of which differ only in belonging to different types, second, the types are mutually exclusive, no sentence being simultaneously of two different types'' (p. 158), and that ``[w]hen there's a regular association of form and the speaker's use of sentences, we will speak of the form-use pair as a sentence type'' (p.156). For example, (\ref{ex:bg:theory:cl}a-b) are two corresponding sentences differing only in the word order between the subject and auxiliary. The two sentences are normally used differently, with (a) normally used for assertions and (b) for questions.  Using this definition, distinctions like actives and passives collapsed. \textcite{sz1985speechact} find that languages tend to have three major clause types, \diis{} associated with three major speech acts \aqrs{}, as we have seen in (\ref{ex:intro:intro}), repeated here in (\ref{ex:bg:theory:cl}):
 
-If we think of clause type information as encoded in $C^{0}$ (for example, as a [$+/-$ int] feature,  \cite{chomskylasnik1977,rizzi1997}; cf. \cite{rizzi2001int}), what children need to figure out is which sentences have the [+int] value and which ones take the [-int] value. In English, the [+int] value of $C^{0}$ is associated with the syntactic rule of subject-aux inversion. So the child must come to treat (\ref{engcl:cluster}) and (\ref{engcl:cluster}a) alike (because of subject-aux inversion triggered by [+int] in $C^{0}$) and distinct from (\ref{engcl:cluster}b).%\footnote{} 
-
-
-\bex{engcl:cluster}
-Do you want a cookie?
-\bxl{}
-Is that Bert?
-\ex
-That’s Bert!
+\bex{ex:bg:theory:cl}
+\bxl
+That's Elmo. \hfill Declarative
+\ex Is that Elmo? \hfill Interrogative
+\ex Find Elmo! \hfill Imperative%, Request
 \exl
 \eex
+
+They additionally note that declaratives are usually considered the default clause type%%%
+
+
+
+But conceiving clause types as a form-use mapping means that embedded clauses like the unlined clause in (\ref{ex:bg:theory:cl:embed}) do not have clause types:
+\bex{ex:bg:theory:cl:embed}
+Mary knows \tun{who Ann can hug}.
+\eex
+
+
+
+We want to capture the intuition that subordinate clauses also have clause type categories. 
+
+
+Alternatively, we can 
+
+
+Frequently, declaratives are considered the default clause type. 
+
+\textcite{katzpostal1984} propose that interrogative sentences have a phonetically null affix Q that prompts subject-auxiliary inversion and \twh-movements. But it's later observed that 
+
+Later Q is replaced by features like [+int], but the intuition that interrogative clauses have a strong feature/affix that is phonetically null and changes the force of the sentence is preserved. It captures the close link between clause types and the force of a sentence.
+
+This feature is replaced by [+wh], but there are several reasons why [+wh] is different from [+int]. 
+
+
 
 This knowledge, that the presence of subject-auxiliary inversion indicates a [+int] and not [-int] value of $C^{0}$, has to be learned from the input and likewise for other surface formal properties relevant for clause typing. This is because the relevant properties indicative of the value of $C^{0}$ (and the clause type category of the sentence) differ from language to language. For example, as we will discuss in detail in the next chapter, Mandarin-acquiring infants, unlike English-acquiring infants, need to pick out that [+int] is expressed by the presence of a sentence-final particle, specifically the particle \tit{ma}, and hence should use this surface feature to cluster sentences into clause types.
 
@@ -35,8 +59,8 @@ Every clause needs to be typed. In the case of typing a \twh-question, either a 
 While the specific way that a clause can be typed has been debated in the literature, people generally agree that identifying the [$\pm$ int] feature on $C_{0}$ is necessary. This means that, learners of grammar must be able to type a clause. %
 
 
-\subsection{Speech act} \label{sec:bg:theory:speech}
-Frege observed that it is possible to express a thought without judging it to be true, and that considering a particular claim and judging it to be true are different things altogether. In asking a polar question like \tit{Is it raining? }one is not judging anything to be true. But in answering \tit{Yes }or asserting the declarative sentence like \tit{It is raining,} one does. Nevertheless, \tit{Is it raining?} and \tit{It is} raining have something in common: they have the same content, or as Frege puts it, they contain the same \tit{thought}. From this observation he derives the influential distinction between \tit{content} and \tit{force}. The following passage from \tit{Der Gedanke} makes this distinction clear:
+\subsection{Speech acts and their link with clause types} \label{sec:bg:theory:speech}
+Frege observes that it is possible to express a thought without judging it to be true, and that considering a particular claim and judging it to be true are different things altogether. In asking a polar question like \tit{Is it raining? }one is not judging anything to be true. But in answering \tit{Yes }or asserting the declarative sentence like \tit{It is raining,} one does. Nevertheless, \tit{Is it raining?} and \tit{It is} raining have something in common: they have the same content, or as Frege puts it, they contain the same \tit{thought}. From this observation he derives the influential distinction between \tit{content} and \tit{force}. The following passage from \tit{Der Gedanke} makes this distinction clear:
 
 \begin{quote}
     
@@ -140,11 +164,104 @@ Imperative & Request & Add (or propose to add) certain property to the To-Do Lis
 
 \subsection{Complication: the role of prosody}
 \label{sec:bg:theory:prosody}
-The precise relationship between prosodic features, clause type, and speech act may not be so straightforward. Cross-linguistically, rising contour is usually associated with a questioning act (\citealt{bolinger1978, ladd1981, gussenhovenchen2000, ladd2001typology}, a.o.). In English, declaratives tend to be associated with falling intonation, polar interrogatives tend to bear rising intonation, while \twh-interrogatives also generally bear a falling contour (\citealt{ladd1981, hedberg2014corpus}). When declaratives are associated with rising intonation, they tend to be interpreted as questions (i.e. rising declaratives, \citealt{ladd1981,gunlogson2004,gunlogson2008,jeong2018,rudin2018}).  
+The precise relationship between prosodic features, clause type, and speech act may not be so straightforward. Cross-linguistically, rising contour is usually associated with a questioning act (\citealt{bolinger1978, ladd1981, gussenhovenchen2000, ladd2001typology}, a.o.). But does intonation contributes to clause typing? The main point of contention comes down to whether sentences like (\ref{ex:bg:theory:prosody:rd}) are declaratives or not (I use $\nearrow$ to indicate the sentence has a final rising intonation, and $\searrow$ for final fall):
+ 
+\bex{ex:bg:theory:prosody:rd}
+It's raining $\nearrow$
+\eex
+\bex{ex:bg:theory:prosody:fd}
+It's raining $\searrow$
+\eex
 
-In Mandarin, experimental studies controlled for lexical tone find that compared to assertions, in questions, the F0 of the entire utterance is raised (\citealt{ho1977intonation, shen1991question, yuan2002prosody, nikawai2004, lee2005prosody, liuxu2005, yuan2006qprosody, yuan2011perception, liufang2009prosody, jiangchen2011} among many others), but different types of interrogatives might end with different contours: \ma-interrogatives and rising declaratives tend to have a final rise contour (\citealt{shen1991question, zeng2004tones}), and A-not-A and \twh-interrogatives tend to end on falling intonation (\citealt{shen1991question, nikawai2004}, cf. \citealt{liuxu2005,yang2020wh}). Perception experiments show that speakers tend to use the overall F0 of the whole sentence to distinguish questions from assertions (\citealt{jiangchen2011, gryllia2020typing}), and it is more difficult to use clause-final prosodic cues, especially if the final syllable has a rising tone (\citealt{yuan2011perception}). 
 
-To summarize, in both languages, prosodic information alone may not be sufficient to predict the clause type of a sentence. But prosodic information may help explain some of the mismatches between clause type and speech act, as declaratives that function as questions might be associated with rising intonation.
+In Gunlogson's \cite*{gunlogson2008} analysis, sentences like (\ref{ex:bg:theory:prosody:rd}) are declarative clauses with a rising intonation, implying that intonation does not affect the clause type feature of the sentence. Meaning-wise, clause type and intonation contribute compositionally to the discourse function of the utterance. 
+
+
+Many analyses of rising declaratives in the dynamic discourse tradition adopt the same assumption. As these cases are rarely discussed in syntactic literature, it is unclear whether syntacticians would classify them as having [$-$int] or [$+$int]. But we can go through the arguments given to other [$+$int], to see if it's possible to assign [$+$int] to the sentence. One test is whether rogative verbs that only select interrogative clauses would embed (\ref{ex:bg:theory:prosody:rd}). If (\ref{ex:bg:theory:prosody:rd}) bears [+int], then the sentence with (\ref{ex:bg:theory:prosody:rd}) embedded under \tit{wonder} should be grammatical.
+
+\bex{ex:bg:theory:prosody:rd-wonder}
+*Mary wonders \tun{it's raining}.
+\eex
+
+As shown in (\ref{ex:bg:theory:prosody:rd-wonder}), this prediction is not borne out; (\ref{ex:bg:theory:prosody:rd}) cannot be embedded under rogative verbs like \tit{wonder}. This suggests that (\ref{ex:bg:theory:prosody:rd}) does not have the feature [+int]. But it could be that (\ref{ex:bg:theory:prosody:rd}) has a silent [+int], but this silent [+int] is realized as \tit{whether} in embedded context. So instead of (\ref{ex:bg:theory:prosody:rd-wonder}), embedded (\ref{ex:bg:theory:prosody:rd}) should be:
+
+\bex{ex:bg:theory:prosody:rd-whether}
+Mary wonders \tun{whether it's raining}.
+\eex
+
+As the rising intonation associated with (\ref{ex:bg:theory:prosody:rd}) would not manifest in embedded clauses, it's hard to distinguish the two possibilities syntactically. But \textcite{farkasroelofsen2017} observe that if the embedded clause is preposed, the intonation difference is preserved, and rising declaratives pattern with polar interrogatives in these cases:
+
+\bex{ex:bg:theory:prosody:rd-prepose}
+\bxl{}
+`It's raining$\searrow$,' it appears/*she wondered.
+\ex`Is it raining?,' *it appears/she wondered.
+\ex`It's raining$\nearrow$,' *it appears/she wondered.
+\exl
+\eex
+
+\textcite{farkasroelofsen2017} uses this evidence to argue that rising declaratives are similar to interrogatives (at least in semantics). They propose that the syntactic representation of sentence forms have two kinds of clause type markers, \tsc{closed/open} and \tsc{dec/int}, as in (\ref{fig:bg:fb2017}). Although they didn't specify where these markers reside in the syntactic structure, but they seem to adopt a split-CP approach following \textcite{rizzi1997}, and thus the two clause markers are both part of CP. 
+
+
+\begin{figure}[H]
+\begin{center}
+\begin{tikzpicture}[level distance=30pt]
+\tikzset{level 1/.style={sibling distance=15pt}}
+\tikzset{level 2/.style={sibling distance=35pt}}
+\Tree
+[.$$ \tsc{open/closed} [ \tsc{int/dec} [.TP ] ] ]
+\end{tikzpicture}
+\end{center}
+\caption{Extended structure of CP proposed by \textcite{farkasroelofsen2017}}
+\label{fig:bg:fb2017}
+\end{figure}
+
+While the morpho-syntax of a sentence is linked to \tsc{dec/int}, the intonation (rise vs. fall) signals whether C bears the feature [\tsc{open}] or [\tsc{closed}]. Rising declaratives like (\ref{ex:bg:theory:prosody:rd}) would be an ``open declarative,'' with the following structure:
+
+\begin{figure}[H]
+\begin{center}
+\begin{tikzpicture}
+\tikzset{level 1/.style={sibling distance=35pt}}
+\tikzset{level 2/.style={sibling distance=35pt}}
+\Tree
+[. CP 
+	[. \tsc{open} ]
+	[. \tsc{}
+		[. \tsc{decl} ]
+		[. TP \edge[roof]; {it's raining} ] 
+	]
+]
+\end{tikzpicture}
+\end{center}
+\caption{The structure of rising declaratives, adapted from \textcite{farkasroelofsen2017}}
+\label{fig:bg:fb2017rd}
+\end{figure}
+
+So for \textcite{farkasroelofsen2017}, the clause type category of rising declaratives is not exactly declarative with [$-$int], and its semantics is even similar to that of the polar interrogatives. But as many have noted, there might be two types of rising declaratives. The one discussed in \textcite{farkasroelofsen2017} is the inquisitive one, but there might an assertive one (\cite{jeong2018, goodhue2021rd}), as shown in (\ref{ex:engcl:annt:rd:a}):
+
+\bex{ex:engcl:annt:rd-cont}
+\bxl
+\label{ex:engcl:annt:rd:q}
+\tit{S and A are on their way to a birthday party for the daughter of A’s friend. They stop at a store to get a birthday card. As they are both scanning the display for a card for the correct age, S is trying to remember how old the girl has just turned, and he thinks he remembers A telling him that she just turned nine, but he wants to confirm it.}\\
+\tbf{S: She’s nine$\nearrow$}
+\ex
+\label{ex:engcl:annt:rd:a}
+\tit{S is enrolling his daughter in a summer camp program with the camp organizer A.}\\
+S: I want to sign her up for Spanish classes in the mornings, and rock climbing in the afternoons.\\
+A: Okay, there are limited places in each activity based on age group, and some of the age groups have already filled up for rock climbing. How old is your daughter?\\
+\tbf{S: She’s nine$\nearrow$}
+\exl
+\hspace*{\fill}\hfill ex. (12-13), \cite[p.955]{goodhue2021rd}
+\eex
+
+In (\ref{ex:engcl:annt:rd:q}), the speaker uses the utterance to elicit a confirmation from the addressee regarding the age of the birthday girl, so the main goal is to solicit responses, similar to that of questions. But in (\ref{ex:engcl:annt:rd:a}), the speaker uses the rising declarative to answer the question raised by the addresseee, proposing to add the proposition \tit{she's nine} to the common ground of the conversation. Even though there is an additional effect associated with the utterance (something to the effect of ``Is there still room in the 9-year-old’s rock climbing group?''), this additional effect is not the main goal of the utterance. \footnote{There is another incredulous use of rising declarative, but the two uses mentioned here are more relevant for the current discussion on the speech act of rising declaratives, as most agree that incredulous rising declarative is also ``inquisitive'', same as (\ref{ex:engcl:annt:rd:q}).} Thus, we might not need to assume an interrogative semantics for rising declaratives.\footnote{Note that if we paraphrase (\ref{ex:engcl:annt:rd:a}), we cannot use \tit{wonder} either:
+
+\bex{ex:bg:theory:prosody:rd-prepose2}
+\tit{S is looking a flyer looking for Spanish speakers.}\\
+``I speak Ladino $\nearrow$," S thinks/$^{??}$ S wonders.
+\eex
+ 
+This suggests that the conclusion we can draw from the test with pre-posed embedded clause might need to be re-examined.}  As \textcite{goodhue2021rd} demonstrates, it is possible to give a unified account for these two uses of rising declaratives without assuming a separate layer of clause type markers. Therefore, in this dissertation, I assume that rising declaratives are declaratives with [$-$int] in $C^{0}$. Since nobody has argued that interrogatives with falling intonation should be classified as having a different clause type as interrogatives with rising intonation, I assume that intonation can modify the conventional effects of a clause (and hence the speech act expressed), and maybe even serve as a cue for identifying clause types, but [\textpm int] does not manipulate intonation the same way it manipulates, say, the word order of subject and auxiliary.
+
 
 \section{Acquisition of speech acts and clause types}
 \label{sec:bg:acq}
@@ -153,7 +270,7 @@ To summarize, in both languages, prosodic information alone may not be sufficien
 Previous studies have shown that infants can recognize communicative intentions even in their first months of life, and they can distinguish signals for communication, such as eye contact, intentional pointing, and speech, from non-communicative signals. Infants tend to follow the gaze of their interactive partner. Newborn babies already show rudimentary form of gaze following (\cite{farroni2004gaze}); 6-month-olds follow gazes that are communicative, such as adults' directly gaze at the object, or being greeted (e.g. ``Hello!'') in infant-directed speech (\cite{gredeback2008gaze, senju2008gaze}). Human infants, but not chimpanzees understand pointing as intentional (\cite{pika2006point, povinelli1997point,morissette1995joint}); 9-month-olds remember different aspect about an object depending on whether the object is presented in a communicative (such as pointing) vs non-communicative scenario (\cite{yoon2008intent}); 12-month-olds not only follow the direction of pointing, but also infer that the pointing is to indicate information such as where a toy is hidden in hide-and-seek games (\cite{behne2005hide,behne2012point}). Starting from six months old, infants can readily interpret speech as indicating communicative intentions, as oppose to other vocalizations like coughing (\cite{vouloumanos2014intent}).
 
 
-Besides recognizing a signal as communicative, infants can attribute goals and desires to an agent, and use shared experience to infer their goals. By 9 months old, infants can recognize an agent's goal of reaching for an object (\cite{woodward1998goal,baldwin2001goal});\footnote{But studies show that still have difficulty with the avoidance type of goals until 14 months old (\cite{feiman2015goals})} 14-month-olds can distinguish actions that are intentional and ones that are accidental, and only imitate actions that are intentional (\cite{carpenter1998intent,sakkalou2013goal}), and if things go wrong, they offer to help achieve others' goals (\cite{warneken2007goalrecog}); they could use shared experience such as cleaning up toys to interpret an agent's pointing as putting away the pointed object away, and would not attribute this goal to an agent who don't have the shared experience (\cite{liebal2009goal}).
+Besides recognizing a signal as communicative, infants can attribute goals and desires to an agent, and use shared experience to infer their goals. By 9 months old, infants can recognize an agent's goal of reaching for an object (\cite{woodward1998goal,baldwin2001goal});\footnote{But studies show that still have difficulty with the avoidance type of goals until 14 months old (\cite{feiman2015goals}).} 14-month-olds can distinguish actions that are intentional and ones that are accidental, and only imitate actions that are intentional (\cite{carpenter1998intent,sakkalou2013goal}), and if things go wrong, they offer to help achieve others' goals (\cite{warneken2007goalrecog}); they could use shared experience such as cleaning up toys to interpret an agent's pointing as putting away the pointed object away, and would not attribute this goal to an agent who don't have the shared experience (\cite{liebal2009goal}).
 
 Relatedly, it seems that infants have some understanding of other people's desires and beliefs, attitudes that frequently associated with the speech acts of assertions, questions, and requests. For example, 9-months-old can distinguish whether someone is unwilling or unable to hand them a toy (\cite{behne2005goal}); 12-month-olds can use eye gaze and positive affect to infer which object an agent is going to reach (\cite{phillips2002gaze}), and by 18 months old, infants use positive affect alone to infer which object the agent prefers, even if the preference is different from their own (\cite{repacholi1997desire}). Around 12-month-olds use pointing not to merely direct others' attention, but to request others to share information (\cite{kovacs2014request}); 13-month-olds seek information to clarify ambiguous situations (\cite{vaish2011request}); by 18 months old, infants are shown to be able to attribute beliefs to other people (\cite{onishi2005tom,surian2007tom,song2008earlytom,song2008false, scott2009tom,perner2012earlytom}, see \cite{scott2017review} for a recent review). 18-month-olds could use common ground knowledge shared with an agent to infer whether the agent is requesting an action with an object (e.g. open the door with the key) or simply playing with the object (\cite{schulze2015indirect}).%16-mo use pointing to solicit informaiton (\cite{begus2012point}); 2-year-olds are shown to use what others know when requesting help (\cite{oneill1996knowledge}). 
  
@@ -167,24 +284,31 @@ In sum, this body of work suggests that by 18 months old, the communicative abil
 
 
 \subsection{Early knowledge of clause types and speech acts} \label{sec:bg:acq:spcl}
- 
-	
-Based on the observations outlined in the previous chapter, infants face many challenges in figuring out clause types and speech acts. Previous studies have shown that they do not need a lot of time to figure this out, as children seem to have knowledge about clause types and speech acts from as early as 18 months old.
 
-%GeffenMintz
+Previous studies show that children seem to have knowledge about clause types and the associated speech acts (in particular interrogatives and questions) from as early as 18 months old. 
+
+Using corpus data, many studies show that infants can use one- and two-word utterances to express a variety of intentions that can be interpreted as \aqrs{} (\cite{bateson1975,bates1976language,ninio1994} among others); English-speaking children start producing interrogatives around 20 months starting with polar and \twh-interrogatives (\citealt{tyack1977, stromswold1995, rowland2003cdswh}). From the comprehension side, results from corpus studies on parent-child interactions show that children begin to respond to parents’ questions, especially \tit{who, what, where} questions, appropriately around one and a half years old (\citealt{ervintripp1978, steffensen1978, shatz1978comprehension, shatz1978communicative, berningergarvey1981, shatzmccloskey1984, clark2015turn, moradlou2020} among others). 
+
+
+
 %Gigliadi, Perkins
-%Marshmallow queen
-%Csillas 
-
-On the formal side, around 12 months, English-speaking infants show sensitivity to differences in word order (\citealt{geffenmintz2015wordorder}) associated with declaratives and polar interrogatives respectively. 
-2.6-year-olds can use the presence/absence of verb morphology to tell whether the sentence is a pro-drop declarative or an imperative (\cite{orfitellihyams2012subj}). 
 
 
-By~2 years, children may be able to associate interrogatives with questions: they predict a change of speaker when they hear interrogative sentences and not declaratives (\citealt{casillas2013, casillas2017turn}), and use word order information to predict upcoming turn changes (\citealt{casillas2013, casillas2017turn,lammertink2015turn}), suggesting that they might expect interrogatives to be associated with questions, which need to be answered.
 
-Using corpus data, many studies have shown that English-speaking children start producing interrogatives around 20 months starting with polar and \twh-interrogatives (\citealt{tyack1977, stromswold1995, rowland2003cdswh}). From the comprehension side, results from corpus studies on parent-child interactions show that children begin to respond to parents’ questions appropriately around one and a half years old (\citealt{ervintripp1978, steffensen1978, shatz1978comprehension, shatz1978communicative, berningergarvey1981, shatzmccloskey1984, clark2015turn, moradlou2020} among others). Data from preferential looking tasks show that already at 15 months old, infants look at the objects corresponding to the answers of \twh-interrogatives (\citealt{seidl2003wh, gagliardi2016wh, perkins2020filler}), though their success might not necessarily reflect knowledge of \twh-interrogatives, as they might be relying on their knowledge of verb argument structure in the task (\citealt{perkins2019}).
+Results from experimental studies show that around 12 months, English-speaking infants show sensitivity to differences in word order (\citealt{geffenmintz2015wordorder}) associated with declaratives and polar interrogatives respectively. Data from preferential looking tasks show that already at 15 months old, infants look at the objects corresponding to the answers of \twh-interrogatives (\citealt{seidl2003wh, gagliardi2016wh, perkins2020filler}), though their success might not necessarily reflect knowledge of \twh-interrogatives, as they might be relying on their knowledge of verb argument structure in the task (\citealt{perkins2019}). 
 
-Mandarin-speaking children are observed to produce \ma-interrogatives, A-not-A interrogatives, and \twh-interrogatives around 2 years old (\citealt{miao1986acq, miao1992, lee1989acq, litang1991int, lichen1997compprod, lichen1997comp, fan2012, lijingwong2017}). Experimental studies testing children’s comprehension suggest that Mandarin-children have adult-like interpretation of \twh-interrogatives around 3 (\citealt{fahn2003acq}), but not of polar interrogatives (\citealt{moradlou2020}). 
+By 18 months old, infants seem to be able to distinguish questions from assertions, and use this distinction to infer the epistemic state of the speaker. \textcite{luchkina2018infant} test how well 18-month-olds’ learn labels of novel objects from speakers who made statements about familiar objects (e.g., \tit{This is a star}) and from speakers who asked questions (e.g., \tit{Is this a star?}). They find that even though both types of speakers make statements when labeling novel objects during the test phase, 18-month-olds only learn novel labels from the speaker who made statements during the familiarization phase, but not from the question-askers. This result suggests that 18-month-olds can differentiate questions from statements, and further use this distinction to infer that question-askers might be less reliable information source than statement-makers. 
+
+\textcite{marshmallowqueen} demonstrate that 18-month-olds can associate interrogative syntax with the speech act of questioning with the preferential looking paradigm. In the experiment, infants watch a video of two puppets cheering a mechanical arm for delivering cookies into a box. During the test phase, one of the puppet leaves the scene while the cookie is being delivered, and is thus ignorant of whether there is a cookie in the box. Then participants either hear a polar interrogative \tit{is there a cookie in the box?} or a declarative \tit{there's a cookie in the box!} that could be uttered by either puppet. They find that at 18 months old, infants look more at the ignorant puppet when hearing the polar interrogative, suggesting that they understand the polar interrogative as a question uttered by the ignorant puppet.
+
+\textcite{casillas2017turn} tap into children's knowledge of turn-taking to see if children differentiate questions from other types of speech acts. They measure how often children switch their gaze to track the upcoming speaker. Since questions are turn-transitioning points where a switch in speaker is mostly likely to happen, if children can identify questions, they should switch gazes to the upcoming speaker more often after questions. In the experiment, children are shown videos of a conversation between two puppets in one of four conditions: with normal speech, with words only (filtering out prosodic cues), with prosody, or with no speech. They find that even at 1 years old, children are faster at switching their gaze to the addressee after questions than non-questions in general. Breaking down the different cues to questions, they find that in the word-only condition, even 1-year-olds switch their gaze to the upcoming speaker more often after questions, but in the prosody-only condition, 5-year-olds still are at chance distinguishing questions from non-quesitons. These results suggest that 1-year-olds might be able to use the morpho-syntactic properties of interrogatives to infer questions. Similar results are replicated with 2.5-year-olds by \textcite{lammertink2015turn}.
+
+
+As for imperatives and commands, \textcite{} show that even in the ``telegraphic speech'' phase (15-30 months old), children respond appropriately to imperatives as commands. \textcite{orfitellihyams2012subj} show that 2.6-year-olds can use the presence/absence of verb morphology to tell whether the sentence is a pro-drop declarative or an imperative. 
+
+
+%%not done
+Going beyond English, Mandarin-speaking children are observed to produce \ma-interrogatives, A-not-A interrogatives, and \twh-interrogatives around 2 years old (\citealt{miao1986acq, miao1992, lee1989acq, litang1991int, lichen1997compprod, lichen1997comp, fan2012, lijingwong2017}). Experimental studies testing children’s comprehension suggest that Mandarin-children have adult-like interpretation of \twh-interrogatives around 3 (\citealt{fahn2003acq}), but not of polar interrogatives (\citealt{moradlou2020}). 
 
 In our prior work, we find that Mandarin-speaking three-year-olds have adult-like interpretations of \twh-phrases, of both the interrogative and the non-interrogative uses. Our first experiment tested sentences like (\ref{bg-acq:dou}) and (\ref{bg-acq:ba}), where the interrogative and non-interrogative interpretation of the \twh-phrase is disambiguated by morpho-syntactic information (the presence/absence of the particle \dou{}):
 

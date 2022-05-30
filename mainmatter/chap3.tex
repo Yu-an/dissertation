@@ -277,30 +277,13 @@ As discussed in the last chapter, while the three major clause types are associa
 Can you put that down?
 \eex 
 
-Another common misalignment cases are rising declaratives like (\ref{ex:engcl:annt:rd}). As discussed in the last chapter, scholars debate on whether to label these cases as declaratives (\cite{gunlogson2008,  farkasroelofsen2017}). 
+Another complication comes from rising declaratives like (\ref{ex:engcl:annt:rd}). As discussed in the last chapter Section~\ref{sec:bg:theory:prosody}, scholars debate on whether to label these cases as declaratives (\cite{gunlogson2008,  farkasroelofsen2017}). 
 
 \bex{ex:engcl:annt:rd}
-She's nine?
+is it raining $\nearrow$
 \eex
 
-Additionally, speakers could be using these rising declaratives to make an assertion or raising a question, which is sometimes argued to be correlated with different prosodic contours (\cite{jeong2018}, cf. \cite{goodhue2021rd}), as in (\ref{ex:engcl:annt:rd-cont}):
-
-\bex{ex:engcl:annt:rd-cont}
-\bxl
-\label{ex:engcl:annt:rd:a}
-\tit{S is enrolling his daughter in a summer camp program with the camp organizer A.}\\
-S: I want to sign her up for Spanish classes in the mornings, and rock climbing in the afternoons.\\
-A: Okay, there are limited places in each activity based on age group, and some of the age groups have already filled up for rock climbing. How old is your daughter?\\
-\tbf{S: She’s nine$\nearrow$}
-\ex 
- \label{ex:engcl:annt:rd:q}
-\tit{S and A are on their way to a birthday party for the daughter of A’s friend. They stop at a store to get a birthday card. As they are both scanning the display for a card for the correct age, S is trying to remember how old the girl has just turned, and he thinks he remembers A telling him that she just turned nine, but he wants to confirm it.}\\
-\tbf{S: She’s nine$\nearrow$}
-\exl
-\hspace*{\fill}\hfill ex. (12-13), \cite[p.955]{goodhue2021rd}
-\eex
-
-In (\ref{ex:engcl:annt:rd:a}), the speaker uses the rising declarative to primarily answer a question, proposing to add the proposition \tit{she's nine} to the common ground of the conversation. Even though there is an additional effect associated with the utterance (something to the effect of ``Is there still room in the 9-year-old’s rock climbing group?''), it's not the main goal of the utterance. In (\ref{ex:engcl:annt:rd:q}), the speaker uses the utterance to elicit a confirmation from the addressee regarding the age of the birthday girl, so the main goal is to solicit responses, similar to that of questions. In this dissertation, I followed \textcite{goodhue2021rd} in classifying the form of (\ref{ex:engcl:annt:rd}) as declaratives, and depending on the contextual information, labeled cases like (\ref{ex:engcl:annt:rd:q}) as assertions and (\ref{ex:engcl:annt:rd:a}) as questions. We will come back to the prosody aspect in Chapter~\ref{chap:eng-sp}.
+I followed \textcite{gunlogson2008} in classifying the form of (\ref{ex:engcl:annt:rd}) as declarative, and labeled the speech act as either question or assertion depending on the contextual information, following \textcite{jeong2018, goodhue2021rd}. We will come back to the prosody aspect in Chapter~\ref{chap:eng-sp}.
 
 \subsubsection{Formal features}
 
@@ -560,9 +543,8 @@ This section is organized as follows. Section~\ref{sec:engcl:model:spec} specifi
 \subsection{Generative models}
 \label{sec:engcl:model:spec}
 
-
-\begin{minipage}[b]{0.45\linewidth}	
 \begin{figure}[H]
+\begin{minipage}[b]{0.45\linewidth}	
 \begin{center}
 \begin{tikzpicture}
 \node[latent] (c) {$C_{i}$};
@@ -582,12 +564,11 @@ This section is organized as follows. Section~\ref{sec:engcl:model:spec} specifi
 \plate {fvalue}{(gamma)(delta)(s)(cvalue)}{$F$};
 \end{tikzpicture}
 \end{center}
-\caption{The \distlearner{}}\label{fig:engcl:baseline-model}
-\end{figure}
+%\end{figure}
 \end{minipage}
 \hspace{0.5cm}
 \begin{minipage}[b]{0.45\linewidth}	
-\begin{figure}[H]
+%\begin{figure}[H]
 \begin{center}
 \begin{tikzpicture}
 \node[obs] (a) {$A_{i}$};
@@ -613,9 +594,10 @@ This section is organized as follows. Section~\ref{sec:engcl:model:spec} specifi
 \plate {fvalue}{(gamma)(delta)(s)(cvalue)}{$F$};
 \end{tikzpicture}
 \end{center}
-\caption{The \praglearner{}}\label{fig:engcl:target-model}
-\end{figure}
 \end{minipage}
+\caption{The  \distlearner{} (left) and \praglearner{} (right)}\label{fig:engcl:model}
+\end{figure}
+
 
 \begin{table}[H]
     \centering
@@ -675,24 +657,182 @@ The data for this model were taken from the annotated dataset reported in the la
 
 
 \subsubsection{Clause type clustering}
-\label{sec:engcl:model:data}
+\label{sec:engcl:model:results:overview}
 
+
+Overall, the model outperforms the distributional learner. As can be seen from Figure~\ref{fig:compare-rand}, the rand score (which measures how well two clusters coincide with each other) of the pragmatic distributional learner is higher. Additionally, the difference between the pragmatic and the distributional learner is larger than the difference between the two supervised learners, suggesting that for learners without access to the actual labels of clause types (which we assume to be the best approximation to the language acquisition process of infants), speech act information is crucial not only for labeling, but also clustering. 
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/compare-rand.jpg}
+    \caption{Comparing all four learners (distributional, pragmatic distributional, supervised distributional, supervised pragmatic) by rand score }
+    \label{fig:compare-rand}
+\end{figure}
+
+
+Figure~\ref{fig:baseline-heatmap} shows how much \diis{} in each cluster identified by the model. As can be seen, Cluster~$0$ contains 90\% of interrogative clauses and Cluster~$2$ is mostly declaratives. Cluster~$1$ is split between declaratives and imperatives.
+
+Figure~\ref{fig:target-heatmap} shows how much \diis{} in each cluster identified by the \plearnerabbr{} model. As can be seen, the model is able to identify three clause clusters: Cluster~$0$ contains 94\% of interrogative clauses, Cluster~$2$ is mostly imperatives, and Cluster $1$ mostly declaratives. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/baseline-heatmap.jpg}
+    \caption{The proportion of \diis{} in each of the three clusters}
+    \label{fig:baseline-heatmap}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/target-heatmap.jpg}
+    \caption{The proportion of \diis{} in each of the three clusters}
+    \label{fig:target-heatmap}
+\end{figure}
+
+Figure~\ref{fig:baseline-heatrev} shows the proportion of sentences clustered together. We can see that 87\% of interrogatives and 93\% of imperatives are clustered together in Cluster~$0$ and $1$ respectively. While most of declaratives are classified in Cluster~$2$, a proportion is classified in Cluster~$1$.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/baseline-heatrev.jpg}
+    \caption{The proportion of actual \diis{} clustered in one category}
+    \label{fig:baseline-heatrev}
+\end{figure}
+
+Figure~\ref{fig:target-heatrev} shows the proportion of sentences clustered together. We can see that our learner performs extremely well: 95\% of declaratives, 90\% of interrogatives, and 87\% of imperatives are clustered together in Cluster~$1$, $0$, $2$ respectively.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/target-heatrev.jpg}
+    \caption{The proportion of actual \diis{} clustered in one category}
+    \label{fig:target-heatrev}
+\end{figure}
 %Rand comparison
 
 %confusion matrix
 
 
 \subsubsection{Morpho-syntactic properties}
-\label{sec:engcl:model:results}
-
-%The graphs
-%\distlearner{} identify a clustering roughly...
+\label{sec:engcl:model:results:morph}
 
 
+The morpho-syntactic profile of each cluster identified by the \dlearnerabbr{} is shown in Figure~\ref{fig:baseline-syncluster}, and three logistic regression models with each of the clusters as dependent variable, and the set of formal features (+/- verb and pre-verbal UFI are excluded, due to low variance) as independent variable are performed. Results of which is shown in Table~\ref{tab:baseline-synstats}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{figures/baseline-syncluster.jpg}
+    \caption{The number of sentences with/without certain formal features in each cluster (Cluster 0 $\sim$ Interrogatives, Cluster 1 $\sim$ Imperatives, Cluster 2 $\sim$ Declaratives), darker colors represent the number of sentences with the feature. UFI stands for Unknown Functional Item (e.g. \twh{}), see Table~\ref{tab:eng-cl:formal-schema} for details.}
+    \label{fig:baseline-syncluster}
+\end{figure}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{r|l|l|l}
+\hline
+ & Cluster~$0$   & Cluster~$1$   &  Cluster~$2$ \\
+ & $\sim$ Interrogatives  & $\sim$ Imperatives  & $\sim$ Declaratives \\
+ \hline\hline
+constant & -6.97*** & 4.461*** & -4.22*** \\
+\hline
+Subject & 1.00* & -4.49*** & 4.37*** \\
+\hline
+Verb Morphology & -1.56*** & 0.21  & -1.46*** \\
+\hline
+Auxiliary & 3.4***  & -2.72*** & 1.16*** \\
+\hline
+Subject-Aux Inversion & 7.45*** & -5.83*** & -1.52*** \\
+\hline
+Sentence-initial UFI & 3.08*** & 0.38* & -1.58*** \\
+\hline
+Post-verbal UFI & -0.51  & -3.07***  & 1.69*** \\
+\hline \hline
+\end{tabular}
+\end{center}
+\caption{Results from the three logistic regression models with each of the clusters as the dependent variable and the morpho-syntactic features as independent variables; asterisks represent the significance level: ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1}
+\label{tab:baseline-synstats}
+\end{table}%
+
+
+From the above table and figure, we can see that the model clearly identifies a cluster for interrogatives, and that features associated with polar and \twh-interrogatives are both present in this cluster. Interestingly, both subject and object \twh-interrogatives are included in this cluster:
+\bex{engcl:baseline:cluster0}
+Who's hiding in the barrel? \hfill Mother of Violet, Session 010603
+\ex What else do we have here? \hfill Mother of Naima, Session 001126
+\eex
+
+Thee other two clusters are not as ideal. Cluster~$1$ consists of a mix of imperative sentences and simple declarative sentences like (\ref{engcl:baseline:cluster1-dec}):
+
+\bex{engcl:baseline:cluster1-dec}
+It's moon face. \hfill Mother of Lily, Session 010423
+\ex I love school. \hfill Mother of Lily, Session 010423
+\eex
+
+Ambiguous sentences (sentences that could either be a pro-drop declarative or an left-edge-ellipsis interrogative) like \ref{engcl:baseline:cluster1-amb} are also put in Cluster~$1$:
+\bex{engcl:baseline:cluster1-amb}
+Wanna read your little Tigger book? \hfill Mother of Violet, Session 010407
+\eex
+
+
+Overall, the distributional learner fails to identify two of the three clause types in English, and fails to identify the characteristic features for imperatives and declaratives. We will turn to the pragmatic distributional learner next, to evaluate whether the learner needs information from pragmatics to identify clause types.
+
+
+Figure~\ref{fig:target-syncluster} shows the morpho-syntactic profile of each cluster identified by the \plearnerabbr{}. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{figures/target-syncluster.jpg}
+    \caption{The number of sentences with/without certain formal features in each cluster (Cluster 0 $\sim$ Interrogatives, Cluster 1 $\sim$ Declaratives, Cluster 2 $\sim$ Imperatives), darker colors represent the number of sentences with the feature.}
+    \label{fig:target-syncluster}
+\end{figure}
+
+Table~\ref{tab:target-synstats} summarises the three logistic regression models with each of the clusters as dependent variable, and the set of formal features (+/- verb and pre-verbal UFI are excluded, due to low variance) as independent variables.  
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{r|l|l|l}
+\hline
+ & Cluster~$0$   & Cluster~$1$   &  Cluster~$2$ \\
+ & $\sim$ Interrogatives  & $\sim$Declaratives  & $\sim$ Imperatives \\
+ \hline\hline
+constant & -6.3*** & -1.44*** & 1.95*** \\
+\hline
+Subject & 0.9** & 4.32*** & -4.75*** \\
+\hline
+Verb Morphology & -0.31 & 1.66***  & -3.08*** \\
+\hline
+Auxiliary & 2.66***  & -0.85*** & -2.14*** \\
+\hline
+Subject-Aux Inversion &5.99*** & -5.83*** & -56.79 \\
+\hline
+Sentence-initial UFI & 3.65*** & 0.38* & 0.72** \\
+\hline
+Post-verbal UFI & -0.43  & 0.5  & -1.12 \\
+\hline \hline
+\end{tabular}
+\end{center}
+\caption{Results from the three logistic regression models with each of the clusters as the dependent variable and the morpho-syntactic features as independent variables; asterisks represent the significance level: ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1}
+\label{tab:target-synstats}
+\end{table}%
+
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.6\textwidth]{figures/target-base-rand.jpg}
+%     \caption{Comparing the pragmatic distributional learner and the distributional learner by rand score }
+%     \label{fig:target-base-rand}
+% \end{figure}
+
+
+The distribution of formal features across the three clusters is similar to the distribution with actual clause type categories. Cluster $0$, the interrogative cluster, is associated with the presence of subject-auxiliary inversion and sentence-initial unknown functional items (UFIs); Cluster $2$, the imperative cluster, is associated with the absence of subject, auxiliaries, verb morphology, or UFIs. The declarative cluster Cluster $1$ is correlated with the presence of subjects, verb morphology, and the lack of subject-auxiliary inversion. The three clusters match the actual clause types, \diis.
+
+Comparing the pragmatic distributional learner with the distributional learner, we can see that the former performs much better, identifying all three clause types and the prominent features associated with these clusters. These results suggest the learner needs information from pragmatics to succeed in clause typing. But how much does the learner need pragmatics? Will noisy speech act information still able to help the learner? In the next section, we compare pragmatic distributional learners with different levels of noises in their speech act information, and see how well the learner performs with deprecated data.
+
+
+\subsection{Interim Summary}
+\label{sec:engcl:model:results:summary}
 
 \subsection{Simulating noisy pragmatic information} 
 \label{sec:engcl:model:noisy}
 %how noise is generated
+
+
 Figure~\ref{fig:noisy-rand-compare} shows the performance of the pragmatic distributional learner when the speech act contains 0-100\% noise. As can be seen, the learner outperforms the distributional learner up until there is around 85\% of noise in speech act. This suggests that speech act information is helpful for learners to cluster sentences, and even deprecated speech act information will still help the learner.  
 
 \begin{figure}[H]
