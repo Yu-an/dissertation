@@ -36,12 +36,12 @@
 \contentsline {subsubsection}{\numberline {3.2.3.3}Informativeness of syntactic and pragmatic cues}{52}{subsubsection.3.2.3.3}%
 \contentsline {section}{\numberline {3.3}Modeling the learning of clause types}{55}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Generative models}{56}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Inferences}{57}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Results}{57}{subsection.3.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.3.1}Clause type clustering}{58}{subsubsection.3.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.3.2}Morpho-syntactic properties}{62}{subsubsection.3.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.4}Interim Summary}{66}{subsection.3.3.4}%
-\contentsline {subsection}{\numberline {3.3.5}Simulating noisy pragmatic information}{66}{subsection.3.3.5}%
+\contentsline {subsection}{\numberline {3.3.2}Inferences}{58}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Simulations with infant-directed speech}{59}{subsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.3.1}The SID{} model}{60}{subsubsection.3.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.3.2}The SPID{} model}{63}{subsubsection.3.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3.3}Interim Summary}{66}{subsubsection.3.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Simulating noisy pragmatic information}{66}{subsection.3.3.4}%
 \contentsline {section}{\numberline {3.4}Discussion}{69}{section.3.4}%
 \contentsline {chapter}{\chapternumberline {4}Learning to identify clause types in Mandarin}{71}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Background}{71}{section.4.1}%
