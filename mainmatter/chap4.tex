@@ -37,7 +37,7 @@ Xiaoxiao	eat-ASP	breakfast	\Sfp{}\\
 \eex
 
 
-Sentence final particles (SFPs) like \ma{} in Mandarin are optional particles at the right edge of a clause (\citealt{chao1968, zhudexi, huang1982, cheng1991, liboya2006} among others). Many SFPs can occur in any clause type, but \ma{} can only occur in polar interrogatives that do not have the A-not-A form seen in (\ref{bg-syn:anota}). Because of these differences, Mandarin-speaking and English-speaking children must pursue different strategies: English learners might mostly rely on word order information to distinguish interrogatives and declaratives, and children learning Mandarin might rely on interrogative phrases like \tit{ma}. 
+Sentence final particles (SFPs) like \ma{} are optional particles at the right edge of a clause (\citealt{chao1968, zhudexi, huang1982, cheng1991, liboya2006} among others). Many SFPs can occur in any clause type, but \ma{} can only occur in polar interrogatives that do not have the A-not-A form seen in (\ref{bg-syn:anota}). Because of these differences, Mandarin-speaking and English-speaking children must pursue different strategies: English learners might mostly rely on word order information to distinguish interrogatives and declaratives, and children learning Mandarin might rely on interrogative phrases like \tit{ma}. 
 
 However, Mandarin learners have to contend with an additional difficulty, namely some of these phrases are not uniquely associated with interrogativity. Two prominent examples are \twh-phrases, which can have interrogative and non-interrogative interpretations in Mandarin, and the question particle \ma, which has a homophone that can occur in non-interrogative clauses.
 
@@ -48,50 +48,40 @@ Xiaoxiao	\Neg{}	eat	what\\
 a.	What didn't Xiaoxiao eat?\\
 b.	Xiaoxiao didn't eat anything.\\
 \eex
-\bex{bg-syn:ambma}
-\gll Xiaoxiao	chi-le		zaocan		ma\\
-	Xiaoxiao	eat-\Asp{}	breakfast	\Sfp{}\\
-a.	Did Xiaoxiao eat breakfast?\\
-b.	(Obviously) Xiaoxiao ate breakfast!\\
-\eex 
+
+
 The sentences in (\ref{bg-syn:ambwh}) and (\ref{bg-syn:ambma}) can be read as either questions or assertions. Thus, observing the \twh{} \tit{shenme} or sentence final \ma{} is not sufficient for a learner to determine the clause type. Learners must rely on additional cues from the context or prosody to determine the correct interpretation. In (\ref{bg-syn:ambwh}), when the context is compatible with both readings, assigning prosodic prominence (normally associated with focus) to the \twh-phrase is indicative of the interpretation as a question; in (\ref{bg-syn:ambma}), the question reading is associated with rising intonation, whereas the assertion reading is associated with falling intonation. 
 
+In Mandarin, interrogativity is indicated by the use of markers such as sentence final particle \ma{}, A-not-A construction, \twh{}. Therefore, instead of coding the word order of the sentence, we will annotate whether or not the clause has an interrogative marker. As mentioned in Section~\ref{sec:bg}, besides \ma{}, SFPs are generally compatible with all clause types. For example, the A-not-A interrogative in (\ref{code-man:intanota}) contains the SFP \tit{a}, but this particle can be used in declaratives and imperatives as well (\citealt{chao1968, lithompson}). However, data from our pilot study suggests that SFPs are frequently found in interrogative clauses: among the 68 sentences with an SFP, 86\% are interrogatives like (\ref{code-man:intanota}). Although the particle \tit{a} is not by itself indicative of interrogativity, children may be able to exploit a correlation between sentence final particles and interrogativity to learn new question markers. That is, if they encounter an utterance like (\ref{ex:mancl:grammar:anota}) and have not yet learned A-not-A to be a polar interrogative indicator, the presence of the SFP \tit{a} could nudge them in the right direction. As of yet, this is an untested hypothesis, but if the pattern shown in the pilot is replicated in a bigger sample, further research will benefit from having this coding in the dataset produced by this project.
 
-Based on our discussion on Mandarin interrogatives in Section 2, we do not expect a word order difference between interrogatives and declaratives in Mandarin; instead, interrogativity is indicated by the use of markers such as sentence final particle \ma{}, A-not-A construction, \twh{}. Therefore, instead of coding the word order of the sentence, we will annotate whether or not the clause has an interrogative marker. As mentioned in Section~\ref{sec:bg}, besides \ma{}, SFPs are generally compatible with all clause types. For example, the A-not-A interrogative in (\ref{code-man:intanota}) contains the SFP \tit{a}, but this particle can be used in declaratives and imperatives as well (\citealt{chao1968, lithompson}). However, data from our pilot study suggests that SFPs are frequently found in interrogative clauses: among the 68 sentences with an SFP, 86\% are interrogatives like (\ref{code-man:intanota}). Although the particle \tit{a} is not by itself indicative of interrogativity, children may be able to exploit a correlation between sentence final particles and interrogativity to learn new question markers. That is, if they encounter an utterance like (\ref{code-man:intanota}) and have not yet learned A-not-A to be a polar interrogative indicator, the presence of the SFP \tit{a} could nudge them in the right direction. As of yet, this is an untested hypothesis, but if the pattern shown in the pilot is replicated in a bigger sample, further research will benefit from having this coding in the dataset produced by this project.
 
-
-\bex{code-man:intanota}
+\bex{ex:mancl:grammar:anota}
 \gll Ni	\tun{you}	watuji	\tun{mei-you}	a?	\\
 You have	excavator	{\Neg{}	have}	\Sfp\\
 ``Do you have an excavator?'' \hfill \tsc{A-not-A}
 \eex
 
 
-
-In addition to the features mentioned above, we will also annotate a set of other morpho-syntactic features following \cite{perkins2019} as input into our model in Study 3. These are relevant properties of subjects, verbs and functional words that infants are known to represent prior to 18-months of age (Table~\ref{tb:syn}). Each feature is annotated as 1 if present, and 0 otherwise.
-\begin{table}[H]
-\caption{Syntactic features}
-\vspace{-2.5ex}
-\begin{center}
-\begin{tabular}{c|p{7cm}|p{7cm}}
- \hline
-  \hline
- & English & Mandarin \\
- \hline
-Subject & Subject of known verb is overt in canonical subject position; sentence-initial; preceded by an auxiliary; preceded by another noun (e.g. topic NP) & Subject of known verb is overt in canonical subject position; preceded by another noun (e.g. topic NP) \\
-\hline
-Verb & Known verb is first verb in sentence; followed by direct object;  followed by a preposition or particle; has \tit{-ed, -en, -ing, -s}, or irregular morphology; verb is preceded by \tit{to, be, have, get}, or \tit{do}  & Known verb is first verb in sentence; followed by direct object; followed by an aspect marker or preceded by \tit{zai} \\
- \hline
-Other & unknown function word sentence-initially, sentence medially before verb, sentence-medially after verb, or sentence-finally & unknown function word sentence medially before verb, sentence-medially after verb; unknown function word sentence-finally \\
- \hline \hline
-\end{tabular}
-\end{center}
-\label{tb:syn}
-\end{table}%
-
-
 \subsection{Mandarin-acquiring children's knowledge}
 \label{sec:mancl:bg:child}
+Subjects
+
+Verbs
+
+Aspectual marker
+
+\tit{Ba} and \tit{bei}
+
+A-not-A structure
+
+\tit{Wh}-phrases
+
+Sentence final \tit{ma}
+
+Negative imperative modals \tit{bie, beng}
+
+As noted earlier, A-not-A structure and sentence-final \tit{ma} both distinguish interrogatives from declaratives in Mandarin. But while there are evidence suggesting that children start producing negation around 1.5 years old (\cite{lee1982,fan2007,li2019neg} among others), we do not have evidence for whether children perceive A-not-A sentences differently from simple negation sentences. Similarly, we do not have evidence for whether children treat \tit{ma} differently from sentences with other sentence final particles like \tit{ya}. I therefore simulate a conservative learner who do not have access to A-not-A and \tit{ma} features, and a knowledgeable learner who have access to these two features. 
+
 
 \subsection{Roadmap of the chapter}
 \label{sec:mancl:bg:map}
@@ -99,13 +89,131 @@ Other & unknown function word sentence-initially, sentence medially before verb,
 \section{Corpus study}
 \label{sec:mancl:corpus}
 
-\subsection{Methodology}
+\subsection{Corpus and methods}
 \label{sec:mancl:corpus:method}
+This study used data from the Tong subcopora (\cite{TongCorpus}) from CHILDES (\cite{CHILDES}), which contains audio and video recordings of weekly hour-long free play sessions between Tong and his caregivers from 1;7-3;4 in Shenzhen, China where Mandarin is the language of the community. Although this corpus only contains data from one child, it is the most comparable to the Providence Corpus in the child’s age range and availability of audio/video data. If more corpora from Mandarin-speaking children become available in the future, the methodology developed here can be applied to them. Another problem with the corpus is that it does not have data from before when the child is 18 months old, which is older than our assumed age that children figure out the clause type categories and older than the children in the English corpus study. However, while the pragmatics of parent-child interaction might change with children's age, the morpho-syntactic properties of parents' sentences should stay constant. Therefore, we assumed that the input sentences share similar properties as parents' sentences before Tong turns 18 months old. Once the corpus releases data from before 18 months old, we would apply the same methodology to these data. 
+
+We sampled 500 conversational turns from each session from when the child was 01;07;18 to 2;2;16. Each session was coded by two annotators independently of the Clause Type and Speech Act information (cohen's $\kappa$: 0.8). For the morpho-syntactic features, initial annotation was generated by a script (\textcolor{red}{url}) using the morphological tagging provided by the corpus, and then manually corrected. In total, 4501 utterances were annotated. 
+
 \subsubsection{Clause Type}
+Same as the English corpus study reported in the last chapter, each sentence was annotated with their clause type category, \diis{} (\ref{ex:mancl:annt:cl:dec}-\ref{ex:mancl:annt:cl:imp}). Sentences with only one noun phrase or injectives were annotated as ``fragments'':\footnote{Sentences without verbs might not be fragments in Mandarin, as the copula \tit{shi} ``be'' is optional:
+\begin{xlist}
+\ex 
+\gll Zhe wode.\\
+This mine.\\
+\trans `This is mine.'
+\end{xlist}
+}
+
+\bex{ex:mancl:annt:cl}
+\bxl \label{ex:mancl:annt:cl:dec}
+\gll Wazi shi le.\\
+Sock wet \Sfp{}\\
+``Your socks got wet.''
+\ex \label{ex:mancl:annt:cl:int}
+\gll Kandao le ma?\\
+See \Asp{} \Sfp{}\\
+\trans``Do you see it?'' 
+\ex \label{ex:mancl:annt:cl:imp}
+\gll Gei wo hongse de na-ge.\\
+Give me red \tsc{poss} that-\Cl{}\\
+\trans``Give me the red one.'' 
+\ex \label{ex:mancl:annt:cl:frag}
+\gll Ai-ya!\\
+\tsc{intj} \\
+\trans ``Wow!''
+\exl
+\eex
+
 \subsubsection{Morpho-syntactic cues for clause typing}
+
+As reviewed in the last section, Mandarin-acquiring children at 18 months old can perceive many morpho-syntactic properties related to clause typing in Table~\ref{tab:mancl:grammar}. In particular, they might be able to identify the subject, verb, auxiliary of the sentence, and distinguish functional from lexical items. We additionally adopted the conservative assumption that children at this age might not be able to identify all the \twh-items at this stage,but they might be able to classify them as functional elements, as they may know the distinction between functional and content elements. We therefore put \twh-items, quantifiers, connectives (e.g. \tit{haishi}, the interrogative ``or''), and focus particles in one category ``unknown functional item (UFI),'' and annotated its position in a sentence: sentence initial, sentence-medial but before the verb, after the verb, or sentence final. In addition to these surface features that were also annotated in the English corpus study, we also annotated for whether the sentence contains an A-not-A structure, and whether there is a sentence-final \tit{ma} particle. But since we do not have evidence for whether children around 18 months can perceive these two cues, as discussed in the last section, when simulating children's learning process, we will compare conservative models without these two cues, and knowledgeable models with these two cues.
+
+
+Each sentence was annotated with whether or not a surface feature is present. Table~\ref{tab:mancl:formal-schema} summarizes the surface features we annotated and their examples.  
+
+
+\begin{exe} \label{mancl:schema:formal:verb}
+\ex 
+\gll \tbf{kan} zhe-ge.\\
+Look this-\Cl{}\\
+\trans `Look at this one!'' \hfill +Verb
+\end{exe}
+
+\bex{mancl:schema:formal:subj}
+\gll \tbf{Wo} zhidao.\\
+I know\\
+\trans ``I know.'' \hfill +Subject
+\eex
+
+\bex{mancl:schema:formal:asp}
+\bxl
+\gll Mama mei gei ni mai \tbf{guo} zhege wanju\\
+Mom \Neg{} to you buy \Asp{} this toy\\
+\trans`` Mom never bought this toy for you.'' \hfill +Aspect
+\exl
+\eex
+
+\bex{mancl:schema:formal:aux}
+\bxl
+\gll Xiaopengyou buneng peng.\\
+Children \Neg-can touch\\
+\trans ``Children can't touch (this).'' \hfill +Auxiliary
+\exl
+\eex
+
+\bex{mancl:schema:formal:ufi}
++ Unknown functional items:
+\bxl
+\gll \tbf{Yaobu} na zhe-ge kapian lai jiao ba\\
+%要 不 拿 这 个 卡片 来 教 吧 .
+What-if take this-\Cl{} card to teach \Sfp{}\\
+\trans ``What if (you) teach with this card.''  \hfill Sentence-initial UFI
+
+\ex
+\gll Zheli \tbf{hai} you labi.\\
+Here also have crayon\\
+\trans ``There's also crayons." \hfill Pre-verbal UFI
+\ex
+\gll  Limian you \tbf{shenme} ya?\\
+Inside have what \Sfp{}\\
+\trans ``What's inside?" \hfill Post-verbal UFI
+\ex 
+\gll Guolai \tbf{ba}\\
+Come \Sfp{}\\
+\trans ``Come here!'' \hfill Sentence final particle
+\exl
+\eex
+
+\bex{mancl:schema:formal:anota}
++ A-not-A: 
+\bxl
+\gll Jintian \tbf{leng-bu-leng} a?\\
+Today cold-\Neg-cold \Sfp{}\\
+\trans ``Is it cold today?" \hfill \tit{Adj-not-Adj}
+\ex 
+\gll Ni \tbf{hui-bu-hui} xiezi?\\
+You can-\Neg-can write\\
+\trans ``Can you write? \hfill \tit{Aux-not-Aux}
+\ex \gll Ni \tbf{you-mei-you} xiaoqiche?\\
+You have-\Neg-have car\\
+\trans ``Do you have cars?'' \hfill \tit{V-not-V}
+\ex 
+\gll \tbf{Chuan-hao} yifu \tbf{meiyou}?\\
+Put-well cloth \Neg{}\\
+\trans ``Did you put on your coat?'' \hfill \tit{A-not}
+\exl
+\eex
+
+\bex{mancl:schema:formal:ma}
+\gll Xiayu le \tbf{ma}?\\
+Rain \Asp{} \tsc{ma}\\
+\trans ``Is it raining?'' \hfill \tit{+ma}
+\eex
 
 \subsection{Results}
 \label{sec:mancl:corpus:results}
+
 \subsubsection{Overview}
 \label{sec:mancl:corpus:results:mapping}
 
@@ -124,6 +232,8 @@ Mandarin}
 
 \subsection{Performance of the \dlearnerabbr{} model}
 \label{sec:mancl:model:results:d}
+
+
 
 \subsection{Performance of the \plearnerabbr{} model}
 \label{sec:mancl:model:results:d}
