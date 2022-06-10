@@ -1,9 +1,9 @@
 \chapter{Learning to identify clause types in Mandarin}
 \label{chap:man-cl}
 
-In this chapter, we will explore how Mandarin-acquiring children learn clause typing. As we have seen from last chapter, pragmatic information is crucial for finding the right clause type clustering. We find that a learner must have access to some pragmatic information in order to find the right clause types but this learner can succeed with very limited access to pragmatic information. 
+In this chapter, we will explore how Mandarin-acquiring children learn clause typing. As we have seen in the last chapter, pragmatic information is crucial for finding the right clause type clustering in English. We found that a learner must have access to some pragmatic information in order to find the right clause types but this learner can succeed with very limited access to pragmatic information. Can we show the same for learners of Mandarin?
 
-As Mandarin [+int] and [imp] have different properties, would they be able to infer surface forms associated with these features from the input? Is pragmatics also crucial for Mandarin-acquiring children? How much pragmatics is required? In this chapter, I address these questions computationally, and found that surface morpho-syntactic features alone cannot help learners cluster sentences into the three clause types, and pragmatics is also needed. 
+As Mandarin [+int] and [imp] have different properties than in English, is it possible for a learner to infer the surface forms associated with these features from the input? Is pragmatics also crucial for Mandarin-acquiring children? And if so, how much pragmatics is required? In this chapter, I address these questions computationally following the same methodology as in Chapter \ref{chap:eng-cl}. I find that, for Mandarin too, surface morpho-syntactic features alone are not sufficient for learners to cluster sentences into the three clause types, so pragmatics is needed. 
 
 This chapter is organized as follows: we will review the properties of Mandarin [+int] and [imp], and children's knowledge regarding these properties. I then report results from a corpus study for Mandarin-speaking parents' input to children in  ~\ref{sec:mancl:corpus}. The data from the corpus study was used to simulate the two learners, \distlearner{} and \praglearner{}.  %
 
@@ -13,7 +13,7 @@ This chapter is organized as follows: we will review the properties of Mandarin 
 \label{sec:mancl:bg:theory}
 
 
-In Mandarin, the [+int] value in $C^{0}$ does not trigger movements, but instead shows up in surface form as \twh-phrases, sentence final \tit{ma}, and A-not-A. For \twh-interrogatives, Mandarin \twh-phrases (\citealt{huang1982, cheng1991} among many others) do not need to be fronted to clause-initial position. Compare the declarative sentence in (\ref{bg-syn:dec-man}) with the \twh-interrogative in (\ref{bg-syn:wh-man}), the \twh-phrase \tit{shenme} occurs in the same position in the interrogative (\ref{bg-syn:wh-man}) as the noun phrase \tit{zaocan} in (\ref{bg-syn:dec-man}). 
+In Mandarin, the [+int] value in $C^{0}$ does not trigger movements, but instead shows up in the surface form as \twh-phrases, sentence final \tit{ma}, and A-not-A constructions. For \twh-interrogatives, Mandarin \twh-phrases (\citealt{huang1982, cheng1991} among many others) do not need to be fronted to clause-initial position. Compare the declarative sentence in (\ref{bg-syn:dec-man}) with the \twh-interrogative in (\ref{bg-syn:wh-man}), the \twh-phrase \tit{shenme} occurs in the same position in the interrogative (\ref{bg-syn:wh-man}) as the noun phrase \tit{zaocan} in (\ref{bg-syn:dec-man}). 
 
 
 %\begin{minipage}[t]{0.45\linewidth}	
@@ -29,7 +29,7 @@ Xiaoxiao eat-\Asp{} what \\
 \eex
 
 
-Interrogativity might also have effects on prosody. As mentioned before, \twh-phrases in Mandarin can be interrogative or indefinite (\ref{bg-syn:ambwh}), but interrogative \twh{} is normally associated with prosodic prominence (\cite{hu2002prosody, dong2009, yangyang2018} a.o.).
+Interrogativity might also have effects on prosody in Mandarin. As mentioned before, \twh-phrases in Mandarin can be interrogative or indefinite (\ref{bg-syn:ambwh}), but interrogative \twh{} is normally associated with prosodic prominence (\cite{hu2002prosody, dong2009, yangyang2018} a.o.).
 
 \bex{bg-syn:ambwh}
 \gll Xiaoxiao	mei	chi	\tun{shenme}\\
@@ -78,7 +78,7 @@ However, Mandarin learners have to contend with an additional difficulty, namely
 
 To summarize the discussion so far, the surface form of [+int] in Mandarin is sentence final particle \ma{}, A-not-A construction, \twh{} with prominence. 
 
-Imperatives in Mandarin share many of the properties of imperatives in English, namely the lack of subjects. This clause type is sometimes marked by a negative modal \tit{bie} (and its etymologically related modal \tit{beng}), which only occurs in imperatives (\cite{chao1968, lithompson}):
+Now, imperatives in Mandarin share many of the formal properties of English imperatives, in particular the lack of subjects. This clause type is sometimes marked by a negative modal \tit{bie} (and its etymologically related modal \tit{beng}), which only occurs in imperatives (\cite{chao1968, lithompson}):
 
 \bex{ex:man:bie}
 \bxl{ex:man:bie:imp}
@@ -100,31 +100,31 @@ I advocate Lisi don't exit-country\\
 \trans ``I have the opinion that you don't leave the country.'' \hfill \textcite[p.458]{lithompson}
 \eex
 
-In sum, [+int] in Mandarin may show up in the surface form of the sentence as the presence of \twh{} with prominence, sentence final \tit{ma}, or A-not-A structure; [imp] shows as sentences without subjects or with second person subjects, and as special negative modal \tit{bie} or \tit{beng} in negative imperatives. 
+Thus, [+int] in Mandarin may show up in the surface form of the sentence as the presence of \twh{} with prominence, sentence final \tit{ma}, or A-not-A structure; [imp] shows as sentences without subjects or with second person subjects, and as special negative modal \tit{bie} or \tit{beng} in negative imperatives. 
 
-Mandarin learner also face the same learning problem as English learners: the clause type feature is abstract and is related to a variety of surface forms, none of which is obligatorily present and many of which can occur in sentences with a different clause-type feature on $C^{0}$. For example, even though [imp] is related to null subjects, but since Mandarin is a pro-drop language, observing that a sentence does not have subjects does not necessarily mean that $C^{0}$ is [imp].  
+In sum, Mandarin learners face the same learning problem as English learners: the clause type feature is abstract and is related to a variety of surface forms, none of which is obligatorily present and many of which can occur in sentences with a different clause-type feature on $C^{0}$. Since the surface features indicative of clause type differ between English and Mandarin, however, the problem manifests itself in its own way in each language. For example, even though [imp] is related to null subjects, but since Mandarin is a pro-drop language, observing that a sentence does not have subjects does not necessarily mean that $C^{0}$ is [imp].  
 
 
 \subsection{Mandarin-acquiring children's knowledge of clause types}
 \label{sec:mancl:bg:child}
-In this section we will look at evidence for Mandarin-acquiring children's knowledge regarding the features reviewed in the last section. For many of these features, we do not have a lot evidence from the comprehension side, and we have to rely on data from children's production alone to make inferences about their knowledge. As production might not be accurate reflection of children's grammar, we will be conservative in our inference.   
+In this section we will look at evidence for Mandarin-acquiring children's knowledge regarding the features reviewed in the last section. For many of these features, we do not have a lot evidence from the comprehension side, and we have to rely on data from children's production alone to make inferences about their knowledge. As production might not be accurate reflection of children's grammar, we will be conservative in our assessments.   
 
-\tsc{\textpm subjects}  Children start producing sentences with subjects once they start producing two-word sentences. As Mandarin do not have subject-verb agreement, and do not have expletive subjects, it is hard to assess chidlren's knowledge regarding subjecthood. %However, studies have shown that when learning meanings of novel verbs, 
+\tsc{\textpm subjects}  Children start producing sentences with subjects once they start producing two-word sentences. As Mandarin does not have subject-verb agreement, and neither has expletive subjects, it is hard to assess children's knowledge regarding subjecthood. %However, studies have shown that when learning meanings of novel verbs, 
 %However, studies show that as early as 17 months old, children could use whether nouns appear before or after a novel verb to infer whether the noun phrase is an agent 
 %However, studies have shown that children could use canonical word order to infer meaning of novel verbs. Specifically, children are able to infer that nouns before the verb is normally the agent of an action (\cite{}).
 
-\tsc{\textpm verbs} By 18 months old, Mandarin-acquiring infants demonstrate ability to categorize novel words as verbs using frequent frames related to verbs, such as auxiliaries and focus particles (\cite{zhangshili2015infant})
+\tsc{\textpm verbs} By 18 months old, Mandarin-acquiring infants demonstrate ability to categorize novel words as verbs using frequent frames related to verbs, such as auxiliaries and focus particles (\cite{zhangshili2015infant}).
 %Experimental results with 2-year-olds suggest that they associate the meaning of verbs with  \cite{lee2008manverb}
 %verbs are produced at higher proportions than nouns in the early vocabulary of Chinese-speaking children, whereas the reverse pattern holds for their English-speaking coun- terparts (Tardif, 1996, in press; Tardif, Fletcher, Liang, & Zhang, 2002; Tardif, Gelman, & Xu, 1999). 
 
 %and a large proportion of early verbs show signs of being treated as a coherent category (Xiao et al. 2006, Xiao 2006)
 %experimental data on Mandarin-speaking children’s understanding of word order shows that they master this syntactic device at a very early stage (Li J. 2009).
-\tsc{\textpm modal auxiliary}  \cite{zhangshili2015infant} find that 12mo use functional words to categorize content words, specifically they could use the negative imperative modal \tit{bie} to identify the follow-up item is a verb, suggesting that children might be sensitive to the presence of these modal auxiliaries.  %Children are found producing modal auxiliaries like \tit{neng} from 18 months old (\cite{}), but it is unclear whether 
+\tsc{\textpm modal auxiliary}  \cite{zhangshili2015infant} find that 12-month-olds use functional words to categorize content words, specifically they could use the negative imperative modal \tit{bie} to identify the follow-up item is a verb, suggesting that children might be sensitive to the presence of these modal auxiliaries.  %Children are found producing modal auxiliaries like \tit{neng} from 18 months old (\cite{}), but it is unclear whether 
 
 
-\tsc{\textpm \tit{wh}-phrases} Children start producing interrogative \twh{} as early as 14 months old (\cite{lee1989acq, fan2012, linjing2014}); both comprhension experiments and corpus data show that they are also found to answer \tit{where}, \tit{who}, \tit{what} questions appropriately at 18 months old (\citealt{fan2012,moradlou2020}). While we have evidence that 3-year-olds can use prosodic prominence to infer whether the \twh-sentence is [+int] (\cite{WHanything}), we do not have evidence for younger children. In the corpus study, I follow the practice in the last chapter and classify \twh-phrases with focus particles and connectives (e.g. \tit{yaobu} ``if'') as `Unknown Functional Items' (UFI).
+\tsc{\textpm \tit{wh}-phrases} Children start producing interrogative \twh{} as early as 14 months old (\cite{lee1989acq, fan2012, linjing2014}); both comprehension experiments and corpus data show that they are also found to answer \tit{where}, \tit{who}, \tit{what} questions appropriately at 18 months old (\citealt{fan2012,moradlou2020}). While we have evidence that 3-year-olds can use prosodic prominence to infer whether the \twh-sentence is [+int] (\cite{WHanything}), we do not have evidence for younger children. In the corpus study discussed in the next section, I follow the same practice as in the last chapter and classify \twh-phrases with focus particles and connectives (e.g. \tit{yaobu} ``if'') as `Unknown Functional Items' (UFI).
 
-\tsc{A-not-A structure} As noted earlier, A-not-A structure and sentence-final \tit{ma} both distinguish interrogatives from declaratives in Mandarin. But while there are evidence suggesting that children start producing negation around 1.5 years old (\cite{lee1982,fan2007,li2019neg, huang2022manchild} among others), we do not have evidence for whether children perceive A-not-A sentences differently from simple negation sentences. Similarly, we do not have evidence for whether children treat \tit{ma} differently from sentences with other sentence final particles like \tit{ya}. I therefore simulated a conservative learner who do not have access to A-not-A and \tit{ma} features, and a knowledgeable learner who have access to these two features. 
+\tsc{A-not-A structure} As noted earlier, A-not-A structure and sentence-final \tit{ma} both distinguish interrogatives from declaratives in Mandarin. But while there is evidence suggesting that children start producing negation around 1.5 years old (\cite{lee1982,fan2007,li2019neg, huang2022manchild} among others), we do not have evidence for whether children perceive A-not-A sentences differently from simple negation sentences. Similarly, we do not have evidence regarding whether children treat \tit{ma} differently from sentences with other sentence final particles like \tit{ya}. In the simulation experiment detailed below, I therefore consider a conservative learner who do not have access to A-not-A and \tit{ma} features and compare it with a knowledgeable learner who has access to these features. 
 
 
 
@@ -135,13 +135,13 @@ In this section we will look at evidence for Mandarin-acquiring children's knowl
 
 \subsection{Corpus and methods}
 \label{sec:mancl:corpus:method}
-This study used data from the Tong subcopora (\cite{TongCorpus}) from CHILDES (\cite{CHILDES}), which contains audio and video recordings of weekly hour-long free play sessions between Tong and his caregivers from 1;7-3;4 in Shenzhen, China where Mandarin is the language of the community. Although this corpus only contains data from one child, it is the most comparable to the Providence Corpus in the child’s age range and availability of audio/video data. If more corpora from Mandarin-speaking children become available in the future, the methodology developed here can be applied to them. Another problem with the corpus is that it does not have data from before when the child is 18 months old, which is older than our assumed age that children figure out the clause type categories and older than the children in the English corpus study. However, while the pragmatics of parent-child interaction might change with children's age, the morpho-syntactic properties of parents' sentences should stay constant. Therefore, we assumed that the input sentences share similar properties as parents' sentences before Tong turns 18 months old. Once the corpus releases data from before 18 months old, we would apply the same methodology to these data. 
+This study used data from the Tong subcopora (\cite{TongCorpus}) from CHILDES (\cite{CHILDES}), which contains audio and video recordings of weekly hour-long free play sessions between Tong and his caregivers from 1;7-3;4 in Shenzhen, China where Mandarin is the language of the community. Although this corpus only contains data from one child, it is the source of Mandarin data that is most comparable to the Providence Corpus in terms of the child’s age range and availability of audio/video data. If more corpora from Mandarin-speaking children become available in the future, the methodology developed here can be applied to them. However, a problem with the Tong corpus is that it does not have data from when the child is younger than 18 months old, which is older than our assumed age that children figure out the clause type categories and older than the children in the English corpus study. However, while the pragmatics of parent-child interaction might change with children's age, the morpho-syntactic properties of parents' sentences should stay constant. Therefore, we assumed that the input sentences share similar properties as parents' sentences before Tong turns 18 months old. Once the corpus releases data from before 18 months old, we would apply the same methodology to these data. 
 
-We sampled 500 conversational turns from each session from when the child was 01;07;18 to 2;2;16. Each session was coded by two annotators independently for the Clause Type and Speech Act information (mean cohen's $\kappa$: 0.8). For the morpho-syntactic features, initial annotation was generated by a script (\textcolor{red}{url}) using the morphological tagging provided by the corpus, and then manually corrected. In total, 4501 utterances were annotated. 
+We sampled 500 conversational turns from each session from when the child was 01;07;18 to 2;2;16. Each session was coded by two annotators independently for the Clause Type and Speech Act information (mean Cohen's $\kappa$: 0.8). For the morpho-syntactic features, initial annotation was generated by a script (\textcolor{red}{url}) using the morphological tagging provided by the corpus, and then manually corrected. In total, 4501 utterances were annotated. 
 
 \subsubsection{Clause Type}
 
-Same as the English corpus study reported in the last chapter, each sentence was annotated with their clause type category, \diis{} (\ref{ex:mancl:annt:cl:dec}-\ref{ex:mancl:annt:cl:imp}). Sentences with only one noun phrase or injectives were annotated as ``fragments'':\footnote{Sentences without verbs might not be fragments in Mandarin, as the copula \tit{shi} ``be'' is optional:
+Same as the English corpus study reported in the last chapter, each sentence was annotated with their clause type category, \diis{} (\ref{ex:mancl:annt:cl:dec}-\ref{ex:mancl:annt:cl:imp}). Sentences with only one noun phrase or injectives were annotated as ``fragments'':\footnote{In contrast to English, sentences without verbs might not be fragments in Mandarin, as the copula \tit{shi} ``be'' is optional:
 \begin{xlist}
 \ex 
 \gll Zhe wode.\\
@@ -174,7 +174,7 @@ The three major speech acts were also annotated, same as English.
 
 \subsubsection{Morpho-syntactic features for clause typing}
 
-As reviewed in the last section, Mandarin-acquiring children at 18 months old can perceive many morpho-syntactic properties related to clause typing in Table~\ref{tab:mancl:grammar}. In particular, they might be able to identify the subject, verb, auxiliary of the sentence, and distinguish functional from lexical items. We additionally adopted the conservative assumption that children at this age might not be able to identify all the \twh-items at this stage,but they might be able to classify them as functional elements, as they may know the distinction between functional and content elements. We therefore put \twh-items, quantifiers, connectives (e.g. \tit{haishi}, the interrogative ``or''), and focus particles in one category ``unknown functional item (UFI),'' and annotated its position in a sentence: sentence initial, sentence-medial but before the verb, after the verb, or sentence final. In addition to these surface features that were also annotated in the English corpus study, we also annotated for whether the sentence contains an A-not-A structure, and whether there is a sentence-final \tit{ma} particle. But since we do not have evidence for whether children around 18 months can perceive these two cues, as discussed in the last section, when simulating children's learning process, we will compare conservative models without these two cues, and knowledgeable models with these two cues.
+As reviewed in the last section, Mandarin-acquiring children at 18 months old can perceive many morpho-syntactic properties related to clause typing in Table~\ref{tab:mancl:grammar}. In particular, they might be able to identify the subject, verb, auxiliary of the sentence, and distinguish functional from lexical items. We additionally adopted the conservative assumption that children at this age might not be able to identify all the \twh-items at this stage, but still might be able to classify them as functional elements, as they may know the distinction between functional and content elements. We therefore put \twh-items, quantifiers, connectives (e.g. \tit{haishi}, the interrogative ``or''), and focus particles in one category ``unknown functional item (UFI),'' and annotated its position in a sentence: sentence initial, sentence-medial but before the verb, after the verb, or sentence final. In addition to these surface features that were also annotated in the English corpus study, we also annotated for whether the sentence contains an A-not-A structure, and whether there is a sentence-final \tit{ma} particle. But since we do not have evidence for whether children around 18 months can perceive these two cues, as discussed in the last section, when simulating children's learning process, we will compare conservative models without these two cues, and knowledgeable models with these two cues.
 
 
 Each sentence was annotated with whether or not a surface feature is present. Table~\ref{tab:mancl:formal-schema} summarizes the surface features we annotated and their examples.  
@@ -300,7 +300,7 @@ Within interrogatives (Figure~\ref{fig:man:real-subint}), \twh-interrogatives ar
     \label{fig:man:real-subimp}
 \end{figure}
 
-Imperatives (Figure~\ref{fig:man:real-subimp}) sentences mostly come without any marker like (\ref{ex:man:impbare}); \tit{bie}-imperatives and SFP-imperatives are equally frequent. 
+Imperative sentences (Figure~\ref{fig:man:real-subimp}) mostly come without any marker like (\ref{ex:man:impbare}); \tit{bie}-imperatives and SFP-imperatives are equally frequent. 
 
 
 \bex{ex:man:imp:corpus}
@@ -441,7 +441,7 @@ Figure~\ref{fig:man-target-heatmap} shows the proportion of \diis{} in each iden
 
 %confusion matrix
 
-We can see that the \plearnerabbr{} model clearly identifies a declarative, an interrogative, and an imperative cluster: 94\% of Cluster~$0$ are interrogatives, 86\% of Cluster~$1$ are declaratives, and 70\% of Cluster~$2$ are imperatives. The three clause types in English are also mostly clustered together by the model: 95\% of declaratives, 90\% of interrogatives, and 87\% of imperatives are clustered together in Cluster~$1$, $0$, $2$ respectively. Compare to \dlearnerabbr{}, this learner is able to find the right clause types in English.
+We can see that the \plearnerabbr{} model clearly identifies a declarative, an interrogative, and an imperative cluster: 94\% of Cluster~$0$ are interrogatives, 86\% of Cluster~$1$ are declaratives, and 70\% of Cluster~$2$ are imperatives. The three clause types in English are also mostly clustered together by the model: 95\% of declaratives, 90\% of interrogatives, and 87\% of imperatives are clustered together in Cluster~$1$, $0$, $2$ respectively. In contrast to the \dlearnerabbr{} learner, this learner is able to find the right clause types in English.
 
 
 Figure~\ref{fig:man-target-syncluster} shows the morpho-syntactic profile of each cluster identified by the \plearnerabbr{}. 
@@ -458,7 +458,7 @@ The profile of the three clusters resembles the profile of \diis{} in our corpus
 \subsection{Simulations with noisy pragmatic information}
 \label{sec:mancl:model:results:noisy}
 
-Figure~\ref{fig:noisy-rand-compare} shows the simulations with 0-100\% noise. The performance of the \dlearnerabbr{} model in our last simulation is marked by the dotted line. As can be seen, the \plearnerabbr{} learner outperforms the \dlearnerabbr{} learner up until there is around 80\% of noise in speech act, and even at 80\% level there are iterations that outperforms the \dlearnerabbr{}. This suggests that a little pragmatics goes a long way, as the learners with noisy pragmatic information still outperforms the one without. 
+Figure~\ref{fig:noisy-rand-compare} shows the simulations with 0-100\% noise. The performance of the \dlearnerabbr{} model in our last simulation is marked by the dotted line. As can be seen, the \plearnerabbr{} learner outperforms the \dlearnerabbr{} learner up until there is around 80\% of noise in speech act, and even at 80\% level there are iterations that outperforms the \dlearnerabbr{}. This suggests that, once again, a little pragmatics goes a long way, as the learners with noisy pragmatic information still outperform the one without. 
 
 \begin{figure}[H]
     \centering
@@ -468,7 +468,7 @@ Figure~\ref{fig:noisy-rand-compare} shows the simulations with 0-100\% noise. Th
 \end{figure}
 
 
-Looking at the learner at maximum noise level, we can see that the \plearnerabbr{} reverts back to the performance of the \dlearnerabbr{} fails to identify a cluster for declaratives (Figutre~\ref{fig:noisy100-heatmap}. Similar to the distributional learner, the cluster for imperatives also have declaratives (\ref{fig:noisy100-heatrev}). 
+Looking at the learner at maximum noise level, we can see that the \plearnerabbr{} reverts back to the performance of the \dlearnerabbr{} fails to identify a cluster for declaratives (Figutre~\ref{fig:noisy100-heatmap}. Similar to the distributional learner, the cluster for imperatives also has declaratives (\ref{fig:noisy100-heatrev}). 
 
 
 
