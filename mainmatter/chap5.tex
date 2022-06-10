@@ -82,45 +82,66 @@ This section details the corpus study I conducted to whether speech gap, direct 
 
 \subsection{Methods}
 \label{sec:engsp:corpus:method}
-This study also uses data from the Providence Corpus (\citealt{ProvidenceCorpus}) from CHILDES system (\citealt{CHILDES}). For the pragmatic and syntactic features, the annotation processes can be divided into two parts: first, two annotators will view the videos of each session muted with ELAN (\citealt{ELAN}), and code the parents' attentional behavior second by second. The annotation will be saved as a ELAN .eaf file. From this .eaf file, we can easily export the time-aligned annotation as a tab-delimited text file for data analyses. Second, the annotators will annotate the other pragmatic features and the syntactic features of each utterance with both the video and the transcript. For this part of the annotation, a text file in CSV format will be generated using the python library for processing CHILDES data PyLangAcq (\citealt{pylangacq}) for each session. In each of these files, the child-directed utterances will be represented as a row of comma-separated values: session number; child's age; the transcription of the utterance; its speaker; its line number in the transcript; and its starting and ending time stamp in the video/audio file. The annotator will add to each row the annotations of the utterance according to the annotation schemas described in Section~3 of the project description and the video recording of the session. The final dataset will consist of one ELAN file in the format of .eaf and one CSV text file (containing both the raw data extracted initially and the corresponding annotation) per session. This way, this dataset will be easily searchable and accessible for future researchers. To analyze the prosodic features, we will adapt a Kaldi forced alignment system (\cite{kaldi}) to obtain a time-aligned dataset. We will manually correct a subset of this dataset to evaluate its accuracy and adjust the system parameters to ensure high accuracy (if necessary, by going through the process multiple times). Once we have a satisfactorily time-aligned dataset, it will be exported as TextGrid files (Praat \cite{praat}) and paired with the audio files of each session. With this dataset, we will extract the mean F0 and intensity information of the whole utterance, as well as the mean, max, min F0 and intensity of the final two syllables with Praat with the ProsodyPro script (\cite{xu2018prosody}), following the methodology of \cite{geffenmintz2017final}. 
+This study also used data from the Providence Corpus (\citealt{ProvidenceCorpus}) from CHILDES system (\citealt{CHILDES}). The audio and video of the sessions sampled in Chapter~\ref{chap:eng-cl} were extracted for annotation. 
 
+For the audio data, I adapted a Kaldi forced alignment system (\cite{kaldi}) to obtain a time-aligned dataset containing the beginning and ending timestamp of each utterance in a session. I also manually aligned 20\% of this dataset to compare for accuracy. The mean difference between the manually aligned dataset and the forced-aligned dataset is 0.1s at the beginning of the utterance (0.001s to 20s), and 0.08s at the end of the utterance. We then extracted the pitch information of each utterance using praat (\cite{praat}). 
 
+For the video data, trained annotators viewed the muted videos using ELAN (\cite{elan}). Each video was annotated first with whether the parent and the child are visible on screen and the parent's focus of attention can be identified. If the parent is only half on screen, but we can still identify the focus of attention of the parent, this proportion was counted as on-screen. If the parent is on screen but the focus cannot be identified due to bad lighting, this proportion of the video was counted as off-screen.
 
+Then, for the parts of the video that both the parent and the child are both on screen, the focus of parents' attention was annotated. Specifically, whether the parent is paying attention to the child, to an object, or unidentifiable. The parent was annotated as paying attention to the child when they attended to the child through (1) direct eye gaze (when the eyes could be seen), (2) head or body orientation toward the child (when the eyes could not be seen), (3) physical interaction with the child.  
 
-
-\label{sec:engsp:corpus:uttgoals}
-\subsubsection{Audio data}
-\label{sec:engsp:corpus:audio}
-%alignment
-%accuracy of the alignment
-%use a combination of manually aligned and forced-aligned timepoints
-
-\subsubsection{Video data}
-\label{sec:engsp:corpus:video}
-Two trained annotators viewed the muted videos using ELAN (\cite{elan}). Each video was annotated first with whether the parent and the child are visible on screen and the parent's focus of attention can be identified. 
-%As the videos from the corpus are sessions of free play, parents and children sometimes go off screen. In some other cases, the parent and the child are both on screen, but they are too far from the camera for us to see where the parent is paying attention to, or the lighting is too bad for us to see anything. Annotating for a general baseline helps us later exclude the undesirable parts of the video
-
-%If parent or child (or both) are off screen, we cannot tell whether the parent is directing eye gaze at the child.
-%This is to later help us exclude parts of the video where the interactions happen off screen, and
-
-Then, for the parts of the video that both the parent and the child are both on screen, the focus of parents' attention was annotated. Specifically, whether the parent is paying attention to the child. The parent was annotated as paying attention to the child when they attended to the child through (1) direct eye gaze (when the eyes could be seen), (2) head or body orientation toward the child (when the eyes could not be seen), (3) physical interaction with the child.  
-
+I then used a script to calculate the proportion of looks to the child during the utterance, and at 1s, 2s, 3s before and after the utterance.%, by dividing the total length of the on-screen time by the length that the parent attends to the child.  
 
 \subsection{Predictions}
 \label{sec:engsp:predictions}
+For prosodic patterns, we should see final rising contour is more frequently associated with questions, especially polar interrogatives, than assertions.
+
+For speech gap, we should see parents pause longer after questions and requests than after assertions, to wait for responses.
+
+For eye gaze, we should see parents direct attention to the child more often after questions and requests than after assertions. 
+
 
 \subsection{Results}
 \label{sec:engsp:results}
 
-
-
 \subsubsection{Prosody}
 \label{sec:engsp:results:prosody}
+A total of 5430 utterances were included in the final pitch extraction. I further applied a low-pass filter...%%%
+From this pitch data, to approximate the process of finding the last pitch accent in the utterance, I applied a peak/valley identification algorithm %%%
+The last peak or valley was then considered the last pitch accent. If it's a peak like (\ref{}), then the utterance was labelled as having a final rising contour. The script for coding pitch information can be found \textcolor{red}{url}. I manually annotated 40 utterances to check for accuracy; 27 of these were correctly labeled by the algorithm.   %%%
+
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/rise-cl.jpg}
+    \caption{Proportion of utterances with final rise across different clause types}
+    \label{fig:}
+\end{figure}
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/rise-sp.jpg}
+    \caption{Proportion of utterances with final rise across different speech acts}
+    \label{fig:}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/rise-int.jpg}
+    \caption{Proportion of \twh{} and polar interrogatives with final rise}
+    \label{fig:}
+\end{figure}
 
 \subsubsection{Speech gap}
 \label{sec:engsp:results:pause}
+%The other property of interest is that questions expect responses. For conversations with pre-linguistic infants, this may mean that parents wait longer after questions for a response.
 
-The other property of interest is that they expect responses. For conversations with pre-linguistic infants, this may mean that parents wait longer after questions for a response. Thus, in this project, we plan to measure the length of pause between parents’ consecutive utterances like (\ref{code-prag:pause}). To do so, we will first extract the consecutive turn sequences in parents’ speech. Following \cite{reimchen2017}, we define such sequences as a sequence of utterances spoken by the same speaker on the same topic. Within the sequences, we will measure the length of pauses between utterances, and see if parents pause longer after questions than after assertions. Moreover, we will code whether a question in the sequence is followed by another question, since \cite{reimchen2017} observe that parents to 14-month-olds tend to follow questions with another question. Our preliminary results show that parents are equally likely to ask another question as they are to answer their own questions, but parents tend to pause longer after questions (mean $= 1861ms$, Fig.~\ref{fg:pauses}) than assertions (mean $= 1216ms; t(347) = 2.08, p <0.05$): parents wait for responses after asking a question but proceed with the conversation after an assertion. 
+ Thus, in this project, we plan to measure the length of pause between parents’ consecutive utterances like (\ref{code-prag:pause}). To do so, we will first extract the consecutive turn sequences in parents’ speech. Following \cite{reimchen2017}, we define such sequences as a sequence of utterances spoken by the same speaker on the same topic. Within the sequences, we will measure the length of pauses between utterances, and see if parents pause longer after questions than after assertions. Moreover, we will code whether a question in the sequence is followed by another question, since \cite{reimchen2017} observe that parents to 14-month-olds tend to follow questions with another question. Our preliminary results show that parents are equally likely to ask another question as they are to answer their own questions, but parents tend to pause longer after questions (mean $= 1861ms$, Fig.~\ref{fig:engsp:pause}) than assertions (mean $= 1216ms; t(347) = 2.08, p <0.05$): parents wait for responses after asking a question but proceed with the conversation after an assertion. 
 
 
 
@@ -128,23 +149,27 @@ The other property of interest is that they expect responses. For conversations 
 \bex{code-prag:pause}
 %\bxl{}
 \tbf{Consecutive turn sequence}\\ 
-%Alex's mother: Who’s that? [pause: 1.086s] Is that the postman?	\hfill		
+	
 \bxl
-\ex You can’t take your rake on the swing but you can [pause: 0.014s] You wanna take your big bird rake on the swing? 			\hfill \tsc{Assertion -Question}
+You can’t take your rake on the swing but you can [pause: 0.014s] You wanna take your big bird rake on the swing? 			\hfill \tsc{Assertion -Question}
 \ex You don't wanna swing? [pause: 0.23s]	You don’t have to.	\hfill \tsc{Question-Assertion}
 \ex Here you use this one. [pause: 0.033s] This one works better.	\hfill \tsc{Assertion-Assertion}
 \exl
 \eex
 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width = 0.8\textwidth]{figures/pause.jpg}
+	\caption{Duration of pause (ms) after each type of speech act}\label{fig:engsp:pause}
+\end{center}
+\end{figure}
 
-%\vspace{-3ex}
-%\noindent 
-%\begin{figure}[H]
-%\begin{center}
-%	\includegraphics[width = 0.5\textwidth]{q-followup.png}
-%	\caption{Duration of pause (ms) after each speech act}\label{fg:pauses}
-%\end{center}
-%\end{figure}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width = 0.8\textwidth]{figures/pause-QA.jpg}
+	\caption{Duration of pause (ms) between Question-Question/Assertion and Assertion-Question/Assertion pairs }\label{fig:engsp:pause-QA}
+\end{center}
+\end{figure}
 
 \subsubsection{Gaze pattern}
 \label{sec:engsp:results:gaze}
@@ -157,7 +182,7 @@ Another consequence of the response-expectation property of questions is that by
 \begin{figure}[H]
 
 \begin{center}
-	%\includegraphics[width =0.4\textwidth]{q-attention.png}
+	\includegraphics[width =1\textwidth]{figures/gaze-pattern-adult.jpg}
 	\caption{Proportion of parents' looks to the child before, during, and after an utterance} \label{fg:attention}
 \end{center}
 \end{figure}

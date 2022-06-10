@@ -7,7 +7,7 @@
 \label{sec:mancl:bg:theory}
 
 
-While all languages have interrogative clauses, the formal features associated with this clause type vary. Mandarin interrogatives have different formal features than English interrogatives. For \twh-interrogatives, Mandarin \twh-phrases (\citealt{huang1982, cheng1991} among many others) do not need to be fronted to clause-initial position. Compare the declarative sentence in (\ref{bg-syn:dec-man}) with the \twh-interrogative in (\ref{bg-syn:wh-man}), the \twh-phrase \tit{shenme} occurs in the same position in the interrogative (\ref{bg-syn:wh-man}) as the noun phrase \tit{zaocan} in (\ref{bg-syn:dec-man}). 
+In Mandarin, the [+int] value in $C^{0}$ does not trigger movements, but instead shows up in surface form as \twh-phrases, sentence final \tit{ma}, and A-not-A. For \twh-interrogatives, Mandarin \twh-phrases (\citealt{huang1982, cheng1991} among many others) do not need to be fronted to clause-initial position. Compare the declarative sentence in (\ref{bg-syn:dec-man}) with the \twh-interrogative in (\ref{bg-syn:wh-man}), the \twh-phrase \tit{shenme} occurs in the same position in the interrogative (\ref{bg-syn:wh-man}) as the noun phrase \tit{zaocan} in (\ref{bg-syn:dec-man}). 
 
 
 %\begin{minipage}[t]{0.45\linewidth}	
@@ -23,7 +23,32 @@ Xiaoxiao eat-\Asp{} what \\
 \eex
 
 
-Polar interrogatives in Mandarin also have SVO word order, but are distinguished from declaratives by surface features like the question-forming particle ma or the A-not-A construction, as in (\ref{bg-syn:ma}) and (\ref{bg-syn:anota}).
+Interrogativity might also have effects on prosody. As mentioned before, \twh-phrases in Mandarin can be interrogative or indefinite (\ref{bg-syn:ambwh}), but interrogative \twh{} is normally associated with prosodic prominence (\cite{hu2002prosody, dong2009, yangyang2018} a.o.).
+
+\bex{bg-syn:ambwh}
+\gll Xiaoxiao	mei	chi	\tun{shenme}\\
+Xiaoxiao	\Neg{}	eat	what\\
+a.	What didn't Xiaoxiao eat?\\
+b.	Xiaoxiao didn't eat anything.\\
+\eex
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/pitch-FC1wh.jpg}
+    \caption{Pitch contour associated with a \twh-interrogative sentence}
+    \label{fig:man:wh1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/pitch-FC0wh.jpg}
+    \caption{Pitch contour associated with a \twh-indefinite sentence}
+    \label{fig:man:wh0}
+\end{figure}
+
+ Figure~\ref{fig:man:wh1} shows the pitch contour of the interrogative interpretation of \twh{} and Figure~\ref{fig:man:wh0} shows the indefinite interpretation. The former prosody is associated with [+int] and the latter with [$-$int], and the crucial difference is that the interrogative \tit{shenme} is produced with prosodic prominence (longer duration, extended lexical tone). 
+
+Polar interrogatives in Mandarin also have SVO word order, but are distinguished from declaratives by surface features like the question-forming particle \tit{ma} or the A-not-A construction, as in (\ref{bg-syn:ma}) and (\ref{bg-syn:anota}).
 
 \bex{bg-syn:ma}
 \gll Xiaoxiao	chi-le	zaocan		\tun{ma}\\
@@ -37,54 +62,62 @@ Xiaoxiao	eat-ASP	breakfast	\Sfp{}\\
 \eex
 
 
-Sentence final particles (SFPs) like \ma{} are optional particles at the right edge of a clause (\citealt{chao1968, zhudexi, huang1982, cheng1991, liboya2006} among others). Many SFPs can occur in any clause type, but \ma{} can only occur in polar interrogatives that do not have the A-not-A form seen in (\ref{bg-syn:anota}). Because of these differences, Mandarin-speaking and English-speaking children must pursue different strategies: English learners might mostly rely on word order information to distinguish interrogatives and declaratives, and children learning Mandarin might rely on interrogative phrases like \tit{ma}. 
+Sentence final particles (SFPs) like \ma{} are  particles at the right edge of a clause (\citealt{chao1968, zhudexi, huang1982, cheng1991, liboya2006} among others). Many SFPs such as \tit{ba, ya} can occur in any clause type, but \ma{} can only occur in polar interrogatives that do not have the A-not-A form seen in (\ref{bg-syn:anota}). 
 
+\begin{comment}
 However, Mandarin learners have to contend with an additional difficulty, namely some of these phrases are not uniquely associated with interrogativity. Two prominent examples are \twh-phrases, which can have interrogative and non-interrogative interpretations in Mandarin, and the question particle \ma, which has a homophone that can occur in non-interrogative clauses.
 
+\end{comment}
 
-\bex{bg-syn:ambwh}
-\gll Xiaoxiao	mei	chi	\tun{shenme}\\
-Xiaoxiao	\Neg{}	eat	what\\
-a.	What didn't Xiaoxiao eat?\\
-b.	Xiaoxiao didn't eat anything.\\
+
+To summarize the discussion so far, the surface form of [+int] in Mandarin is sentence final particle \ma{}, A-not-A construction, \twh{} with prominence. 
+
+Imperatives in Mandarin share many of the properties of imperatives in English, namely the lack of subjects. This clause type is sometimes marked by a negative modal \tit{bie} (and its etymologically related modal \tit{beng}), which only occurs in imperatives (\cite{chao1968, lithompson}):
+
+\bex{ex:man:bie}
+\bxl{ex:man:bie:imp}
+\gll \tbf{Bie} pao!\\
+Don't run\\
+``Don't run!''
+\ex 
+\gll *Zhangsan \tbf{bie} pao.\\
+Zhangsan don't run\\
+(intended) Zhangsan doesn't run.
+\exl
+\eex 
+
+Using \tit{bie} as a diagnostic for imperatives, we can see that Mandarin [imp] can be embedded (\cite{lithompson, chen2005imp}), and certain verbs like \tit{zhuzhang} selects [imp]:
+
+\bex{ex:man:embed-imp}
+\gll Wo \tun{zhuzhang} Lisi \tbf{bie} chu-guo.\\
+I advocate Lisi don't exit-country\\
+\trans ``I have the opinion that you don't leave the country.'' \hfill \textcite[p.458]{lithompson}
 \eex
 
+In sum, [+int] in Mandarin may show up in the surface form of the sentence as the presence of \twh{} with prominence, sentence final \tit{ma}, or A-not-A structure; [imp] shows as sentences without subjects or with second person subjects, and as special negative modal \tit{bie} or \tit{beng} in negative imperatives. 
 
-The sentences in (\ref{bg-syn:ambwh}) and (\ref{bg-syn:ambma}) can be read as either questions or assertions. Thus, observing the \twh{} \tit{shenme} or sentence final \ma{} is not sufficient for a learner to determine the clause type. Learners must rely on additional cues from the context or prosody to determine the correct interpretation. In (\ref{bg-syn:ambwh}), when the context is compatible with both readings, assigning prosodic prominence (normally associated with focus) to the \twh-phrase is indicative of the interpretation as a question; in (\ref{bg-syn:ambma}), the question reading is associated with rising intonation, whereas the assertion reading is associated with falling intonation. 
-
-In Mandarin, interrogativity is indicated by the use of markers such as sentence final particle \ma{}, A-not-A construction, \twh{}. Therefore, instead of coding the word order of the sentence, we will annotate whether or not the clause has an interrogative marker. As mentioned in Section~\ref{sec:bg}, besides \ma{}, SFPs are generally compatible with all clause types. For example, the A-not-A interrogative in (\ref{code-man:intanota}) contains the SFP \tit{a}, but this particle can be used in declaratives and imperatives as well (\citealt{chao1968, lithompson}). However, data from our pilot study suggests that SFPs are frequently found in interrogative clauses: among the 68 sentences with an SFP, 86\% are interrogatives like (\ref{code-man:intanota}). Although the particle \tit{a} is not by itself indicative of interrogativity, children may be able to exploit a correlation between sentence final particles and interrogativity to learn new question markers. That is, if they encounter an utterance like (\ref{ex:mancl:grammar:anota}) and have not yet learned A-not-A to be a polar interrogative indicator, the presence of the SFP \tit{a} could nudge them in the right direction. As of yet, this is an untested hypothesis, but if the pattern shown in the pilot is replicated in a bigger sample, further research will benefit from having this coding in the dataset produced by this project.
-
-
-\bex{ex:mancl:grammar:anota}
-\gll Ni	\tun{you}	watuji	\tun{mei-you}	a?	\\
-You have	excavator	{\Neg{}	have}	\Sfp\\
-``Do you have an excavator?'' \hfill \tsc{A-not-A}
-\eex
+Mandarin learner also face the same learning problem as English learners: the clause type feature is abstract and is related to a variety of surface forms, none of which is obligatorily present and many of which can occur in sentences with a different clause-type feature on $C^{0}$. For example, even though [imp] is related to null subjects, but since Mandarin is a pro-drop language, observing that a sentence does not have subjects does not necessarily mean that $C^{0}$ is [imp].  
 
 
-\subsection{Mandarin-acquiring children's knowledge}
+\subsection{Mandarin-acquiring children's knowledge of clause types}
 \label{sec:mancl:bg:child}
-Subjects
+%Many 
 
-Verbs
+\tsc{\tit{wh}-phrases} 
 
-Aspectual marker
+\tsc{A-not-A structure} As noted earlier, A-not-A structure and sentence-final \tit{ma} both distinguish interrogatives from declaratives in Mandarin. But while there are evidence suggesting that children start producing negation around 1.5 years old (\cite{lee1982,fan2007,li2019neg} among others), we do not have evidence for whether children perceive A-not-A sentences differently from simple negation sentences. Similarly, we do not have evidence for whether children treat \tit{ma} differently from sentences with other sentence final particles like \tit{ya}. I therefore simulate a conservative learner who do not have access to A-not-A and \tit{ma} features, and a knowledgeable learner who have access to these two features. 
 
-\tit{Ba} and \tit{bei}
+\tsc{subjects}
 
-A-not-A structure
 
-\tit{Wh}-phrases
-
-Sentence final \tit{ma}
-
-Negative imperative modals \tit{bie, beng}
-
-As noted earlier, A-not-A structure and sentence-final \tit{ma} both distinguish interrogatives from declaratives in Mandarin. But while there are evidence suggesting that children start producing negation around 1.5 years old (\cite{lee1982,fan2007,li2019neg} among others), we do not have evidence for whether children perceive A-not-A sentences differently from simple negation sentences. Similarly, we do not have evidence for whether children treat \tit{ma} differently from sentences with other sentence final particles like \tit{ya}. I therefore simulate a conservative learner who do not have access to A-not-A and \tit{ma} features, and a knowledgeable learner who have access to these two features. 
+\tsc{negative imperative modals \tit{bie, beng}}
 
 
 \subsection{Roadmap of the chapter}
 \label{sec:mancl:bg:map}
+
+This chapter is organized as follows: %%%%
+
 
 \section{Corpus study}
 \label{sec:mancl:corpus}
@@ -109,23 +142,23 @@ This mine.\\
 \bxl \label{ex:mancl:annt:cl:dec}
 \gll Wazi shi le.\\
 Sock wet \Sfp{}\\
-``Your socks got wet.''
+``Your socks got wet.'' \hfill Declarative
 \ex \label{ex:mancl:annt:cl:int}
 \gll Kandao le ma?\\
 See \Asp{} \Sfp{}\\
-\trans``Do you see it?'' 
+\trans``Do you see it?''  \hfill Interrogative
 \ex \label{ex:mancl:annt:cl:imp}
 \gll Gei wo hongse de na-ge.\\
 Give me red \tsc{poss} that-\Cl{}\\
-\trans``Give me the red one.'' 
+\trans``Give me the red one.'' \hfill Imperative
 \ex \label{ex:mancl:annt:cl:frag}
 \gll Ai-ya!\\
 \tsc{intj} \\
-\trans ``Wow!''
+\trans ``Wow!'' \hfill Fragments
 \exl
 \eex
 
-\subsubsection{Morpho-syntactic cues for clause typing}
+\subsubsection{Morpho-syntactic features for clause typing}
 
 As reviewed in the last section, Mandarin-acquiring children at 18 months old can perceive many morpho-syntactic properties related to clause typing in Table~\ref{tab:mancl:grammar}. In particular, they might be able to identify the subject, verb, auxiliary of the sentence, and distinguish functional from lexical items. We additionally adopted the conservative assumption that children at this age might not be able to identify all the \twh-items at this stage,but they might be able to classify them as functional elements, as they may know the distinction between functional and content elements. We therefore put \twh-items, quantifiers, connectives (e.g. \tit{haishi}, the interrogative ``or''), and focus particles in one category ``unknown functional item (UFI),'' and annotated its position in a sentence: sentence initial, sentence-medial but before the verb, after the verb, or sentence final. In addition to these surface features that were also annotated in the English corpus study, we also annotated for whether the sentence contains an A-not-A structure, and whether there is a sentence-final \tit{ma} particle. But since we do not have evidence for whether children around 18 months can perceive these two cues, as discussed in the last section, when simulating children's learning process, we will compare conservative models without these two cues, and knowledgeable models with these two cues.
 
@@ -146,6 +179,7 @@ I know\\
 \trans ``I know.'' \hfill +Subject
 \eex
 
+\begin{comment}
 \bex{mancl:schema:formal:asp}
 \bxl
 \gll Mama mei gei ni mai \tbf{guo} zhege wanju\\
@@ -153,10 +187,11 @@ Mom \Neg{} to you buy \Asp{} this toy\\
 \trans`` Mom never bought this toy for you.'' \hfill +Aspect
 \exl
 \eex
+\end{comment}
 
 \bex{mancl:schema:formal:aux}
 \bxl
-\gll Xiaopengyou buneng peng.\\
+\gll Xiaopengyou bu-\tbf{neng} peng.\\
 Children \Neg-can touch\\
 \trans ``Children can't touch (this).'' \hfill +Auxiliary
 \exl
@@ -217,9 +252,61 @@ Rain \Asp{} \tsc{ma}\\
 \subsubsection{Overview}
 \label{sec:mancl:corpus:results:mapping}
 
+In total, 3077 utterances were annotated.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/man-real-cldist.jpg}
+    \caption{Distribution of clause types in the corpus}
+    \label{fig:man:real-cldist}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/man-real-subint.jpg}
+    \caption{Subcategories of interrogatives}
+    \label{fig:man:real-subint}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/man-real-subimp.jpg}
+    \caption{Subcategories of imperatives}
+    \label{fig:man:real-subimp}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/man-real-sp.jpg}
+    \caption{Distribution of speech acts in the corpus}
+    \label{fig:man-real-sp}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/man-real-clsp.jpg}
+    \caption{The speech acts performed by each clause type in parents' speech}
+    \label{fig:man-real-clsp}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/man-real-spcl.jpg}
+    \caption{The clause type used to express each speech act in parents' speech}
+    \label{fig:man-real-spcl}
+\end{figure}
 
 \subsubsection{Morpho-syntactic cues}
 \label{sec:mancl:corpus:results:syn}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{figures/real-syncluster.jpg}
+    \caption{Number of sentences with/without various formal cues in each clause type; darker colors represent number of sentences with the cue, lighter colors, number of sentences without the cue }
+    \label{fig:man-real-syncluster}
+\end{figure}
+
 
 \subsubsection{Informativeness of the cues}
 \label{sec:mancl:corpus:results:supervised}
@@ -233,13 +320,131 @@ Mandarin}
 \subsection{Performance of the \dlearnerabbr{} model}
 \label{sec:mancl:model:results:d}
 
+Figure~\ref{fig:man-baseline-heatmap} shows the proportion of \diis{} in each identified cluster, and Figure~\ref{fig:man-baseline-heatrev} shows the proportion of sentences clustered together. In other words, Figure~\ref{fig:man-baseline-heatmap} shows whether each cluster mostly consists of one clause type, and Figure~\ref{fig:man-baseline-heatrev} shows whether each clause type is put in one cluster.  
 
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/man-baseline-conversative-heat.jpg}
+    \caption{The proportion of \diis{} in each of the three clusters identified by the \dlearnerabbr{} model}
+    \label{fig:man-baseline-conversative-heat}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/man-baseline-conversative-heatrev.jpg}
+    \caption{The proportion of actual \diis{} clustered in one category}
+    \label{fig:man-baseline-conversative-heatrev}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/man-baseline-mid-heat.jpg}
+    \caption{The proportion of \diis{} in each of the three clusters identified by the \dlearnerabbr{} model}
+    \label{fig:man-baseline-mid-heat}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/man-baseline-conversative-heatrev.jpg}
+    \caption{The proportion of actual \diis{} clustered in one category}
+    \label{fig:man-baseline-mid-heatrev}
+\end{figure}
+
+Overall, Figure~\ref{fig:man-baseline-heatmap} shows that the \dlearnerabbr{} model identifies an interrogative cluster and a declarative cluster. Cluster~$0$ mostly contains interrogative clauses, as 90\% of sentences in this cluster are interrogative; Cluster~$2$ is mostly declarative, and 86\% of the data in this cluster are declaratives. Cluster~$1$ is split between declaratives and imperatives. Figure~\ref{fig:baseline-heatrev} shows that 87\% of interrogatives and 93\% of imperatives are clustered together in Cluster~$0$ and $1$ respectively. While most of declaratives are classified in Cluster~$2$, a proportion is classified in Cluster~$1$.
+
+These results seem to suggest that the \dlearnerabbr{} found two out of three clause types, but how do these clause types look like? Did the model find the right morpho-syntactic properties to associate with each clause type? Figure~\ref{fig:baseline-syncluster} plots the morpho-syntactic profile of each cluster identified by the \dlearnerabbr{}. Darker colors represent sentences with the morpho-syntactic property, and lighter colors represent sentences without the property. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{figures/man-baseline-syncluster.jpg}
+    \caption{The number of sentences with/without certain formal features in each cluster (Cluster 0 $\sim$ Interrogatives, Cluster 1 $\sim$ Imperatives, Cluster 2 $\sim$ Declaratives), darker colors represent the number of sentences with the feature. UFI stands for Unknown Functional Item (e.g. \twh{}), see Table~\ref{tab:mancl:formal-schema} for details.}
+    \label{fig:man-baseline-syncluster}
+\end{figure}
+
+We can see that Cluster~$0$, which is 90\% interrogative clauses, is associated with [+int] morpho-syntactic properties such as subject-auxiliary inversion and sentence-initial unknown functional item (e.g. \twh{}).
 
 \subsection{Performance of the \plearnerabbr{} model}
 \label{sec:mancl:model:results:d}
 
+Figure~\ref{fig:man-target-heatmap} shows the proportion of \diis{} in each identified cluster, and Figure~\ref{fig:man-target-heatrev} shows the proportion of sentences clustered together. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/man-target-heatmap.jpg}
+    \caption{The proportion of \diis{} in each of the three clusters identified by the \plearnerabbr{} model}
+    \label{fig:man-target-heatmap}
+\end{figure}
+
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/man-target-heatrev.jpg}
+    \caption{The proportion of actual \diis{} clustered in one category}
+    \label{fig:man-target-heatrev}
+\end{figure}
+%Rand comparison
+
+%confusion matrix
+
+We can see that the \plearnerabbr{} model clearly identifies a declarative, an interrogative, and an imperative cluster: 94\% of Cluster~$0$ are interrogatives, 86\% of Cluster~$1$ are declaratives, and 70\% of Cluster~$2$ are imperatives. The three clause types in English are also mostly clustered together by the model: 95\% of declaratives, 90\% of interrogatives, and 87\% of imperatives are clustered together in Cluster~$1$, $0$, $2$ respectively. Compare to \dlearnerabbr{}, this learner is able to find the right clause types in English.
+
+
+Figure~\ref{fig:man-target-syncluster} shows the morpho-syntactic profile of each cluster identified by the \plearnerabbr{}. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{figures/man-target-syncluster.jpg}
+    \caption{The number of sentences with/without a formal property in each cluster (Cluster 0 $\sim$ Interrogatives, Cluster 1 $\sim$ Declaratives, Cluster 2 $\sim$ Imperatives), darker colors represent the number of sentences with the property, lighter colors represent sentences without the property.}
+    \label{fig:man-target-syncluster}
+\end{figure}
+
+The profile of the three clusters resembles the profile of \diis{} in our corpus study (Figure~\ref{fig:man-real-syncluster}). The cluster for interrogatives has more sentences with subject-auxiliary inversion and clause-initial unknown functional items (e.g. \twh{}), and the cluster for imperatives is characterized by the lack of subjects and verb suffixes. 
+
 \subsection{Simulations with noisy pragmatic information}
 \label{sec:mancl:model:results:noisy}
+
+Figure~\ref{fig:noisy-rand-compare} shows the simulations with 0-100\% noise. The performance of the \dlearnerabbr{} model in our last simulation is marked by the dotted line. As can be seen, the \plearnerabbr{} learner outperforms the \dlearnerabbr{} learner up until there is around 80\% of noise in speech act, and even at 80\% level there are iterations that outperforms the \dlearnerabbr{}. This suggests that a little pragmatics goes a long way, as the learners with noisy pragmatic information still outperforms the one without. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{figures/noisy-rand-compare.jpg}
+    \caption{Performance of the \plearnerabbr{} model with different levels of noise in the speech act information; dotted marks the rand score of the \dlearnerabbr{} learner}
+    \label{fig:noisy-rand-compare}
+\end{figure}
+
+
+Looking at the learner at maximum noise level, we can see that the \plearnerabbr{} reverts back to the performance of the \dlearnerabbr{} fails to identify a cluster for declaratives (Figutre~\ref{fig:noisy100-heatmap}. Similar to the distributional learner, the cluster for imperatives also have declaratives (\ref{fig:noisy100-heatrev}). 
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/noisy100-heatmap.jpg}
+    \caption{The proportion of \diis{} in each of the three clusters (100\% noise in speech act information) }
+    \label{fig:noisy100-heatmap}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/noisy100-heatrev.jpg}
+    \caption{The proportion of actual \diis{} clustered in one category}
+    \label{fig:noisy100-heatrev}
+\end{figure}
+
+Looking at the morpho-syntactic profile of this model with random speech act information behaves like the \dlearnerabbr{} model, and fails to identify the properties of English imperatives and declaratives.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{figures/noisy100-syncluster.jpg}
+    \caption{The number of sentences with/without certain formal features in each cluster (Cluster 0 $\sim$ Interrogatives, Cluster 1 $\sim$ Imperatives, Cluster 2 $\sim$ Declaratives), darker colors represent the number of sentences with the feature.}
+    \label{fig:noisy100-syncluster}
+\end{figure}
+
 
 \section{Discussion}
 \label{sec:mancl:discussion}
