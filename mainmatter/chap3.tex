@@ -521,7 +521,7 @@ As seen in the table, compared to declaratives, interrogatives are more likely t
 
 %A more realistic model for infant language learning would be unsupervised model where they discover the clustering of sentences. Nevertheless, the supervised learners are useful as an estimate of how informative formal and speech act features are for the task of inferring clause type.
 
-Of course, these two models do not reflect how infants learn clause typing, as they were given clause type information. Infants must learn clause typing without having access to data of which they already know the clause type. These supervised models are nevertheless are useful for appreciating the information contained in the data that children receive as input. They allow us to measure how informative the syntactic and pragmatic cues in parents' input are for identifying the clause type feature of a sentence. The results from these two models suggest that the information needed for clause typing is indeed available in the input and, in particular, from the categories with which we annotated our data. In the next section, we will get one step closer to addressing how infants learn clause types by removing the actual clause type labels from our models (switching to what in machine learning is known as ``unsupervised learning''). This makes the learning models more similar to the actual learning task where infants are not given these labels. Using these models, we can ask whether a learner that expects three clause type categories would be able to solve the clustering problem discussed in Chapter~\ref{chap:introduction} on the basis of morpho-syntactic cues alone. We then consider the question of whether adding in speech act information would help. Finally, as speech act information is likely not perceived veridically (e.g. due to developing pragmatic skills at this age), I ask how much pragmatics learners need to learn clause type categories. 
+Of course, these two models do not reflect how infants learn clause typing, as they were given clause type information. Infants must learn clause typing without having access to data of which the clause type label is given. These supervised models are nevertheless useful for appreciating the information contained in the data that children receive as input. They allow us to measure how informative the syntactic and pragmatic cues in parents' input are for identifying the clause type feature of a sentence. The results from these two models suggest that the information needed for clause typing is indeed available in the input and, in particular, from the categories with which we annotated our data. In the next section, we will get one step closer to addressing how infants learn clause types by removing the actual clause type labels from our models (switching to what in machine learning is known as ``unsupervised learning''). This makes the learning models more similar to the actual learning task where infants are not given these labels. Using these models, we can ask whether a learner that expects three clause type categories would be able to solve the clustering problem discussed in Chapter~\ref{chap:introduction} on the basis of morpho-syntactic cues alone. We then consider the question of whether adding in speech act information would help. Finally, as speech act information is likely not perceived veridically (e.g. due to developing pragmatic skills at this age), I ask how much pragmatics learners need to learn clause type categories. 
 
 
 \section{Modeling the learning of clause types}
@@ -637,18 +637,18 @@ Tables~\ref{tab:engcl:baseline-variables} and ~\ref{tab:engcl:target-variables} 
     \hline
         $a_{i}$ & Speech Act: \\
         	  &Assertion, Question, Request/Command, Other\\
-          & $\vec{\theta} \sim \mbox{Dir}(\alpha)$\\
+          & $\vec{\theta} \sim \mbox{Dir}(1,1,1,1)$\\
           & $ a_{i} \sim \mbox{Multinomial}(\vec{\theta})$;\\
 
 \hline
          $c_{i}$ &  Clause Type:\\
         & Declarative, Interrogative, Imperative\\
-        &$\vec{\phi^{(a)}} \sim \mbox{Dir}(\beta)$\\
+        &$\vec{\phi^{(a)}} \sim \mbox{Dir}(1,1,1)$\\
         &  $c_{i} \sim  \mbox{Multinomial}(\vec{\phi^{(a)}})$;\\
 \hline
         $\vec{s_{i}}$ &  Set of morpho-syntactic properties; \\
         $s_{i}^{(F)}$ &  property $F$ in the set;  \\
-        &$\delta\sim \mbox{Beta}(\gamma)$\\        
+        &$\delta\sim \mbox{Beta}(1,1)$\\        
         & $s_{i}^{(F)} \sim \mbox{Bernoulli}(\delta^{(c)})$ \\
     \hline
     \hline
@@ -950,7 +950,7 @@ This chapter investigates how 18-month-olds learn to identify the three clause t
 
 I then investigated the extent to which learners need to rely on pragmatic information (i.e., knowing what speech act a given utterance of sentence is conveying), to solve not just labeling, but the clustering itself. I built two Bayesian clustering models simulating a \distlearner{} (\dlearnerabbr{}) and a \praglearner{} (\plearnerabbr{}). I found that pragmatic information is crucial for finding the right clause type clustering, as the \plearnerabbr{} learner outperforms the \dlearnerabbr{} when we ran the two models with the annotated dataset from our corpus study. In addition, a small amount of pragmatics might suffice; even with 80\% of noise, the speech act information still helps improve the performance of the model. So even if the speech act information is not perceived veridically for all utterances (for example, due to the infants’ developing pragmatic ability), learners can still enjoy its benefits.
 
-Now that we have established the importance of pragmatics, and that a small amount of pragmatics might suffice, the question then is, how do children identify speech act information by a learner who has not yet identified the clause types. Are there any non-clause type cues for speech act in children's interaction with parents? We will turn to these questions in Chapter~\ref{chap:eng-sp}.
+Now that we have established the importance of pragmatics, and that a small amount of pragmatics might suffice, the question then is, how do children identify speech act information by a learner who has not yet identified the clause types. Are there any non-clause type cues in parents' behavior for speech act in children's interaction with parents? We will turn to these questions in Chapter~\ref{chap:eng-sp}.
 
 
 %Our next question is then, what about other languages? As we have discussed in Chapter~\ref{chap:background}, languages differ in the formal features of each clause type, and learners need to discover the correlation from input. The distributional learner for English still have some success with clustering, identifying interrogative clauses. However, maybe the formal features are not as informative in other languages. In the next chapter, we will turn to Mandarin learners, and test the two learners with Mandarin input data. 
