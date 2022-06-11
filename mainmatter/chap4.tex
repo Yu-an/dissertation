@@ -127,9 +127,9 @@ In this section we will look at evidence for Mandarin-acquiring children's knowl
 
 \tsc{\textpm subjects}   As Mandarin does not have subject-verb agreement, and does not have expletive subjects, it is hard to assess chidlren's knowledge regarding subjecthood. But observations of children's production data before 18 months old suggest that they understand the basic word order of Mandarin as SVO (\cite{tardif1993verb,tardif1996verb}). They also produce subject control sentences (e.g. \tit{Zhangsan tried PRO to help me}) correctly before turning 2 (\cite{yang2015control}). Although this falls out of our interested age range, studies have demonstrated that 2.6-year-olds can correctly distinguish subjects from topics (\cite{chien1985subj}). 
 
-\tsc{\textpm verbs} By 18 months old, Mandarin-acquiring infants produce many verbs, and use verbs productively in many contexts; while this does not necessarily mean that they have a verb category, it is consistent with the hypothesis that they do (\cite{tardif1993verb,tardif1996verb, xiaolee2006,zhangshili2015infant}, among many others). 13-month-olds also demonstrate the ability to categorize novel words as verbs using frequent frames related to verbs, such as auxiliaries (e.g. \tit{bie} ``don't'') and focus particles (e.g. \tit{ye} ``also'', \cite{zhangshili2015infant}; \cite{ying2021func} for 19-month-olds).
+\tsc{\textpm verbs} By 18 months old, Mandarin-acquiring infants produce many verbs, and use verbs productively in many contexts (\cite{tardif1993verb,tardif1996verb, xiaolee2006,zhangshili2015infant}, among many others); while this does not necessarily mean that they have a verb category, it is consistent with the hypothesis that they do . 13-month-olds also demonstrate the ability to categorize novel words as verbs using frequent frames related to verbs, such as auxiliaries (e.g. \tit{bie} ``don't'', \cite{zhang2015bie}) and focus particles (e.g. \tit{ye} ``also'', \cite{zhangshili2015infant}; \cite{ying2021func} for 19-month-olds).
 
-\tsc{\textpm modal auxiliary}  \cite{zhangshili2015infant} find that 12-month-olds use functional words to categorize content words, specifically that they could use the negative imperative modal \tit{bie} to identify the follow-up item is a verb, suggesting that children might be sensitive to the presence of these modal auxiliaries.  %Children are found producing modal auxiliaries like \tit{neng} from 18 months old (\cite{}), but it is unclear whether 
+\tsc{\textpm auxiliary}  \cite{zhang2015bie} find that 12-month-olds use functional words to categorize content words, specifically that they could use the negative imperative modal \tit{bie} to identify the follow-up item is a verb, suggesting that children might be sensitive to the presence of this negative modal auxiliary.  %Children are found producing modal auxiliaries like \tit{neng} from 18 months old (\cite{}), but it is unclear whether 
 
 
 \tsc{\textpm \tit{wh}-phrases} Children start producing interrogative \twh{} as early as 14 months old (\cite{lee1989acq, fan2012, linjing2014}); both comprhension experiments and corpus data show that they are also found to answer \tit{where}, \tit{who}, \tit{what} questions appropriately at 18 months old (\citealt{fan2012,moradlou2020}). While we have evidence that 3-year-olds can use prosodic prominence to infer whether a \twh-sentence is [+int] (\cite{WHanything}), we do not have evidence about younger children. In the corpus study described in the next section, I follow the practice from the last chapter and classify \twh-phrases with focus particles and connectives (e.g. \tit{yaobu} ``if'') as `Unknown Functional Items' (UFI).
@@ -405,7 +405,7 @@ want sit \Sfp{}\\
 Mother of Tong, Session 01;08;22
 \eex
 
-As we have discussed, \tit{a} does not change the clause category of the sentence, but still elicits a discourse effect similar to a question's effect, namely that the speaker wants the addressee to settle an issue.
+As we have discussed, the final particle \tit{a} does not change the clause category of the sentence, but still elicits a discourse effect similar to a question's effect, namely that the speaker wants the addressee to settle an issue.
 
 %%%%%%%%%%%%%%%%%%
 \subsubsection{Morpho-syntactic cues}
@@ -428,12 +428,24 @@ As we have discussed, \tit{a} does not change the clause category of the sentenc
 Mandarin}
 \label{sec:mancl:model}
 
+In this section, I applied the same Bayesian cluster models as reported in the last chapter to the Mandarin data. As mentioned earlier, we do not have evidence for whether Mandarin-speaking children identify A-not-A constructions or sentence final \tit{ma}. Therefore, I ran two separate simulations for each model (four simulations in total): a conservative learner that do not have access to whether A-not-A or \tit{ma} are present, and a knowledgeable learner that do have access. (\ref{ex:mancl:formal-consornot}) lists the morpho-syntactic cues that each learner have access to.
 
+\bex{ex:mancl:formal-consornot}
+For the conservative learner: \\
+\textpm subject, \textpm verb, \textpm auxiliary, \textpm sentence-initial UFI, \textpm pre-verbal UFI,  \textpm post-verbal UFI, \textpm sentence final particle
+\ex For the knowledgeable learner:
+\textpm subject, \textpm verb, \textpm auxiliary, \textpm sentence-initial UFI, \textpm pre-verbal UFI,  \textpm post-verbal UFI, \textpm sentence final particle, \textpm A-not-A, \textpm \tit{ma}
+\eex
+
+We used the same methodology and learning models as in the English study in Chapter \ref{chap:eng-cl}. The results are as follows.
 \subsection{Performance of the \dlearnerabbr{} model}
 \label{sec:mancl:model:results:d}
 
-We used the same methodology and learning models as in the English study in Chapter \ref{chap:eng-cl}. The results are as follows.
-Figure~\ref{fig:man-baseline-heatmap} shows the proportion of \diis{} in each identified cluster, and Figure~\ref{fig:man-baseline-heatrev} shows the proportion of sentences clustered together. In other words, Figure~\ref{fig:man-baseline-heatmap} shows whether each cluster mostly consists of one clause type, and Figure~\ref{fig:man-baseline-heatrev} shows whether each clause type is put in one cluster.  
+
+\subsubsection{The conservative simulation} 
+The conservative simulation of the \dlearnerabbr{} model does not use interrogative-specific features \textpm A-not-A construction and \textpm \tit{ma}. From the results, it does not seem like the model identified any meaningful grammatical class in Mandarin.
+
+Figure~\ref{fig:man-baseline-conservative-heat} shows the proportion of \diis{} in each identified cluster, and Figure~\ref{fig:man-baseline-conservative-heatrev} shows the proportion of sentences clustered together. 
 
 
 
@@ -452,12 +464,27 @@ Figure~\ref{fig:man-baseline-heatmap} shows the proportion of \diis{} in each id
     \label{fig:man-baseline-conservative-heatrev}
 \end{figure}
 
+As we can see, the conservative \dlearnerabbr{} fail to identify any clause types. Each cluster contains all three clause types, and all three clause types are distributed across the three clusters. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{figures/man-baseline-conservative-syncluster.jpg}
+    \caption{The number of sentences with/without certain formal features in each cluster, darker colors represent the number of sentences with the feature. }
+    \label{fig:man-baseline-syncluster}
+\end{figure}
+
+Figure~\ref{fig:man-baseline-syncluster} shows the distribution of morpho-syntactic features across all three clusters. The three clusters do not seem to form meaningful grammatical classes.
+
+\subsubsection{The knowledgeable simulation}
+The knowledgeable simulation of the \dlearnerabbr{} model uses interrogative-specific features, \textpm A-not-A construction and \textpm \tit{ma}. But it also failed to identify any meaningful grammatical class in Mandarin.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{figures/man-baseline-mid-heat.jpg}
     \caption{The proportion of \diis{} in each of the three clusters identified by the \dlearnerabbr{} model}
     \label{fig:man-baseline-mid-heat}
 \end{figure}
+
 
 
 \begin{figure}[H]
@@ -467,24 +494,25 @@ Figure~\ref{fig:man-baseline-heatmap} shows the proportion of \diis{} in each id
     \label{fig:man-baseline-mid-heatrev}
 \end{figure}
 
-Overall, Figure~\ref{fig:man-baseline-heatmap} shows that the \dlearnerabbr{} model identifies an interrogative cluster and a declarative cluster. Cluster~$0$ mostly contains interrogative clauses, as 90\% of sentences in this cluster are interrogative; Cluster~$2$ is mostly declarative, and 86\% of the data in this cluster are declaratives. Cluster~$1$ is split between declaratives and imperatives. Figure~\ref{fig:baseline-heatrev} shows that 87\% of interrogatives and 93\% of imperatives are clustered together in Cluster~$0$ and $1$ respectively. While most declaratives are classified in Cluster~$2$, a proportion is classified in Cluster~$1$.
-
-These results seem to suggest that the \dlearnerabbr{} found two out of three clause types. But, again, we should ask how do these clause types look like? Did the model find the right morpho-syntactic properties to associate with each clause type? Figure~\ref{fig:baseline-syncluster} plots the morpho-syntactic profile of each cluster identified by the \dlearnerabbr{}. Darker colors represent sentences with the morpho-syntactic property, and lighter colors represent sentences without the property. 
+Overall, Figure~\ref{fig:man-baseline-mid-heat} shows that all three clusters identified by the \dlearnerabbr{} model are predominantly declarative sentences, which simply reflects the fact that declaratives are the most frequent clause type in the dataset. But compared to the conservative simulation, it puts more interrogatives in Cluster~$2$, as shown in Figure~\ref{fig:baseline-mid-heatrev}. But a closer look at the distribution of morpho-syntactic cues within each cluster (Figure~\ref{fig:man-baseline-syncluster} suggests that none of the clusters are meaningful grammatical classes in Mandarin. %The only recognizable feature considers Cluster~$2$ a cluster that allows sentence final particles, which does not correspond to any sentence types in Mandarin.  
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{figures/man-baseline-conservative-syncluster.jpg}
-    \caption{The number of sentences with/without certain formal features in each cluster (Cluster 0 $\sim$ Interrogatives, Cluster 1 $\sim$ Imperatives, Cluster 2 $\sim$ Declaratives), darker colors represent the number of sentences with the feature. UFI stands for Unknown Functional Item (e.g. \twh{}), see Table~\ref{tab:mancl:formal-schema} for details.}
+    \includegraphics[width=1\textwidth]{figures/man-baseline-mid-syncluster.jpg}
+    \caption{The number of sentences with/without certain formal features in each cluster, darker colors represent the number of sentences with the feature. }
     \label{fig:man-baseline-syncluster}
 \end{figure}
 
-We can see that Cluster~$0$, which is 90\% interrogative clauses, is associated with [+int] morpho-syntactic properties such as subject-auxiliary inversion and sentence-initial unknown functional item (e.g. \twh{}).
+
+These results suggest that regardless of whether the model has access to interrogative-specific features or not, the \dlearnerabbr{} failed to identify any of the clause types. It failed to find any meaning grammatical classes. 
+
+
 
 \subsection{Performance of the \plearnerabbr{} model}
 \label{sec:mancl:model:results:d}
+\subsubsection{The conservative simulation}
+By having access to pragmatic information, the conservative \plearnerabbr{} model could identify two clause types. Figure~\ref{fig:man-target-conservative-heatmap} shows the proportion of \diis{} in each identified cluster, and Figure~\ref{fig:man-target-conservative-heatrev} shows the proportion of sentences clustered together. 
 
-Again, we used the same methodology and learning algorithm as in Chapter \ref{chap:eng-cl}.
-Figure~\ref{fig:man-target-heatmap} shows the proportion of \diis{} in each identified cluster, and Figure~\ref{fig:man-target-heatrev} shows the proportion of sentences clustered together. 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{figures/man-target-conservative-heatmap.jpg}
@@ -501,63 +529,88 @@ Figure~\ref{fig:man-target-heatmap} shows the proportion of \diis{} in each iden
     \caption{The proportion of actual \diis{} clustered in one category}
     \label{fig:man-target-conservative-heatrev}
 \end{figure}
-%Rand comparison
-
-%confusion matrix
-
-We can see that the \plearnerabbr{} model clearly identifies a declarative, an interrogative, and an imperative cluster: 94\% of Cluster~$0$ are interrogatives, 86\% of Cluster~$1$ are declaratives, and 70\% of Cluster~$2$ are imperatives. The three clause types in English are also mostly clustered together by the model: 95\% of declaratives, 90\% of interrogatives, and 87\% of imperatives are clustered together in Cluster~$1$, $0$, $2$ respectively. In contrast to \dlearnerabbr{}, this learner is able to find the right clause types in English.
 
 
-Figure~\ref{fig:man-target-syncluster} shows the morpho-syntactic profile of each cluster identified by the \plearnerabbr{}. 
+We can see that the \plearnerabbr{} model clearly identifies a declarative and an interrogative cluster: 97\% of Cluster~$1$ are declaratives, 79\% of Cluster~$3$ are interrogatives. Declaratives and interrogatives in Mandarin are also mostly clustered together by the model: 70\% of declaratives, 90\% of interrogatives, and 93\% of imperatives are clustered together in Cluster~$1$, $3$, $1$ respectively. In contrast to \dlearnerabbr{}, this learner is able to find at least one clause type in Mandarin.
+
+
+Figure~\ref{fig:man-target-conservative-syncluster} shows the morpho-syntactic profile of each cluster identified by the \plearnerabbr{}. 
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{figures/man-target-conservative-syncluster.jpg}
-    \caption{The number of sentences with/without a formal property in each cluster (Cluster 0 $\sim$ Interrogatives, Cluster 1 $\sim$ Declaratives, Cluster 2 $\sim$ Imperatives), darker colors represent the number of sentences with the property, lighter colors represent sentences without the property.}
+    \caption{The number of sentences with/without a formal property in each cluster (Cluster 1 $\sim$ imperatives, Cluster 2 $\sim$ declaratives, Cluster 3 $\sim$ interrogatives), darker colors represent the number of sentences with the property, lighter colors represent sentences without the property.}
     \label{fig:man-target-conservative-syncluster}
 \end{figure}
 
-The profile of the three clusters resembles the profile of \diis{} in our corpus study (Figure~\ref{fig:man-real-syncluster}). The cluster for interrogatives has more sentences with subject-auxiliary inversion and clause-initial unknown functional items (e.g. \twh{}), and the cluster for imperatives is characterized by the lack of subjects and verb suffixes. 
-The \plearnerabbr{} has identified some of the right morpho-syntactic properties associated with clause type.
+\subsubsection{The knowledgeable simulation}
+By having access to pragmatic information, the knowledgable \plearnerabbr{} model could identify two clause types, one for interrogatives and one for declaratives, but imperatives and declaratives are still collapsed into one cluster. Figure~\ref{fig:man-target-mid-heatmap} shows the proportion of \diis{} in each identified cluster, and Figure~\ref{fig:man-target-mid-heatrev} shows the proportion of sentences clustered together. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/man-target-mid-heatmap.jpg}
+    \caption{The proportion of \diis{} in each of the three clusters identified by the \plearnerabbr{} model}
+    \label{fig:man-target-mid-heatmap}
+\end{figure}
+
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/man-target-mid-heatrev.jpg}
+    \caption{The proportion of actual \diis{} clustered in one category}
+    \label{fig:man-target-mid-heatrev}
+\end{figure}
+
+
+The \plearnerabbr{} model identifies a declarative and an interrogative cluster: 98\% of Cluster~$1$ are declaratives, 80\% of Cluster~$3$ are interrogatives. The three clause types are also mostly clustered together by the model: 67\% of declaratives, 93\% of interrogatives, and 93\% of imperatives are clustered together in Cluster~$2$, $3$, $2$ respectively. In contrast to \dlearnerabbr{}, this learner is able to find at least one clause type in Mandarin.
+
+
+Figure~\ref{fig:man-target-mid-syncluster} shows the morpho-syntactic profile of each cluster identified by the \plearnerabbr{}. The model correctly associates +A-not-A and +\tit{ma} as the surface features for [+int], but it fails to identify the right property for [imp], as Cluster~$2$ contains almost all of the imperatives, but also a large portion of declaratives. It seems that Cluster~$1$ is a cluster specifically for `copula' sentences like (\ref{ex:mancl:midtarget:1}). 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{figures/man-target-mid-syncluster.jpg}
+    \caption{The number of sentences with/without a formal property in each cluster (Cluster 1 $\sim$ declaratives, Cluster 2 $\sim$ imperatives+declaratives, Cluster 3 $\sim$ interrogatives), darker colors represent the number of sentences with the property, lighter colors represent sentences without the property.}
+    \label{fig:man-target-mid-syncluster}
+\end{figure}
+
+\bex{ex:mancl:midtarget:1}
+\gll Zhe xia, (zhe shang).\\
+This down (this up)\\
+``This is down. (This is up)''
+\eex
+
+\subsubsection{Compare all four simulations}
+
+Figure~\ref{fig:man-rand-compare-mid} compares the performance of all four simulations. We can see that the two \dlearnerabbr{} simulations are both bad at identifying clause types in Mandarin, but with pragmatics and some knowledge about A-not-A, the \plearnerabbr{} outperforms the other three models. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{figures/man-rand-compare-mid.jpg}
+    \caption{Performance of conservative and knowledgeable \dlearnerabbr{} and \plearnerabbr{}}
+    \label{fig:man-rand-compare-mid}
+\end{figure}
+
+Our results suggest that pragmatics is extremely crucial for Mandarin-acquiring children to identify clause types. Without pragmatics, learners might not be able to find any meaningful categories. Next, we are going to look at how much pragmatics the learners need.
 
 \subsection{Simulations with noisy pragmatic information}
 \label{sec:mancl:model:results:noisy}
 
-Figure~\ref{fig:noisy-rand-compare} shows the simulations with 0-100\% noise in the pragmatic information. The performance of the \dlearnerabbr{} model in our last simulation is used as a baseline and marked by the dotted line. As can be seen, the \plearnerabbr{} learner outperforms the \dlearnerabbr{} learner up until there is around 80\% of noise in the speech act information, and even at 80\% level there are iterations that outperform the \dlearnerabbr{}. This suggests that a little pragmatics goes a long way, as the learners with noisy pragmatic information still outperform the one without. 
+Figure~\ref{man-noisy-rand-cons} and \ref{man-noisy-rand-mid} show the simulations with 0-100\% noise in the pragmatic information, as a conservative learner and a knowledgeable learner respectively. The performances of the \dlearnerabbr{} models are used as baselines and marked by the dotted line. As can be seen, the conservative \plearnerabbr{} model tolerates 20\% of noise in the pragmatics, and the knowledgeable model tolerates about 40\% of noise. Both are lower than the threshold for their English counterparts. This suggests that Mandarin learners rely heavily on the pragmatic information to identify clause type categories, as compared to their English counterparts. 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{figures/noisy-rand-compare.jpg}
-    \caption{Performance of the \plearnerabbr{} model with different levels of noise in the speech act information; dotted marks the rand score of the \dlearnerabbr{} learner}
-    \label{fig:man-noisy-rand-compare}
-\end{figure}
-
-
-Looking at the learner at maximum noise level, we can see that the \plearnerabbr{} reverts back to the performance of the \dlearnerabbr{} and fails to identify a cluster for declaratives (Figutre~\ref{fig:noisy100-heatmap}. Similar to the distributional learner, the cluster for imperatives also has declaratives (\ref{fig:noisy100-heatrev}). 
-
-
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/noisy100-heatmap.jpg}
-    \caption{The proportion of \diis{} in each of the three clusters (100\% noise in speech act information) }
-    \label{fig:noisy100-heatmap}
+    \includegraphics[width=1\textwidth]{figures/man-noisy-rand-cons}
+    \caption{Performance of the conservative \plearnerabbr{} model with different levels of noise in the speech act information; dotted marks the rand score of the \dlearnerabbr{} learner}
+    \label{fig:man-noisy-rand-cons}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{figures/noisy100-heatrev.jpg}
-    \caption{The proportion of actual \diis{} clustered in one category}
-    \label{fig:noisy100-heatrev}
-\end{figure}
-
-Looking at the morpho-syntactic profile of this model with random speech act information shows that here too, it behaves like the \dlearnerabbr{} model and fails to identify the properties of English imperatives and declaratives.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{figures/noisy100-syncluster.jpg}
-    \caption{The number of sentences with/without certain formal features in each cluster (Cluster 0 $\sim$ Interrogatives, Cluster 1 $\sim$ Imperatives, Cluster 2 $\sim$ Declaratives), darker colors represent the number of sentences with the feature.}
-    \label{fig:noisy100-syncluster}
+    \includegraphics[width=1\textwidth]{figures/man-noisy-rand-mid}
+    \caption{Performance of the knowledgeable \plearnerabbr{} model with different levels of noise in the speech act information; dotted marks the rand score of the \dlearnerabbr{} learner}
+    \label{fig:man-noisy-rand-mid}
 \end{figure}
 
 

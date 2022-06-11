@@ -1,14 +1,17 @@
 \chapter{Learning speech acts}
 \label{chap:eng-sp}
-As we have discussed in the last two chapters, pragmatics is crucial for children to learn clause type categories, and that even with 80\% of noise in the speech act data, learners could still benefit from this source of information. This chapter investigates non-clause type cues in the input that might be helpful for children to identify different speech acts, in particular questions. Are there any non-clause type cues? How informative are these non-clause type cues? If children use these cues, is it possible for them to predict 20\% of the data? 
+As we have discussed in the last two chapters, pragmatics is crucial for children to learn clause type categories, and that even noisy pragmatics could benefit the learner. But the remaining question is then, how do children learn speech act categories? Given that the way we generally identify a speech act is via its clause type, there is a potentially vicious circle here --- you need to know the clause type to identify the speech act, but you need to know the speech act to identify the clause type. How do learners avoid this circularity? While clause type information might  be important for speech act recognition, it is possible that the learner has access to other non-clause type cues that might be helpful. This chapter therefore explores whether such cues are present in children's input, and how informative these cues are to speech act information. If children use these cues to infer speech act, would the noise level in their inference be below 80\% (and 40\% for Mandarin learners), so that they can use this information for clause type clustering? 
 
-Previously, many have discussed the possible behavioral patterns that might associate with speech acts. For example, \textcite{domaneschi2017facial} find that the upper half of the face are related to the performance of speech acts. But as I use Providence corpus again in this chapter (\citealt{ProvidenceCorpus}), we are limited in the types of cues we can explore. So in this chapter, I focus on three types of cues, prosody, speech gap, and eye gaze. 
+Previously, many have discussed the possible behavioral patterns associate with speech acts. For example, \textcite{domaneschi2017facial} find that the upper half of the face are related to the performance of speech acts. But as I used Providence corpus again in this chapter (\citealt{ProvidenceCorpus}), we are limited in the types of cues we can explore. In this chapter, I will focus on three types of cues, prosody, speech gap, and attentional behavior. 
 
-% prosody
 
-As we have discussed in Chapter~\ref{chap:background}, we can understand speech acts as actions that a speaker performs, but we can also understand speech acts in terms of their effects on the discourse. Specifically, the effect of questions and requests are different from assertions; the first two require the engagement of an addressee, either to provide responses or perform action, but assertions do not have such requiremnts. This discourse effect makes questions perfect turn-transition points (\cite{duncan1972turn} among many others), signaling that the current speaker is done with the turn and the next speaker needs to get ready. As speakers tend to use signals like eye gaze to appoint the next turn, these signals might be useful to tell us which utterances are questions. Another similar conversation signal might be the turn-taking time. Another property also comes out of being a turn-taking is to say usually we do not see any gaps after these points (\citealt{tice2011turn} a.o.).   
+As we have discussed in Chapter~\ref{chap:background}, one way of understanding speech acts is to look at their effects on the discourse. Specifically, the effect of questions and requests are different from assertions; the first two require the engagement of an addressee, either to provide responses or perform action, but assertions do not have such requirements. This discourse effect makes questions perfect turn-transition points (\cite{duncan1972turn} among many others), signaling that the current speaker is done with the turn and the next speaker needs to get ready. As speakers tend to use signals like eye gaze to appoint the next turn, these signals might be useful for identifying which utterances are questions. 
 
-This chapter is organized as follows: Section~\ref{sec:engsp:background} reviews the three cues in detail, what kind of pattern might be correlated with different speech acts, and previous evidence for children's perception of these cues. I then report results from a corpus study with Providence Corpus in Section~\ref{sec:engsp:corpus}, where I looked at the prosody of parents' utterances (Section~\ref{sec:engsp:results:prosody}), the speech gap between parents' utterances (Section~\ref{sec:engsp:results:pause}), and parents' attentional behavior (\ref{sec:engsp:results:gaze}).
+Another similar conversation signal might be the turn-taking time. Another property related to a turn-transition point is that interlocutors use these points as cues for when to take over the turn. In a natural face-to-face conversation, the gap between a question and its answer might be smaller than other pairs of utterances in a conversation (\citealt{tice2011turn} a.o.). But the questioner might also pause and wait if nobody steps in immediately (\cite{sacks1978pause}). Therefore, tracking the gap after utterances might tell us whether the utterance is a question.
+
+As for prosodic cues, we have discussed in Chapter~\ref{chap:background} that rising contour tends to be associated with questions cross-linguistically (\cite{gussenhovenchen2000}). We are then interested in how parents use prosody in speech to children.
+
+This chapter is organized as follows: Section~\ref{sec:engsp:background} reviews previous evidence for children's perception of these cues. I then report results from a corpus study with Providence Corpus in Section~\ref{sec:engsp:corpus}, where I looked at the prosody of parents' utterances (Section~\ref{sec:engsp:results:prosody}), the speech gap between parents' utterances (Section~\ref{sec:engsp:results:pause}), and parents' attentional behavior (\ref{sec:engsp:results:gaze}).
 Section~\ref{sec:engsp:discussion} concludes the chapter.
 
 
@@ -16,58 +19,45 @@ Section~\ref{sec:engsp:discussion} concludes the chapter.
 \label{sec:engsp:background}
 \subsection{Prosody}
 \label{sec:engsp:bg:prosody}
+As we have seen in Chapter~\ref{chap:background}, rising intonation tends to associate with interrogatives (particularly polar interrogatives) and questions cross-linguistically. Results from previous experimental and corpus studies suggest that children might be sensitive to the distinction between final rise (specifically polar interrogative rise) and fall. 
 
-Previous studies show that children are sensitive to prosodic distinctions since birth. %Since birth, babies have been shown to be particularly sensitive to pitch and other prosodic differences in speech. Research highlights that infants are able to use prosodic cues consistently some months after birth, not only in terms of sensitiveness to prosodic acoustic features (Bosch & Sebastián-Galles, 2001; Fernald & Kuhl, 1987; Jusczyk et al., 1993; Mehler et al., 1988; Nazzi et al., 1998; Ramus et al., 2000) b
+From as early as 6 months old, infants are able to identify utterance boundaries, and are sensitive to the edge prosody (\cite{johnson2014edge}). They also can use distinctions in prosodic contours (e.g. final rise vs. fall) to distinguish clause types (polar interrogative vs. declaratives). For example, \textcite{frota2014}) show that as young as 6 months old, European Portuguese-acquiring infants are sensitive to the prosodic distinction between polar interrogatives and declaratives, which is the only cue that distinguishes these two clause types in the language. \textcite{geffenmintz2011} find that when given a combination of word order and prosodic cues, English-acquiring 7-month-olds can distinguish polar interrogatives from declarative assertions. \textcite{soderstrom2005clause} test English-speaking infants between 4.5 months and 2 years old (average 14 months old), and find that they are sensitive to the distinction between declaratives with a falling a rising contour. Before 18 months old, infants acquiring non-lexical tone languages such as English are shown to be sensitive to some tonal distinctions in lexical tone languages such as Mandarin. They are particularly sensitive to the distinction between the rising tone that is similar to English polar-interrogative rise, and the falling tone similar to English declarative fall (\cite{shi2017tone, Hay2019}).%, although it is unclear whether we can draw any conclusions about their sensitivity to English polar interrogative rise.
 
-
-From as early as 6 months old, infants are found to be able to use these distinctions to distinguish different speech acts since birth. From the comprehension side, infants are found to be able to use prosodic cues to distinguish clause types and speech acts. \textcite{frota2014} show that as young as 6 months old, infants are sensitive to the prosodic distinction between polar interrogatives and declaratives, which is the only cue that distinguishes these two clause types. \textcite{geffenmintz2011} find that when given a combination of word order and prosodic cues, English-acquiring 7-month-olds can distinguish polar interrogatives from declarative assertions. \textcite{soderstrom2005clause} test English-speaking infants between 4.5 months and 2 years old (average 14 months old), and find that they are sensitive to the distinction between declaratives with a falling a rising contour. \textcite{} show that 14 month-olds English-acquiring respond differently to a rising contour, and only learn novel labels to objects if the word is pronounced with a rising contour.\footnote{Their studies uses stimuli created with Mandarin lexical contours, in particular the rising tone (tone 2) and the falling tone (tone 4). Although the rising tone is very similar to English polar-interrogative rise, and the falling tone similar to English declarative fall, and that 14-month-olds show different behaviors toward these two tones, it is unclear whether we can draw any conclusions about their sensitivity to English polar interrogative rise.}
-
-% But \textcite{keitel2013turn} suggest that children before 3yo cannot use intonation to infer transition after a turn (i.e. they do not anticipate a speaker change after questions with prosodic cues)
+While infants might be sensitive to the distinction between rise and fall, it is unclear, at least with English-acquiring infants, whether they can use prosodic cues alone to detect questions. When given only prosodic cues without any morpho-syntactic information, \textcite{keitel2013turn} and \textcite{casillas2017turn} both find that children younger than 2 years old cannot use intonation alone to infer transition after a turn, but they can infer such transitions with morpho-syntactic cues associated with interrogatives. 
 
 On the production side, studies have found that children are able to use different prosodic contours for different functions from when they start speaking. \textcite{menyuk1969prosody} analyze the prosodic contours of one child's utterances, and annotates their perceived speech acts between 18  and 20 months, and find that even though the utterances are mostly one word or two words, there's a correlation between the intended speech act and prosody. For example, an intended request with a one-word utterance ``door!" is typically associated with a sharp rise and then fall; the same utterance as a question tends to end with a rising intonation. Since the speech act labels in the study are annotations by adults inferred from one-word utterances, it is unclear whether these are actually the speech acts that the child perform, and the conclusion seems to be that adults systematically associate certain prosodic contours to \aqrs{}, even with one-word utterance. Nonetheless, it seems that at the child is using different prosodic contours at this age, and it is possible that these contours are systematically associated with different speech acts. 
-% Esteve-Gibert & Prieto (2013) analysed a total of 2,701 vocalizations from a longitudinal corpus of four Catalan-babbling infants aged 0;7 to 0;11. The results also showed that infants use different prosodic patterns to distinguish communicative from investigative vocalizations and to express intentionality. Specifically, they found that requests and expressions of discontent displayed wider pitch range and longer duration patterns than responses or statements. 
 
-%Studies on the prosody-pragmatics interface show that children around the two-word stage display an emerging complex inventory of intonation contours with an adult-like intentional meaning (Chen & Fikkert, 2007; Frota, Vigario, & Cruz, to appear; Prieto et al., 2012).  
-
-Furthermore, children seem to associate the rising contour with response elicitation. \textcite{flax1991prosody} conduct a longitudinal study observing three children interacting with their mothers before they can speak, when they have a vocabulary of 10 words, and when their vocabulary consists of 50 words, and code whether the child's utterance (or vocalization, at the pre-verbal stage) is produced with a final rise. They find when children request a response from their addressee, they tend to produce the utterance with final rise. 
+Furthermore, for their own production, children seem to associate the rising contour with response elicitation. \textcite{flax1991prosody} conduct a longitudinal study observing three children interacting with their mothers before they can speak (when they have a vocabulary of 10 words, and again when their vocabulary consists of 50 words), and code whether the child's utterance (or vocalization, at the pre-verbal stage) is produced with a final rise. They find when children request a response from their addressee, they tend to produce the utterance with a final rise. 
 
 Previous studies have also shown that there are prosodic cues that distinguish clause types and speech acts, in particular, between polar interrogatives and declaratives, in child-directed speech. \textcite{geffenmintz2017final} show that, polar interrogatives and declaratives differ in the pitch of the last two syllables, with polar interrogatives generally have a rising contour; they also find that there is no distinction between \twh-interrogatives and declaratives in the last two syllables. \textcite{chianggeffenmintz2018initial} examines sentence-initial prosodic cues, and find that polar interrogatives and declaratives both have a higher starting pitch than declaratives, and that echo \twh-questions tend to have a higher pitch than other types of questions. %These studies only looked at the duration, F0, and intensity of the last two and the first syllables; there might be 
 
 In summary, prosodic might help children distinguish different speech acts, and that children can perceive these cues. In particular, there might be cues at sentence-final and sentence-initial position. We will examine the role of prosody more closely in Section~\ref{sec:engsp:corpus}, and go beyond the last two and the first syllables.
 
-\subsection{Speech gap}
+\subsection{Pauses in conversation}
 \label{sec:engsp:bg:pause}
-Questions are turn-transition points (\cite{duncan1972turn} among others), and this means that speakers anticipate a change of turn after questions. In adult-to-adult conversations, this property translates to shorter speech gaps after questions in general (\cite{stivers2010,enfield2010,hilbrink2013turn} among many others). 
+As mentioned earlier, questions are turn-transition points (\cite{duncan1972turn} among others), and this means that speakers anticipate a change of turn after questions. In adult-to-adult conversations, this property translates to shorter speech gaps after questions in one-on-one in-person conversations (\cite{stivers2010,enfield2010,hilbrink2013turn} among many others). Speakers might also wait after questions for responses (\cite{sacks1978pause}), but for adults, longer inter-turn silence leads to feelings of unease and tend to be avoided (\cite{roberts2006pause} among others). But when interacting with pre-linguistic infants, this silence might be helpful rather than scary: if children can track the length of pause after an utterance, they might be able to infer that longer pauses are associated with questions and request. Are children sensitive to the turn-taking properties of conversations? 
+%As infants could use prosodic cues to detect clause boundaries (\cite{hirsh1987clause, seidl2007prosody}), they might be able to track the length of pause after an utterance. 
 
+As early as 3 months old, infants show sensitivity to the structure of conversation. The overlap between infant vocalization and parents' speech decreases overtime, and the average gap between parent utterance and infant vocalization decreases, suggesting that they respect the turn-taking rules (\cite{hilbrink2013turn3mo}). When they start producing one-word utterances, slow down at trying to change turn, but quickly pick up the speed again as their linguistic ability develops (\cite{hilbrink2013turn}).
 
-
-As early as 3 months old, infants show sensitivity to the structure of conversation. The overlap between infant vocalization and parents' speech decreases overtime, and the average gap between parent utterance and infant vocalization decreases, suggesting that they respect the turn-taking rules (\cite{hilbrink2013turn3mo}). When they start producing one-word utterances, slow down at trying to change turn, but quickly pick up the speed again as their linguistic ability develops (\cite{hilbrink2013turn}). 
-
+Studies also show that same as adults, children interpret pauses as meaningful. \textcite{craiggallagher1983pause} 
+investigates whether 22-36-month-olds abandon their request (e.g. wanting a cookie) or not after the parent's initial responses (classified as neutral, e.g. \tit{you want what?},  negative, \tit{No.} or simply pause). They found that the older children (3-year-olds) abandon requests after adult pauses for more than 1s, suggesting that children treat long pauses as a meaningful response. Although from these research, it is unclear whether children associate inter-turn silence with the interlocutor trying to elicit a response. 
 
 %Bloom et al: four children, 21 to 36 months of age. Adjacent speech is more than anything from the beginning, Contingent speech increase over time (adjacent (immediately preceded by an adult utterance), or as nonadjacent (not immediately preceded by an adult utterance). Adjacent utterances were either contingent (shared the same topic and added new information relative to the topic of the prior utterance), imitative (shared the same topic but did not add new information), or noncontingent (did not share the same topic). Linguistically contingent speech (speech that expanded the verb relation of the prior adult utterance with added or replaced constituents within a clause)  occurred more often after questions than nonquestions. 
 
-Studies also show that children interpret pauses as meaningful. %\textcite{craiggallagher1983pause} 
-%Craig, Gallagher (1983): six children, 22-36mo; whether they abandon their requrest (I want a cookie) or not after the parent's initial response (neutral: you want what? Neg: no. Pause) . A subset of them (older kids) abandon requrests after adult pauses for more than 1s. They conclude that this suggests that some children treat long pauses as a distinct class of speech act.
+On the other side the problem, the length of pauses results from the dynamics of conversation; if parents are interacting with a pre-linguistic infant, would they follow the same rules? In other words, if we assume that children can keep track of the length of pauses, are there any patterns from the silence? Previous studies show that parents seem to treat pre-linguistic infants as competent conversationalists, and any vocalizations (e.g. crying, babbling) or even body movements, are treated as a conversational turn (\cite{beebe1988,jaffe2001turn}). The length of pauses also correlate with the vocabulary of children (\cite{marklund2015pause}). Different from adult-to-adult interactions, parents to 14-month-olds tend to follow questions with another question (\cite{reimchen2017}).  
 
-Previous studies show that parents seem to treat any vocalizations (e.g. crying, babbling) as a turn. 
-%Jaffe et al. 2007:  Parents treat their infants as capable of making meaningful contributions: they take every look, vocalization, arm flail, and burp as ‘‘utterances” in the joint discourse 
+While these studies show that parents respect turn-taking rules when interacting with pre-verbal infants, but so far little is known whether parents' speech gaps are informative of the speech act performed. Section~\ref{sec:engsp:results:pause} examines the correlation between the speech act of an utterance and the length of pauses after an utterance, to see if the gap between utterances is informative of an utterance's speech acts. 
 
-%\textcite{reimchen2017} observe that parents to 14-month-olds tend to follow questions with another question. They separated utterances with 0.75s pause in-between. Infants are considered "responding" if they vocalize within 2s of parents' utterance, and 14-month-olds responded to 18% of parents' questions, and 18% of parents' assertions
-%Bornstein etal.2008: parents use questions to respond to infants' vocalization starting 14-21month (mom are expecting more responses from infants)
-
-While these studies show that parents respect turn-taking rules when interacting with pre-verbal infants, but so far little is known whether parents' speech gaps are informative of the speech act performed. Section~\ref{sec:engsp:corpus:pause} examines the correlation between the speech act of an utterance and the length of pauses after an utterance, to see if the gap between utterances is informative of an utterance's speech acts. 
-
-\subsection{Gaze pattern}
+\subsection{Attentional behavior}
 \label{sec:engsp:bg:gaze}
-%Argyle 1972: speakers use gaze for turn allocation
-% gaze func- tions in dyadic encounters, such as to initiate interaction, signal address, receive addressee feedback, and coordinate turn transi- tions  Kendon, 1967, 1990; Argyle et al., 1973; Cary, 1978; Duncan et al., 1979; Goodwin, 1980; Bavelas et al., 2002; Lerner, 2003; Rossano et al., 2009) 
-%Csibra: Direct gaze has been shown to induce attention orienting toward faces (von Grünau and Anston, 1995; Senju et al., 2005; Conty et al., 2006; Doi et al., 2009; Shirama, 2012; Böckler et al., 2014; Lyyra et al., 2017; for a critical view regarding the results from visual search studies, see Cooper et al., 2013), whereas seeing another individual with a gaze directed away from oneself triggers the re-orienting of one’s visuospatial attention in the gazed-at direction (e.g., Friesen and Kingstone, 1998; Driver et al., 1999; Hietanen, 1999; Langton and Bruce, 1999; for a review, see Frischen et al., 2007). 
 
-%Csibra: Farroni, Csibra, Simion and Johnson (2002) found that, when they can choose between photographs of faces looking directly at them or looking away, 3-day-old newborns prefer to look at the face that appears to make eye contact with them. This is a very robust effect, unusually strong among studies with neonates, as not a single infant oriented more towards the face with averted eyes than towards the face with direct gaze. This phenomenon suggests that what newborns are sensitive to is not simply the presence of eyes but more specifically the position of the pupils/irises within the eye. The effect can also be demonstrated with schematic faces (Farroni et al., 2004a) but disappears when the faces are turned upside down (Farroni et al., 2006), suggesting that the preferred stimulus for newborns is not simply two eyes with the pupils in their middle, but two eyes with the pupils aligned centrally in the context of a frontal face in a canonical (i.e. upright) position. Note that this is the position that is characteristic to the prototypical mother-infant face-to-face interaction (Watson, 1972). This preference also indicates that face and gaze perception are intimately linked together from birth.
- 
- %But confliciting evidence: \textcite{keitel2013turn} find that when watching videos of two speakers having a face-to-face conversation, 6- to 12-month- olds shift gaze between speakers randomly; 3-year-olds can, and show a strong preference for normal intonation (as opposed to reduced intonation)
- 
-While these studies show that infants can perceive parents' direction of eye gaze, and that adults use eye gaze for turn allocation, but so far little is known whether parents' gaze pattern correlates with turn allocation, and furthermore, with the speech act of an utterance. If questions signals a transition of turn, parents' gaze should fall on the addressee--the child--more after questions. Section~\ref{sec:engsp:corpus:pause} examines parents gaze pattern during parent-child interactions, to see if this cue is informative of an utterance's speech acts.
+Another consequence of the response-expectation property of questions is that by the end of a question, the speaker tends to appoint the next speaker. A common device for turn allocation is eye gaze (\citealt{argyle1972gaze, kendon1967gaze,duncan1979gaze, rossano2009gaze, csibra2010}). In dyadic interactions, we tend to look at our interlocutor when we need their response. Thus, it is possible that by tracking where the parent attends to, specifically whether the parent is directly looking at you, the learner might be able to infer whether a question is being asked. 
+
+We have seen in Chapter~\ref{sec:bg:acq:pre} that infants are sensitive to the direction of eye gaze since birth. 3-day-old newborns prefer to look at the face that appears to make eye contact with them, suggesting that they are sensitive to the position of the pupils/irises within the eye (\cite{farroni2004gaze}).
+
+
+While these studies show that infants can perceive parents' direction of eye gaze, and that adults use eye gaze for turn allocation, so far little is known whether parents' gaze pattern correlates with turn allocation, and furthermore, with the speech act of an utterance. If questions signals a transition of turn, parents' gaze should fall on the addressee--the child--more after questions. I address this question in Section~\ref{sec:engsp:results:pause} by examining parents gaze pattern during parent-child interactions, to see if this cue is informative of an utterance's speech acts.
 
 \subsection{Interim Summary}
 \label{sec:engsp:bg:summary}
@@ -108,56 +98,65 @@ For eye gaze, we should see parents direct attention to the child more often aft
 
 \subsubsection{Prosody}
 \label{sec:engsp:results:prosody}
-A total of 5430 utterances were included in the final pitch extraction. I further applied a low-pass filter...%%%
-From this pitch data, to approximate the process of finding the last pitch accent in the utterance, I applied a peak/valley identification algorithm %%%
-The last peak or valley was then considered the last pitch accent. If it's a peak like (\ref{}), then the utterance was labelled as having a final rising contour. The script for coding pitch information can be found \textcolor{red}{url}. I manually annotated 40 utterances to check for accuracy; 27 of these were correctly labeled by the algorithm.   %%%
+A total of 5430 utterances were included in the fi ch extraction. I further applied a low-pass filter at 500 Hz that removes most of the phonetic information used to distinguish between phonemes. From this pitch data, to approximate the process of finding the last pitch accent in the utterance, I applied a peak/valley identification algorithm. The last peak or valley was then considered the last pitch accent. If it's a peak like (\ref{fig:rise-sp}), then the utterance was labelled as having a final rising contour. The script for coding pitch information can be found at \mycode{}. I manually annotated 40 utterances to check for accuracy; 27 of these were correctly labeled by the algorithm.  
 
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/pitch-rise.jpg}
+    \caption{``You think it's a birdy?''}
+    \label{fig:rise-sp}
+\end{figure}
+
+Figure~\ref{fig:rise-sp} and \ref{fig:rise-cl} show the proportion of final rise, as identified by the algorithm. As we can see, there is no difference in the proportion of rises among speech acts. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/rise-sp.jpg}
+    \caption{Proportion of utterances with final rise across different speech acts}
+    \label{fig:rise-sp}
+\end{figure}
 
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{figures/rise-cl.jpg}
     \caption{Proportion of utterances with final rise across different clause types}
-    \label{fig:}
+    \label{fig:rise-cl}
 \end{figure}
 
-
-
+But if we look into sub-categories of interrogatives, we can see that the proportion of final rise is much higher with polar interrogatives than with declaratives. 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{figures/rise-sp.jpg}
-    \caption{Proportion of utterances with final rise across different speech acts}
-    \label{fig:}
+    \includegraphics[width=0.7\textwidth]{figures/pitch-polardecwh.jpg}
+    \caption{Proportion of declaratives, \twh{} and polar interrogatives with final rise}
+    \label{fig:rise-int}
 \end{figure}
 
+These results seem to suggest that the presence of final rise might not be informative of the speech act of the sentence, unless morpho-syntactic features like subject-auxiliary inversion is also present. However, this could be a result of the algorithm I applied here, and do not reflect the pattern of the data. I plan to hand annotate more cases in the future to have more reliable data.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/rise-int.jpg}
-    \caption{Proportion of \twh{} and polar interrogatives with final rise}
-    \label{fig:}
-\end{figure}
-
-\subsubsection{Speech gap}
+\subsubsection{Pauses}
 \label{sec:engsp:results:pause}
-%The other property of interest is that questions expect responses. For conversations with pre-linguistic infants, this may mean that parents wait longer after questions for a response.
 
- Thus, in this project, we plan to measure the length of pause between parents’ consecutive utterances like (\ref{code-prag:pause}). To do so, we will first extract the consecutive turn sequences in parents’ speech. Following \cite{reimchen2017}, we define such sequences as a sequence of utterances spoken by the same speaker on the same topic. Within the sequences, we will measure the length of pauses between utterances, and see if parents pause longer after questions than after assertions. Moreover, we will code whether a question in the sequence is followed by another question, since \cite{reimchen2017} observe that parents to 14-month-olds tend to follow questions with another question. Our preliminary results show that parents are equally likely to ask another question as they are to answer their own questions, but parents tend to pause longer after questions (mean $= 1861ms$, Fig.~\ref{fig:engsp:pause}) than assertions (mean $= 1216ms; t(347) = 2.08, p <0.05$): parents wait for responses after asking a question but proceed with the conversation after an assertion. 
-
-
+For this cue, I measured the length of silence between parents’ consecutive utterances like (\ref{code-prag:pause}). To do so, I first followed \textcite{bloom1976discourse} and annotated for each utterance whether it is a contingent utterance of the previous one, namely whether it shares the same topic and adds new information relative to the topic of the prior utterance. the consecutive turn sequences in parents’ speech. I will refer to a pair of utterances as consecutive turn sequences. Within the sequences, I measured the length of pauses between utterances. 
 
 
 \bex{code-prag:pause}
 %\bxl{}
-\tbf{Consecutive turn sequence}\\ 
-	
+\tbf{Consecutive turn sequence}
 \bxl
-You can’t take your rake on the swing but you can [pause: 0.014s] You wanna take your big bird rake on the swing? 			\hfill \tsc{Assertion -Question}
-\ex You don't wanna swing? [pause: 0.23s]	You don’t have to.	\hfill \tsc{Question-Assertion}
-\ex Here you use this one. [pause: 0.033s] This one works better.	\hfill \tsc{Assertion-Assertion}
+You can’t take your rake on the swing.\\
+ \tsc{pause: 0.014s} \\ 
+ You wanna take your big bird rake on the swing? 			\hfill \tsc{Assertion -Question}
+\ex You don't wanna swing?\\
+ \tsc{pause: pause: 0.23s} \\	
+ You don’t have to.	\hfill \tsc{Question-Assertion}
+\ex Here you use this one. \\
+ \tsc{pause:  0.033s} \\ This one works better.	\hfill \tsc{Assertion-Assertion}
 \exl
 \eex
+
+In total, 4066 utterances were found to have a contingent follow-up that allows us to measure the inter-turn silence. Figure~\ref{fig:engsp:pause} shows the length of pause after each speech act category.
 
 \begin{figure}[H]
 \begin{center}
@@ -166,38 +165,45 @@ You can’t take your rake on the swing but you can [pause: 0.014s] You wanna ta
 \end{center}
 \end{figure}
 
+Results show that parents are equally likely to ask another question as they are to answer their own questions, but parents tend to pause longer after questions (mean $= 1728ms$) than assertions (mean $= 1321ms; t(2925) = -2.23, p = 0.02$), suggesting that parents pause after asking a question but proceed with the conversation after an assertion. %There is no difference between questions and requests mean $= 1345ms; t(1418) = 0.83, p = 0.4$), suggesting
+
+\begin{comment}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width = 0.8\textwidth]{figures/pause-QA.jpg}
 	\caption{Duration of pause (ms) between Question-Question/Assertion and Assertion-Question/Assertion pairs }\label{fig:engsp:pause-QA}
 \end{center}
 \end{figure}
+\end{comment}
 
-\subsubsection{Gaze pattern}
+
+\subsubsection{Parents' attentional behavior}
 \label{sec:engsp:results:gaze}
 
-
-
-Another consequence of the response-expectation property of questions is that by the end of a question, the speaker tends to appoint the next speaker. A common device for turn allocation is eye gaze (\citealt{argyle1972gaze, kendon1967gaze,duncan1979gaze, rossano2009gaze}), so the \hypos{} predicts that parents would engage in longer eye contact after questions than other types of speech acts. To test this, we plan to annotate, on a second-by-second basis, parents' attentional behaviors toward the child using ELAN. The annotation will be done without reference to the transcript so that the annotator is not biased by the linguistic information of the scene. For each video, the annotators will first identify the segments of the video where the parent and the child are both visible on screen, and the parent’s focus of attention is identifiable via her visual focus or head/body orientation. Then for these segments, we will annotate whether the parent is attending to the child.  
+In total, 857 utterances were found to have corresponding attentional data. Figure~\ref{fig:attention} shows the proportion of looks to the child before, during, and after an utterance.
 
 
 \begin{figure}[H]
 
 \begin{center}
 	\includegraphics[width =1\textwidth]{figures/gaze-pattern-adult.jpg}
-	\caption{Proportion of parents' looks to the child before, during, and after an utterance} \label{fg:attention}
+	\caption{Proportion of parents' looks to the child before, during, and after an utterance} \label{fig:attention}
 \end{center}
 \end{figure}
 
 
-Fig.~\ref{fg:attention} shows the proportion of looks to the child before and after uttering a sentence in our pilot sample: when the utterance is a question, the proportion of looks to the child is higher ($0.47$) than when it is an assertion ($0.39; t(16) = 2.53, p <0.05$) or a request ($0.35; t(16)= 4.55, p<0.001$); in the post-utterance region, the proportion of looks to the child is higher when the utterance is a question ($0.53$) than when it is an assertion ($0.37; t(4) = 4.4, p<0.05$) or a request ($0.35; t(4) = 13.2, p<0.001$). These results suggest that the predictions of the \hypos{} are borne out: parents look at the child longer after questions. Thus, despite parents asking questions whose answers they know, the characteristic turn-changing properties of questions are observable in speech pauses and speaker attention. 
+From Fig.~\ref{fig:attention}, we can see that when the utterance is a question, the proportion of looks to the child is higher (average $0.41$) than when it is an assertion (average $0.27; t(16) = 2.53, p <0.05$), but roughly equivalent to when the utterance is a request ($0.37; t(16)= 1.27, p=0.21$); in the post-utterance region, the proportion of looks to the child is higher when the utterance is a question ($0.53$) than when it is an assertion ($0.25; t(4) = 7.95, p<0.05$) but not when it's a request ($0.39; t(4) = 4.2, p=0.2$). These results suggest that parents look at the child longer after questions and requests. %%%%
 
 
 \subsubsection{Informativeness of the cues}
 \label{sec:engsp:results:stats}
+A multinomial logistic regression model was built with the three cues as independent variables, and the speech act categories (assertions, questions, requests, and other) as the dependent variable. The data for the model was an intersection of the prosody, pause, and attentional data, as not all utterances have follow-up utterances for us to measure the inter-turn silence, and some utterances were uttered off screen with no attentional data. In total, 806 utterances were included in the analysis.  I then split the data into a training set (90\% of the data) and testing set (10\%), and trained a logistic regression classifier with the training data. For details of the model, see Appendix~\ref{appx}. This classifier can predict 57\% of the speech act labels, suggesting that the three cues could to some extend help children identify speech act information. 
 
-\section{Discussion}
+\section{Conclusion}
 \label{sec:engsp:discussion}
+In this chapter, we addressed the question of how children learn to identify speech acts, specifically, we looked at whether certain non-clause type cues, such as prosody, speech pauses, and attention, could help the learner identify speech acts. With a corpus study, I showed that it is possible to identify speech acts with these three cues. Specifically, polar questions tend to be associated with a rising intonation; parents pause longer after questions and requests, and look at the child longer when asking questions. 
+
+
 
 %Note that at this point I do not claim that 18-month-olds use there cues for speech act identification, but merely probing into whether this information is present in the corpus. 
 %Information is present, but do speakers in fact extract speech act information from these cues?
