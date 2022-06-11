@@ -105,7 +105,8 @@ rain \Asp{} \Sfp{}\\
 \eex
 
 Similarly, when these particles append to a declarative clause, they do not change the clause type to [+int]:
-\bex{ex:mancl:dec-q}
+
+\bex{ex:mancl:dec-qa}
 \gll %想 坐 啊 ?	Tong
 Xiang zuo a?\\
 want sit \Sfp{}\\
@@ -134,7 +135,7 @@ In this section we will look at evidence for Mandarin-acquiring children's knowl
 
 \tsc{\textpm \tit{wh}-phrases} Children start producing interrogative \twh{} as early as 14 months old (\cite{lee1989acq, fan2012, linjing2014}); both comprhension experiments and corpus data show that they are also found to answer \tit{where}, \tit{who}, \tit{what} questions appropriately at 18 months old (\citealt{fan2012,moradlou2020}). While we have evidence that 3-year-olds can use prosodic prominence to infer whether a \twh-sentence is [+int] (\cite{WHanything}), we do not have evidence about younger children. In the corpus study described in the next section, I follow the practice from the last chapter and classify \twh-phrases with focus particles and connectives (e.g. \tit{yaobu} ``if'') as `Unknown Functional Items' (UFI).
 
-\tsc{A-not-A structure} As noted earlier, the A-not-A structure and the presence of sentence-final \tit{ma} both distinguish interrogatives from declaratives in Mandarin. But while there is evidence suggesting that children start producing negation around 1.5 years old (\cite{lee1982,fan2007,li2019neg, huang2022manchild} among others), we do not have evidence regarding whether children perceive A-not-A sentences differently from simple negation sentences. Similarly, we do not have evidence regarding whether children treat \tit{ma} differently from sentences with other sentence final particles like \tit{ya}. I therefore simulated a conservative learner who does not have access to A-not-A and \tit{ma} features, and compare it with a knowledgeable learner who does have access to these two features. 
+\tsc{A-not-A structure} As noted earlier, the A-not-A structure and the presence of sentence-final \tit{ma} both distinguish interrogatives from declaratives in Mandarin. But while there is evidence suggesting that children start producing negation around 1.5 years old (\cite{lee1982neg,fan2007,li2019neg, huang2022manchild} among others), we do not have evidence regarding whether children perceive A-not-A sentences differently from simple negation sentences. Similarly, we do not have evidence regarding whether children treat \tit{ma} differently from sentences with other sentence final particles like \tit{ya}. I therefore simulated a conservative learner who does not have access to A-not-A and \tit{ma} features, and compare it with a knowledgeable learner who does have access to these two features. 
 
 
 
@@ -282,7 +283,7 @@ In total, 3077 utterances were annotated. Figure~\ref{fig:man-real-cldist} shows
     \centering
     \includegraphics[width=0.7\textwidth]{figures/man-real-cldist.jpg}
     \caption{Distribution of clause types in the corpus}
-    \label{fig:man:real-cldist}
+    \label{fig:man-real-cldist}
 \end{figure}
 
 Within interrogatives (Figure~\ref{fig:man:real-subint}), \twh-interrogatives (\ref{ex:man:int:wh}) are more frequent than other types of interrogatives, a pattern similar to the one observed in English; followed by A-not-A (\ref{ex:man:int:anota}) and \tit{ma}-interrogatives (\ref{ex:man:int:ma}). Disjunctive interrogatives with \tit{haishi} ``or'' (\ref{ex:man:int:haishi}) are relatively rare. 
@@ -438,6 +439,7 @@ For the conservative learner: \\
 \eex
 
 We used the same methodology and learning models as in the English study in Chapter \ref{chap:eng-cl}. The results are as follows.
+
 \subsection{Performance of the \dlearnerabbr{} model}
 \label{sec:mancl:model:results:d}
 
@@ -470,10 +472,10 @@ As we can see, the conservative \dlearnerabbr{} fail to identify any clause type
     \centering
     \includegraphics[width=1\textwidth]{figures/man-baseline-conservative-syncluster.jpg}
     \caption{The number of sentences with/without certain formal features in each cluster, darker colors represent the number of sentences with the feature. }
-    \label{fig:man-baseline-syncluster}
+    \label{fig:man-baseline-conservative-syncluster}
 \end{figure}
 
-Figure~\ref{fig:man-baseline-syncluster} shows the distribution of morpho-syntactic features across all three clusters. The three clusters do not seem to form meaningful grammatical classes.
+Figure~\ref{fig:man-baseline-conservative-syncluster} shows the distribution of morpho-syntactic features across all three clusters. The three clusters do not seem to form meaningful grammatical classes.
 
 \subsubsection{The knowledgeable simulation}
 The knowledgeable simulation of the \dlearnerabbr{} model uses interrogative-specific features, \textpm A-not-A construction and \textpm \tit{ma}. But it also failed to identify any meaningful grammatical class in Mandarin.
@@ -494,7 +496,7 @@ The knowledgeable simulation of the \dlearnerabbr{} model uses interrogative-spe
     \label{fig:man-baseline-mid-heatrev}
 \end{figure}
 
-Overall, Figure~\ref{fig:man-baseline-mid-heat} shows that all three clusters identified by the \dlearnerabbr{} model are predominantly declarative sentences, which simply reflects the fact that declaratives are the most frequent clause type in the dataset. But compared to the conservative simulation, it puts more interrogatives in Cluster~$2$, as shown in Figure~\ref{fig:baseline-mid-heatrev}. But a closer look at the distribution of morpho-syntactic cues within each cluster (Figure~\ref{fig:man-baseline-syncluster} suggests that none of the clusters are meaningful grammatical classes in Mandarin. %The only recognizable feature considers Cluster~$2$ a cluster that allows sentence final particles, which does not correspond to any sentence types in Mandarin.  
+Overall, Figure~\ref{fig:man-baseline-mid-heat} shows that all three clusters identified by the \dlearnerabbr{} model are predominantly declarative sentences, which simply reflects the fact that declaratives are the most frequent clause type in the dataset. But compared to the conservative simulation, it puts more interrogatives in Cluster~$2$, as shown in Figure~\ref{fig:man-baseline-mid-heatrev}. But a closer look at the distribution of morpho-syntactic cues within each cluster (Figure~\ref{fig:man-baseline-syncluster} suggests that none of the clusters are meaningful grammatical classes in Mandarin. %The only recognizable feature considers Cluster~$2$ a cluster that allows sentence final particles, which does not correspond to any sentence types in Mandarin.  
 
 \begin{figure}[H]
     \centering
@@ -509,7 +511,7 @@ These results suggest that regardless of whether the model has access to interro
 
 
 \subsection{Performance of the \plearnerabbr{} model}
-\label{sec:mancl:model:results:d}
+\label{sec:mancl:model:results:p}
 \subsubsection{The conservative simulation}
 By having access to pragmatic information, the conservative \plearnerabbr{} model could identify two clause types. Figure~\ref{fig:man-target-conservative-heatmap} shows the proportion of \diis{} in each identified cluster, and Figure~\ref{fig:man-target-conservative-heatrev} shows the proportion of sentences clustered together. 
 
@@ -597,7 +599,7 @@ Our results suggest that pragmatics is extremely crucial for Mandarin-acquiring 
 \subsection{Simulations with noisy pragmatic information}
 \label{sec:mancl:model:results:noisy}
 
-Figure~\ref{man-noisy-rand-cons} and \ref{man-noisy-rand-mid} show the simulations with 0-100\% noise in the pragmatic information, as a conservative learner and a knowledgeable learner respectively. The performances of the \dlearnerabbr{} models are used as baselines and marked by the dotted line. As can be seen, the conservative \plearnerabbr{} model tolerates 20\% of noise in the pragmatics, and the knowledgeable model tolerates about 40\% of noise. Both are lower than the threshold for their English counterparts. This suggests that Mandarin learners rely heavily on the pragmatic information to identify clause type categories, as compared to their English counterparts. 
+Figure~\ref{fig:man-noisy-rand-cons} and \ref{fig:man-noisy-rand-mid} show the simulations with 0-100\% noise in the pragmatic information, as a conservative learner and a knowledgeable learner respectively. The performances of the \dlearnerabbr{} models are used as baselines and marked by the dotted line. As can be seen, the conservative \plearnerabbr{} model tolerates 20\% of noise in the pragmatics, and the knowledgeable model tolerates about 40\% of noise. Both are lower than the threshold for their English counterparts. This suggests that Mandarin learners rely heavily on the pragmatic information to identify clause type categories, as compared to their English counterparts. 
 
 \begin{figure}[H]
     \centering
