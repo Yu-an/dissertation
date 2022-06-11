@@ -59,20 +59,20 @@
 \contentsline {subsection}{\numberline {4.3.3}Simulations with noisy pragmatic information}{92}{subsection.4.3.3}%
 \contentsline {section}{\numberline {4.4}Discussion}{95}{section.4.4}%
 \contentsline {chapter}{\chapternumberline {5}Learning speech acts}{97}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Background}{97}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Prosody}{97}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Speech gap}{99}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}Gaze pattern}{100}{subsection.5.1.3}%
-\contentsline {subsection}{\numberline {5.1.4}Interim Summary}{100}{subsection.5.1.4}%
-\contentsline {section}{\numberline {5.2}Corpus study}{101}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Methods}{101}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Predictions}{102}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}Results}{102}{subsection.5.2.3}%
-\contentsline {subsubsection}{\numberline {5.2.3.1}Prosody}{102}{subsubsection.5.2.3.1}%
-\contentsline {subsubsection}{\numberline {5.2.3.2}Speech gap}{105}{subsubsection.5.2.3.2}%
-\contentsline {subsubsection}{\numberline {5.2.3.3}Gaze pattern}{107}{subsubsection.5.2.3.3}%
-\contentsline {subsubsection}{\numberline {5.2.3.4}Informativeness of the cues}{109}{subsubsection.5.2.3.4}%
-\contentsline {section}{\numberline {5.3}Discussion}{109}{section.5.3}%
-\contentsline {chapter}{\chapternumberline {6}Conclusion and discussion}{110}{chapter.6}%
-\contentsline {appendix}{\chapternumberline {A}Clause Types and Speech Acts in English}{111}{chapter.A}%
-\contentsline {chapter}{Bibliography}{112}{section*.7}%
+\contentsline {section}{\numberline {5.1}Background}{98}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Prosody}{98}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Speech gap}{100}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Gaze pattern}{101}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.4}Interim Summary}{101}{subsection.5.1.4}%
+\contentsline {section}{\numberline {5.2}Corpus study}{102}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Methods}{102}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Predictions}{103}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Results}{103}{subsection.5.2.3}%
+\contentsline {subsubsection}{\numberline {5.2.3.1}Prosody}{103}{subsubsection.5.2.3.1}%
+\contentsline {subsubsection}{\numberline {5.2.3.2}Speech gap}{106}{subsubsection.5.2.3.2}%
+\contentsline {subsubsection}{\numberline {5.2.3.3}Gaze pattern}{108}{subsubsection.5.2.3.3}%
+\contentsline {subsubsection}{\numberline {5.2.3.4}Informativeness of the cues}{110}{subsubsection.5.2.3.4}%
+\contentsline {section}{\numberline {5.3}Discussion}{110}{section.5.3}%
+\contentsline {chapter}{\chapternumberline {6}Conclusion and discussion}{111}{chapter.6}%
+\contentsline {appendix}{\chapternumberline {A}Clause Types and Speech Acts in English}{112}{chapter.A}%
+\contentsline {chapter}{Bibliography}{113}{section*.7}%
