@@ -194,14 +194,30 @@ In total, 857 utterances were found to have attentional data suitable for annota
 
 From Fig.~\ref{fig:attention}, we can see that when the utterance is a question, the proportion of looks to the child is higher (average $0.41$) than when it is an assertion (average $0.27; t(16) = 2.53, p <0.05$), but roughly equivalent to when the utterance is a request ($0.37; t(16)= 1.27, p=0.21$); in the post-utterance region, the proportion of looks to the child is higher when the utterance is a question ($0.53$) than when it is an assertion ($0.25; t(4) = 7.95, p<0.05$) but not when it's a request ($0.39; t(4) = 4.2, p=0.2$). These results suggest that parents look at the child longer after questions and requests. %%%%
 
+\begin{comment}
+
 
 \subsubsection{Informativeness of the cues}
 \label{sec:engsp:results:stats}
 A multinomial logistic regression model was built with the three cues as independent variables, and the speech act categories (assertions, questions, requests, and other) as the dependent variable. The data for the model was an intersection of the prosody, pause, and attentional data, as not all utterances have follow-up utterances for us to measure the inter-turn silence, and some utterances were uttered off screen with no attentional data. In total, 806 utterances were included in the analysis.  We then split the data into a training set (90\% of the data) and testing set (10\%), and trained a logistic regression classifier with the training data. For details of the model, see Appendix~\ref{appx}. This classifier can predict 57\% of the speech act labels, suggesting that the three cues could to some extend help children identify speech act information. 
+\end{comment}
 
 \section{Conclusion}
 \label{sec:engsp:discussion}
-In this chapter, we addressed the question of how children learn to identify speech acts, specifically, we looked at whether certain non-clause type cues, such as prosody, speech pauses, and attention, could help the learner identify speech acts. With a corpus study, I showed that it is possible to get some knowledge related to the identifcation of speech act type from these three cues. Specifically, polar questions tend to be associated with a rising intonation; parents pause longer after questions and requests; and they look at the child longer when asking questions. 
+In this chapter, we addressed the question of how children learn to identify speech acts, specifically, we looked at whether certain non-clause type cues, such as prosody, speech pauses, and attention, could help the learner identify speech acts. 
+
+I did not find the prosody of parents' questions differ from other types of speech acts, but there is a distinction between polar interrogatives and declaratives. The other two cues, length of pauses between utterances and direct eye gaze, both distinguish assertions from questions/requests, but do not distinguish between questions and requests. Even though these three cues cannot perfectly predict the use of speech act, but as my simulation with noisy speech act information suggests, learners might still benefit from this source of information when learning the clustering of clause types.  
+
+\notdone{
+While some evidence suggests that 18-month-olds can infer speech acts, especially questions (\cite{casillas2017turn, marshmallowqueen}), their inferences might not be perfect. Consequently, they might have only limited access to speech act information. Moreover, there's the problem of how children can infer speech act categories in the first place -- and it is undeniable that the clause type information is useful for solving this problem. As adults, the primary way we identify the act performed by a given sentence is through its clause type. But this is precisely the problem that the child is trying to solve (i.e. identifying the clause type). If children need speech act information to identify clause type categories, but they also need clause type information to identify speech act categories, it seems that we have a chicken-and-egg problem. }
+\notdone{
+But it does not have to be that the learning of clause type and the learning of speech acts happen sequentially. It is likely that children learn to identify speech act and clause type in tandem and mutually informative ways: children learn to identify clause types by tracking formal regularities in conjunction with their growing
+knowledge of speech act and its associated socio-pragmatic cues; similarly, they learn
+to identify speech acts by tracking socio-pragmatic cues in conjunction with their growing
+understanding of the formal features of various clause types.}
+
+
+%With a corpus study, I showed that it is possible to get some knowledge related to the identifcation of speech act type from these three cues. Specifically, polar questions tend to be associated with a rising intonation; parents pause longer after questions and requests; and they look at the child longer when asking questions. 
 
 
 
