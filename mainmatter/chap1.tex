@@ -1,11 +1,10 @@
-% -*- mode: latex; coding: utf-8; fill-column: 72; -*-
-
-
 \chapter{Introduction}
 \label{chap:introduction}
-We use language to perform various kinds of speech acts -- providing information, asking questions, making requests, etc. In any language, there are specific signals in the form of a sentence that indicate what speech act it is typically used for. In particular, languages tend to have dedicated types of sentences for the same three basic speech acts: declaratives are typically used for assertions (\ref{ex:intro:intro:dec}), interrogatives for questions (\ref{ex:intro:intro:int}), and imperatives for commands (\ref{ex:intro:intro:imp}):
+
+Through language, humans are able to change the world by requesting that others do things, by asking for new information, and by providing new information themselves. It is hard to imagine what the human species would be without these fundamental linguistic capacities. Within all these speech acts that we use languages to perform, there seems to be three kinds of speech acts that are linguistically special. Indeed, languages tend to have dedicated three clause types for kinds of speech acts (\citealt{sz1985speechact, konig2007, aikhenvald2016, portner2018}, see \cite{konig2020} for a recent review) Specifically, declaratives are typically used for assertions (\ref{ex:intro:intro:dec}) and (\ref{ex:intro:man:dec}), interrogatives for questions (\ref{ex:intro:intro:int}) and (\ref{ex:man:intro:int}), and imperatives for commands (\ref{ex:intro:intro:imp}) and (\ref{ex:intro:man:imp}):
 
 \bex{ex:intro:intro}
+English clause types:
 \bxl \label{ex:intro:intro:dec}
 That's Elmo. \hfill Declarative, Assertion
 \ex\label{ex:intro:intro:int} Is that Elmo? \hfill Interrogative, Question
@@ -13,54 +12,85 @@ That's Elmo. \hfill Declarative, Assertion
 \exl
 \eex
 
-
-These dedicated types of sentences are commonly referred to as \tit{clause types} (\citealt{sz1985speechact, konig2007, aikhenvald2016, portner2018}, see \cite{konig2020} for a recent review). Different, unrelated languages tend to have the same clause types, but languages differ greatly in how clause types are realized in the surface form. Even if learners have innate knowledge of what the clause type categories \emph{are}, they still need to learn to \emph{associate} the surface expressions of their language with the right clause type. Previous experimental results suggest that by 18 months old, children differentiate these clause types and associate them with their canonical speech act (e.g. \cite{casillas2017turn,marshmallowqueen}). How do children figure it out? %In principle, the association of clause types with particular speech acts should help here. If learners could perceive speech act types directly, this would indeed be a very useful cue to learn how clause types are expressed in their language. But speech acts cannot be perceived directly and, conversely, we often identity a sentence to be performing a particular speech act by the sentence's clause type. There is a potentially vicious circularity here: we typically identify speech acts by using clause type information, but we might need speech act information to learn to recognize clause types. How do learners avoid this circularity?
-
-In the remainder of this chapter, I will clarify how to understand the notions of clause types and speech acts, and discuss some of the specific problems that learners face when acquiring clause types. I will close by outlining the \emph{pragmatic bootstrapping hypothesis} as a potential solution to the puzzle.
-
-\section{Clause types}
-\label{sec:bg:theory:clause}
-
- In this dissertation I use the term \emph{clause type} to specifically refer to the way of grouping sentences grammatically that are closely associated with the speech act used to perform by the sentence (e.g. assertion, question, request). Clause types are distinguished strictly based on formal criteria, and clause type categories are formal categories. This is different from the traditional view according to which clause type should be thought of as a form-function pair: ``[w]hen there's a regular association of form and the speaker's use of sentences, we will speak of the form-use pair as a sentence type'' (\cite[p.156]{sz1985speechact}). Conceiving clause types as a form-use mapping runs into problems with embedded clauses like the underlined clause in (\ref{ex:bg:theory:cl:embed}), as we cannot tease apart the ``use'' of  this portion of the sentence alone:
-\bex{ex:bg:theory:cl:embed}
-Mary knows \tun{who Ann can hug}.
-\eex
-
-As formal categories, clause type categories participate in syntactic relations like syntactic  selection. Certain verbs select one clause type and not the other. For example, \tit{wonder} selects interrogatives but not declaratives, and \tit{think} selects declaratives but not interrogatives:
-
-\bex{ex:intro:embed:wonder}
-\bxl
-Mary wonders who Ann can hug.
-\ex *Mary wonders Ann can hug Sue.
-\exl
-\ex \label{ex:intro:embed:know}
-\bxl
-Mary knows who Ann can hug.
-\ex Mary knows Ann can hug Sue.
+\bex{ex:intro:man}
+Mandarin clause types:
+\bxl \label{ex:intro:man:dec}
+\gll Zhe shi Elmo.\\
+This is Elmo\\
+\trans ``This is Elmo." \hfill Declarative, Assertion
+\ex \label{ex:intro:man:int}
+\gll Zhe shi Elmo \tbf{ma}?\\
+This is Elmo \Sfp\\
+\trans ``Is that Elmo?'' \hfill Interrogative
+\ex \label{ex:intro:man:imp}
+\gll Zhizhi Elmo!\\
+Point Elmo\\
+\trans ``Point at Elmo!'' \hfill Imperative
 \exl
 \eex
 
-As shown by the contrast between (\ref{ex:intro:embed:wonder}) and (\ref{ex:intro:embed:know}), \tit{wonder} is grammatical with embedded interrogatives, but not declaratives, while \tit{know} is grammatical with both.
 
+As the above examples in English and Mandarin show, while both English and Mandarin have declaratives, interrogatives, and imperatives to be used to perform the functions of asserting, questioning, and commanding, the form of each clause types varies. For example, if we compare the interrogative clauses in the two languages with the declarative clauses, we can see that the English interrogative clause has a different word order from the declarative one, with the subject and the auxiliary switch places i the interrogative clause. In Mandarin, the difference arises at the edge of the sentence, as the interrogative clause has an additional sentence final particle \tit{ma} at the end of the sentence. Mandarin could also use A-not-A constructions for polar interrogatives:
 
+\bex{ex:intro:anota}
+\gll Zhe \tbf{shi-bu-shi} Elmo?\\
+This be-\Neg-be Elmo\\
+``Is this Elmo?'' \hfill A-not-A Interrogative
+\eex
 
-Languages tend to have three major clause types (\diis{}) associated with three major speech acts (\aqrs{}), as we have seen in (\ref{ex:intro:intro}). Among these three clause types, declaratives are usually considered the default clause type, whereas interrogatives and imperatives are the results of some operations on declaratives (\cite{sz1985speechact, chomsky1957,chomsky1995minimalist, akmajian1984clausetype, platzack1997imp,rizzi1997} among many others). 
+Again in this case, the canonical function of the sentence is questioning, same as its English counterpart in (\ref{ex:intro:intro:int}), but interrogativity in this example is marked by the presence of the disjunctive negative structures (i.e. \tit{shi-bu-shi}). 
 
+Besides using relative word order of constituents (English), particles (Mandarin \tit{ma}), disjunctive negative structures (Mandarin A-not-A), we can also find languages like Italian and Portuguese where declaratives and interrogatives share the same morpho-syntactic features and only differ in intonation, and languages like West Greenlandic that differentiate the two clause types by verb inflection (\tit{vutit} for declaratives and \tit{vit} for interrogatives, \ref{ex:intro:gl}):
+\bex{ex:intro:gl}
+West Greenlandic
+\bxl
+\label{ex:intro:gl:dec}
+\gll neri- vutit\\
+eat- \Ind.\Ssg.\Pst{}\\
+``You ate.'' \hfill Declarative
+\ex \label{ex:intro:gl:int}
+\gll neri- vit\\
+eat- \Int.\Ssg.\Pst{}\\
+``Did you eat?'' \hfill Interrogative
+\exl
+\hspace*{\fill} \cite[18, ex (50)]{konig2007}
+\eex
 
+For another type of interrogative, \twh-interrogatives, languages differ in whether the \twh-phrase is fronted to the beginning of a clause,  like English (\ref{ex:intro:engwh}) or stays in situ (\ref{ex:intro:manwh}):
 
-To capture these two language universals, the clause type information is often analyzed as related to an abstract feature occupying $C^{0}$ (\cite{chomsky1995minimalist, cheng1991, rizzi1997, rizzi2001int, chomskylasnik1977,platzack1997imp,akmajian1984clausetype, han1998imp}). An interrogative clause has the [+int] value, imperative [imp], and declarative [$-$int].\footnote{In many analyses, the value for imperative $C^{0}$ is [imp] instead of [$+$imp], partly due to there is no [$+$int, +imp] clause type (\cite{platzack1997imp,han1998imp} among others). In this dissertation, I do not make any commitment on the specific analysis of imperatives.} 
+\bex{ex:intro:engwh}
+\tbf{What} did Elmo eat?
+\eex
+\bex{ex:intro:manwh}
+\gll Elmo chi-le \tbf{shenme}?\\
+Elmo eat-\Asp{} what\\
+``What did Elmo eat?''
+\eex
 
+Despite all these cross-linguistic differences in how clause types are marked, we can still see that  in each language, the three major clause types (\diis{}) are canonically associated with the same three major speech acts (\aqrs{}). 
 
+Of course, while each of these three clause types has their canonical mapping to a speech act, they can be used to perform other speech acts too. For example, when we use the sentence \tit{Can you pass the salt?} at a dinner table, even though the sentence is an interrogative in English with subject-auxiliary inversion, 
 
+This is true in Mandarin as well:
+\bex{ex:intro:manmis}
+\gll Keyi bangwo di-yixia zhijin \tbf{ma}?\\
+Can help me pass-\Clf{} napkin \Sfp{}\\
+``Can you pass me the napkin?''
+\eex
 
-%Transition sentence!!!!
-In order to get the clearest picture of the puzzle described above, it is useful to start by taking the strongest position about the clause type categories, i.e. that there are three possible values of $C^{0}$. One can then ask how the learner could identify the signals to these categories. Specifically, the learners need to learn how to \tbf{cluster} sentences into these three clause types, and \tbf{label} them with their functions. 
+Sentences with particle \tit{ma}, as discussed above, are interrogatives in Mandarin. But same as its English counterpart, when you utter (\ref{ex:intro:manmis}) to me when I'm sitting next to the napkin box, you are making a request rather than asking a question. 
 
-\section{Learning problems related to clause types}
+Thus, languages tend to have dedicated clause types that are typically associated with dedicated speech acts, but these clause types can be used for other speech acts. 
 
+As adults, we understand this canonical mapping between clause types and speech acts. When we hear someone utters ``Is it raining?'' we assume that they are asking a question, and when we hear someone says ``It's raining!'' we assume that they are making an assertion.  But for a child whose grammar is still developing, this might not be trivial, as they have to figure out the makeup of the \diis{} in their language and associate them to their canonical speech acts.   %How do they figure out speech act, if they can’t rely on clause types, and conversely, how can they figure out clause types, if they need clause types to figure out speech acts? how does a child figure out the clause types in their language, and link them to their canonical functions?
 
-Assuming that the clause type categories are innate, learners only need to identify the signals to the abstract category. Namely, what learners need to figure out is which sentences have the [+int] feature and which ones have [-int]. 
-For example, while (\ref{ex:intro:cluster-base}) and (\ref{ex:intro:cluster:dec}) are two different strings, the learner needs to recognize that they share the same feature when it comes to clause types, frequently analyzed as a [+int] feature on $C^{0}$. They also need to recognize that even though (\ref{ex:intro:cluster:dec}) and (\ref{ex:intro:cluster:int}) share the same lexical items, their $C^{0}$ are marked with different features: [+int] for the former, and [$-$int] for the latter.
+Remarkably, children seem to have figured this out early. By 18months, they seem to be able differentiate interrogatives from declaratives, and understand that people use interrogatives to ask questions, all while their grammar and understanding of the world are still in development (\cite{geffenmintz2011,geffenmintz2015wordorder,casillas2017turn,perkins2019,marshmallowqueen}. This dissertation therefore examines how children figure out the clause types. Specifically, children need to identify the right categories of clauses (the ``clustering problem") and figure out what speech act they are canonically used for (the ``labeling problem") .
+
+\section{Clustering problem and labeling problem}
+
+As we have seen, languages tend to have three clause types.  Given the quasi-universality of these main clause types, it may be reasonable to assume some kind of language universal, such that children would expect that their language is likely to have three main clause types for \aqrs{}. But even if we assume that the clause type categories are innate, languages do not wear these abstract clause type categories on their sleeves. So learners still need to identify the specific signals in the surface form of the sentences in their language associated with the three abstract categories. 
+
+For example, while (\ref{ex:intro:cluster-base}) and (\ref{ex:intro:cluster:dec}) are two different strings, the learner needs to recognize that they are the same when it comes to clause types. They also need to recognize that even though (\ref{ex:intro:cluster:dec}) and (\ref{ex:intro:cluster:int}) share the same lexical items, their $C^{0}$ are marked with different features: [+int] for the former, and [$-$int] for the latter.
 
 
 \bex{ex:intro:cluster-base}
@@ -87,10 +117,6 @@ This is Elmo\\
 \gll Zhe shi Elmo \tbf{ma}?\\
 This is Elmo \Sfp\\
 \trans ``Is that Elmo?'' \hfill Interrogative
-\ex 
-\gll Zhizhi Elmo!\\
-Point Elmo\\
-\trans ``Point at Elmo!'' \hfill Imperative
 \exl
 \eex
 
@@ -145,14 +171,15 @@ After identifying the clusters, learners need to determine the canonical functio
 
 But the mapping between speech acts and clause types is not one-to-one either. The function of a sentence can be thought of as the speech act performed by uttering it. For example, Alex's mother uses (\ref{}) to ask Alex's preferences, performing the speech act of questioning.
 \bex{}
-Do you want to get down? \hfill Alex's mother, Session 01;05;12, Providence Corpus (\cite{ProvidenceCorpus})
+Do you want to get down? \hfill Alex's mother, Session 01;05;12,\\
+\hspace*{\fill} Providence Corpus (\cite{ProvidenceCorpus})
 \eex
 
 %This paragraph is not good
 Speech act theory focuses on what speakers \emph{do} with sentences (\cite{austin1975things, searle1969} a.o.), but this is not the only way to conceptualize speech acts. I will return to the different options for describing speech acts in the next chapter. For now it suffices to observe that, regardless of one's theory of speech act, it is generally agreed upon that the form of a sentence, i.e. its clause type, constrains the types of speech act performed by uttering it. Canonically, declaratives tend to be assertions, interrogatives questions, and imperatives requests. 
 
 
-But this mapping from clause type to speech act type is not inviolable. In some contexts, it is possible that the conventionalized speech act associated with a clause type is not the actual speech act performed by uttering it. \emph{Indirect speech acts} are these mismatching cases where the primary, ``non-literal'' force of an utterance is different from the conventionalized, ``literal'' force of a sentence associated with its clause type (\citealt{searle1975tax, searle1976class, bachharnish1979, levinson1983, searlevanderveken1985, portner2018, starr2014, murraystarr2020} a.o.). The common example illustrating this phenomenon is \tit{Can you pass the salt?} as a request. As an interrogative sentence, its conventionalized (and ``literal'') force is questioning, but the primary act performed is requesting. As a result, some speech act categories can be expressed by more than one clause types, and vice versa. For example, interrogatives can express assertions, questions, requests/commands (\ref{eng-cl:q-all}); and questions can be expressed by \diis{} (\ref{eng-cl:int-all}).
+But this mapping from clause type to speech act type is not inviolable. In some contexts, it is possible that the conventionalized speech act associated with a clause type is not the actual speech act performed by uttering it. \emph{Indirect speech acts} are these mismatching cases where the primary, ``non-literal'' force of an utterance is different from the conventionalized, ``literal'' force of a sentence associated with its clause type (\citealt{searle1975tax, searle1976class, bachharnish1979, searlevanderveken1985, portner2004, starr2014, portner2018, murraystarr2020} a.o.). The common example illustrating this phenomenon is \tit{Can you pass the salt?} as a request. As an interrogative sentence, its conventionalized (and ``literal'') force is questioning, but the primary act performed is requesting. As a result, some speech act categories can be expressed by more than one clause types, and vice versa. For example, interrogatives can express assertions, questions, requests/commands (\ref{eng-cl:q-all}); and questions can be expressed by \diis{} (\ref{eng-cl:int-all}).
 \bex{eng-cl:int-all}
 Speech acts expressed by interrogatives 
 \bxl Is it snowing? \hfill Question
@@ -174,17 +201,21 @@ Is it snowing? \hfill Interrogative
 \section{Pragmatic bootstrapping hypothesis}
 %It is possible that children could use the link between speech act and clause type to make bootstrap into clause type categories
 
+%Clearly, speech act information will be necessary for the labeling problem: to understand that a particular clause type is declartaive and and another is interrogatives, it will be useful to know that the former is typically used for assertions, and the latter for questions. The question that this dissertation investigates is whether speech act information might even play a crucial rule at the clustering level... 
+
 As said in the initial description of the problem, it would be useful for learners to have access to speech act information in order to determine clause type. After separating the problem into the clustering problem and the learning problem, it may even appear \emph{necessary} that they can access speech act information. Surface features alone may allow a learner to cluster sentences into three distinct formal categories, but without being able to determine the conventional function of the sentences in a cluster they will not be able to \emph{label} the clusters correctly. This leads me to postulate the following pragmatic bootstrapping hypothesis:
 
 \begin{quote}
 Infants use the speech act information, in addition to observations of morpho-syntactic features in the surface form of sentences, to cluster and label sentences into the three major clause types.
 \end{quote}
 
+%Clearly, speech act information will be necessary for the labeling problem: to understand that a particular clause type is declartaive and and another is interrogatives, it will be useful to know that the former is typically used for assertions, and the latter for questions. The question that this dissertation investigates is whether speech act information might even play a crucial rule at the clustering level... 
 
-%previously...here are some of the differences
 
 But, as said, there is a danger of circularity.
 Our \hypos{} assumes that children can infer the speech act categories of the sentence at this point. While some evidence suggests that 18-month-olds can infer speech acts, their inferences might not be perfect. Consequently, they might have only limited access to speech act information. Moreover, there's the problem of how children can infer speech act categories in the first place -- and it is undeniable that the clause type information is useful for solving this problem. As adults, the primary way we identify the act performed by a given sentence is through its clause type. But this is precisely the problem that the child is trying to solve (i.e. identifying the clause type). If children need speech act information to identify clause type categories, but they also need clause type information to identify speech act categories, it seems that we have a chicken-and-egg problem. 
+
+%you should also mention that you will look for non linguistic cues to speech acts. 
 
 We can break out of the circularity by observing that, to get the learning process going, children do not need \emph{perfect} speech act information. I will evaluate the \hypos{} by 
 %I address the first problem by
@@ -193,15 +224,17 @@ simulating the learning of clause type with various degrees of noise in the spee
 by exploring non-clause type cues for speech act information in the input. I find that the prosody of parents' utterances, speech gap between utterances, and direct eye gaze might be useful in learning the distinctions between speech acts.
 These are noisy cues for speech act information, but cues nonetheless. As my simulations show that even very noisy speech act information is useful for learning clause types, this suggests a way out of the circularity. Learners can make use of non-clause type cues towards speech act, which may be sufficient to solve the clustering and labelling problems.
 
-\section{Discussion and roadmap}
+
+\section{Roadmap}
 \label{sec:intro:roadmap} 
+%This project will focus in particular on interrogatives and questions, and how children distinguish them from declaratives and assertions. One reason for this is because the use of questions by parents of preverbal children raises interesting challenges. The canonical role of questions is usually assumed to be information-seeking (Searle 1969). However, before children can talk, parents can’t expect informative responses, and their questions are often ones that they know the answers to (Holtzman 1972, Shatz 1979, Tamir 1980). Another reason is that the two main types of interrogatives (polar vs. WH-) raise interesting questions about form: in languages across the world, including English, it is not entirely obvious that the two types are unified from a formal standpoint, as the formal features of one (e.g. rising prosody or question particle) do not necessarily carry over to the other, and furthermore, each shares formal features with declaratives that the other does not. For example, polar interrogatives in many languages are not syntactically distinguishable from declaratives, while WH-interrogatives in many languages frequently bear the same final falling intonational contour as declaratives (Bartels 1999, Hedberg et al. 2010, Truckenbrodt 2012). A third reason is that the quasi- universality of prosodic rises in polar interrogatives (Gussenhoven 2004, a.o.) makes it a good candidate for a universal that learners may be equipped with. If so, children may be able to identify polar interrogatives earlier than WH-interrogatives. This prosodic head start for polar interrogatives may be further aided by the fact that parents may use them more than WH- interrogatives for genuine information seeking (Walker & Armstrong 1994).
 
 This dissertation is organized as follows. Chapter~\ref{chap:background} examines the developmental trajectory of speech acts and clause types, especially questions and interrogatives. As we will see, English-acquiring infants as early as 18 months seem to have already sensitive to the distinctions between different clause types and speech acts, and seem to understand the mapping between questions and interrogatives. The same holds for infants acquiring other languages as well, even though we have less evidence. Our question then is, how do 18-month-olds learn to figure out clause types?
 
 Chapter~\ref{chap:eng-cl} looks at how English-acquiring 18-month-olds could solve the problem. Specifically, is information from syntax enough for children to find the right three clause type categories, or do they need pragmatic information like the speech act of the sentence to find the right clustering? I build two computational models to address this question, a \distlearner{} (\dlearnerabbr{}), and a \praglearner{} (\plearnerabbr{}). These two learners both need to infer the abstract clause type, but \dlearnerabbr{} draws inferences from syntactic information alone while \plearnerabbr{} uses both syntactic and pragmatic information. I use a corpus study to first provide a quantitative description of the type of input that infants get, and use the resulted annotated dataset as input for the computational models. I find that pragmatic information is indeed important for solving the clustering problem: without the speech act information, \dlearnerabbr{} cannot find the right clause types. Additionally, a little pragmatics goes a long way, as  even if 80\% of the pragmatic information is noise, it still improves the learner's performance. 
 
-In Chapter~\ref{chap:man-cl}, I apply the same methodology to another language, Mandarin. Mandarin-acquiring infants figure out the clause types of their language around the same age as English-acquiring infants, but the two languages employ different morpho-syntactic features for clause typing. How do Mandarin-acquiring infants solve the problem? Do they also need pragmatic information? I compare the same two learners, and found that pragmatics information is crucial for identifying Mandarin clause types; without pragmatic information, learners might not be able to identify any of the clause types correctly.
+In Chapter~\ref{chap:man-cl}, I apply the same methodology to another language, Mandarin. Mandarin-acquiring infants figure out the clause types of their language around the same age as English-acquiring infants, but the two languages employ different morpho-syntactic features for clause typing. How do Mandarin-acquiring infants solve the problem? Do they also need pragmatic information? I compare the same two learners, and found that pragmatics information is crucial for identifying Mandarin clause types; without pragmatic information, learners might not be able to identify any of the clause types correctly, and even with pragmatic information, the learner might still have some difficulty identifying the imperative clause type.
 
-But in both chapters, I operate under the assumption that infants have information about speech act types at their disposal. How do they obtain such information about the speech acts of their parents' utterances? %Of course their knowledge of clause type might help, but are there signals from other sources?
-In Chapter~\ref{chap:eng-sp}, I explore potential cues from prosody and parents' behavior that might help infants identify questions. Chapter~\ref{chap:discussion} concludes the dissertation.
+But in both chapters, I assume that infants have information about speech act types at their disposal. How do they obtain such information about the speech acts of their parents' utterances? In Chapter~\ref{chap:eng-sp}, I explore potential cues from prosody and parents' behavior that might help infants identify questions. Chapter~\ref{chap:discussion} concludes the dissertation.
+
 
