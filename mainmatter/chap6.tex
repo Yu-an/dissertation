@@ -2,43 +2,44 @@
 \label{chap:discussion}
 
 \section{Summary of findings}
-In language after language, we see three clause types (\diis{}) dedicated to three speech acts (\aqrs{}), and by 18 months old, children seem to be able to differentiate these clause types and associate them with their canonical speech act. To gain this ability, they need to identify the right categories of clauses (the clustering problem) and figure out what speech act they are canonically used for (the labeling problem). To solve the labeling problem, some speech act information must be available, but if there are too many mismatching cases between speech acts and clause types, this information might not be useful after all. To solve the clustering problem, children need to pay attention to the surface morpho-syntactic features of each sentence in their input. But in the input, the surface features might be absent or misleading. Again, it seems plausible that speech act information can help, but this information too is potentially misleading.
+In language after language, we find three clause types (\diis{}) that are dedicated to three speech acts (\aqrs{}). By 18 months old, children seem to be able to differentiate these clause types and associate them with their canonical speech act. To gain this ability, they need to identify the right categories of clauses (i.e.\ solve the clustering problem) and figure out what speech act they are canonically used for (i.e.\ solve the labeling problem). To solve the labeling problem, some speech act information must be available to the learner, but since there is the possibility of mismatches -- sentences used to perform speech acts that are not canonically associated with their clause types -- it is not immediately clear how useful it is for learners to be able to identify speech acts, if it is useful at all. Then, to solve the clustering problem, children surely need to pay attention to the surface morpho-syntactic features of each sentence in their input. But in the input that learners actually receive, many surface features might be absent or misleading. Again, it seems plausible that the availability of some information related to speech acts might be helpful to the learner, but this information too is potentially misleading, again due to cases where sentences are used to perform speech acts that are not canonically associated with their clause type.
 
-This dissertation investigates how children figure out clause type categories. In particular, are the surface formal features of the sentences in the input sufficient for children to figure out the clustering of clause types? If not, is speech act information helpful for solving the clustering problem?
+This dissertation investigates how children figure out clause type categories. In particular, are the surface formal features of the sentences in the input sufficient for children to figure out the clustering of clause types? If not, is speech act information helpful for solving the clustering problem? And how might learners access such speech act information?
 
-I addressed these questions computationally by simulating two learners, a \distlearner{} (\dlearnerabbr{}), and a \praglearner{} (\plearnerabbr{}). Both learners use the surface morpho-syntactic features of the input sentences to attempt to cluster sentences into three categories, i.e.\ to learn the clause type categories. But the \plearnerabbr{} additionally has access to information about which speech act is performed by a sentence. I found that in English, the \dlearnerabbr{} model could identify interrogative clause but could not identify the other two clauses, but in Mandarin, this model cannot find any of the right categories. The \plearnerabbr{} model in both languages outperform the \dlearnerabbr{}. In English, the \plearnerabbr{} model can find all three clause types; in Mandarin, the model  has problem with imperative clauses. These results suggest that pragmatics is helpful, indeed crucial, to solve the clustering problem. 
+I addressed these questions computationally by simulating two learners, a \distlearner{} (\dlearnerabbr{}), and a \praglearner{} (\plearnerabbr{}). Both learners use the surface morpho-syntactic features of the input sentences to attempt to cluster sentences into three categories, i.e.\ to learn the clause type categories. But the \plearnerabbr{} additionally has access to some information about which speech act is performed by a sentence. I found that in English, the \dlearnerabbr{} model could identify interrogative clause but could not identify the other two clauses, but in Mandarin, this model cannot find any of the right categories. The \plearnerabbr{} model in both languages outperforms the \dlearnerabbr{}. In English, the \plearnerabbr{} model can find all three clause types; in Mandarin, the model has problem with imperative clauses. These results suggest that pragmatics is helpful, indeed crucial, to solve the clustering problem. 
 
-But if the speech act information is useful for clause type learning, how do children figure out speech act information? Given that the way we generally identify a speech act is via its clause type, there is a potentially vicious circle here --- you need to know the clause type to identify the speech act but you need to know the speech act to identify the clause type. How do learners avoid this circularity?
+But if the speech act information is useful for clause type learning, how do children figure out speech act information? Given that the way we generally identify a speech act is via its clause type, there is a potentially vicious circle here -- you need to identify a sentence's clause type to infer the speech act that is being performed, but you need to be able to infer speech act information to learn to identify clause types. How do learners avoid this circularity?
 
 One way to break this circularity is to \tit{not} think of the learning of speech acts and clause types as two processes that need to happen sequentially, but as a joint learning process. It is likely that children learn to identify speech act and clause type in tandem and mutually informative ways.
 
-To get one step closer from this joint learning hypothesis, I first addressed the question of how much speech act information children need to identify clause types. With the \plearnerabbr{} model, I simulated the learning of clause type with various degrees of noise in the speech act information. I showed that even if children can only perceive speech act information a small proportion of the time, they can still benefit from this information, as a noisy pragmatic percept is superior to no pragmatics at all. 
+To get one step closer to understanding and evaluating this joint learning hypothesis, I first addressed the question of how much speech act information children need to identify clause types. With the \plearnerabbr{} model, I simulated the learning of clause type with various degrees of noise in the speech act information. I showed that even if children can only perceive speech act information a small proportion of the time, they can still benefit from this information, as a noisy pragmatic percept is superior to no pragmatics at all. 
 
-I then explored what kind of non-clause type cues for speech act information is present in the input. Even if children must rely on clause type information to figure out the speech acts, they could have access to additional information that is unrelated to clause typing, but informative for recognizing speech act type. When speakers perform speech acts, because of the conventional functions of these speech acts on the discourse, the performance might be associated with certain socio-pragmatic features. For example, because of questions' response-elicitation function, we would expect pauses after questions. With prior knowledge about communication, and expectations about what questions do, children might able to use these socio-pragmatic features to figure out this speech act. If children have such expectations, would they find anything in the input? 
+I then explored what kind of non-clause type cues for speech act information are present in the input. Even if children must rely on clause type information to figure out the speech acts, they could have access to additional information that is unrelated to clause typing, but is informative for recognizing speech act type. When speakers perform speech acts, because of the conventional functions of these speech acts on the discourse, the performance might be associated with certain socio-pragmatic features. For example, because of questions' response-elicitation function, we would expect pauses after questions. With prior knowledge about the functions of communication, and expectations about what questions do, children might able to use these socio-pragmatic features to figure out this speech act. If children have such expectations, could they find anything in the input? 
 
-I explored three cues that could potentially differentiate questions from other speech acts prosody, pauses, and direct eye gaze. I found that parents do not use final rises more often with questions, but polar interrogatives have more final rises than other types of speech acts and clause types, including \twh-interrogatives and declaratives. Although due to the limitation of the pitch identification algorithm, these results are still preliminary, and we need manually annotated pitch data to draw further conclusions. Moreover, parents tend to pause longer after questions, and attend the child more when asking questions. Therefore it is in principle plausible that there are some socio-pragmatic features that children can use, in addition to their growing knowledge of clause types to infer the speech act category of an utterance. This little bit of information about speech act could then be used to provide enough pragmatic information that the child needs in order to get the clause type clusters identified accurately.
+I explored three cues that could potentially differentiate questions from other speech acts: prosody, pauses, and direct eye gaze. I found that parents do not use final rises more often with questions, but that polar interrogatives have more final rises than other types of speech acts and clause types, including \twh-interrogatives and declaratives. However, due to the limitation of the pitch identification algorithm, these results are still preliminary, and we need manually annotated pitch data to draw further conclusions. Moreover, parents tend to pause longer after questions, and attend to the child more when asking questions. Therefore it is in principle plausible that there are some socio-pragmatic features that children can use, in addition to their growing knowledge of clause types to infer the speech act category of an utterance. This little bit of information about speech act could then be used to provide enough pragmatic information that the child needs in order to get the clause type clusters identified accurately.
 
 \section{The pragmatic syntactic bootstrapping hypothesis}
-
-
 
 When examined separately, the learning of clause types and the learning of speech acts share many similarities. 
 %The learning of clause types seem to parallel with the learning problems typically associated with the semantic bootstrapping hypothesis, and the learning of speech act categories seem to parallel to some degree to the problems addressed by the syntactic bootstrapping hypothesis. Let's look at them one by one. 
 
 
-The clause type categories are abstract formal features of a sentence related to a variety of surface forms, none of which is obligatorily present and many of which can occur in sentences with a different clause-type feature. While in principle the surface formal features could be sufficient, this dissertation showed that they in fact fall short. To compensate for this insufficiency, learners can use the speech act information --- which systematically related to clause types --- to find the right way for clause typing.  
+The clause type categories are abstract formal features of a sentence related to a variety of surface forms, none of which is obligatorily present and many of which can occur in sentences with a different clause-type feature. While in principle the surface formal features could be sufficient, this dissertation showed that they in fact fall short. To compensate for this insufficiency, learners can use the speech act information -- which is systematically related to clause types -- to learn to identify clause types and which surface features are relevant for clause typing.
 
 %Leaving aside the nature of speech act categories for now, but they are also not directly observable from the input, same as clause types, and need to be inferred. 
-Speech acts are abstract pragmatic/semantic/conceptual categories. As we have seen in Chapter~\ref{chap:eng-sp}, speech act categories are related to a variety of human behaviors (e.g. pauses and eye gaze), none of which is obligatorily present (you don't need to pause after a question) and many of which can occur when performing other speech act categories. While I showed that the features are correlated with the use of questions, it is likely that the learners use the clause type information --- which systematically related to speech acts --- to constrain their inference of speech acts.  
+Speech acts are abstract pragmatic/semantic/conceptual categories. As we have seen in Chapter~\ref{chap:eng-sp}, speech act categories are related to a variety of human behaviors (e.g. pauses and eye gaze), none of which are obligatorily present (you don't \emph{need} to pause after a question) and many of which can occur when performing other speech act categories. While I showed that the features are correlated with the use of questions, it is likely that the learners use the clause type information --- which is systematically related to speech acts --- to inform how they infer speech act types.
 
-In both learning processes, one source of information could bridge the gap between the learners' input and the abstract category they need to acquire, because of the robust correlations between clause types and speech acts across languages. 
+In both learning processes, one source of information could bridge the gap between the learners' input and the abstract category they need to acquire, because of the robust correlation between the major clause types and the major speech act types across languages. 
 
-But as I have discussed in previous chapters, when we put these two learning processes together, our first impression is that there is a chicken-and-egg problem: the learner needs speech act information to learn clause types, but they also needs clause types to learn speech act information. To break this vicious cycle, \hypos{} proposes that the learner has to learn the two in tandem:
+But as I have discussed throughout this dissertation, when we put these two learning processes together, our first impression is that there is a chicken-and-egg problem: the learner needs speech act information to learn clause types, but they also needs clause types to learn speech act information. To break this vicious cycle, \hypos{} proposes that the learner has to learn the two in tandem:
 
 \begin{exe}\ex\label{ex:prag-syn-hypo}
 \tbf{The \hypos{}}:\\
 Children learn to identify speech acts and clause types in tandem and mutually informative ways: children learn to identify clause types by tracking formal regularities in conjunction with their growing knowledge of speech acts and its associated social pragmatic cues; similarly, they identify speech acts by tracking social pragmatic cues in conjunction with their growing understanding of the syntax of clause types. 
 \end{exe} 
+
+\begin{comment}
+
 
 \bex{}
 \ex
@@ -57,25 +58,52 @@ Children learn to identify speech acts and clause types in tandem and mutually i
 	]
 	[. {Speech act categories \\
 	\aqrs{}} 
-		[. {Social pragmatic features} ]
+		
 		[. {Prosodic features} ]
+		[. {Social pragmatic features} ]
 	]
 ]
 
 \end{tikzpicture}
 \eex
-
-In this dissertation, I have established that (a) the learning of clause types does not require perfect speech act information, which makes it possible that children learn clause type information while still trying to figure out the speech act information. (b) There are social pragmatic cues associated with the use of the question speech act. So if a child is armed with a theory of what questions do, in addition to an innate knowledge that there are speech act categories, they could potentially find the signals they need.
-
-In future work, I plan to provide a proof of concept for the \hypos{} for the acquisition of questions and interrogatives.  
+\end{comment}
 
 
+In this dissertation, I have established (a) that the learning of clause types does not require perfect speech act information; thus, it is possible that children learn clause type information while still trying to figure out the speech act information. And, (b) that there are social pragmatic cues associated with the use of the speech act of questioning. So if a child is equipped with a theory of what questions do, in addition to an innate knowledge that there are speech act categories that are associated with clause types, they could potentially find the signals they need.
+
+In future work, I plan to test the feasibility of the speech act bootstrapping hypothesis computationally. Figure~\ref{fg:model} shows the graphical model. 
+  
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  node distance= 0.8cm and 0.8cm,
+  classnode/.style={draw,ellipse,text width=0.3cm,align=center},
+  enode/.style={draw,ellipse,text width=0.2cm,align=center},
+  obsnode/.style={draw,ellipse,text width=0.3cm,align=center, fill=black!30}
+]
+\node[classnode] (a) {$A$};
+\node[obsnode, below right=of a] (p) {$P$};
+\node[classnode, below left =of a] (c) {$C$};
+\node[obsnode, below left=of c] (s) {$S$};
+\node[obsnode, below right =of c] (f) {$F$};
+%\node[enode, left=of c] (e) {$e$};
+\path (a) edge[-latex] (p)
+(a) edge[-latex] (c)
+(c) edge[-latex] (s)
+(c) edge[-latex] (f)
+(a) edge[-latex] (f)
+;
+\end{tikzpicture}
+\caption{Graphical Model}\label{fg:model}
+\end{figure}
+
+The question is then whether it is possible for a learner to use the expected social pragmatic cues to initially identify questions in their input, and use this speech act information to bootstrap the process of learning to identify the surface properties of interrogative clauses. The proposed model will (i) track the prosodic and pragmatic features of each utterance and infer the speech act that would generate these features; (ii) using knowledge of prosodic and syntactic features of each sentence, the model will be able to identify the clause type that would generate these features; and (iii) speech and clause type categories will influence each other. The advantage of such a learner is that it can exploit pragmatics to identify clause type indirectly via identifying the speech act, and exploit syntax to identify speech act indirectly via identifying the clause type. 
 
 %%%%
 \begin{comment}
 Previously, \textcite{hacquardlidz2018} proposes the \hypos{} to address the learning of attitude verbs like \tit{think}. In their paper, the hypothesis is proposed for the learning of an abstract semantic property (the semantic class of an attitude verb) that is systematically related to (a) syntactic distribution and (b) pragmatic function. The \hypos{} is proposed to deal with the problem that observations of only the syntactic distribution or only the pragmatic function had the potential to mislead, so each was used to constrain the other. 
 
-In our situation, the learners need to figure out two abstract categories, the clause types and the speech acts information, and the formulation seems to be that the two categories need to be learned in tandem.
+In our situation, the learners need to figure out two abstract categories, the clause types and the speech acts information, and the =two categories need to be learned in tandem. 
 
 \tbf{The \hypos{}} (alternative):\\
 Children learn to identify the sentential force of a sentence by observing the speech acts that the sentence is used to perform on the one hand, and observing the syntactic clause types in tandem and mutually informative ways: children learn to identify clause types by tracking formal regularities in conjunction with their growing knowledge of speech acts and its associated social pragmatic cues; similarly, they identify speech acts by tracking social pragmatic cues in conjunction with their growing understanding of the syntax of clause types. 
