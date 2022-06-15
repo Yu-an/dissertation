@@ -1,11 +1,11 @@
 \chapter{Learning to identify clause types in Mandarin}
 \label{chap:man-cl}
 
-In this chapter, we will explore how Mandarin-acquiring children learn clause typing. As we have seen in the last chapter, pragmatic information is crucial for finding the right clause type clustering in English. We found that a learner must have access to some pragmatic information in order to find the right clause types but this learner can succeed with very limited access to pragmatic information. Can we show the same for learners of Mandarin?
+In this chapter, we will explore how Mandarin-acquiring children learn clause typing. As we have seen in the last chapter, pragmatic information is crucial for finding the right clause type clustering in English. We found that a learner must have access to some pragmatic information in order to find the right clause types but this learner can succeed with very limited access to pragmatic information. Can we show the same for learners of a different language, like Mandarin?
 
-As Mandarin [+int] and [imp] have different properties than in English, is it possible for a learner to infer the surface forms associated with these features from the input? Is pragmatics also crucial for Mandarin-acquiring children? And if so, how much pragmatics is required? In this chapter, I address these questions computationally following the same methodology as in Chapter \ref{chap:eng-cl}. I find that, for Mandarin too, surface morpho-syntactic features alone are not sufficient for learners to cluster sentences into the three clause types, so pragmatics is needed. 
+Mandarin offers an interesting testing case not only because it has a different set of surface features for [+int] and [imp]. Due to its impoverished morphology, the problem with absent and misleading surface features might be even more pronounced. Is it possible for a learner to infer the surface forms associated with these features from the input? Is pragmatics also crucial for Mandarin-acquiring children? And if so, how much pragmatics is required? In this chapter, I address these questions computationally following the same methodology as in Chapter \ref{chap:eng-cl}. I find that, for Mandarin too, surface morpho-syntactic features alone are not sufficient for learners to cluster sentences into the three clause types, and pragmatics is needed, even more so than for English. 
 
-This chapter is organized as follows: we will review the properties of Mandarin [+int] and [imp], and children's knowledge regarding these properties. I then report results from a corpus study for Mandarin-speaking parents' input to children in  \ref{sec:mancl:corpus}. The data from the corpus study was used to simulate the two learners, \distlearner{} and \praglearner{}.  %
+This chapter is organized as follows: we will review the properties of Mandarin [+int] and [imp], and what we know of children's knowledge regarding these properties. I then report results from a corpus study for Mandarin-speaking parents' input to children in  \ref{sec:mancl:corpus}. The data from the corpus study was used to simulate the two learners, \distlearner{} and \praglearner{}.  %
 
 \section{Background}
 \label{sec:mancl:bg}
@@ -14,7 +14,9 @@ This chapter is organized as follows: we will review the properties of Mandarin 
 
 
 
-In Mandarin, the [+int] value in $C^{0}$ does not trigger movements, but instead shows up in surface form as \twh-phrases, sentence final \tit{ma}, and the A-not-A form. In Mandarin \twh-interrogatives, \twh-phrases  do not need to be fronted to clause-initial position (\citealt{huang1982, cheng1991} among many others). Compare the declarative sentence in (\ref{bg-syn:dec-man}) with the \twh-interrogative in (\ref{bg-syn:wh-man}): the \twh-phrase \tit{shenme} occurs in the same position in the interrogative (\ref{bg-syn:wh-man}) as the noun phrase \tit{zaocan} in (\ref{bg-syn:dec-man}). 
+In Mandarin, the [+int] value in $C^{0}$ does not trigger movements, but instead shows up in surface form as \twh-phrases, sentence final \tit{ma}, and the A-not-A form. Let's go through one by one.
+ 
+The presence of a \twh-phrase could signal [+int]. Mandarin \twh-interrogatives are famously known to have \twh-phrases stay in situ, and do not need to be fronted to clause-initial position (\citealt{huang1982, cheng1991} among many others). Compare the declarative sentence in (\ref{bg-syn:dec-man}) with the \twh-interrogative in (\ref{bg-syn:wh-man}): the \twh-phrase \tit{shenme} occurs in the same position in the interrogative (\ref{bg-syn:wh-man}) as the noun phrase \tit{zaocan} in (\ref{bg-syn:dec-man}). 
 
 
 %\begin{minipage}[t]{0.45\linewidth}	
@@ -30,7 +32,7 @@ Xiaoxiao eat-\Asp{} what \\
 \eex
 
 
-Interrogativity might also have effects on prosody. As mentioned before, \twh-phrases in Mandarin can be interrogative or indefinite (\ref{bg-syn:ambwh}), but interrogative \twh{} is normally associated with prosodic prominence (\cite{hu2002prosody, dong2009, yangyang2018} a.o.).
+But prosody could be important for [+int]. The \twh-phrases in Mandarin can be interrogative or indefinite (\ref{bg-syn:ambwh}), but interrogative \twh{} is normally associated with prosodic prominence (\cite{hu2002prosody, dong2009, yangyang2018} a.o.).
 
 \bex{bg-syn:ambwh}
 \gll Xiaoxiao	mei	chi	\tun{shenme}\\
@@ -76,10 +78,10 @@ Sentence final particles (SFPs) like \ma{} are  particles at the right edge of a
 
 To summarize the discussion so far, the surface form of [+int] in Mandarin is sentence final particle \ma{}, A-not-A constructions, and \twh{} with prominence. 
 
-Now, imperatives in Mandarin share many of the properties of imperatives in English, namely the lack of subjects. This clause type is sometimes marked by a negative modal \tit{bie} (and its etymologically related modal \tit{beng}), which only occurs in imperatives (\cite{chao1968, lithompson}):
+In theoretical discussions, it is extremely difficult to pin down what are imperatives in Mandarin. One diagnostic is the negative modal \tit{bie} (and its etymologically related modal \tit{beng}), which cannot occur with other values of $C^{0}$ (\cite{chao1968, lithompson}):
 
 \bex{ex:man:bie}
-\bxl{ex:man:bie:imp}
+\bxl\label{ex:man:bie:imp}
 \gll \tbf{Bie} pao!\\
 Don't run\\
 ``Don't run!''
@@ -100,7 +102,7 @@ I advocate Lisi don't exit-country\\
 
 While some have argued that certain \Sfp{s} like \tit{ba} are imperative particles (\cite{zhudexi,chao1968,lithompson}), they can actually appear in declaratives, imperatives, and interrogatives, and do not necessarily convey a request/command force (\cite{hanyang1995,liboya2006,ettingermalamud2014,YY2021}):
 \bex{ex:mancl:ba}
-Xiayu le \tbf{ba}?\\
+\gll Xiayu le \tbf{ba}?\\
 rain \Asp{} \Sfp{}\\
 \trans ``It's raining?''
 \eex
@@ -113,11 +115,29 @@ Xiang zuo a?\\
 want sit \Sfp{}\\
 ``Want to sit on it?''
 \hfill Declaratives as question\\
-Mother of Tong, Session 01;08;22
+\hspace*{\fill} Mother of Tong, Session 01;08;22
 \eex
 
 The particle \tit{a} elicits a discourse effect along the lines of ``we both know $p$ (or the answers to the question $q$), but let's put it on the table.'' I do not consider this particle to be changing the clause type to be interrogative, just like the final rise in English does not change the clause type of declaratives. This is notwithstanding the fact that the discourse effect of an utterance with \tit{a} is similar to that of a question, namely the speaker wants the addressee to respond. This too is akin to the English final rise.
 I therefore do not assume that sentence final particles like \tit{ba} and \tit{a} that can occur across clause types are related to [imp] or [+int].
+
+
+But the only other possible surface feature for Mandarin might be the lack of subjects. But as we have briefly mentioned, this feature might create many problems for the learner. First, as it is possible to have second person pronoun as a subject with [imp]. In (\ref{}), the sentence has the imperative marker \tit{bie}, but also has subject \tit{ni}:
+\bex{ex:man:imp-2}
+\gll Ni \tbf{bie} pao!\\
+You don't run\\
+``Don't run!''
+\eex 
+
+Moreover, as Mandarin is a pro-drop language, other types of sentences could appear without subjects. 
+
+Another surface feature for English [imp] is [$-$ verb suffix], but Mandarin verbs do not have suffixes. Mandarin does have aspect morphemes \tit{le, zhe, guo}, but they can appear with [imp]:  
+
+\bex{}
+Bie yao-zhe zuichun!\\
+Don't bite-\Asp{} lips\\
+``Don't bite your lips!'' \hfill Mother of Tong, Session 02;00;19
+\eex
 
 Thus, [+int] in Mandarin may show up in the surface form of the sentence as the presence of \twh{} with prominence, sentence final \tit{ma}, or A-not-A structure; [imp] shows as sentences without subjects or with second person subjects, and as special negative modal \tit{bie} or \tit{beng} in negative imperatives. 
 
@@ -128,7 +148,7 @@ In sum, Mandarin learners face the same learning problem as English learners: th
 
 \subsection{Mandarin-acquiring children's knowledge of clause types}
 \label{sec:mancl:bg:child}
-In this section we will look at evidence for Mandarin-acquiring children's knowledge regarding the features reviewed in the last section. For many of these features, we do not have a lot evidence from the comprehension side, and we have to rely on data from children's production alone to make inferences about their knowledge. As production might not be an accurate reflection of children's grammar, we will be conservative in our assessment.   
+In this section we will look at what we know about Mandarin-acquiring children's knowledge regarding the features reviewed in the last section. For many of these features, we do not have a lot evidence from the comprehension side, and we have to rely on data from children's production alone to make inferences about their knowledge. As production might not be an accurate reflection of children's grammar, we will be conservative in our assessment.   
 
 \tsc{\textpm subjects}   As Mandarin does not have subject-verb agreement, and does not have expletive subjects, it is hard to assess chidlren's knowledge regarding subjecthood. But observations of children's production data before 18 months old suggest that they understand the basic word order of Mandarin as SVO (\cite{tardif1993verb,tardif1996verb}). They also produce subject control sentences (e.g. \tit{Zhangsan tried PRO to help me}) correctly before turning 2 (\cite{yang2015control}). Although this falls out of our interested age range, studies have demonstrated that 2.6-year-olds can correctly distinguish subjects from topics (\cite{chien1985subj}). 
 
@@ -152,7 +172,7 @@ In this section we will look at evidence for Mandarin-acquiring children's knowl
 \label{sec:mancl:corpus:method}
 For this corpus study, we used data from the Tong subcopora (\cite{TongCorpus}) from CHILDES (\cite{CHILDES}), which contains audio and video recordings of weekly hour-long free play sessions between Tong and his caregivers from 1;7-3;4 in Shenzhen, China where Mandarin is the language of the community. Although this corpus only contains data from one child, it is the source of Mandarin data that is most comparable to the Providence Corpus in terms of the child's age range and availability of audio/video data. If more corpora from Mandarin-speaking children become available in the future, the methodology developed here can be applied to them. Another problem with the corpus is that it does not have data from when before the child was 18 months old, which is older than the age that we assume children figure out the clause type categories; 18 months is also older than the children in the English corpus study. However, while the pragmatics of parent-child interaction might change with children's age, the morpho-syntactic properties of parents' sentences should stay constant. Therefore, we assumed that the input sentences share similar properties as parents' sentences before Tong turns 18 months old. Once corpus data from younger children becomes available, we would apply the same methodology to these data. 
 
-We sampled 500 conversational turns from each session from when the child was 01;07;18 to 2;2;16. Each session was coded by two annotators independently for the Clause Type and Speech Act information (mean cohen's $\kappa$: 0.8). For the morpho-syntactic features, initial annotation was generated by a script (\textcolor{red}{url}) using the morphological tagging provided by the corpus, and then manually corrected. In total, 4501 utterances were annotated. 
+We sampled 500 conversational turns from each session from when the child was 01;07;18 to 2;2;16. Each session was coded by two annotators independently for the Clause Type and Speech Act information (mean cohen's $\kappa$: 0.8). For the morpho-syntactic features, initial annotation was generated by a script using the morphological tagging provided by the corpus, and then manually corrected. In total, 4501 utterances were annotated. 
 
 \subsubsection{Clause Type}
 
@@ -628,7 +648,7 @@ In this chapter, we investigated how Mandarin-acquiring 18-month-olds can learn 
 Just like English parents, Mandarin parents also 
 use clause types systematically, and the three clause types are predominantly mapped to their canonical functions (declaratives to assertions, interrogatives to questions, imperatives to requests/commands). The three clause types show distinctive formal profiles in the input available to children: compared to declaratives, interrogatives are more likely to have post-verbal UFIs, and more likely to have A-not-A and sentence final \tit{ma}; imperatives are more likely to not have subjects and negative modal \tit{bie}.
 
-We then investigated the extent to which Mandarin learners need to rely on pragmatic information to identify clause types. I showed that, \dlearnerabbr{} performs worse in Mandarin than in English, as it simply cannot identify any of the right categories, even when we loosen our assumptions on learners' morpho-syntactic knowledge. But adding pragmatic information improves the performance significantly, as the \plearnerabbr{} could identify interrogative and declarative clauses, but still have problem with imperatives. Whereas a little pragmatics helps a lot for English learners, Mandarin learners require more accurate pragmatic information to succeed; when the noise in speech act exceeds 40 \% (20\% for learners with less morpho-syntactic knowledge), performance drops to the same level as syntax-only models.
+We then investigated the extent to which Mandarin learners need to rely on pragmatic information to identify clause types. I showed that, \dlearnerabbr{} performs worse in Mandarin than in English, as it simply cannot identify any of the right categories, even when we loosen our assumptions on learners' morpho-syntactic knowledge. But adding pragmatic information improves the performance significantly, as the \plearnerabbr{} could identify interrogative and declarative clauses, but still have problem identifying imperatives. Whereas a little pragmatics helps a lot for English learners, Mandarin learners require more accurate pragmatic information to succeed; when the noise in speech act exceeds 40 \% (20\% for learners with less morpho-syntactic knowledge), performance drops to the same level as syntax-only models.
 Thus, pragmatics is essential for both English and Mandarin learners. But pragmatics is even more crucial for Mandarin learners, as the morpho-syntactic information is not enough for clause typing. 
 
 So far, we have been just \emph{assuming} that children have access to, possibly noisy, speech act information. As mentioned, this could lead to a chicken-and-egg problem: children need speech act to learn clause type, but at the same time they need clause type to learn speech act. In the next chapter, we explore other potential cues for pragmatic information that are not related to clause typing. As we have demonstrated with our simulations, learners of both English and Mandarin can tolerate some noise in the pragmatic information used to infer clause type. If cues other than clause type (e.g. parents' attention behavior) are informative of speech act to some extent, this may already be sufficient to solve the clustering problem of clause typing. In the next chapter, we specifically look at three such cues, prosody, speech gaps, and parents' attention.

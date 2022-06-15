@@ -2,10 +2,16 @@
 \label{chap:eng-cl}
 
 
-As discussed in the previous chapters, cross-linguistically we see three major clause types, declaratives, interrogatives, and imperatives, corresponding to three main speech acts, assertions, questions, and commands/requests. We also saw in Chapter~\ref{chap:background} that by 18 months old, infants seem to have figured out the differences among these clauses and how they are associated with their canonical functions.  To gain this ability, they must have solved a number of learning problems. Specifically, as discussed in Chapter~\ref{chap:introduction}, learners need to solve the \tbf{clustering problem}, i.e. clustering clauses in the right three categories, and the \tbf{labeling problem}, i.e. linking each category to its function. 
+As discussed in the previous chapters, cross-linguistically we see three major clause types, declaratives, interrogatives, and imperatives, corresponding to three main speech acts, assertions, questions, and commands/requests. We also saw in Chapter~\ref{chap:background} that by 18 months old, infants seem to have figured out clause types and their canonical functions, i.e., the type of speech acts they are canonically used for.  As discussed in Chapter~\ref{chap:introduction}, the acquisition of clause types can be decomposed into two challenges: 1) the clustering problem, i.e. clustering clauses in the right three categories, and 2) the \tbf{labeling problem}, i.e. linking each category to its function. 
 
 %Given that infants's early success at identifying clause types,
-This chapter investigates how learners solve these problems, especially the clustering problem, by probing the extent to which children need to rely on pragmatic information (i.e., inferring what speech act a given utterance of sentence is conveying). As discussed in Chapter~\ref{chap:introduction}, pragmatic information is essential for solving the labeling problem. The question I ask here, then, is whether pragmatic information is also crucial for solving the clustering problem as well. Will a learner strictly tracking formal regularities home in on the right three clusters of clauses? Will a learner privy to some speech act information fare better? How much pragmatic information is required? To answer these questions, I compare the performance of two computational models, a \gls{dlearnerabbr} and a \gls{plearnerabbr}. Since the success of the learning models should be commensurate with infants' early successes at identifying clause types, I will test the models using data from an annotated dataset I created with parental sentences in the Providence Corpus (\cite{ProvidenceCorpus}). One additional problem arises from our assumption that children have access to the speech act information, because we cannot rely on infants to perceive the pragmatic import of sentences in the absence of the knowledge of clause typing. While I will return to this problem in Chapter~\ref{chap:eng-sp}, in this chapter I ask how much pragmatics is needed for solving the cluster problem. To answer this question, I manipulated the ratio of noise in the pragmatic information and found that the clustering can succeed with very limited access to pragmatic information. . 
+This chapter investigates how learners solve these problems, especially the clustering problem, by probing the extent to which children need to rely on pragmatic information (i.e., inferring what speech act a given utterance of sentence is conveying). As discussed in Chapter~\ref{chap:introduction}, pragmatic information is essential for solving the labeling problem. The question I ask here, then, is whether pragmatic information is also crucial for solving the clustering problem, or, conversely, if it might hurt. Will a learner strictly tracking formal regularities home in on the right three clusters of clauses? Will a learner privy to some speech act information fare better? Does the speech act information help or hurt the learner? It can help by highlighting which formal distinctions matter for clause typing; it could hurt if clause types are systematically used in indirect speech acts. If pragmatic information like speech act helps, how much pragmatic information is required? 
+
+To answer these questions, I compare the performance of two computational models, a \gls{dlearnerabbr} and a \gls{plearnerabbr}. Since the success of the learning models should be commensurate with infants' early successes at identifying clause types, I test the models using data from an annotated dataset created with parental sentences in the Providence Corpus (\cite{ProvidenceCorpus}). I will show that the \gls{dlearnerabbr} fail to identify all three clause types, suggesting that the morpho-syntactic information alone is not sufficient for learning clause types, and pragmatic information, i.e. the speech act that a sentence is used to perform, is crucial.
+
+But how much pragmatics is needed, I manipulate the ratio of noise in the pragmatic information. I will show that learners need very little pragmatic information to help them figure out clause type. Even with 80\% noise, models with speech act information still outperform the one without.
+
+In this chapter, I assume that learners can have access to pragmatic information. Chapter~\ref{chap:eng-sp} will address the question of how learners might be able to glean speech act information other than relying on clause types. 
 
 This rest of the chapter is organized as follows: 
 In Section~\ref{sec:engcl:background}, I first briefly introduce the two computational models mentioned above, and how they can help us answer our questions (Section~\ref{sec:engcl:bg:learners}). I then review the formal features of English \diis{} (Section~\ref{sec:engcl:bg:grammar}), setting the stage for discussing the learning of these clause types. But these are features that English employs for clause typing, infants at 18 months old might not be able to perceive all of these features. To allow our models to best capture 18-month-olds' learning process, we need to look at 18-month-olds' linguistic capacity and knowledge with regard to these features. So in Section~\ref{sec:engcl:bg:assumptions} I briefly go through the linguistic capacities and knowledge of infants before 18 months old with regard to the formal features used for clause typing, which in turn will guide the way these features are coded in the corpus. 
@@ -26,7 +32,7 @@ The \tbf{\distlearner{}} (\dlearnerabbr{}) assumes that learners track the stati
 
 The \tbf{\praglearner{}} (\plearnerabbr{}) also tracks the distributions of morpho-syntactic features, but at the same time, it keeps track of the speech acts expressed by these sentences as well. Thus, it infers clause type categories with information from both syntax and pragmatics. 
 
-Thus, we would be able to answer the question of whether pragmatics is crucial for the clustering problem by comparing the performance of these two learners: if pragmatic information indeed helps the learner, not only with labeling but also with clustering, we would see \plearnerabbr{} outperforms \dlearnerabbr. Additionally, if \plearnerabbr{} indeed performs better, we can manipulate the ratio of noise in the pragmatic information that \plearnerabbr{} receives, to see how much pragmatic is needed for learners to solve the clustering problem. 
+Thus, we would be able to answer the question of whether pragmatics is crucial for the clustering problem by comparing the performance of these two learners: if pragmatic information helps the learner, not only with labeling but also with clustering, we would see \plearnerabbr{} outperforms \dlearnerabbr. Additionally, if \plearnerabbr{} performs better, we can manipulate the ratio of noise in the pragmatic information that \plearnerabbr{} receives, to see how much pragmatic is needed for learners to solve the clustering problem. 
 
 
 The success of these two learners depend on the specific features we feed into the models. In Chapter~\ref{chap:background}, we reviewed different taxonomies for speech act information and we may abstract away from language-specific ways of indicating force by having the \plearnerabbr{} keep track of pragmatic information in terms of knowing whether a sentence is an assertion, question or request. But the morpho-syntactic features for clause typing differ from language to language and to test whether the \dlearnerabbr{} can acquire clause typing from morphosyntax alone, we must test it on the actual features of the language we test it on. So, in the next section, we will go through the specific morpho-syntactic features that English employs for clause typing, to set the stage for our discussion of the learning of clause types. 
@@ -103,7 +109,7 @@ Be quiet!
 \eex
 
 
-In sum, declaratives ([$-$int, $-$imp] feature in $C$) in English are the unmarked clause type; interrogatives ([+int] in $C$) are associated with subject-auxiliary inversion, the presence of clause-initial \twh-phrases, and the presence of the complementizer \tit{whether}; imperatives ([+imp] in $C$) are marked by using verb stems, and by the absence of sentential subjects or having second person pronouns as subjects. So, to successfully infer the clause type categories, learners have to pay attention to morpho-syntactic features that include the presence or absence of the sentential subject, the form of the verb, the position of the auxiliary, the presence or absence of \twh-phrases in clause-initial position, and the choice of complementizers in the surface form of sentences. Table~\ref{tab:engcl:grammar} summaries the morpho-syntactic features and their associated clause types:
+In sum, declaratives ([$-$int] feature in $C$) in English are the unmarked clause type; interrogatives ([+int] in $C$) are associated with subject-auxiliary inversion, the presence of clause-initial \twh-phrases, and the presence of the complementizer \tit{whether}; imperatives ([imp]\footnote{Since we are always comparing imperatives with declaratives, I will sometimes use [+imp] as the feature for imperatives and [$-$int, $-$imp] for declaratives. But this is not to make a theoretical claim about the hypothesis space of $C^{0}$, as it is unclear which clause type corresponds to [+imp, +int].} in $C$) are marked by using verb stems, and by the absence of sentential subjects or having second person pronouns as subjects. So, to successfully infer the clause type categories, learners have to pay attention to morpho-syntactic features that include the presence or absence of the sentential subject, the form of the verb, the position of the auxiliary, the presence or absence of \twh-phrases in clause-initial position, and the choice of complementizers in the surface form of sentences. Table~\ref{tab:engcl:grammar} summaries the morpho-syntactic features and their associated clause types:
 
 
 \begin{table}[H]
@@ -194,7 +200,7 @@ To understand how infants figure out clause types and speech acts, we not only n
 %%%%PAST TENSE
 For this study, we used data from the Providence sub-corpora (\cite{ProvidenceCorpus}) from CHILDES (\cite{CHILDES}), which consists of parent-child interactions from 6 families recorded between 2002-2005 in Providence, RI. We selected this particular corpus because it covers children’s interaction with parents at the critical age that we are interested in ($\leq$ 18 months old). Additionally, it contains transcripts, audio, and video data, providing us with an opportunity to not only look at the morpho-syntax of parents’ sentences, but also their prosodic information, and even parents’ behavior accompanying each utterance. Parent-child interaction data from five typically developing children in this corpus were included in this study: Alex, Lily, Naima, Violet, and William. %For each session, we used the transcript to annotate  
 
-We sampled 500 conversational turns from each session, and annotated the resulting dataset with the annotation schema detailed in the next section.\footnote{The full annotation schema can be accessed here: \url{https://github.com/Yu-an/annotation_tool/blob/main/schema.pdf}} For the clause type and speech act information, each annotator completed a subset of transcripts (20\% were double annotated, mean Cohen's $\kappa$ = 0.84, range 0.8-0.91, `almost perfect’ per Landis and Koch's (\cite*{landis1977iaa}) descriptive division). To annotate the speech act information, annotators were asked to look at 20 utterances before and 2 utterances after the current utterance in the conversation, as well as consulting the videos for contextual information. If the annotator could not decide on an annotation despite the contextual information, a second person would be consulted, and if still unclear, the utterance would be eliminated. For the morpho-syntactic features, initial annotation was generated by a script (\textcolor{red}{url}) using the morphological tagging provided by CHILDES, and then manually corrected. 
+We sampled 500 conversational turns from each session, and annotated the resulting dataset with the annotation schema detailed in the next section.\footnote{The full annotation schema can be accessed here: \url{https://github.com/Yu-an/annotation_tool/blob/main/schema.pdf}} For the clause type and speech act information, each annotator completed a subset of transcripts (20\% were double annotated, mean Cohen's $\kappa$ = 0.84, range 0.8-0.91, `almost perfect’ per Landis and Koch's (\cite*{landis1977iaa}) descriptive division). To annotate the speech act information, annotators were asked to look at 20 utterances before and 2 utterances after the current utterance in the conversation, as well as consulting the videos for contextual information. If the annotator could not decide on an annotation despite the contextual information, a second person would be consulted, and if still unclear, the utterance would be eliminated. 16 utterances were eliminated in this way. For the morpho-syntactic features, initial annotation was generated by a script using the morphological tagging provided by CHILDES, and then manually corrected. 
 
 In total, 9147 utterances were annotated. We will return to the video and audio part of the annotation process in Chapter~\ref{chap:eng-sp}.
 
@@ -245,8 +251,9 @@ Is that a big bird shovel? \hfill	Polar interrogative
 
 \subsubsection{Speech Act}
 
-Three major speech act categories, assertions, questions and requests/commands, were labeled;%\footnote{The distinction between requests and commands can be subtle, and often involves the calculation of the social hierarchy between conversational partners. As parents hold authority over the child, even if the parent intend an utterance to be a request, it could be perceived by the child as a command. Therefore, I did not make a distinction in this dissertation.}
-minor speech act categories such as exclamations and greetings were labeled as Other:
+Three major speech act categories, assertions, questions and requests/commands, were labeled;
+minor speech act categories such as exclamations and greetings were labeled as `Other:' 
+%The distinction between requests and commands can be subtle, and often involves the calculation of the social hierarchy between conversational partners. As parents hold authority over the child, even if the parent intend an utterance to be a request, it could be perceived by the child as a command. Therefore,
 
 \bex{ex:engcl:annt:sp}
 \bxl\label{ex:engcl:annt:sp:a} It’s all twisted!\hfill	Assertion
@@ -270,7 +277,7 @@ Another complication comes from rising declaratives like (\ref{ex:engcl:annt:rd}
 is it raining $\nearrow$
 \eex
 
-We followed \textcite{gunlogson2008} in classifying the form of (\ref{ex:engcl:annt:rd}) as declarative, and labeled the speech act as either question or assertion depending on the contextual information, following \textcite{jeong2018, goodhue2021rd}. We will return to the complications brought on by prosody in Chapter~\ref{chap:eng-sp}.
+We followed \textcite{gunlogson2008} in classifying the form of (\ref{ex:engcl:annt:rd}) as declarative, and labeled the speech act as either question or assertion depending on the contextual information, following \textcite{jeong2018, goodhue2021rd}. We will return to prosody in Chapter~\ref{chap:eng-sp}.
 
 \subsubsection{Formal features}
 
@@ -388,7 +395,7 @@ Conversely, as shown in Figure~\ref{fig:real-spcl}, the majority of assertions a
 \end{figure}
 
 
-The few cases of mismatches between clause type and force appear to show that such mismatches are marked by certain morpho-syntactic features. For example, declarative and interrogative sentences used for requests/commands tend to have modals, attitude verbs, or future morphology in the sentence:
+The few cases of mismatches between clause type and force appear to show that such mismatches are systematically marked by morpho-syntactic features, similar to what \textcite{zaitsu2020} have found. For example, declarative and interrogative sentences used for requests/commands tend to have modals, attitude verbs, or future morphology in the sentence:
 
 \bex{eng-cl:dec-req}
 \bxl{}	I need you to help me.		\hfill	Mother of William, Session 010605
@@ -498,8 +505,7 @@ The performance of the two models over 10 iterations is shown in Figure~\ref{fig
 
 %Both models found the same morpho-syntactic regularities the coefficients the two models assigned to the morpho-syntactic predictors 
 
-Our next question is how well the models know the morpho-syntactic makeup of each clause type. This can be inferred from the coefficients that the two models assign to the morpho-syntacitc predictors. A bigger coefficient assigned to a predictor means that the model assigns it a higher significance. As declarative clauses were used as the baseline, the coefficients should in particular be interpreted as indicating how much a specific morpho-syntactic cue contribute to the increase/decrease in the log odds of the sentence being classified as interrogative/imperative vs. declarative (i.e. if a sentence has a morpho-syntactic cue, how likely will it have the feature [+int] or [+imp] as opposed to the default clause type [-int, -imp]). For our purposes, significance was calculated using a two-tail $z$-test. Details of the models, coefficients, and $p$-values are reported in \mycode{}. %Appendix~\ref{appx:engcl}. 
-Table~\ref{tab:engcl:corpus:formal} summarizes the morpho-syntactic profile of each clause type.
+Our next question is how well the models know the morpho-syntactic makeup of each clause type. This can be inferred from the coefficients that the two models assign to the morpho-syntacitc predictors. A bigger coefficient assigned to a predictor means that the model assigns it a higher significance. As declarative clauses were used as the baseline, the coefficients should in particular be interpreted as indicating how much a specific morpho-syntactic cue contribute to the increase/decrease in the log odds of the sentence being classified as interrogative/imperative vs. declarative (i.e. if a sentence has a morpho-syntactic cue, how likely will it have the feature [+int] or [+imp] as opposed to the default clause type [-int, -imp]). Table~\ref{tab:engcl:corpus:formal} summarizes the morpho-syntactic profile of each clause type. For our purposes, significance was calculated using a two-tail $z$-test. %Details of the models, coefficients, and $p$-values are reported in \mycode{}. 
 
 \begin{table}[H]
 \begin{center}
@@ -664,12 +670,25 @@ Tables~\ref{tab:engcl:baseline-variables} and ~\ref{tab:engcl:target-variables} 
 
 The task of both learners is then to infer the category assignment of the clause type variable (i.e. is the sentence a declarative, interrogative, or imperative) from observations of morpho-syntactic properties of the sentence. The \plearnerabbr{} learner additionally observes speech act information and assumes it is related to clause type. 
 
-I applied Gibbs sampling (\cite{geman1984gibbs}), a form of a Markov chain Monte Carlo sampler to sample from the posterior distribution of clause type category assignments. The sampling algorithm of the two learners are detailed below. In the following algorithms, $\vec{c}$ represent the set of clause type assignments in the corpus. The variable $\vec{a}$ represents the set of all speech act values in the corpus; $\vec{S}$ represents all values in the corpus for the set of morpho-syntactic properties. The subscript $i$ represents the current sentence, and $-i$ represents all values of a variable except the current sentence (for example, $c_{i}$ represents the clause type assignment of the current sentence, and $c_{-i}$ represents the clause type assignments of all sentences in the corpus except the current one).
+I applied Gibbs sampling (\cite{geman1984gibbs}), a form of a Markov chain Monte Carlo sampler to sample from the posterior distribution of clause type category assignments. The sampling algorithm of the two learners are detailed below. In the following algorithms, $\vec{c}$ represent the set of clause type assignments in the corpus. The variable $\vec{a}$ represents the set of all speech act values in the corpus; $\vec{S}$ represents all values in the corpus for the set of morpho-syntactic properties, and $\vec{s^(F)}$ represents all the values in the corpus for a specific morpho-syntactic feature $F$. The subscript $i$ represents the current sentence, and $-i$ represents all values of a variable except the current sentence (for example, $c_{i}$ represents the clause type assignment of the current sentence, and $c_{-i}$ represents the clause type assignments of all sentences in the corpus except the current one). The following counts are calculated:
+\bex{}
+$n$ is total number of observations so far;
+
+$n_{c_{i}}$ is the number of observations of $c = c_{i}$ so far;
+
+$n_{a_{i}}$ is the number of observations of $a = a_{i}$ so far;
+
+$n^{(a_{i})}_{c_{i}}$ is the number of observations of $c=c_{i}$ while $a = a_{i}$;
+
+$n^{(F,c_{i})}_{s_{i}}$ is the number of observations so far where $s^{(F)}=1$ when $c = c_{i}$;
+
+$n^{(F)}_{c_{i}}$ is the number of observations of feature $F$ so far when $c = c_{i}$
+\eex
 
 \begin{comment}
 \tbf{The \dlearnerabbr{} model:} We first randomly initialized assignments of $c_{i}$ for each sentence with three categories (representing declaratives, interrogatives, and imperatives). 
 
-\tbf{The \plearnerabbr{} model:} The algorithm first randomly initializes assignments of $c$ for all sentence with three values (representing declaratives, interrogatives, and imperatives). Then it sweeps to update values of $c_{i}$. The posterior predictive probability can be computed using Bayes' Rule as follows:
+\tbf{The \plearnerabbr{} model:} The algorithm first randomly initializes assignments of $c$ for all sentence with three values (representing declaratives, interrogatives, and imperatives). Then it sweeps to update values of $c_{i}$. The likelihood term of both models is the conditional probability $p(\vec{S}|\vec{c})$. The prior terms differ, as for the \plearnerabbr{} the probability of the assignment of $c_{i}$ is conditioned on the speech act values $\vec{a}$. The posterior predictive probability can be computed using Bayes' Rule as follows:
 
 \begin{equation}
 p(c_{i}| c_{-i}, \vec{a}, \vec{S_{i}},\phi, \delta) = \frac{p(\vec{S_{i}}| \vec{c}, \delta)\ p(c_{i}|, c_{-i}, \phi,\vec{a})}{\Sigma_{c_{i}'}p(\vec{S_{i}}| \vec{c'}, \delta)\ \ p(c_{i}'|, c_{-i}, \phi, \vec{a})}
@@ -708,15 +727,33 @@ p(\vec{S_{i}}| \vec{c}, \delta, \gamma)=&\prod_{F}\frac{\Gamma(\sum_{k}(\gamma_{
 \end{comment}
    %Assume $\beta_{k}$ is the value of $\beta$ for when $c = k$ (i.e. the clause type assignment is $k$), $n_{c_{i}}$ as the number of observations of $c=c_{i}$ so far, and  $n_{c_{i}}^{(k)}$ is the number of observations of other values of $c$ 
 
-For both models, we first randomly initialize values of $c_{i}$ for each sentence with three categories (representing declaratives, interrogatives, and imperatives). After initialization, the \dlearnerabbr{} sweeps to update current $c_{i}$ with the posterior distribution specified in Equation~\ref{eq:engcl:base}, and the \plearnerabbr{} updates with Equation~\ref{eq:engcl:target}. The likelihood term of both models is the conditional probability $p(\vec{S}|\vec{c})$, but the prior terms differ, as for the \plearnerabbr{} the probability of the assignment of $c_{i}$ is conditioned on the speech act values $\vec{a}$. 
+For both models, we first randomly initialize values of $c_{i}$ for each sentence with three categories (representing declaratives, interrogatives, and imperatives). After initialization, the \dlearnerabbr{} sweeps to update current $c_{i}$ with the posterior distribution specified in Equation~\ref{eq:engcl:base}, and the \plearnerabbr{} updates with Equation~\ref{eq:engcl:target}.  
 
 \begin{equation} \label{eq:engcl:base}
-p(c_{i}| c_{-i}, \vec{S_{i}},\phi, \delta) \propto p(\vec{S_{i}}| \vec{c}, \delta)\ p(c_{i}|, c_{-i}, \phi)
+\begin{split}
+p(c_{i}| c_{-i}, \vec{S_{i}}) = &\frac{p(\vec{S_{i}}| \vec{c})\ p(c_{i}|\beta, c_{-i})}{\Sigma_{c_{i}'}p(\vec{S_{i}}| \vec{c'})\ \ p(c_{i}'| c_{-i})}\\
+= & \frac{ \prod_{F}\frac{1+n_{s^{(F, c_{i})}_{i}}}{2+n_{c^{F}_{i}}}%S
+\frac{1+n_{c_{i}}}{4+n}%C
+}%分子
+{\sum_{c'_{i}}\prod_{F}\frac{1+n^{(F, c'_{i})}_{s_{i}}}{2+n^{(F)}_{c'_{i}}}%S
+\frac{1+n_{c'_{i}}}{4+n} %C
+}%分母
+\end{split}
 \end{equation}
 
 \begin{equation} \label{eq:engcl:target}
-p(c_{i}| c_{-i}, \vec{a}, \vec{S_{i}},\phi, \delta) \propto p(\vec{S_{i}}| \vec{c}, \delta)\ p(c_{i}|, c_{-i}, \phi,\vec{a})
+\begin{split}
+p(c_{i}| c_{-i}, \vec{a}, \vec{S_{i}}, \delta) = &\frac{p(\vec{S_{i}}| \vec{c})\ p(c_{i}|\beta, c_{-i}, \vec{a})}{\Sigma_{c_{i}'}p(\vec{S_{i}}| \vec{c'})\ \ p(c_{i}'| c_{-i}, \vec{a})}\\
+= & \frac{ \prod_{F}\frac{1+n_{s^{(F, c_{i})}_{i}}}{2+n_{c^{(F)}_{i}}}%S
+\frac{1+n_{c_{i}}^{(a_{i})}}{4+n_{a_{i}}}%C
+}%分子
+{\sum_{c'_{i}}\prod_{F}\frac{1+n^{(F, c'_{i})}_{s_{i}}}{2+n^{(F)}_{c'_{i}}}%S
+\frac{1+n_{c'_{i}}^{(a_{i})}}{4+n_{a_{i}}} %C
+}%分母
+\end{split}
 \end{equation}
+
+
 
 %uses the the observed values of morpho-syntactic properties to infer for the current utterance and the values of $C$ of other sentences to calculate a posterior distribution over new category assignments for the current sentence, and then re-sample the new value of $C$ from this posterior probability distribution. 
 
@@ -769,7 +806,7 @@ Turning to the profile of each cluster identified by the \dlearnerabbr{} model, 
 
 Overall, Figure~\ref{fig:baseline-heatmap} shows that the \dlearnerabbr{} model identifies an interrogative cluster and a declarative cluster. Cluster~$0$ mostly contains interrogative clauses, as 90\% of sentences in this cluster are interrogative; Cluster~$2$ is mostly declarative, and 86\% of the data in this cluster are declaratives. Cluster~$1$ is split between declaratives and imperatives. Figure~\ref{fig:baseline-heatrev} shows that 87\% of interrogatives and 93\% of imperatives are clustered together in Cluster~$0$ and $1$ respectively. While most of declaratives are classified in Cluster~$2$, a proportion is classified in Cluster~$1$.
 
-These results seem to suggest that the \dlearnerabbr{} found two out of three clause types, but how do these clause types look like? Did the model find the right morpho-syntactic properties to associate with each clause type? Figure~\ref{fig:baseline-syncluster} plots the morpho-syntactic profile of each cluster identified by the \dlearnerabbr{}. Darker colors represent sentences with the morpho-syntactic property, and lighter colors represent sentences without the property. 
+These results seem to suggest that the \dlearnerabbr{} found one out of three clause types, but how do these clause types look like? Did the model find the right morpho-syntactic properties to associate with each clause type? Figure~\ref{fig:baseline-syncluster} plots the morpho-syntactic profile of each cluster identified by the \dlearnerabbr{}. Darker colors represent sentences with the morpho-syntactic property, and lighter colors represent sentences without the property. 
 
 \begin{figure}[H]
     \centering
@@ -951,7 +988,9 @@ This chapter investigates how 18-month-olds learn to identify the three clause t
 
 I then investigated the extent to which learners need to rely on pragmatic information (i.e., knowing what speech act a given utterance of sentence is conveying), to solve not just labeling, but the clustering itself. I built two Bayesian clustering models simulating a \distlearner{} (\dlearnerabbr{}) and a \praglearner{} (\plearnerabbr{}). I found that morpho-synatctic information is not sufficient for finding the right clause type clustering and a small amount of pragmatic information is necessary, as the \plearnerabbr{} learner outperforms the \dlearnerabbr{} when we ran the two models with the annotated dataset from our corpus study. In addition, a small amount of pragmatics might suffice; even with 80\% of noise, the speech act information still helps improve the performance of the model. So even if the speech act information is not perceived veridically for all utterances, learners can still enjoy its benefits.
 
-Now that we have established the importance of pragmatics, and that a small amount of pragmatics might suffice, the question then is, is there any information in the non-linguistic behavior of parents that signals the speech act of an utterance? We will turn to these questions in Chapter~\ref{chap:eng-sp}.
+
+Now that we have established the importance of pragmatics, and that a small amount of pragmatics might suffice, the question then is, how children may get this pragmatic information. How can children infer speech act independently of clause types?  As we have discussed in Chapter~\ref{chap:introduction}, With the innate knowledge of a set of speech act categories and what speech acts do, and a theory of communication, children might have certain expectations about how each speech acts are performed in the input. If these expectations are met, then they can use these cues to infer which utterance is performed with what speech act. But just as our discussion with clause types, behaviors related to speech acts might be absent or misleading. We therefore need to very empirically whether some of these expectations about speech acts can be met. Specifically, is certain prosodic contours and non-linguistic behavior of parents correlate with the use of questions? We will turn to these questions in Chapter~\ref{chap:eng-sp}.
+
 
 
 %Our next question is then, what about other languages? As we have discussed in Chapter~\ref{chap:background}, languages differ in the formal features of each clause type, and learners need to discover the correlation from input. The distributional learner for English still have some success with clustering, identifying interrogative clauses. However, maybe the formal features are not as informative in other languages. In the next chapter, we will turn to Mandarin learners, and test the two learners with Mandarin input data. 
