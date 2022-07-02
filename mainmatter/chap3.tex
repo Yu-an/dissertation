@@ -298,13 +298,13 @@ As reviewed in the last two sections, infants at 18 months old can perceive many
 \hline
 \multirow{2}{*}{\textpm Subject} & 
 ($+$) \tbf{I}'ll take it.\\
-&($-$) Take it. \hfill
+&($-$) $\varnothing$ Take it. \hfill
 \\
 \hline
 \multirow{2}{*}{\textpm Verb Suffix} & 
 ($+$) Nobody feel\tbf{s} good huh?\\
 
-&($-$) Find Elmo! 
+&($-$) Find$\varnothing$ Elmo! 
 \\ 
 \hline
 \multirow{2}{*}{\textpm Auxiliary} & 
@@ -603,18 +603,7 @@ The two models simulating the \distlearner{} and the \praglearner{} are Bayesian
 
 
 
-Both models assume that there are three clause type categories, \diis{}, that explain the distribution of a set of morpho-syntactic properties in the input. This is shown in the graphical illustrations in Figure~\ref{fig:engcl:model} as the morpho-syntactic properties $\vec{s_{i}}$ being conditioned on the clause type variable $\vec{c_{i}}$. The \plearnerabbr{} model additionally assumes that there are four speech act categories (assertions, questions, requests/commands, or some other speech acts such as exclamatives), and that this pragmatic information helps to identify the clause type category. This is shown in the graphical representation as the variable $c_{i}$ being conditioned on the variable $a_{i}$ (for speech act). 
-
-In both models, the clause type variable $c_{i}$ follows a multinomial distribution with a parameter $\phi$. This parameter is assumed to have a uniform Dirichlet prior $\mbox{Dir}(1,1,1)$. This means that it is equally likely \emph{a priori} for a sentence to be a declarative, interrogative or imperative. For the model simulating the \distlearner{}, the parameter $\phi$ represents the probability that a sentence $i$ is a declarative, interrogative, or imperative. As the \plearnerabbr{} model assumes that the speech act category $a_{i}$ of the utterance expressed by the sentence informs the learner of the clause type category, so the parameter $\phi^{(a)}$ in this model represents the probability that a sentence $i$, which expresses the speech act $a_{i}$, is a declarative, interrogative, or imperative. 
-
-In the \plearnerabbr{} model, the speech act variable $a_{i}$ follows a multinomial distribution with parameter $\theta$. This parameter represents the probability that the speech act expressed by the sentence $i$ is an assertion, question, request/command, or some other speech act. This parameter also has a uniform Dirichlet prior $\mbox{Dir}(1,1,1,1)$, meaning that we assume that it is equally likely \emph{a priori} that the sentence $i$ expresses an assertion, question, request/command, or some other speech act.
-
-In both models, morpho-syntactic properties are represented by a vector of Bernoulli variables $\vec{s_{i}}$, and $\vec{s_{i}}$ is conditioned on $c_{i}$. 
-The number of morpho-syntactic properties included is represented by a vector $F$, and the properties are the same as the ones in the corpus study listed in Table~\ref{tab:eng-cl:formal-schema} in Section~\ref{sec:engcl:corpus:schema}. Each $s^{(F)}_{i}$ in $\vec{s_{i}}$ takes the value 1 if the sentence contains the property, and 0 otherwise. $s^{(F)}_{i}$ is conditioned on the parameter $\delta^{(c, F)}$, which represents the probability of observing a given morpho-syntactic property in a particular clause type category. 
-This parameter is assumed to have a uninformative uniform $\mbox{Beta}(1,1)$ prior, meaning that \tit{a priori}, it is equally likely for a particular property to be present or absent in a clause type category. 
-
-
-Tables~\ref{tab:engcl:baseline-variables} and ~\ref{tab:engcl:target-variables} summarize the notation and statistical assumptions for the two models. 
+Both models assume that there are three clause type categories, \diis{}, that explain the distribution of a set of morpho-syntactic properties in the input. This is shown in the graphical illustrations in Figure~\ref{fig:engcl:model} as the morpho-syntactic properties $\vec{s_{i}}$ being conditioned on the clause type variable $\vec{c_{i}}$. The \plearnerabbr{} model additionally assumes that there are four speech act categories (assertions, questions, requests/commands, or some other speech acts such as exclamatives), and that this pragmatic information helps to identify the clause type category. This is shown in the graphical representation as the variable $c_{i}$ being conditioned on the variable $a_{i}$ (for speech act). Tables~\ref{tab:engcl:baseline-variables} and ~\ref{tab:engcl:target-variables} summarize the notation and statistical assumptions for the two models. 
 
 \begin{table}[H]
     \centering
@@ -663,6 +652,20 @@ Tables~\ref{tab:engcl:baseline-variables} and ~\ref{tab:engcl:target-variables} 
     \caption{Variables of the \plearnerabbr{} model, their distributions, and explanations}
     \label{tab:engcl:target-variables}
 \end{table}
+
+
+
+
+
+
+In both models, the clause type variable $c_{i}$ follows a multinomial distribution with a parameter $\phi$. This parameter is assumed to have a uniform Dirichlet prior $\mbox{Dir}(1,1,1)$. This means that it is equally likely \emph{a priori} for a sentence to be a declarative, interrogative or imperative. For the model simulating the \distlearner{}, the parameter $\phi$ represents the probability that a sentence $i$ is a declarative, interrogative, or imperative. As the \plearnerabbr{} model assumes that the speech act category $a_{i}$ of the utterance expressed by the sentence informs the learner of the clause type category, so the parameter $\phi^{(a)}$ in this model represents the probability that a sentence $i$, which expresses the speech act $a_{i}$, is a declarative, interrogative, or imperative. 
+
+In the \plearnerabbr{} model, the speech act variable $a_{i}$ follows a multinomial distribution with parameter $\theta$. This parameter represents the probability that the speech act expressed by the sentence $i$ is an assertion, question, request/command, or some other speech act. This parameter also has a uniform Dirichlet prior $\mbox{Dir}(1,1,1,1)$, meaning that we assume that it is equally likely \emph{a priori} that the sentence $i$ expresses an assertion, question, request/command, or some other speech act.
+
+In both models, morpho-syntactic properties are represented by a vector of Bernoulli variables $\vec{s_{i}}$, and $\vec{s_{i}}$ is conditioned on $c_{i}$. 
+The number of morpho-syntactic properties included is represented by a vector $F$, and the properties are the same as the ones in the corpus study listed in Table~\ref{tab:eng-cl:formal-schema} in Section~\ref{sec:engcl:corpus:schema}. Each $s^{(F)}_{i}$ in $\vec{s_{i}}$ takes the value 1 if the sentence contains the property, and 0 otherwise. $s^{(F)}_{i}$ is conditioned on the parameter $\delta^{(c, F)}$, which represents the probability of observing a given morpho-syntactic property in a particular clause type category. 
+This parameter is assumed to have a uninformative uniform $\mbox{Beta}(1,1)$ prior, meaning that \tit{a priori}, it is equally likely for a particular property to be present or absent in a clause type category. 
+
 
 
 \subsection{Inferences}
