@@ -3,10 +3,10 @@
 
 This dissertation investigates how children figure out the clause types of their language, on the basis of their input. In this chapter, I review what we already know from the existing literature on (1) the target knowledge, namely the formal properties of clause types and speech acts and their analyses in the formal literature; (2) children's understanding of clause types and speech acts, and the linguistic and pragmatic capacities that they can draw from early in development, and what we know about the kinds of speech acts and clause types children are exposed to. I will come back to English and Mandarin-acquiring children's morpho-syntactic knowledge in Chapter~\ref{chap:eng-cl} and Chapter~\ref{chap:man-cl}.
 
-\section{Theories of clause types and speech acts} \label{sec:bg:theory}
+\section{Theories of clause types, sentential force, and speech acts} \label{sec:bg:theory}
 
 
-\subsection{Speech acts} \label{sec:bg:theory:speech}
+\subsection{Speech acts and force} \label{sec:bg:theory:speech}
 
 Frege observes that it is possible to express a thought without judging it to be true -- that considering a particular claim and judging it to be true are different things altogether. In asking a polar question like \tit{Is it raining?} one is not judging anything to be true. But in answering \tit{Yes }or asserting the declarative sentence like \tit{It is raining}, one does. Nevertheless, \tit{Is it raining?} and \tit{It is raining} have something in common: they have the same content, or as Frege puts it, they contain the same \tit{thought}. From this observation, he derives the influential distinction between \tit{content} and \tit{force}. The following passage from \tit{Der Gedanke} makes this distinction clear:
 
@@ -196,119 +196,7 @@ precise relationship between prosodic features, clause type, and speech act are 
 But in the discussion of intonational typology, it seems that intonation is a surface feature for clause typing too. In some languages such as Italian and Portuguese, prosody is the only feature that distinguishes polar interrogatives and declaratives (\citealt{konig2007, truckenbrodt2009prosody} among many others), and some languages use a combination of morpho-syntactic and prosodic cues (e.g. French, Sanuma, \cite{konig2007, aikhenvald2016}). The cross-linguistic pattern seems to be that some kind of rising intonation is associated with interrogatives, and falling with declaratives, but exceptions do exist (notably, falling for interrogatives in Roermond Dutch (\cite{gussenhoven2002}), and rising for declaratives in Chickasaw (\cite{gordon1999prosody})). 
 
 
-
-In English, whether prosody is a surface feature for clause typing or simply an indicator for questioning is debated. English declaratives tend to be associated with falling intonation, polar interrogatives tend to bear rising intonation, while \twh-interrogatives also generally bear a falling contour (\citealt{ladd1981, ladd2008intonational, hedberg2004wh, hedberg2014corpus} among many others). When declaratives are associated with a  L* H-H\% rising intonation, they tend to be interpreted as questions (i.e. rising declaratives, \citealt{ladd1981,gunlogson2004,gunlogson2008,jeong2018,rudin2018,goodhue2021rd}). The main point of contention comes down to whether sentences like (\ref{ex:bg:theory:prosody:rd}) are declaratives or not (I will use $\nearrow$ to indicate the sentence has a final rising intonation, and $\searrow$ for final fall):
- 
-\bex{ex:bg:theory:prosody:rd}
-It's raining $\nearrow$
-\eex
-\bex{ex:bg:theory:prosody:fd}
-It's raining $\searrow$
-\eex
-
-
-In Gunlogson's \cite*{gunlogson2008} analysis, sentences like (\ref{ex:bg:theory:prosody:rd}) are declarative clauses with a rising intonation, implying that intonation does not affect the clause type feature of the sentence. Meaning-wise, clause type and intonation contribute compositionally to the discourse function of the utterance. 
-
-
-Many analyses of rising declaratives in the dynamic discourse tradition adopt the same assumption. As these cases are rarely discussed in syntactic literature, it is unclear whether syntacticians would classify them as having [$-$int] or [$+$int]. But we can go through
-%the arguments given to other
-some typical syntactic tests for
-[$+$int], to see if it's possible to assign [$+$int] to
-%the sentence
-rising declaratives. One test is whether rogative verbs that only select interrogative clauses would embed (\ref{ex:bg:theory:prosody:rd}). If (\ref{ex:bg:theory:prosody:rd}) bears [+int], then the sentence with (\ref{ex:bg:theory:prosody:rd}) embedded under \tit{wonder} should be grammatical.
-
-\bex{ex:bg:theory:prosody:rd-wonder}
-*Mary wonders \tun{it's raining}.
-\eex
-
-As shown in (\ref{ex:bg:theory:prosody:rd-wonder}), this prediction is not borne out; (\ref{ex:bg:theory:prosody:rd}) cannot be embedded under rogative verbs like \tit{wonder}. This suggests that (\ref{ex:bg:theory:prosody:rd}) does not have the feature [+int]. But it could be that (\ref{ex:bg:theory:prosody:rd}) has a silent [+int], but this silent [+int] is realized as \tit{whether} in embedded context. So instead of (\ref{ex:bg:theory:prosody:rd-wonder}), embedded (\ref{ex:bg:theory:prosody:rd}) should be:
-
-\bex{ex:bg:theory:prosody:rd-whether}
-Mary wonders \tun{whether it's raining}.
-\eex
-
-As the rising intonation associated with (\ref{ex:bg:theory:prosody:rd}) would not manifest in embedded clauses, it's hard to distinguish the two possibilities syntactically. But \textcite{farkasroelofsen2017} observe that if the embedded clause is preposed, the intonation difference is preserved, and rising declaratives pattern with polar interrogatives in these cases:
-
-\bex{ex:bg:theory:prosody:rd-prepose}
-\bxl{}
-`It's raining$\searrow$,' it appears/*she wondered.
-\ex`Is it raining?,' *it appears/she wondered.
-\ex`It's raining$\nearrow$,' *it appears/she wondered.
-\exl
-\eex
-
-\textcite{farkasroelofsen2017} use this evidence to argue that rising declaratives are similar to interrogatives and that this similarity should be captured in part by syntax. They propose that the syntactic representation of sentence forms have two kinds of clause type markers, \tsc{closed/open} and \tsc{dec/int}, as in (\ref{fig:bg:fb2017}). Although they didn't specify where these markers reside in the syntactic structure, but they seem to adopt a split-CP approach following \textcite{rizzi1997}, and thus the two clause markers are both part of CP. 
-
-
-\begin{figure}[H]
-\begin{center}
-\begin{tikzpicture}[level distance=30pt]
-\tikzset{level 1/.style={sibling distance=15pt}}
-\tikzset{level 2/.style={sibling distance=35pt}}
-\Tree
-[. CP 
-	[. \tsc{open/closed} ]
-	[. \tsc{}
-		[. \tsc{decl/int} ]
-		[. TP \edge[roof]; { } ] 
-	]
-]
-\end{tikzpicture}
-\end{center}
-\caption{Extended structure of CP proposed by \textcite{farkasroelofsen2017}}
-\label{fig:bg:fb2017}
-\end{figure}
-
-While the morpho-syntax of a sentence is linked to \tsc{dec/int}, the intonation (rise vs. fall) signals whether C bears the feature [\tsc{open}] or [\tsc{closed}]. Rising declaratives like (\ref{ex:bg:theory:prosody:rd}) would be an ``open declarative,'' with the following structure:
-
-\begin{figure}[H]
-\begin{center}
-\begin{tikzpicture}
-\tikzset{level 1/.style={sibling distance=35pt}}
-\tikzset{level 2/.style={sibling distance=35pt}}
-\Tree
-[. CP 
-	[. \tsc{open} ]
-	[. \tsc{}
-		[. \tsc{decl} ]
-		[. TP \edge[roof]; {it's raining} ] 
-	]
-]
-\end{tikzpicture}
-\end{center}
-\caption{The structure of rising declaratives, adapted from \textcite{farkasroelofsen2017}}
-\label{fig:bg:fb2017rd}
-\end{figure}
-
-So for \textcite{farkasroelofsen2017}, the clause type category of rising declaratives is not exactly declarative with [$-$int] (but rather [\tsc{open,dec}]), and its semantics is similar to that of the polar interrogatives. 
-
-However, as many have noted, there might be two types of rising declaratives. The one discussed in \textcite{farkasroelofsen2017} is the inquisitive one, but there might an assertive one (\cite{jeong2018, goodhue2021rd}), as shown in (\ref{ex:engcl:annt:rd:a}):
-
-\bex{ex:engcl:annt:rd-cont}
-\bxl
-\label{ex:engcl:annt:rd:q}
-\tit{S and A are on their way to a birthday party for the daughter of A’s friend. They stop at a store to get a birthday card. As they are both scanning the display for a card for the correct age, S is trying to remember how old the girl has just turned, and he thinks he remembers A telling him that she just turned nine, but he wants to confirm it.}\\
-\tbf{S: She’s nine$\nearrow$}
-\ex
-\label{ex:engcl:annt:rd:a}
-\tit{S is enrolling his daughter in a summer camp program with the camp organizer A.}\\
-S: I want to sign her up for Spanish classes in the mornings, and rock climbing in the afternoons.\\
-A: Okay, there are limited places in each activity based on age group, and some of the age groups have already filled up for rock climbing. How old is your daughter?\\
-\tbf{S: She’s nine$\nearrow$}
-\exl
-\hspace*{\fill}\hfill ex. (12-13), \cite[955]{goodhue2021rd}
-\eex
-
-In (\ref{ex:engcl:annt:rd:q}), the speaker uses the utterance to elicit a confirmation from the addressee regarding the age of the birthday girl, so the main goal is to solicit responses, similar to that of questions. But in (\ref{ex:engcl:annt:rd:a}), the speaker uses the rising declarative to answer the question raised by the addressee, proposing to add the proposition \tit{she's nine} to the common ground of the conversation. Even though there is an additional effect associated with the utterance (something to the effect of ``Is there still room in the 9-year-old’s rock climbing group?''), this additional effect is not the main goal of the utterance.\footnote{There is another incredulous use of rising declarative, but the two uses mentioned here are more relevant for the current discussion on the speech act of rising declaratives, as most agree that incredulous rising declarative is also ``inquisitive'', same as (\ref{ex:engcl:annt:rd:q}).} Thus, we might not need to assume an interrogative semantics for rising declaratives.\footnote{Note that if we paraphrase (\ref{ex:engcl:annt:rd:a}), we cannot use \tit{wonder} either:
-
-\begin{xlisti}
-\ex \label{ex:bg:theory:prosody:rd-prepose2}
-\tit{S is looking a flyer looking for Spanish speakers.}\\
-``I speak Ladino $\nearrow$," S thinks/$^{??}$ S wonders.
-\end{xlisti}
-
-This suggests that the conclusion drawn from the test with pre-posed embedded clause might need to be re-examined.}  As \textcite{goodhue2021rd} demonstrates, it is possible to give a unified account for these two uses of rising declaratives without assuming a separate layer of clause type markers. Therefore, in this dissertation, I assume that rising declaratives are declaratives with [$-$int] in $C^{0}$. Since nobody has argued that interrogatives with falling intonation should be classified as having a different clause type as interrogatives with rising intonation, I assume that intonation can modify the conventional effects of a clause (and hence the speech act expressed), and maybe even serve as a cue for identifying clause types, but [\textpm int] does not manipulate intonation the same way it manipulates, say, the word order of subject and auxiliary.
-
+\revise{In }
 %%BUt going beyond English, there are language that use prosody to disnguish clause types...European portugese...French
 
 

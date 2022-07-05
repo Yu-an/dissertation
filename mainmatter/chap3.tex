@@ -18,7 +18,7 @@ In Section~\ref{sec:engcl:background}, I first briefly introduce the two computa
 
 In Section~\ref{sec:engcl:corpus}, I report results from a corpus study on parents' use of different clause types and speech acts, to give a quantitative description of the information present in the input. The annotated dataset that results from this corpus study will be used in our modeling experiments.
 
-Section~\ref{sec:engcl:model} details the two computational models for the two learners, \gls{dlearnerabbr} and \gls{plearnerabbr}, to see if pragmatic information is needed for solving the clustering problem. I then manipulate the ratio of noise in the pragmatic information to see how much pragmatics is needed (Section~\ref{sec:engcl:model:noisy}). 
+Section~\ref{sec:engcl:model} details the two computational models for the two learners, \gls{dlearnerabbr} and \gls{plearnerabbr}, to see if pragmatic information is needed for solving the clustering problem. I then manipulate the ratio of noise in the pragmatic information to see how much pragmatics is needed (Section~\ref{sec:engcl:model:noisy}). \revise{One feature not addressed in chapter is prosody. As we have discussed in Chapter~\ref{chap:background}, the role of prosody might be complicated. We will turn to prosodic features in Chapter~\ref{chap:prosody}.}
 
 \section{Background}
 \label{sec:engcl:background}
@@ -486,9 +486,15 @@ From these results, we can see that the formal signatures of each clause type is
 \label{sec:engcl:corpus:supervised}
 In the previous section, we saw that in parents' speech to 18-month-olds, the three clause types are mostly mapped to their canonical functions, and that they have different morpho-syntactic profiles as expected. In this section, I evaluate the informativeness of syntactic and pragmatic cues by comparing two supervised learning models. Unlike the models simulating the \dlearnerabbr{} learner and the \plearnerabbr{} learner I will discuss later, these two supervised models were trained on a subset of our annotated dataset with clause type labels given as input. That is, the models are given correctly annotated data for training (hence the term ``supervised'') and attempt to determine the significant statistical regularities associated with each clause type. After the training phase, these models were tested on the part of data they have not seen, to see how well they could use the statistical regularities discovered in the training data to predict clause type labels. 
 
-The supervised \dlearnerabbr{} learner uses morpho-syntactic cues as predictors for clause typing, while the supervised \plearnerabbr{} uses both morpho-syntactic and speech act information. Both are multinomial logistic regression models trained on 90\% of the annotated dataset, with clause type categories as dependent variable (declarative as the baseline), and a set of morpho-syntactic cues as predictors. As discussed in Section~\ref{sec:engcl:bg:grammar}, [+int] is associated with the presence of cues (e.g. auxiliary inversion, clause-initial \twh{}, complementizer), while [+imp] is associated with the absence of cues (e.g. verb suffix, subject). So the set of syntactic predictors in our models is [-subject, $-$verb suffix, +auxiliary, +subj-aux inversion, +clause-initial UFI,+pre-verbal UFI, +post-verbal UFI]. We then test the performance of both on the unseen 10\% of the data to see how well they predict the clause type categories. We calculated the rand score of both models to evaluate their performance. The rand score is normally used to measure the similarity between two data clusterings (\cite{rand1971}), calculated by taking all pairs of samples and counting ones that are assigned to the same or different clusters in the predicted and true clusterings:
+The supervised \dlearnerabbr{} model uses morpho-syntactic cues as predictors for clause typing, while the supervised \plearnerabbr{} model uses both morpho-syntactic and speech act information. Both are multinomial logistic regression models trained on 90\% of the annotated dataset, with clause type categories as dependent variable (declarative as the baseline), and a set of morpho-syntactic cues as predictors. As discussed in Section~\ref{sec:engcl:bg:grammar}, [+int] is associated with the presence of cues (e.g. auxiliary inversion, clause-initial \twh{}, complementizer), while [+imp] is associated with the absence of cues (e.g. verb suffix, subject). So the set of syntactic predictors in our models is [-subject, $-$verb suffix, +auxiliary, +subj-aux inversion, +clause-initial UFI,+pre-verbal UFI, +post-verbal UFI]. We then test the performance of both on the unseen 10\% of the data to see how well they predict the clause type categories. We calculated the adjusted rand score of both models to evaluate their performance. The rand index is normally used to measure the similarity between two data clusterings (\cite{rand1971}), calculated by taking all pairs of samples and counting ones that are assigned to the same or different clusters in the predicted and true clusterings:
 
 \begin{equation} \mbox{RI} =\frac{ \mbox{number of agreeing pairs}}{ \mbox{number of pairs}} 
+\end{equation}
+
+\revise{The adjusted Rand index (ARI) is the corrected-for-chance version of the Rand index (cf. \cite{hubert1985ari,steinley2004ari}):}
+
+\begin{equation} \label{eq:ari}
+\mbox{ARI} =\frac{ \mbox{RI}-\mbox{Expected RI}}{ max(\mbox{RI})-\mbox{Expected RI}} 
 \end{equation}
 
 
@@ -497,7 +503,7 @@ The performance of the two models over 10 iterations is shown in Figure~\ref{fig
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{figures/super-compare-rand-name.jpg}
+    \includegraphics[width=0.8\textwidth]{figures/super-compare-rand-name.jpg}
     \caption{Comparing the two supervised models by rand score (performance over 10 iterations)}
     \label{fig:super-compare-rand}
 \end{figure}
@@ -673,7 +679,7 @@ This parameter is assumed to have a uninformative uniform $\mbox{Beta}(1,1)$ pri
 
 The task of both learners is then to infer the category assignment of the clause type variable (i.e. is the sentence a declarative, interrogative, or imperative) from observations of morpho-syntactic properties of the sentence. The \plearnerabbr{} learner additionally observes speech act information and assumes it is related to clause type. 
 
-I applied Gibbs sampling (\cite{geman1984gibbs}), a form of a Markov chain Monte Carlo sampler to sample from the posterior distribution of clause type category assignments. The sampling algorithm of the two learners are detailed below. In the following algorithms, $\vec{c}$ represent the set of clause type assignments in the corpus. The variable $\vec{a}$ represents the set of all speech act values in the corpus; $\vec{S}$ represents all values in the corpus for the set of morpho-syntactic properties, and $\vec{s^(F)}$ represents all the values in the corpus for a specific morpho-syntactic feature $F$. The subscript $i$ represents the current sentence, and $-i$ represents all values of a variable except the current sentence (for example, $c_{i}$ represents the clause type assignment of the current sentence, and $c_{-i}$ represents the clause type assignments of all sentences in the corpus except the current one). The following counts are calculated:
+I applied Gibbs sampling (\cite{geman1984gibbs}), a form of a Markov chain Monte Carlo sampler to sample from the posterior distribution of clause type category assignments. The sampling algorithm of the two learners are detailed below. In the following algorithms, $\vec{c}$ represent the set of clause type assignments in the corpus. The variable $\vec{a}$ represents the set of all speech act values in the corpus; $\vec{S}$ represents all values in the corpus for the set of morpho-syntactic properties, and $\vec{s^{(F)}}$ represents all the values in the corpus for a specific morpho-syntactic feature $F$. The subscript $i$ represents the current sentence, and $-i$ represents all values of a variable except the current sentence (for example, $c_{i}$ represents the clause type assignment of the current sentence, and $c_{-i}$ represents the clause type assignments of all sentences in the corpus except the current one). The following counts are calculated:
 \bex{}
 $n$ is total number of observations so far;
 
@@ -770,16 +776,16 @@ For each model, I ran the chain for 5000 iterations and analyzed the last sample
 The data for this model were taken from the annotated dataset reported in Section~\ref{sec:engcl:corpus}. The labels of speech acts and morpho-syntactic observations were used as input to the models, and the true labels of clause type were used to evaluate the performance of the models. As the learners need to use the surface features of sentences to learn about clause-level properties, instead of one-noun utterances or utterances of only injectives, we eliminated from the dataset sentences that do not contain a verb or an auxiliary. In total, $3923$  sentences were fed into the models.
 
 
-Figure~\ref{fig:compare-rand} shows the rand scores of the two models over 10 iterations, and in comparison with the rand scores of the two multinomial logistic regression models ran in Section~\ref{sec:engcl:corpus:supervised}. 
-This score was calculated by taking all pairs of samples and counting ones that are assigned to the same or different clusters in two clusterings to measure the similarity between the clusterings (\cite{rand1971}). This score ranges between 0 and 1, where a higher score indicates better performance. 
+Figure~\ref{fig:compare-rand} shows the adjusted rand scores of the two models over 10 iterations, and in comparison with the adjusted rand scores of the two multinomial logistic regression models ran in Section~\ref{sec:engcl:corpus:supervised}. 
+As explained in the last section, this score ranges between 0 and 1, with higher scores indicating better performance. 
 
-Overall, the \plearnerabbr{} model substantially outperforms the \dlearnerabbr{} model. The pragmatic information led to an improvement from an average 0.74 rand score to an average of 0.87 rand score, bringing the model up to the level of supervised performance. This suggests that pragmatic information is crucial for learning the clustering of clause type information. 
+Overall, the \plearnerabbr{} model substantially outperforms the \dlearnerabbr{} model. The pragmatic information led to an improvement from an average \revise{0.4 adjusted rand score to an average of 0.7 rand score}, bringing the model up to the level of supervised performance. This suggests that pragmatic information is crucial for learning the clustering of clause type information. 
 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{figures/compare-rand.jpg}
-    \caption{Comparing all four learners (distributional, pragmatic distributional, supervised distributional, supervised pragmatic) by rand score }
+    \includegraphics[width=0.8\textwidth]{figures/compare-all-rand.jpg}
+    \caption{Comparing all four learners (distributional, pragmatic distributional, supervised distributional, supervised pragmatic) by \revise{adjusted rand score} }
     \label{fig:compare-rand}
 \end{figure}
 
@@ -807,20 +813,20 @@ Turning to the profile of each cluster identified by the \dlearnerabbr{} model, 
 \end{figure}
 
 
-Overall, Figure~\ref{fig:baseline-heatmap} shows that the \dlearnerabbr{} model identifies an interrogative cluster and a declarative cluster. Cluster~$0$ mostly contains interrogative clauses, as 90\% of sentences in this cluster are interrogative; Cluster~$2$ is mostly declarative, and 86\% of the data in this cluster are declaratives. Cluster~$1$ is split between declaratives and imperatives. Figure~\ref{fig:baseline-heatrev} shows that 87\% of interrogatives and 93\% of imperatives are clustered together in Cluster~$0$ and $1$ respectively. While most of declaratives are classified in Cluster~$2$, a proportion is classified in Cluster~$1$.
+Overall, Figure~\ref{fig:baseline-heatmap} shows that the \dlearnerabbr{} model identifies an interrogative cluster and a declarative cluster. \revise{Cluster~$1$} mostly contains interrogative clauses, as 90\% of sentences in this cluster are interrogative; \revise{Cluster~$3$} is mostly declarative, and 86\% of the data in this cluster are declaratives. \revise{Cluster~$2$ }is split between declaratives and imperatives. Figure~\ref{fig:baseline-heatrev} shows that 87\% of interrogatives and 93\% of imperatives are clustered together in \revise{Cluster~$1$ and $2$ }respectively. While most of declaratives are classified in \revise{Cluster~$3$}, a proportion is classified in \revise{Cluster~$2$}.
 
-These results seem to suggest that the \dlearnerabbr{} found one out of three clause types, but how do these clause types look like? Did the model find the right morpho-syntactic properties to associate with each clause type? Figure~\ref{fig:baseline-syncluster} plots the morpho-syntactic profile of each cluster identified by the \dlearnerabbr{}. Darker colors represent sentences with the morpho-syntactic property, and lighter colors represent sentences without the property. 
+These results seem to suggest that the \dlearnerabbr{} model found one out of three clause types, but how do these clause types look like? Did the model find the right morpho-syntactic properties to associate with each clause type? Figure~\ref{fig:baseline-syncluster} plots the morpho-syntactic profile of each cluster identified by the \dlearnerabbr{}. Darker colors represent sentences with the morpho-syntactic property, and lighter colors represent sentences without the property. 
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{figures/baseline-syncluster.jpg}
-    \caption{The number of sentences with/without certain formal features in each cluster (Cluster 0 $\sim$ Interrogatives, Cluster 1 $\sim$ Imperatives, Cluster 2 $\sim$ Declaratives), darker colors represent the number of sentences with the feature. UFI stands for Unknown Functional Item (e.g. \twh{}), see Table~\ref{tab:eng-cl:formal-schema} for details.}
+    \caption{The number of sentences with/without certain formal features in each cluster (\revise{Cluster 1 $\sim$ Interrogatives, Cluster 2 $\sim$ Imperatives, Cluster 3 $\sim$ Declaratives}), darker colors represent the number of sentences with the feature. UFI stands for Unknown Functional Item (e.g. \twh{}), see Table~\ref{tab:eng-cl:formal-schema} for details.}
     \label{fig:baseline-syncluster}
 \end{figure}
 
-We can see that Cluster~$0$, which is 90\% interrogative clauses, is associated with [+int] morpho-syntactic properties such as subject-auxiliary inversion and sentence-initial unknown functional item (e.g. \twh{}). 
+We can see that \revise{Cluster~$1$}, which is 90\% interrogative clauses, is associated with [+int] morpho-syntactic properties such as subject-auxiliary inversion and sentence-initial unknown functional item (e.g. \twh-phrases). 
 
-The other two clusters are not as ideal. Cluster~$1$ consists of a mix of imperative sentences and simple declarative sentences. While it appears that the cluster mostly consists of sentences with bare verb stem, which is characteristic for imperatives in English, but a quick look at the sentences show that it also includes declaratives with these properties as well:
+The other two clusters are not as ideal. \revise{Cluster~$2$} consists of a mix of imperative sentences and simple declarative sentences. While it appears that the cluster mostly consists of sentences with bare verb stem, which is characteristic for imperatives in English, but a quick look at the sentences show that it also includes declaratives with these properties as well:
 
 \bex{engcl:baseline:cluster1-dec}
  I love school. \hfill Mother of Lily, Session 010423
@@ -831,7 +837,7 @@ The sentence is clustered together with imperatives like \tit{Take the bottle!} 
 Wanna read your little Tigger book? \hfill Mother of Violet, Session 010407
 \eex
 
-Moreover, compare to the distribution of morpho-syntactic features of imperatives in English in Figure~\ref{fig:real-syncluster}, this cluster seems to have more sentences with subjects. It seems that instead of finding a cluster for imperatives and declaratives, the model puts too much weight on the lack of subjects in a sentence, so any sentences without subjects are in Cluster~$1$. 
+Moreover, compare to the distribution of morpho-syntactic features of imperatives in English in Figure~\ref{fig:real-syncluster}, this cluster seems to have more sentences with subjects. It seems that instead of finding a cluster for imperatives and declaratives, the model puts too much weight on the lack of subjects in a sentence, so any sentences without subjects are in \revise{Cluster~$2$}. 
 
 \begin{comment}
 A multinomial logistic regression model was performed to further probe into the morpho-syntactic profile of each cluster, with the three
@@ -883,7 +889,7 @@ Figure~\ref{fig:target-heatmap} shows the proportion of \diis{} in each identifi
 
 %confusion matrix
 
-We can see that the \plearnerabbr{} model clearly identifies a declarative, an interrogative, and an imperative cluster: 94\% of Cluster~$0$ are interrogatives, 86\% of Cluster~$1$ are declaratives, and 70\% of Cluster~$2$ are imperatives. The three clause types in English are also mostly clustered together by the model: 95\% of declaratives, 90\% of interrogatives, and 87\% of imperatives are clustered together in Cluster~$1$, $0$, $2$ respectively. In contrast to \dlearnerabbr{}, this learner is able to find the right clause types in English.
+We can see that the \plearnerabbr{} model clearly identifies a declarative, an interrogative, and an imperative cluster: \revise{94\% of Cluster~$1$ are interrogatives, 86\% of Cluster~$2$ are declaratives, and 70\% of Cluster~$3$ are imperatives.} The three clause types in English are also mostly clustered together by the model: 95\% of declaratives, 90\% of interrogatives, and 87\% of imperatives are clustered together in \revise{Cluster~$2$, $1$, $3$} respectively. In contrast to \dlearnerabbr{} model, this model is able to find the right clause types in English.
 
 
 Figure~\ref{fig:target-syncluster} shows the morpho-syntactic profile of each cluster identified by the \plearnerabbr{}. 
@@ -891,7 +897,7 @@ Figure~\ref{fig:target-syncluster} shows the morpho-syntactic profile of each cl
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{figures/target-syncluster.jpg}
-    \caption{The number of sentences with/without a formal propertyin each cluster (Cluster 0 $\sim$ Interrogatives, Cluster 1 $\sim$ Declaratives, Cluster 2 $\sim$ Imperatives), darker colors represent the number of sentences with the property, lighter colors represent sentences without the property.}
+    \caption{The number of sentences with/without a formal propertyin each cluster (\revise{Cluster 1 $\sim$ Interrogatives, Cluster 2 $\sim$ Declaratives, Cluster 3 $\sim$ Imperatives}), darker colors represent the number of sentences with the property, lighter colors represent sentences without the property.}
     \label{fig:target-syncluster}
 \end{figure}
 
@@ -946,39 +952,59 @@ Using data from infant-directed speech in English, our models simulate the \dist
 %how noise is generated
 As we have seen in the last section, pragmatics information is crucial for clause type clustering. In this series of simulations, I manipulated the amount of noise in the speech act information that the \plearnerabbr{} model takes as input. Instead of feeding the model true speech act labels, I replaced a percentage of the data with random speech act labels to simulate the situation where the learner randomly guess the speech act for a proportion of the utterances they hear. Each simulation was run 10 times. 
 
-Figure~\ref{fig:noisy-rand-compare} shows the simulations with 0-100\% noise. The performance of the \dlearnerabbr{} model in our last simulation is marked by the dotted line. As can be seen, the \plearnerabbr{} learner outperforms the \dlearnerabbr{} learner up until there is around 80\% of noise in speech act, and even at 80\% level there are iterations that outperforms the \dlearnerabbr{}. This suggests that a little pragmatics goes a long way, as the learners with noisy pragmatic information still outperforms the one without. 
+Figure~\ref{fig:noisy-rand-compare} shows the simulations with 0-100\% noise. The performance of the \dlearnerabbr{} model in our last simulation is indicated by the dotted line. As can be seen, the \plearnerabbr{} learner outperforms the \dlearnerabbr{} learner up until there is around 80\% of noise in speech act, and even at 80\% level there are iterations that outperforms the \dlearnerabbr{}. This suggests that a little pragmatics goes a long way, as the learners with noisy pragmatic information still outperforms the one without. 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{figures/noisy-rand-compare.jpg}
-    \caption{Performance of the \plearnerabbr{} model with different levels of noise in the speech act information; dotted marks the rand score of the \dlearnerabbr{} learner}
+    \includegraphics[width=1\textwidth]{figures/noisy-adjrand.jpg}
+    \caption{Performance of the \plearnerabbr{} model with different levels of noise in the speech act information; dotted line indicates the \revise{adjusted rand score} of the \dlearnerabbr{} learner}
     \label{fig:noisy-rand-compare}
 \end{figure}
 
+\revise{Zooming in on the clusters identified by the models, I found that simulations with around 80\% noise cannot successfully identify all three clusters correctly while simulations with 70\% noise level can, even though the adjusted rand scores of these two levels are roughly the same. At 80\%, we can see that the \plearnerabbr{} reverts back to the performance of the \dlearnerabbr{} in that it fails to identify a cluster for declaratives (Figure~\ref{fig:noisy80-heatmap}). Similar to the \dlearnerabbr{} model, the cluster containing most imperatives also contains many declaratives (\ref{fig:noisy80-heatrev}). }
 
-Looking at the learner at maximum noise level, we can see that the \plearnerabbr{} reverts back to the performance of the \dlearnerabbr{} in that it fails to identify a cluster for declaratives (Figure~\ref{fig:noisy100-heatmap}. Similar to the distributional learner, the cluster containing most imperatives also contains many declaratives (\ref{fig:noisy100-heatrev}). 
+\begin{figure}[H]
+\begin{minipage}[b]{0.45\linewidth}	
+    \centering
+    \includegraphics[width=1.2\textwidth]{figures/target-heatmap-70.jpg}
+\end{minipage}
+\begin{minipage}[b]{0.45\linewidth}	
+\centering
+    \includegraphics[width=1.2\textwidth]{figures/target-heatmap-80.jpg}
+\end{minipage}
+    \caption{The proportion of \diis{} in each of the three clusters identified by the \plearnerabbr{} model; with 70\% (left) and 80\% (right) noise in speech act information }
+    \label{fig:noisy80-heatmap}
+\end{figure}
+
+\begin{figure}[H]
+\begin{minipage}[b]{0.45\linewidth}	
+    \centering
+    \includegraphics[width=1.2\textwidth]{figures/target-heatrev-70.jpg}
+\end{minipage}
+\begin{minipage}[b]{0.45\linewidth}	
+    \centering
+    \includegraphics[width=1.2\textwidth]{figures/target-heatrev-80.jpg}
+\end{minipage}   
+    \caption{The proportion of actual \diis{} clustered in one category, with 70\% (left) 80\% (right) noise in speech act information}
+    \label{fig:noisy80-heatrev}
+\end{figure}
+
+
+
+\revise{The morpho-syntactic profile of different simulations further shows that at 80\% noise level, the \plearnerabbr{} and \dlearnerabbr{} model behave similarly, as both fail to identify the property [$-$ subject] for imperatives (Figure~\ref{fig:noisy80-syncluster}). In contrast, with 70\% noise level the model can still find the right morpho-syntactic features for interrogatives and imperatives (Figure~\ref{fig:noisy70-syncluster}).} 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{figures/noisy100-heatmap.jpg}
-    \caption{The proportion of \diis{} in each of the three clusters (100\% noise in speech act information) }
-    \label{fig:noisy100-heatmap}
+    \includegraphics[width=1\textwidth]{figures/target-syncluster-80.jpg}
+    \caption{\revise{The morpho-syntactic profile of each cluster in simulations with 80\% noise in speech act information (Cluster 1 $\sim$ Imperatives, Cluster 2 $\sim$ Interrogatives, Cluster 3 $\sim$ Declaratives).}}
+    \label{fig:noisy80-syncluster}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{figures/noisy100-heatrev.jpg}
-    \caption{The proportion of actual \diis{} clustered in one category}
-    \label{fig:noisy100-heatrev}
-\end{figure}
-
-Looking at the morpho-syntactic profile of this model with random speech act information, we again see that it behaves like the \dlearnerabbr{} model, and fails to identify the properties of English imperatives and declaratives.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{figures/noisy100-syncluster.jpg}
-    \caption{The number of sentences with/without certain formal features in each cluster (Cluster 0 $\sim$ Interrogatives, Cluster 1 $\sim$ Imperatives, Cluster 2 $\sim$ Declaratives), darker colors represent the number of sentences with the feature.}
-    \label{fig:noisy100-syncluster}
+    \includegraphics[width=1\textwidth]{figures/target-syncluster-70.jpg}
+    \caption{\revise{The morpho-syntactic profile of each cluster in simulations with 70\% noise in speech act information (Cluster 1 $\sim$ Interrogatives, Cluster 2 $\sim$ Imperatives, Cluster 3 $\sim$ Declaratives).}}
+    \label{fig:noisy70-syncluster}
 \end{figure}
 
 Results from our simulations suggest that morphosyntax is not sufficient to solve the clustering problem, and a small amount of pragmatic information is necessary.
@@ -989,8 +1015,20 @@ Results from our simulations suggest that morphosyntax is not sufficient to solv
 This chapter investigates how 18-month-olds learn to identify the three clause types in English. Our corpus study provides evidence suggesting that the information that children need to solve the clustering and labeling problems for acquiring clause types is present in their input. Parents use clause types systematically, and the three clause types are predominantly mapped to their canonical functions (declaratives to assertions, interrogatives to questions, imperatives to requests/commands) despite the presence of the theoretically expected exceptions to this mapping. The three clause types also show systematically different formal profiles in the input: compared to declaratives, interrogatives are more likely to have auxiliaries, subject-auxiliary inversion, and clause-initial functional items like \twh{}, which are characteristic of [+int] of $C^{0}$ in English; imperatives are more likely to not have subjects or verb suffixes, which is characteristic of [+imp].
 
 
-I then investigated the extent to which learners need to rely on pragmatic information (i.e., knowing what speech act a given utterance of sentence is conveying), to solve not just labeling, but the clustering itself. I built two Bayesian clustering models simulating a \distlearner{} (\dlearnerabbr{}) and a \praglearner{} (\plearnerabbr{}). I found that morpho-synatctic information is not sufficient for finding the right clause type clustering and a small amount of pragmatic information is necessary, as the \plearnerabbr{} learner outperforms the \dlearnerabbr{} when we ran the two models with the annotated dataset from our corpus study. In addition, a small amount of pragmatics might suffice; even with 80\% of noise, the speech act information still helps improve the performance of the model. So even if the speech act information is not perceived veridically for all utterances, learners can still enjoy its benefits.
+I then investigated the extent to which learners need to rely on pragmatic information (i.e., knowing what speech act a given utterance of sentence is conveying), to solve not just labeling, but the clustering itself. I built two Bayesian clustering models simulating a \distlearner{} (\dlearnerabbr{}) and a \praglearner{} (\plearnerabbr{}). I found that morpho-synatctic information is not sufficient for finding the right clause type clustering and a small amount of pragmatic information is necessary, as the \plearnerabbr{} learner outperforms the \dlearnerabbr{} when we ran the two models with the annotated dataset from our corpus study. In addition, a small amount of pragmatics might suffice; even with 80\% noise, the speech act information still helps improve the performance of the model. So even if the speech act information is not perceived veridically for all utterances, learners can still enjoy its benefits.
 
+\subsection{\revise{Implications for learning clause types}}
+\revise{With all of the above results, what conclusion can/can't we draw regarding children's learning of clause types? Here I want to discuss the areas where the models are solving an easier problem than children, where the models are probably given a harder problem.  }
+
+\revise{First, our models assume that the learners have \tit{a priori} knowledge regarding the number of clause type categories in their language. While this is a reasonable assumption given the near-universality of declaratives, interrogatives, and imperatives, there are several ways that the actual task that learners have to solve could be more difficult. For one, children might have to figure out the number of clause types in addition to which sentence belongs to which clause type. This additional inference about number might make the learning problem harder for the child. But it is also possible that children start with the assumption that there are three clause types, and gradually expand to include minor clause type categories like exclamatives.  }
+
+\revise{Moreover, I assumed that the learners at this age can perceive a set of morpho-syntactic features that are relevant for clause typing. But this set of features were hand-picked to give the \dlearnerabbr{} model the best chance to succeed; children not be so lucky to have this set picked for them and might need to figure out what are the relevant features for clause typing in addition to figuring out which features go with which clause type cluster. This will no doubt make the learning problem harder. One justification for making this assumption though is that (besides giving the \dlearnerabbr{} the best shot) children might have some knowledge that certain features are clausal features, and some are not. For example, they might know that verb objects might be relevant for learning properties about verbs, but not necessarily relevant for learning the properties of the whole clause. This knowledge might help them pick the relevant morpho-syntactic features for figuring out clause type clusters.
+}
+
+\revise{Another area where we could improve the model is how speech act information is accessed by the learner. In our simulations with different noise levels, we replaced a proportion of true speech act labels with random speech act labels. In other words, the models assumed that every utterance you hear is associated with a speech act category; if you are uncertain, you still need to make a guess. But it is very likely that in cases of uncertainty, instead of make a guess, the learner simply tosses out the utterance, so they might not learn from this datapoint. In fact, we adults do this too: sometimes when we can't decide whether our interlocutor is asking a question or making a statement, instead of making a guess right away, we might decide to skip this utterance and wait for more data. Therefore, my next step is to adjust the model to incorporate an internal signal of confidence about speech act perception. This signal could then be used as a filter to help learners only learn from utterances that they are confident about.  }
+
+
+\revise{One area that the models are given a disadvantage is the absence of prosodic features. We will come back to these features in Chapter~\ref{chap:prosody}.  }
 
 Now that we have established the importance of pragmatics, and that a small amount of pragmatics might suffice, the question then is, how children may get this pragmatic information. How can children infer speech act independently of clause types?  As we have discussed in Chapter~\ref{chap:introduction}, With the innate knowledge of a set of speech act categories and what speech acts do, and a theory of communication, children might have certain expectations about how each speech acts are performed in the input. If these expectations are met, then they can use these cues to infer which utterance is performed with what speech act. But just as our discussion with clause types, behaviors related to speech acts might be absent or misleading. We therefore need to very empirically whether some of these expectations about speech acts can be met. Specifically, is certain prosodic contours and non-linguistic behavior of parents correlate with the use of questions? We will turn to these questions in Chapter~\ref{chap:eng-sp}.
 
