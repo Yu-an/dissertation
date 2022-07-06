@@ -99,6 +99,130 @@ Under no condition would Mary eat tripe.
 
 These are cases where the speech act information might be particularly useful to a learner, as identifying the utterance as making an assertion would help the learner to avoid making the generalization that [-int] also triggers subject-auxiliary inversion. 
 
+\revise{Another tricky case is what is the clause type category for rising declaratives.} When declaratives are associated with a  L* H-H\% rising intonation, they tend to be interpreted as questions (i.e. rising declaratives, \citealt{ladd1981,gunlogson2004,gunlogson2008,jeong2018,rudin2018,goodhue2021rd}). But are sentences like (\ref{ex:bg:theory:prosody:rd}) declaratives (I will use $\nearrow$ to indicate the sentence has a final rising intonation, and $\searrow$ for final fall)?
+ 
+\bex{ex:bg:theory:prosody:rd}
+It's raining $\nearrow$
+\eex
+\bex{ex:bg:theory:prosody:fd}
+It's raining $\searrow$
+\eex
+
+
+In Gunlogson's \cite*{gunlogson2008} analysis, sentences like (\ref{ex:bg:theory:prosody:rd}) are declarative clauses with a rising intonation, implying that intonation does not affect the clause type feature of the sentence. Meaning-wise, clause type and intonation contribute compositionally to the discourse function of the utterance. 
+
+
+Many analyses of rising declaratives in the dynamic discourse tradition adopt the same assumption. As these cases are rarely discussed in syntactic literature, it is unclear whether syntacticians would classify them as having [$-$int] or [$+$int]. But we can go through
+%the arguments given to other
+some typical syntactic tests for
+[$+$int], to see if it's possible to assign [$+$int] to
+%the sentence
+rising declaratives. One test is whether rogative verbs that only select interrogative clauses would embed (\ref{ex:bg:theory:prosody:rd}). If (\ref{ex:bg:theory:prosody:rd}) bears [+int], then the sentence with (\ref{ex:bg:theory:prosody:rd}) embedded under \tit{wonder} should be grammatical.
+
+\bex{ex:bg:theory:prosody:rd-wonder}
+*Mary wonders \tun{it's raining}.
+\eex
+
+As shown in (\ref{ex:bg:theory:prosody:rd-wonder}), this prediction is not borne out; (\ref{ex:bg:theory:prosody:rd}) cannot be embedded under rogative verbs like \tit{wonder}. This suggests that (\ref{ex:bg:theory:prosody:rd}) does not have the feature [+int]. But it could be that (\ref{ex:bg:theory:prosody:rd}) has a silent [+int], but this silent [+int] is realized as \tit{whether} in embedded context. So instead of (\ref{ex:bg:theory:prosody:rd-wonder}), embedded (\ref{ex:bg:theory:prosody:rd}) should be:
+
+\bex{ex:bg:theory:prosody:rd-whether}
+Mary wonders \tun{whether it's raining}.
+\eex
+
+As the rising intonation associated with (\ref{ex:bg:theory:prosody:rd}) would not manifest in embedded clauses, it's hard to distinguish the two possibilities syntactically. But \textcite{farkasroelofsen2017} observe that if the embedded clause is preposed, the intonation difference is preserved, and rising declaratives pattern with polar interrogatives in these cases:
+
+\bex{ex:bg:theory:prosody:rd-prepose}
+\bxl{}
+`It's raining$\searrow$,' it appears/*she wondered.
+\ex`Is it raining?,' *it appears/she wondered.
+\ex`It's raining$\nearrow$,' *it appears/she wondered.
+\exl
+\eex
+
+\textcite{farkasroelofsen2017} use this evidence to argue that rising declaratives are similar to interrogatives and that this similarity should be captured in part by syntax. They propose that the syntactic representation of sentence forms have two kinds of clause type markers, \tsc{closed/open} and \tsc{dec/int}, as in (\ref{fig:bg:fb2017}). Although they didn't specify where these markers reside in the syntactic structure, but they seem to adopt a split-CP approach following \textcite{rizzi1997}, and thus the two clause markers are both part of CP. 
+
+
+\begin{figure}[H]
+\begin{center}
+\begin{tikzpicture}[level distance=30pt]
+\tikzset{level 1/.style={sibling distance=15pt}}
+\tikzset{level 2/.style={sibling distance=35pt}}
+\Tree
+[. CP 
+	[. \tsc{open/closed} ]
+	[. \tsc{}
+		[. \tsc{decl/int} ]
+		[. TP \edge[roof]; { } ] 
+	]
+]
+\end{tikzpicture}
+\end{center}
+\caption{Extended structure of CP proposed by \textcite{farkasroelofsen2017}}
+\label{fig:bg:fb2017}
+\end{figure}
+
+While the morpho-syntax of a sentence is linked to \tsc{dec/int}, the intonation (rise vs. fall) signals whether C bears the feature [\tsc{open}] or [\tsc{closed}]. Rising declaratives like (\ref{ex:bg:theory:prosody:rd}) would be an ``open declarative,'' with the following structure:
+
+\begin{figure}[H]
+\begin{center}
+\begin{tikzpicture}
+\tikzset{level 1/.style={sibling distance=35pt}}
+\tikzset{level 2/.style={sibling distance=35pt}}
+\Tree
+[. CP 
+	[. \tsc{open} ]
+	[. \tsc{}
+		[. \tsc{decl} ]
+		[. TP \edge[roof]; {it's raining} ] 
+	]
+]
+\end{tikzpicture}
+\end{center}
+\caption{The structure of rising declaratives, adapted from \textcite{farkasroelofsen2017}}
+\label{fig:bg:fb2017rd}
+\end{figure}
+
+So for \textcite{farkasroelofsen2017}, the clause type category of rising declaratives is not exactly declarative with [$-$int] (but rather [\tsc{open,dec}]), and its semantics is similar to that of the polar interrogatives. 
+
+However, as many have noted, there might be two types of rising declaratives. The one discussed in \textcite{farkasroelofsen2017} is the inquisitive one, but there might an assertive one (\cite{jeong2018, goodhue2021rd}), as shown in (\ref{ex:engcl:annt:rd:a}):
+
+\bex{ex:engcl:annt:rd-cont}
+\bxl
+\label{ex:engcl:annt:rd:q}
+\tit{S and A are on their way to a birthday party for the daughter of A’s friend. They stop at a store to get a birthday card. As they are both scanning the display for a card for the correct age, S is trying to remember how old the girl has just turned, and he thinks he remembers A telling him that she just turned nine, but he wants to confirm it.}\\
+\tbf{S: She’s nine$\nearrow$}
+\ex
+\label{ex:engcl:annt:rd:a}
+\tit{S is enrolling his daughter in a summer camp program with the camp organizer A.}\\
+S: I want to sign her up for Spanish classes in the mornings, and rock climbing in the afternoons.\\
+A: Okay, there are limited places in each activity based on age group, and some of the age groups have already filled up for rock climbing. How old is your daughter?\\
+\tbf{S: She’s nine$\nearrow$}
+\exl
+\hspace*{\fill}\hfill ex. (12-13), \cite[955]{goodhue2021rd}
+\eex
+
+In (\ref{ex:engcl:annt:rd:q}), the speaker uses the utterance to elicit a confirmation from the addressee regarding the age of the birthday girl, so the main goal is to solicit responses, similar to that of questions. But in (\ref{ex:engcl:annt:rd:a}), the speaker uses the rising declarative to answer the question raised by the addressee, proposing to add the proposition \tit{she's nine} to the common ground of the conversation. Even though there is an additional effect associated with the utterance (something to the effect of ``Is there still room in the 9-year-old’s rock climbing group?''), this additional effect is not the main goal of the utterance.\footnote{There is another incredulous use of rising declarative, but the two uses mentioned here are more relevant for the current discussion on the speech act of rising declaratives, as most agree that incredulous rising declarative is also ``inquisitive'', same as (\ref{ex:engcl:annt:rd:q}).} Thus, we might not need to assume an interrogative semantics for rising declaratives. 
+
+\revise{Moreover, the pre-posing diagnostics that \cite{farkasroelofsen2017} use might not be conclusive. If we paraphrase (\ref{ex:engcl:annt:rd:a}), we cannot use \tit{wonder} either:}
+
+\begin{exe}
+\ex \label{ex:bg:theory:prosody:rd-prepose2}
+\tit{S is looking a flyer looking for Spanish speakers.}\\
+``I speak Ladino $\nearrow$," S thinks/$^{??}$ S wonders.
+\end{exe}
+
+\revise{This suggests that the conclusion drawn from the test with pre-posed embedded clause might need to be re-examined.}
+
+\revise{\textcite{konig2007} additionally note that interrogative clauses tend to be able to license polarity items like \tit{ever, any}, but rising declaratives cannot license these items: }
+\bex{ex:engcl:rd:npi}
+\bxl
+\ex Have you \tun{ever} met him?
+\ex *You have ever met him $\nearrow$
+\exl
+\eex
+
+\revise{While this evidence suggests that rising declaratives might not be interrogatives, it technically does not eliminate the possibility that rising declaratives are their own clause type. But as \cite{goodhue2021rd} demonstrate, it is possible to derive the right semantics for all types of rising declaratives without assuming an additional \tsc{open/closed} layer in the syntax, the motivation for proposing a separate clause type for rising declaratives is also eliminated. Therefore, in this dissertation, I assume that rising declaratives are declaratives with [$-$int] in $C^{0}$. I will return to prosody in Chapter~\ref{chap:prosody}.}
+
 Imperatives (sometimes analyzed as $C$ having the feature [imp], \cite{platzack1997imp}) in English typically use a bare verb stem. In most cases, subjects are missing (\ref{ex:engcl:imp}a), but sometimes there are subjects expressing the addressee (\ref{ex:engcl:imp}b).
 
 \bex{ex:engcl:imp}

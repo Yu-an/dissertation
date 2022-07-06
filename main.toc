@@ -6,88 +6,92 @@
 \contentsline {chapter}{List of Figures}{viii}{section*.5}%
 \contentsline {chapter}{List of Abbreviations}{xi}{section*.6}%
 \contentsline {chapter}{\chapternumberline {1}Introduction}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Learning clause types}{5}{section.1.1}%
+\contentsline {section}{\numberline {1.1}Learning \leavevmode {\color {blue}matrix} clause types}{5}{section.1.1}%
 \contentsline {subsection}{\numberline {1.1.1}The clustering and labeling problem}{5}{subsection.1.1.1}%
 \contentsline {subsection}{\numberline {1.1.2}The usefulness of speech act information}{8}{subsection.1.1.2}%
-\contentsline {subsection}{\numberline {1.1.3}The problem with speech act information}{10}{subsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.1.3}The problem with speech act information}{9}{subsection.1.1.3}%
 \contentsline {subsection}{\numberline {1.1.4}Learning clause types: Interim summary}{11}{subsection.1.1.4}%
-\contentsline {section}{\numberline {1.2}Learning speech act categories}{13}{section.1.2}%
+\contentsline {section}{\numberline {1.2}Learning speech act categories}{12}{section.1.2}%
 \contentsline {section}{\numberline {1.3}Discussion and roadmap}{16}{section.1.3}%
 \contentsline {chapter}{\chapternumberline {2}Background}{19}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Theories of clause types, sentential force, and speech acts}{19}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Speech acts and force}{19}{subsection.2.1.1}%
 \contentsline {subsection}{\numberline {2.1.2}Clause types}{27}{subsection.2.1.2}%
 \contentsline {subsection}{\numberline {2.1.3}The role of prosody}{29}{subsection.2.1.3}%
-\contentsline {section}{\numberline {2.2}Acquisition of speech acts and clause types}{34}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Early communicative abilities}{34}{subsection.2.2.1}%
+\contentsline {section}{\numberline {2.2}Acquisition of speech acts and clause types}{33}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Early communicative abilities}{33}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}Early knowledge of clause types and speech acts}{36}{subsection.2.2.2}%
 \contentsline {section}{\numberline {2.3}Summary}{40}{section.2.3}%
 \contentsline {chapter}{\chapternumberline {3}Learning to identify clause types in English}{41}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Background}{43}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Two learners}{43}{subsection.3.1.1}%
 \contentsline {subsection}{\numberline {3.1.2}Clause types in English}{44}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Linguistic knowledge and capacities of 18-month-olds}{47}{subsection.3.1.3}%
-\contentsline {section}{\numberline {3.2}Corpus study}{50}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Corpus and methods}{50}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Annotation schema}{51}{subsection.3.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.2.1}Clause Type}{51}{subsubsection.3.2.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2.2}Speech Act}{53}{subsubsection.3.2.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.2.3}Formal features}{54}{subsubsection.3.2.2.3}%
-\contentsline {subsection}{\numberline {3.2.3}Results}{55}{subsection.3.2.3}%
-\contentsline {subsubsection}{\numberline {3.2.3.1}Overview}{55}{subsubsection.3.2.3.1}%
-\contentsline {subsubsection}{\numberline {3.2.3.2}Morpho-syntactic cues}{60}{subsubsection.3.2.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.3.3}Informativeness of syntactic and pragmatic cues}{62}{subsubsection.3.2.3.3}%
-\contentsline {section}{\numberline {3.3}Modeling the learning of clause types}{66}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Generative models}{67}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Inferences}{69}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Simulations with infant-directed speech}{71}{subsection.3.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.3.1}The SID{} model}{72}{subsubsection.3.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.3.2}The SPID{} model}{75}{subsubsection.3.3.3.2}%
-\contentsline {subsubsection}{\numberline {3.3.3.3}Interim Summary}{78}{subsubsection.3.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Simulating noisy pragmatic information}{78}{subsection.3.3.4}%
-\contentsline {section}{\numberline {3.4}Discussion}{82}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}\leavevmode {\color {blue}Implications for learning clause types}}{83}{subsection.3.4.1}%
-\contentsline {chapter}{\chapternumberline {4}Learning to identify clause types in Mandarin}{86}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Background}{87}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Clause types in Mandarin}{87}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Mandarin-acquiring children's knowledge of clause types}{91}{subsection.4.1.2}%
-\contentsline {section}{\numberline {4.2}Corpus study}{93}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Corpus and methods}{93}{subsection.4.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.1.1}Clause Type}{94}{subsubsection.4.2.1.1}%
-\contentsline {subsubsection}{\numberline {4.2.1.2}Morpho-syntactic features for clause typing}{94}{subsubsection.4.2.1.2}%
-\contentsline {subsection}{\numberline {4.2.2}Results}{96}{subsection.4.2.2}%
-\contentsline {subsubsection}{\numberline {4.2.2.1}Overview}{96}{subsubsection.4.2.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.2.2}Morpho-syntactic cues}{103}{subsubsection.4.2.2.2}%
-\contentsline {section}{\numberline {4.3}Modeling the learning of clause type in Mandarin}{103}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Performance of the SID{} model}{104}{subsection.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.1.1}The conservative simulation}{104}{subsubsection.4.3.1.1}%
-\contentsline {subsubsection}{\numberline {4.3.1.2}The knowledgeable simulation}{106}{subsubsection.4.3.1.2}%
-\contentsline {subsection}{\numberline {4.3.2}Performance of the SPID{} model}{108}{subsection.4.3.2}%
-\contentsline {subsubsection}{\numberline {4.3.2.1}The conservative simulation}{108}{subsubsection.4.3.2.1}%
-\contentsline {subsubsection}{\numberline {4.3.2.2}The knowledgeable simulation}{111}{subsubsection.4.3.2.2}%
-\contentsline {subsubsection}{\numberline {4.3.2.3}Compare all four simulations}{114}{subsubsection.4.3.2.3}%
-\contentsline {subsection}{\numberline {4.3.3}Simulations with noisy pragmatic information}{115}{subsection.4.3.3}%
-\contentsline {section}{\numberline {4.4}Discussion}{116}{section.4.4}%
-\contentsline {chapter}{\chapternumberline {5}Prosody }{118}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Background}{118}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Corpus study}{120}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Methods}{120}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Results}{121}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5.3}Learning clause type categories with prosody}{126}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Conclusion}{129}{section.5.4}%
-\contentsline {chapter}{\chapternumberline {6}Learning speech acts}{131}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Background}{135}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Pauses in conversation}{135}{subsection.6.1.1}%
-\contentsline {subsection}{\numberline {6.1.2}Attentional behavior}{136}{subsection.6.1.2}%
-\contentsline {subsection}{\numberline {6.1.3}Interim Summary}{137}{subsection.6.1.3}%
-\contentsline {section}{\numberline {6.2}Corpus study}{138}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Methods}{138}{subsection.6.2.1}%
-\contentsline {subsection}{\numberline {6.2.2}The correlations we expect}{139}{subsection.6.2.2}%
-\contentsline {subsection}{\numberline {6.2.3}Results}{139}{subsection.6.2.3}%
-\contentsline {subsubsection}{\numberline {6.2.3.1}Pauses}{139}{subsubsection.6.2.3.1}%
-\contentsline {subsubsection}{\numberline {6.2.3.2}Parents' attentional behavior}{140}{subsubsection.6.2.3.2}%
-\contentsline {section}{\numberline {6.3}Conclusion}{141}{section.6.3}%
-\contentsline {chapter}{\chapternumberline {7}Conclusion and discussion}{143}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Summary of findings}{143}{section.7.1}%
-\contentsline {section}{\numberline {7.2}The pragmatic syntactic bootstrapping hypothesis}{145}{section.7.2}%
-\contentsline {chapter}{Bibliography}{148}{section*.7}%
+\contentsline {subsection}{\numberline {3.1.3}Linguistic knowledge and capacities of 18-month-olds}{51}{subsection.3.1.3}%
+\contentsline {section}{\numberline {3.2}Corpus study}{54}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Corpus and methods}{54}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Annotation schema}{55}{subsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.2.1}Clause Type}{55}{subsubsection.3.2.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2.2}Speech Act}{57}{subsubsection.3.2.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.2.3}Formal features}{58}{subsubsection.3.2.2.3}%
+\contentsline {subsection}{\numberline {3.2.3}Results}{59}{subsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.3.1}Overview}{59}{subsubsection.3.2.3.1}%
+\contentsline {subsubsection}{\numberline {3.2.3.2}Morpho-syntactic cues}{64}{subsubsection.3.2.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.3.3}Informativeness of syntactic and pragmatic cues}{66}{subsubsection.3.2.3.3}%
+\contentsline {section}{\numberline {3.3}Modeling the learning of clause types}{70}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Generative models}{71}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Inferences}{73}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Simulations with infant-directed speech}{75}{subsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.3.1}The SID{} model}{76}{subsubsection.3.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.3.2}The SPID{} model}{79}{subsubsection.3.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3.3}Interim Summary}{82}{subsubsection.3.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Simulating noisy pragmatic information}{82}{subsection.3.3.4}%
+\contentsline {section}{\numberline {3.4}Discussion}{86}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}\leavevmode {\color {blue}Implications for learning clause types}}{87}{subsection.3.4.1}%
+\contentsline {chapter}{\chapternumberline {4}Learning to identify clause types in Mandarin}{90}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Background}{91}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Clause types in Mandarin}{91}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Mandarin-acquiring children's knowledge of clause types}{96}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}Corpus study}{97}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Corpus and methods}{97}{subsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.1.1}Clause Type}{98}{subsubsection.4.2.1.1}%
+\contentsline {subsubsection}{\numberline {4.2.1.2}Morpho-syntactic features for clause typing}{99}{subsubsection.4.2.1.2}%
+\contentsline {subsection}{\numberline {4.2.2}Results}{101}{subsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.1}Overview}{101}{subsubsection.4.2.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2.2}Morpho-syntactic cues}{107}{subsubsection.4.2.2.2}%
+\contentsline {section}{\numberline {4.3}Modeling the learning of clause type in Mandarin}{107}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Performance of the SID{} model}{108}{subsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.1.1}The conservative simulation}{108}{subsubsection.4.3.1.1}%
+\contentsline {subsubsection}{\numberline {4.3.1.2}The knowledgeable simulation}{110}{subsubsection.4.3.1.2}%
+\contentsline {subsection}{\numberline {4.3.2}Performance of the SPID{} model}{112}{subsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.2.1}The conservative simulation}{112}{subsubsection.4.3.2.1}%
+\contentsline {subsubsection}{\numberline {4.3.2.2}The knowledgeable simulation}{115}{subsubsection.4.3.2.2}%
+\contentsline {subsubsection}{\numberline {4.3.2.3}Compare all four simulations}{118}{subsubsection.4.3.2.3}%
+\contentsline {subsection}{\numberline {4.3.3}Simulations with noisy pragmatic information}{119}{subsection.4.3.3}%
+\contentsline {section}{\numberline {4.4}Discussion}{120}{section.4.4}%
+\contentsline {chapter}{\chapternumberline {5}\leavevmode {\color {blue}Prosody, clause types, and speech acts in English}}{123}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Background}{124}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Prosody, clause types, and speech acts in English}{124}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Children's knowledge of prosodic features}{127}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Corpus study}{130}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Methods}{130}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Results}{132}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}Learning clause type categories with prosody}{134}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Disucssion}{140}{section.5.4}%
+\contentsline {chapter}{\chapternumberline {6}Learning speech acts}{142}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Background}{146}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Pauses in conversation}{146}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Attentional behavior}{147}{subsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.1.3}Interim Summary}{148}{subsection.6.1.3}%
+\contentsline {section}{\numberline {6.2}Corpus study}{149}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Methods}{149}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}The correlations we expect}{150}{subsection.6.2.2}%
+\contentsline {subsection}{\numberline {6.2.3}Results}{150}{subsection.6.2.3}%
+\contentsline {subsubsection}{\numberline {6.2.3.1}Pauses}{150}{subsubsection.6.2.3.1}%
+\contentsline {subsubsection}{\numberline {6.2.3.2}Parents' attentional behavior}{151}{subsubsection.6.2.3.2}%
+\contentsline {section}{\numberline {6.3}Conclusion}{152}{section.6.3}%
+\contentsline {chapter}{\chapternumberline {7}Conclusion and discussion}{154}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Summary of findings}{154}{section.7.1}%
+\contentsline {section}{\numberline {7.2}The pragmatic syntactic bootstrapping hypothesis}{157}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}\leavevmode {\color {blue}Determining the role of prosody}}{158}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}\leavevmode {\color {blue}From matrix to embedded clauses}}{160}{subsection.7.2.2}%
+\contentsline {chapter}{Bibliography}{162}{section*.7}%
