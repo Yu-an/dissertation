@@ -2,30 +2,30 @@
 \label{chap:eng-cl}
 
 
-As discussed in the previous chapters, cross-linguistically we see three major clause types, declaratives, interrogatives, and imperatives, corresponding to three main speech acts, assertions, questions, and commands/requests. We also saw in Chapter~\ref{chap:background} that by 18 months old, infants seem to have figured out clause types and their canonical functions, i.e., the type of speech acts they are canonically used for.  As discussed in Chapter~\ref{chap:introduction}, the acquisition of clause types can be decomposed into two challenges: 1) the clustering problem, i.e. clustering clauses in the right three categories, and 2) the \tbf{labeling problem}, i.e. linking each category to its function. 
+As discussed in the previous chapters, cross-linguistically we see three major clause types, declaratives, interrogatives, and imperatives, corresponding to three main speech acts, assertions, questions, and commands/requests. We also saw in Chapter~\ref{chap:background} that by 18 months old, infants seem to have figured out clause types and their canonical functions, i.e., the type of speech acts they are canonically used for.  As discussed in Chapter~\ref{chap:introduction}, the acquisition of clause types can be decomposed into two challenges: 1) the \tbf{clustering problem}, i.e. clustering clauses in the right three categories, and 2) the \tbf{labeling problem}, i.e. linking each category to its function. 
 
 %Given that infants's early success at identifying clause types,
-This chapter investigates how learners solve these problems, especially the clustering problem, by probing the extent to which children need to rely on pragmatic information (i.e., inferring what speech act a given utterance of sentence is conveying). As discussed in Chapter~\ref{chap:introduction}, pragmatic information is essential for solving the labeling problem. The question I ask here, then, is whether pragmatic information is also crucial for solving the clustering problem, or, conversely, if it might hurt. Will a learner strictly tracking formal regularities home in on the right three clusters of clauses? Will a learner privy to some speech act information fare better? Does the speech act information help or hurt the learner? It can help by highlighting which formal distinctions matter for clause typing; it could hurt if clause types are systematically used in indirect speech acts. If pragmatic information like speech act helps, how much pragmatic information is required? 
+This chapter investigates how learners solve these problems, especially the clustering problem, by probing the extent to which children need to rely on pragmatic information (i.e., inferring what speech act a given utterance of sentence is conveying). As discussed in Chapter~\ref{chap:introduction}, pragmatic information is essential for solving the labeling problem. The question I ask here, then, is whether pragmatic information is also crucial for solving the clustering problem, or, conversely, if it might hurt. Will a learner strictly tracking morpho-syntactic regularities home in on the right three clusters of clauses? Will a learner privy to some speech act information fare better? Does the speech act information help or hurt the learner? It can help by highlighting which formal distinctions matter for clause typing; it could hurt if clause types are systematically used in indirect speech acts. If pragmatic information like speech act helps, how much pragmatic information is required? 
 
 To answer these questions, I compare the performance of two computational models, a \gls{dlearnerabbr} and a \gls{plearnerabbr}. Since the success of the learning models should be commensurate with infants' early successes at identifying clause types, I test the models using data from an annotated dataset created with parental sentences in the Providence Corpus (\cite{ProvidenceCorpus}). I will show that the \gls{dlearnerabbr} fail to identify all three clause types, suggesting that the morpho-syntactic information alone is not sufficient for learning clause types, and pragmatic information, i.e. the speech act that a sentence is used to perform, is crucial.
 
-But how much pragmatics is needed, I manipulate the ratio of noise in the pragmatic information. I will show that learners need very little pragmatic information to help them figure out clause type. Even with 80\% noise, models with speech act information still outperform the one without.
+But how much pragmatics is needed, I manipulate the ratio of noise in the pragmatic information. I will show that learners need very little pragmatic information to help them figure out clause type. Even with 70\% noise, models with speech act information still outperform the one without.
 
-In this chapter, I assume that learners can have access to pragmatic information. Chapter~\ref{chap:eng-sp} will address the question of how learners might be able to glean speech act information other than relying on clause types. 
+In this and the next Chapter, I assume that learners do not have access to prosodic information, and we will add this information in Chapter~\ref{chap:prosody}. I also assume that learners has access to pragmatic information. Chapter~\ref{chap:eng-sp} will address the question of how learners might be able to glean speech act information other than relying on clause types. 
 
 This rest of the chapter is organized as follows: 
-In Section~\ref{sec:engcl:background}, I first briefly introduce the two computational models mentioned above, and how they can help us answer our questions (Section~\ref{sec:engcl:bg:learners}). I then review the formal features of English \diis{} (Section~\ref{sec:engcl:bg:grammar}), setting the stage for discussing the learning of these clause types. But these are features that English employs for clause typing, infants at 18 months old might not be able to perceive all of these features. To allow our models to best capture 18-month-olds' learning process, we need to look at 18-month-olds' linguistic capacity and knowledge with regard to these features. So in Section~\ref{sec:engcl:bg:assumptions} I briefly go through the linguistic capacities and knowledge of infants before 18 months old with regard to the formal features used for clause typing, which in turn will guide the way these features are coded in the corpus. 
+In Section~\ref{sec:engcl:background}, I first briefly introduce the two computational models mentioned above, and how they can help us answer our questions (Section~\ref{sec:engcl:bg:learners}). I then review the formal features of English \diis{} (Section~\ref{sec:engcl:bg:grammar}), setting the stage for discussing the learning of these clause types. While these are features that English employs for clause typing, infants at 18 months old might not be able to perceive all of these features. To allow our models to best capture 18-month-olds' learning process, we need to look at 18-month-olds' linguistic capacity and knowledge with regard to these features. So in Section~\ref{sec:engcl:bg:assumptions} I briefly go through the linguistic capacities and knowledge of infants before 18 months old with regard to the formal features used for clause typing, which in turn will guide the way these features are coded in the corpus. 
 
 In Section~\ref{sec:engcl:corpus}, I report results from a corpus study on parents' use of different clause types and speech acts, to give a quantitative description of the information present in the input. The annotated dataset that results from this corpus study will be used in our modeling experiments.
 
-Section~\ref{sec:engcl:model} details the two computational models for the two learners, \gls{dlearnerabbr} and \gls{plearnerabbr}, to see if pragmatic information is needed for solving the clustering problem. I then manipulate the ratio of noise in the pragmatic information to see how much pragmatics is needed (Section~\ref{sec:engcl:model:noisy}). \revise{One feature not addressed in chapter is prosody. As we have discussed in Chapter~\ref{chap:background}, the role of prosody might be complicated. We will turn to prosodic features in Chapter~\ref{chap:prosody}.}
+Section~\ref{sec:engcl:model} details the two computational models for the two learners, \gls{dlearnerabbr} and \gls{plearnerabbr}, to see if pragmatic information is needed for solving the clustering problem. I then manipulate the ratio of noise in the pragmatic information to see how much pragmatics is needed (Section~\ref{sec:engcl:model:noisy}). One feature not addressed in chapter is prosody. As we have discussed in Chapter~\ref{chap:background}, the role of prosody for clause typing and speech act identification might be complicated. I will come back to prosodic features in Chapter~\ref{chap:prosody}, report results from a corpus study examining the prosody of parents' sentences, and results from a modeling study investigating whether 
 
 \section{Background}
 \label{sec:engcl:background}
 
 \subsection{Two learners} 
 \label{sec:engcl:bg:learners}
-As mentioned above, the question we set out to answer is whether morpho-syntactic features alone are sufficient for learners to solve the clustering problem. To this end, I build two computational models that learn the clustering of clauses, a \text{\distlearner{}} (\dlearnerabbr{}) and a \text{\praglearner{}} (\plearnerabbr{}). Both learners are forms of distributional learning: they track distributions of certain features in their input, and use these observations to infer the underlying categories that gives rise these distributions
+As mentioned above, the question we set out to answer is whether morpho-syntactic features alone are sufficient for learners to solve the clustering problem. To this end, I build two computational models simulating a \text{\distlearner{}} (\dlearnerabbr{}) and a \text{\praglearner{}} (\plearnerabbr{}). Both learners are forms of distributional learning: they track distributions of certain features in their input, and use these observations to infer the underlying categories that gives rise these distributions
 (cf. \cite{feldman2013,gagliardi2017modeling,perkins2022vmodel,perkins2019,nguyenwilson2021}; see \cite{pearl2020review} for a recent review). Specifically, these two learners share the same goal of discovering the underlying clustering of sentences in parents' speech, i.e. to infer the abstract clause type categories in English. The difference between them lie in the sources of information they take as input. 
 
 The \tbf{\distlearner{}} (\dlearnerabbr{}) assumes that learners track the statistical distributions of \tit{morpho-syntactic features} present in the surface forms of sentences to infer the abstract clause type category that gives rise to these distributions. This learner serves as our baseline; by looking at its performance, we will be able to see whether syntactic information by itself is sufficient for identifying clause types. 
@@ -80,6 +80,8 @@ As discussed in Chapter~\ref{chap:introduction}, these cases might be a problem 
 Mary ate \tun{what Ann cooked.} \hfill Free relative sentences
 \eex
 
+
+These won't be an immediate problem, since our primary concern is with children's acquisition of sentential force, and thus I restrict myself to cases of matrix clauses, not embedded ones. 
 %Mary claims that she ate what?
 %in-situ \twh-questions,\footnote{We adopt the analysis given by \textcite{bobaljik2015echo} here that this type of \twh-questions are in fact declaratives with [-int] in their $C$. One of the reasons for this analysis is that these types of clauses cannot be selected by rogative verbs like \tit{wonder}:
 %\begin{xlisti}
@@ -99,7 +101,7 @@ Under no condition would Mary eat tripe.
 
 These are cases where the speech act information might be particularly useful to a learner, as identifying the utterance as making an assertion would help the learner to avoid making the generalization that [-int] also triggers subject-auxiliary inversion. 
 
-\revise{Another tricky case is what is the clause type category for rising declaratives.} When declaratives are associated with a  L* H-H\% rising intonation, they tend to be interpreted as questions (i.e. rising declaratives, \citealt{ladd1981,gunlogson2004,gunlogson2008,jeong2018,rudin2018,goodhue2021rd}). But are sentences like (\ref{ex:bg:theory:prosody:rd}) declaratives (I will use $\nearrow$ to indicate the sentence has a final rising intonation, and $\searrow$ for final fall)?
+Another tricky case is what is the clause type category for rising declaratives. When declaratives are associated with a  L* H-H\% rising intonation, they tend to be interpreted as questions (i.e. rising declaratives, \citealt{ladd1981,gunlogson2004,gunlogson2008,jeong2018,rudin2018,goodhue2021rd}). But are sentences like (\ref{ex:bg:theory:prosody:rd}) declaratives (I will use $\nearrow$ to indicate the sentence has a final rising intonation, and $\searrow$ for final fall)?
  
 \bex{ex:bg:theory:prosody:rd}
 It's raining $\nearrow$
@@ -120,7 +122,7 @@ some typical syntactic tests for
 rising declaratives. One test is whether rogative verbs that only select interrogative clauses would embed (\ref{ex:bg:theory:prosody:rd}). If (\ref{ex:bg:theory:prosody:rd}) bears [+int], then the sentence with (\ref{ex:bg:theory:prosody:rd}) embedded under \tit{wonder} should be grammatical.
 
 \bex{ex:bg:theory:prosody:rd-wonder}
-*Mary wonders \tun{it's raining}.
+*Mary wonders \tun{it's raining}$\nearrow$.
 \eex
 
 As shown in (\ref{ex:bg:theory:prosody:rd-wonder}), this prediction is not borne out; (\ref{ex:bg:theory:prosody:rd}) cannot be embedded under rogative verbs like \tit{wonder}. This suggests that (\ref{ex:bg:theory:prosody:rd}) does not have the feature [+int]. But it could be that (\ref{ex:bg:theory:prosody:rd}) has a silent [+int], but this silent [+int] is realized as \tit{whether} in embedded context. So instead of (\ref{ex:bg:theory:prosody:rd-wonder}), embedded (\ref{ex:bg:theory:prosody:rd}) should be:
@@ -182,7 +184,7 @@ While the morpho-syntax of a sentence is linked to \tsc{dec/int}, the intonation
 \label{fig:bg:fb2017rd}
 \end{figure}
 
-So for \textcite{farkasroelofsen2017}, the clause type category of rising declaratives is not exactly declarative with [$-$int] (but rather [\tsc{open,dec}]), and its semantics is similar to that of the polar interrogatives. 
+So for \textcite{farkasroelofsen2017}, the clause type category of rising declaratives is not declarative with [$-$int] (but rather [\tsc{open,dec}]). Both \tsc{open} and [$+$int] are equivalent to a Q-morpheme, so the semantics of rising declaratives is similar to that of polar interrogatives. 
 
 However, as many have noted, there might be two types of rising declaratives. The one discussed in \textcite{farkasroelofsen2017} is the inquisitive one, but there might an assertive one (\cite{jeong2018, goodhue2021rd}), as shown in (\ref{ex:engcl:annt:rd:a}):
 
@@ -203,25 +205,28 @@ A: Okay, there are limited places in each activity based on age group, and some 
 
 In (\ref{ex:engcl:annt:rd:q}), the speaker uses the utterance to elicit a confirmation from the addressee regarding the age of the birthday girl, so the main goal is to solicit responses, similar to that of questions. But in (\ref{ex:engcl:annt:rd:a}), the speaker uses the rising declarative to answer the question raised by the addressee, proposing to add the proposition \tit{she's nine} to the common ground of the conversation. Even though there is an additional effect associated with the utterance (something to the effect of ``Is there still room in the 9-year-old’s rock climbing group?''), this additional effect is not the main goal of the utterance.\footnote{There is another incredulous use of rising declarative, but the two uses mentioned here are more relevant for the current discussion on the speech act of rising declaratives, as most agree that incredulous rising declarative is also ``inquisitive'', same as (\ref{ex:engcl:annt:rd:q}).} Thus, we might not need to assume an interrogative semantics for rising declaratives. 
 
-\revise{Moreover, the pre-posing diagnostics that \cite{farkasroelofsen2017} use might not be conclusive. If we paraphrase (\ref{ex:engcl:annt:rd:a}), we cannot use \tit{wonder} either:}
+Moreover, the pre-posing diagnostics that \cite{farkasroelofsen2017} use might not be conclusive. As pointed out by \cite{rudin2019embed}, these cases of embedded rising declaratives can only be quotatives: 
 
-\begin{exe}
-\ex \label{ex:bg:theory:prosody:rd-prepose2}
-\tit{S is looking a flyer looking for Spanish speakers.}\\
-``I speak Ladino $\nearrow$," S thinks/$^{??}$ S wonders.
-\end{exe}
+\bex{rudin2019}
+\tit{Context: Alvin (A) is talking to Bertha (B) about a conversation he had with Cynthia}
+\bxl\label{rudin2019emb}
+A: Cynthia asked me if you’re married.\\
+\textsf{You = A \xmark; You = B \cmark}
+\ex \label{rudin2019rdembed} A: Are you married$\nearrow$, Cynthia asked me.\\
+\textsf{You = A \cmark; You = B \xmark}
+\exl
+\eex
 
-\revise{This suggests that the conclusion drawn from the test with pre-posed embedded clause might need to be re-examined.}
+For embedded clauses that do not have rising intonation like (\ref{rudin2019emb}), the embedded subject second person pronoun can only refer to the addressee. But when the embedded clause is associated with a rising intonation like (\ref{rudin2019rdembed}), the embedded subject second person pronoun can only refer to the speaker, and cannot refer to the addressee. This suggests that the conclusion drawn from the test with pre-posed embedded clause might need to be re-examined.
 
-\revise{\textcite{konig2007} additionally note that interrogative clauses tend to be able to license polarity items like \tit{ever, any}, but rising declaratives cannot license these items: }
+\textcite{konig2007} additionally note that interrogative clauses tend to be able to license polarity items like \tit{ever, any}, but rising declaratives cannot license these items: 
 \bex{ex:engcl:rd:npi}
-\bxl
-\ex Have you \tun{ever} met him?
+\bxl Have you \tun{ever} met him?
 \ex *You have ever met him $\nearrow$
 \exl
 \eex
 
-\revise{While this evidence suggests that rising declaratives might not be interrogatives, it technically does not eliminate the possibility that rising declaratives are their own clause type. But as \cite{goodhue2021rd} demonstrate, it is possible to derive the right semantics for all types of rising declaratives without assuming an additional \tsc{open/closed} layer in the syntax, the motivation for proposing a separate clause type for rising declaratives is also eliminated. Therefore, in this dissertation, I assume that rising declaratives are declaratives with [$-$int] in $C^{0}$. I will return to prosody in Chapter~\ref{chap:prosody}.}
+\revise{While these pieces of evidence suggest that rising declaratives might not be interrogatives, it technically does not eliminate the possibility that rising declaratives are their own clause type. But as \cite{goodhue2021rd} demonstrate, it is possible to derive the right semantics for all types of rising declaratives without assuming an additional \tsc{open/closed} layer in the syntax, the motivation for proposing a separate clause type for rising declaratives is also eliminated. Therefore, in this dissertation, I assume that rising declaratives are declaratives with [$-$int] in $C^{0}$. I will return to prosody in Chapter~\ref{chap:prosody}.}
 
 Imperatives (sometimes analyzed as $C$ having the feature [imp], \cite{platzack1997imp}) in English typically use a bare verb stem. In most cases, subjects are missing (\ref{ex:engcl:imp}a), but sometimes there are subjects expressing the addressee (\ref{ex:engcl:imp}b).
 
@@ -302,21 +307,20 @@ Generally, infants have been shown to track distributional properties of various
 
 \tsc{$\pm$ Subj-aux inversion:} By 18 months, infants can recognize whether there is an auxiliary in the sentence, and are sensitive to the relative word order between the auxiliary and the sentential subject. As mentioned above, well before they turn 18 months old, infants can already use preceding auxiliaries to categorize a novel word into the verb category (e.g. \cite{peterson2006aux, mintz2006verb}), suggesting that they understand the relation between auxiliaries and verbs. Additionally, as mentioned above, 12-month-olds can already detect subject-auxiliary inversion (\cite{geffenmintz2015wordorder}, cf. \cite{erreich1984,ambridge2006auxinvert}); with both word order and prosodic cues, even 7-month-olds are able to detect the difference between polar interrogatives and declaratives (\cite{geffenmintz2011}). We therefore assume that infants are able to detect whether there is an auxiliary in the sentence, and further that they are able to detect whether the subject is preceding or following the auxiliary.
 
-\tsc{$\pm$ Sentence-initial \twh{}:} \textcite{perkinslidz2021wh} shows that 18-month-olds, but not younger infants, begin to represent the sentence-initial \tit{which NP} as the head of a long-distance dependency. These results are suggestive, but we do not yet have evidence for the full range of \twh-phrases. In order to be conservative, we do not assume that infants have full-fledged knowledge of \twh{}. However, infants at this age have been shown to have the ability to tease apart functional from content words based on their acoustic and phonological properties (\cite{shi1999func,shi2014functional}) and it is reasonable to assume that they treat \twh{s} as functional items (\cite{perkins2019}). Therefore, we will consider \twh{} to be unknown to 18-month-olds, but still treat them as unknown \emph{functional} items (UFI), following \textcite{perkins2019}.\footnote{Note that \textcite{perkins2019} models what happens before 18 months, as her experiment narrows down the developmental window to 18 months old. Moreover, while her experiment only tests \tit{which}, there are some studies suggesting that 18-month-olds can also understand \tit{what}, \tit{who}, and \tit{where}. Thus, assuming that all \twh-items are unknown functional items might in fact be too conservative. In the future, I plan to see if loosening this assumption (e.g. assume that some \twh-items are known) will boost the performance of the \dlearnerabbr{}.} We can also assume that 18-month-olds can keep track of the position of these UFIs in a sentence, so we can code \twh-items as sentence-initial UFIs.\footnote{Other functional items for which we lack evidence for 18-month-olds knowing them include quantifiers, focus particles, complementizers (e.g. \tit{whether}), and certain conjuntors such as \tit{because}. I assume that these are UFIs as well.} 
+\tsc{$\pm$ Sentence-initial \twh{}:} \textcite{perkinslidz2021wh} shows that 18-month-olds, but not younger infants, begin to represent the sentence-initial \tit{which NP} as the head of a long-distance dependency. These results are suggestive, but we do not yet have evidence for the full range of \twh-phrases. In order to be conservative, we do not assume that infants have full-fledged knowledge of \twh{}. However, infants at this age have been shown to have the ability to tease apart functional from content words based on their acoustic and phonological properties (\cite{shi1999func,shi2014functional}) and it is reasonable to assume that they treat \twh{s} as functional items (\cite{perkins2019}). Therefore, we will consider \twh{} to be unknown to 18-month-olds, but still treat them as unknown \emph{functional} items (UFI), following \textcite{perkins2019}.\footnote{Note that \textcite{perkins2019} models what happens before 18 months, as her experiment narrows down the developmental window to 18 months old. Moreover, while her experiment only tests \tit{which}, results from productions studies (e.g. \citealt{clark2015turn}) suggest that 18-month-olds might also understand \tit{what}, \tit{who}, and \tit{where}. Thus, assuming that all \twh-items are unknown functional items might in fact be too conservative. In the future, I plan to see if loosening this assumption (e.g. assume that some \twh-items are known) will boost the performance of the \dlearnerabbr{}.} We can also assume that 18-month-olds can keep track of the position of these UFIs in a sentence, so we can code \twh-items as sentence-initial UFIs.\footnote{Other functional items for which we lack evidence for 18-month-olds knowing them include quantifiers, focus particles, complementizers (e.g. \tit{whether}), and certain connectives such as \tit{because}. I assume that these are UFIs as well.} 
 
-\tsc{Complementizer:} Complementizers indicate the clause type of the embedded clause instead of the matrix clause. For simplicity, this dissertation mainly focuses on the matrix clause, and therefore this feature might not be relevant.  %So far, we do not have evidence for infants' knowledge of complementizers at this age, but, like \twh{s}, they might be able to categorize complementizers as functional items. We will treat these as UFIs. However, one thing to note is that complementizers indicate the clause type of embedded clauses, but for simplification, this dissertation mainly deals with matrix clauses. Nonetheless, having  %So we will treat these as UFIs as well. Since infants can identify verbs, we assume that they can track that certain UFIs occur post-verbally. 
-
+\tsc{Complementizer:} Complementizers indicate the clause type of the embedded clause instead of the matrix clause. Thus, if we focus on matrix clauses to investigate the acquisition of sentential force, complementizers might not be relevant for learner. Nonetheless, I annotated these as UFIs as well. Since infants can identify verbs, we assume that they can track that certain UFIs occur post-verbally.
 
 %Table~\ref{} summarises our assumptions about 18-month-olds' knowledge of the set of formal features that associated with clause typing.
 
 
-%Finally, infants can perceive some features of prosody, and might be able to use some non-clause type-related features to infer speech acts. We will come back to both in Chapter~\ref{chap:eng-sp}.
+Finally, infants can perceive some features of prosody. We will come back to this feature in Chapter~\ref{chap:prosody}.
 
 In summary, apart from clause-initial \twh-phrases and complementizers (which we will assume to be perceived as clause-initial UFIs), 18-month-olds have the formal features relevant for clause typing in English. But how do parents use clause types and speech acts? How serious is the many-to-many mapping problem, both for the mapping between clause type and speech act, and for the mapping between formal features and clause type? We will address these questions with a corpus study. %The annotated dataset resulted from this study will be used in our computational modeling experiments.
 
 \section{Corpus study}
 \label{sec:engcl:corpus}
-To understand how infants figure out clause types and speech acts, we not only need to know which features they can in principle understand, but also need to establish what kind of information is even \emph{available} to them in the input. In this section, I’ll report findings from the corpus study on parental input to English-speaking infants. 
+To understand how infants figure out clause types and speech acts, we need to not only know which features they can in principle understand, but also we need to establish what kind of information is even \emph{available} to them in the input. In this section, I’ll report findings from the corpus study on parental input to English-speaking infants. 
 
 
 \subsection{Corpus and methods}
@@ -326,7 +330,7 @@ For this study, we used data from the Providence sub-corpora (\cite{ProvidenceCo
 
 We sampled 500 conversational turns from each session, and annotated the resulting dataset with the annotation schema detailed in the next section.\footnote{The full annotation schema can be accessed here: \url{https://github.com/Yu-an/annotation_tool/blob/main/schema.pdf}} For the clause type and speech act information, each annotator completed a subset of transcripts (20\% were double annotated, mean Cohen's $\kappa$ = 0.84, range 0.8-0.91, `almost perfect’ per Landis and Koch's (\cite*{landis1977iaa}) descriptive division). To annotate the speech act information, annotators were asked to look at 20 utterances before and 2 utterances after the current utterance in the conversation, as well as consulting the videos for contextual information. If the annotator could not decide on an annotation despite the contextual information, a second person would be consulted, and if still unclear, the utterance would be eliminated. 16 utterances were eliminated in this way. For the morpho-syntactic features, initial annotation was generated by a script using the morphological tagging provided by CHILDES, and then manually corrected. 
 
-In total, 9147 utterances were annotated. We will return to the video and audio part of the annotation process in Chapter~\ref{chap:eng-sp}.
+In total, 9047 utterances were annotated. As we are primarily interested in the form and function of parents' sentences, we excluded children's utterances and uninterpretable utterances from the dataset. In total, 7039 utterances were analyzed. We will return to the video and audio part of the annotation process in Chapter~\ref{chap:eng-sp}.
 
 
 
@@ -336,7 +340,7 @@ In total, 9147 utterances were annotated. We will return to the video and audio 
 
 \subsubsection{Clause Type}
 
-All sentences in our sample were annotated with clause type information: declarative (\ref{ex:engcl:annt:cl:decl}), interrogative (\ref{ex:engcl:annt:cl:int}), or imperative (\ref{ex:engcl:annt:cl:imp}). Minor clause types like exclamatives were annotated as Other (\ref{ex:engcl:annt:cl:other}), as our primary interest is on the three major clause types (and we do not have evidence for 18-month-olds' understanding of minor clause types). Two other categories were also included: Fragments and Ambiguous cases. In cases where the utterance only contains a noun or an injective without verbs like (\ref{ex:engcl:annt:cl:frag}), the utterance was annotated as a Fragment: 
+All sentences in our sample were annotated with clause type information: declarative (\ref{ex:engcl:annt:cl:decl}), interrogative (\ref{ex:engcl:annt:cl:int}), or imperative (\ref{ex:engcl:annt:cl:imp}). Minor clause types like exclamatives were annotated as Other (\ref{ex:engcl:annt:cl:other}), as our primary interest is on the three major clause types (and we do not have evidence for 18-month-olds' understanding of minor clause types). Two other categories were also included: Fragments and Ambiguous cases. In cases where the utterance only contains a noun or an interjective without verbs like (\ref{ex:engcl:annt:cl:frag}), the utterance was annotated as a Fragment: 
 
 \bex{ex:engcl:annt:cl}	
 Clause type
@@ -395,13 +399,13 @@ In such cases, we annotated the utterance with the non-literal (indirect) speech
 Can you put that down?
 \eex 
 
-Another complication comes from rising declaratives like (\ref{ex:engcl:annt:rd}). As discussed in the last chapter Section~\ref{sec:bg:theory:prosody}, there is a live debate on whether to label these cases as declaratives, interrogatives or some more sophisticated category (\cite{gunlogson2008,  farkasroelofsen2017}). 
+As discussed in Section~\ref{sec:engcl:bg:grammar}, there is a live debate on whether to label these cases as declaratives, interrogatives or some more sophisticated category (\cite{gunlogson2008,  farkasroelofsen2017}). 
 
 \bex{ex:engcl:annt:rd}
-is it raining $\nearrow$
+it is raining $\nearrow$
 \eex
 
-We followed \textcite{gunlogson2008} in classifying the form of (\ref{ex:engcl:annt:rd}) as declarative, and labeled the speech act as either question or assertion depending on the contextual information, following \textcite{jeong2018, goodhue2021rd}. We will return to prosody in Chapter~\ref{chap:eng-sp}.
+We followed \textcite{gunlogson2008} and \textcite{goodhue2021rd} in classifying the form of (\ref{ex:engcl:annt:rd}) as declarative, and labeled the speech act as either question or assertion depending on the contextual information, following \textcite{jeong2018},\footnote{Note that she follows \textcite{farkasroelofsen2017} in assuming that the clause type of rising declaratives is [open, $-$int], different from my assumption.} \textcite{goodhue2021rd}. We will return to prosody in Chapter~\ref{chap:eng-sp}.
 
 \subsubsection{Formal features}
 
@@ -474,7 +478,7 @@ As reviewed in the last two sections, infants at 18 months old can perceive many
 
 
 \subsubsection{Overview}
-With the schema given above, an annotated dataset consisting of 9047 utterances was created. As we are primarily interested in the form and function of parents' sentences in this chapter, we excluded children's utterances and uninterpretable utterances from the dataset. In total, 7039 utterances were analyzed.  Figure~\ref{fig:real-cldist} shows the distribution of clause types in the dataset. Declarative clauses are the most frequent clause type, followed by interrogatives and imperatives. 
+In total, 7039 utterances were analyzed.  Figure~\ref{fig:real-cldist} shows the distribution of clause types in the dataset. Declarative clauses are the most frequent clause type, followed by interrogatives and imperatives. 
 
 
 \begin{figure}[H]
@@ -587,7 +591,7 @@ In sum, clause types are typically used for their canonical function in the inpu
 
 \subsubsection{Morpho-syntactic cues}
 \label{sec:engcl:corpus:formal}
-We now turn to the formal cues of each clause type, as reviewed in Section~\ref{sec:engcl:bg:grammar}. In this analysis, we excluded fragment utterances that only contain a noun (\tit{Birdie!}) or an interjective (\tit{Oh}). In total, 3923 sentences were included in the analysis. The distribution of the morpho-syntactic cues listed in Table~\ref{tab:eng-cl:formal-schema} across different clause types is shown in Figure~\ref{fig:real-syncluster}. Darker colors represent the number of sentences with the morpho-syntactic property, and lighter colors represent sentences without the property.%The x-axis of the figure represents the counts of sentences, and the eight morpho-syntactic features are listed along the y-axis. Each graph is split in the middle: to the left of the line, bars with darker colors represent the counts of declarative, interrogative, or imperative sentences with this specific feature, and to the right, bars with lighter colors represents the number of sentences without this feature. 
+We now turn to the formal cues of each clause type, as reviewed in Section~\ref{sec:engcl:bg:grammar}. In this analysis, we excluded fragment utterances that only contain a noun (\tit{Birdie!}) or an injective (\tit{Oh}). In total, 3923 sentences were included in the analysis. The distribution of the morpho-syntactic cues listed in Table~\ref{tab:eng-cl:formal-schema} across different clause types is shown in Figure~\ref{fig:real-syncluster}. Darker colors represent the number of sentences with the morpho-syntactic property, and lighter colors represent sentences without the property.%The x-axis of the figure represents the counts of sentences, and the eight morpho-syntactic features are listed along the y-axis. Each graph is split in the middle: to the left of the line, bars with darker colors represent the counts of declarative, interrogative, or imperative sentences with this specific feature, and to the right, bars with lighter colors represents the number of sentences without this feature. 
 
 
 
@@ -635,7 +639,7 @@ The performance of the two models over 10 iterations is shown in Figure~\ref{fig
 
 %Both models found the same morpho-syntactic regularities the coefficients the two models assigned to the morpho-syntactic predictors 
 
-Our next question is how well the models know the morpho-syntactic makeup of each clause type. This can be inferred from the coefficients that the two models assign to the morpho-syntacitc predictors. A bigger coefficient assigned to a predictor means that the model assigns it a higher significance. As declarative clauses were used as the baseline, the coefficients should in particular be interpreted as indicating how much a specific morpho-syntactic cue contribute to the increase/decrease in the log odds of the sentence being classified as interrogative/imperative vs. declarative (i.e. if a sentence has a morpho-syntactic cue, how likely will it have the feature [+int] or [+imp] as opposed to the default clause type [-int, -imp]). Table~\ref{tab:engcl:corpus:formal} summarizes the morpho-syntactic profile of each clause type. For our purposes, significance was calculated using a two-tail $z$-test. %Details of the models, coefficients, and $p$-values are reported in \mycode{}. 
+Our next question is how well the models know the morpho-syntactic makeup of each clause type. This can be inferred from the coefficients that the two models assign to the morpho-syntacitc predictors. A bigger coefficient assigned to a predictor means that the model assigns it a higher significance. As declarative clauses were used as the baseline, the coefficients should in particular be interpreted as indicating how much a specific morpho-syntactic cue contributes to the increase/decrease in the log odds of the sentence being classified as interrogative/imperative vs. declarative (i.e. if a sentence has a morpho-syntactic cue, how likely will it have the feature [+int] or [+imp] as opposed to the default clause type [-int, -imp]). Table~\ref{tab:engcl:corpus:formal} summarizes the morpho-syntactic profile of each clause type. For our purposes, significance was calculated using a two-tail $z$-test. %Details of the models, coefficients, and $p$-values are reported in \mycode{}. 
 
 \begin{table}[H]
 \begin{center}
@@ -649,7 +653,7 @@ Imperatives (+imp) & $-$subject, $-$verb suffix\\
 \hline \hline
 \end{tabular}
 \end{center}
-\caption{Morpho-syntactic cues associated with interrogatives and imperatives compared to declaratives}
+\caption{Morpho-syntactic cues associated with interrogatives and imperatives compared to declaratives, according to the supervised \plearnerabbr{} model}
 \label{tab:engcl:corpus:formal}
 \end{table}%
 
@@ -668,7 +672,7 @@ Now that we have seen that the relevant information for clause typing is present
 As discussed in Section~\ref{sec:engcl:bg:learners}, I examine the role of pragmatics computationally by building two Bayesian clustering models. The two models simulate a \distlearner{} and a \praglearner{}. Both are distributional learning models: as input, they observe the distribution of several morpho-syntactic cues that are identifiable by infants at 18 months old, and they use that information to cluster sentences into three clause type categories. Given that, cross-linguistically, the same three types of clause types (\diis{}) are associated with three major speech acts (\aqrs{}), it is reasonable to assume that an expectation for three clause types is innate. Even if learners do not have this innate expectation, determining whether learning can succeed with this expectation is a first step in determining whether it is possible to learn the clause types without it. Our learners thus assume that there are three categories, and only have to discover what these categories are, based on formal features. The \praglearner{} additionally observes speech act information and assumes that it is related to clause type. We further manipulated the ratio of noise in the pragmatic information that the pragmatically informed learner is given, to test how much pragmatics the learner needs.
 
 
-This section is organized as follows. Section~\ref{sec:engcl:model:spec} specifies the generative models simulating the two learners. Then I specify how the two models infer clause type categories in Section~\ref{sec:engcl:model:infer}. Section~\ref{sec:engcl:model:results} reports the simulations with English infant-directed speech demonstrating that pragmatic information is crucial for finding the right clause type clustering, and that this pragmatic information does not have to be perfect, as even with 80\% of noise, it still boosts the performance of the \praglearner{}. 
+This section is organized as follows. Section~\ref{sec:engcl:model:spec} specifies the generative models simulating the two learners. Then I specify how the two models infer clause type categories in Section~\ref{sec:engcl:model:infer}. Section~\ref{sec:engcl:model:results} reports the simulations with English infant-directed speech demonstrating that pragmatic information is crucial for finding the right clause type clustering, and that this pragmatic information does not have to be perfect, as even with 70\% of noise, it still boosts the performance of the \praglearner{}. 
 
 \subsection{Generative models}
 The two models simulating the \distlearner{} and the \praglearner{} are Bayesian clustering models, illustrated in Figure~\ref{fig:engcl:model}.% 
@@ -788,7 +792,7 @@ Both models assume that there are three clause type categories, \diis{}, that ex
 
 
 
-In both models, the clause type variable $c_{i}$ follows a multinomial distribution with a parameter $\phi$. This parameter is assumed to have a uniform Dirichlet prior $\mbox{Dir}(1,1,1)$. This means that it is equally likely \emph{a priori} for a sentence to be a declarative, interrogative or imperative. For the model simulating the \distlearner{}, the parameter $\phi$ represents the probability that a sentence $i$ is a declarative, interrogative, or imperative. As the \plearnerabbr{} model assumes that the speech act category $a_{i}$ of the utterance expressed by the sentence informs the learner of the clause type category, so the parameter $\phi^{(a)}$ in this model represents the probability that a sentence $i$, which expresses the speech act $a_{i}$, is a declarative, interrogative, or imperative. 
+In both models, the clause type variable $c_{i}$ follows a multinomial distribution with a parameter $\phi$. This parameter is assumed to have a uniform Dirichlet prior $\mbox{Dir}(1,1,1)$. This means that it is equally likely \emph{a priori} for a sentence to be a declarative, interrogative or imperative. This could be interpreted as the learner do not assume any bias at the very beginning. For the model simulating the \distlearner{}, the parameter $\phi$ represents the probability that a sentence $i$ is a declarative, interrogative, or imperative. As the \plearnerabbr{} model assumes that the speech act category $a_{i}$ of the utterance expressed by the sentence informs the learner of the clause type category, so the parameter $\phi^{(a)}$ in this model represents the probability that a sentence $i$, which expresses the speech act $a_{i}$, is a declarative, interrogative, or imperative. 
 
 In the \plearnerabbr{} model, the speech act variable $a_{i}$ follows a multinomial distribution with parameter $\theta$. This parameter represents the probability that the speech act expressed by the sentence $i$ is an assertion, question, request/command, or some other speech act. This parameter also has a uniform Dirichlet prior $\mbox{Dir}(1,1,1,1)$, meaning that we assume that it is equally likely \emph{a priori} that the sentence $i$ expresses an assertion, question, request/command, or some other speech act.
 
@@ -1085,7 +1089,7 @@ Figure~\ref{fig:noisy-rand-compare} shows the simulations with 0-100\% noise. Th
     \label{fig:noisy-rand-compare}
 \end{figure}
 
-\revise{Zooming in on the clusters identified by the models, I found that simulations with around 80\% noise cannot successfully identify all three clusters correctly while simulations with 70\% noise level can, even though the adjusted rand scores of these two levels are roughly the same. At 80\%, we can see that the \plearnerabbr{} reverts back to the performance of the \dlearnerabbr{} in that it fails to identify a cluster for declaratives (Figure~\ref{fig:noisy80-heatmap}). Similar to the \dlearnerabbr{} model, the cluster containing most imperatives also contains many declaratives (\ref{fig:noisy80-heatrev}). }
+Zooming in on the clusters identified by the models, I found that simulations with around 80\% noise cannot successfully identify all three clusters correctly while simulations with 70\% noise level can, even though the adjusted rand scores of these two levels are roughly the same. At 80\%, we can see that the \plearnerabbr{} reverts back to the performance of the \dlearnerabbr{} in that it fails to identify a cluster for declaratives (Figure~\ref{fig:noisy80-heatmap}). Similar to the \dlearnerabbr{} model, the cluster containing most imperatives also contains many declaratives (\ref{fig:noisy80-heatrev}). 
 
 \begin{figure}[H]
 \begin{minipage}[b]{0.45\linewidth}	
@@ -1096,7 +1100,7 @@ Figure~\ref{fig:noisy-rand-compare} shows the simulations with 0-100\% noise. Th
 \centering
     \includegraphics[width=1.2\textwidth]{figures/target-heatmap-80.jpg}
 \end{minipage}
-    \caption{The proportion of \diis{} in each of the three clusters identified by the \plearnerabbr{} model; with 70\% (left) and 80\% (right) noise in speech act information }
+    \caption{Proportion of \diis{} in each of the three clusters identified by the \plearnerabbr{} model; with 70\% (left) and 80\% (right) noise in speech act information }
     \label{fig:noisy80-heatmap}
 \end{figure}
 
@@ -1109,7 +1113,7 @@ Figure~\ref{fig:noisy-rand-compare} shows the simulations with 0-100\% noise. Th
     \centering
     \includegraphics[width=1.2\textwidth]{figures/target-heatrev-80.jpg}
 \end{minipage}   
-    \caption{The proportion of actual \diis{} clustered in one category, with 70\% (left) 80\% (right) noise in speech act information}
+    \caption{Proportion of actual \diis{} clustered in one category, with 70\% (left) 80\% (right) noise in speech act information}
     \label{fig:noisy80-heatrev}
 \end{figure}
 
@@ -1120,29 +1124,29 @@ Figure~\ref{fig:noisy-rand-compare} shows the simulations with 0-100\% noise. Th
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{figures/target-syncluster-80.jpg}
-    \caption{\revise{The morpho-syntactic profile of each cluster in simulations with 80\% noise in speech act information (Cluster 1 $\sim$ Imperatives, Cluster 2 $\sim$ Interrogatives, Cluster 3 $\sim$ Declaratives).}}
+    \caption{Morpho-syntactic profile of each cluster in simulations with 80\% noise in speech act information (Cluster 1 $\sim$ Imperatives, Cluster 2 $\sim$ Interrogatives, Cluster 3 $\sim$ Declaratives).}
     \label{fig:noisy80-syncluster}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{figures/target-syncluster-70.jpg}
-    \caption{\revise{The morpho-syntactic profile of each cluster in simulations with 70\% noise in speech act information (Cluster 1 $\sim$ Interrogatives, Cluster 2 $\sim$ Imperatives, Cluster 3 $\sim$ Declaratives).}}
+    \caption{Mmorpho-syntactic profile of each cluster in simulations with 70\% noise in speech act information (Cluster 1 $\sim$ Interrogatives, Cluster 2 $\sim$ Imperatives, Cluster 3 $\sim$ Declaratives).}
     \label{fig:noisy70-syncluster}
 \end{figure}
 
-Results from our simulations suggest that morphosyntax is not sufficient to solve the clustering problem, and a small amount of pragmatic information is necessary.
+Results from our simulations suggest that morphosyntax is not sufficient to solve the clustering problem, and a small amount of pragmatic information is necessary. Even with 70\% noise, pragmatic learner can still home in on the correct three clause types. 
 
 \section{Discussion}
 \label{sec:engcl:discussion}
 
-This chapter investigates how 18-month-olds learn to identify the three clause types in English. Our corpus study provides evidence suggesting that the information that children need to solve the clustering and labeling problems for acquiring clause types is present in their input. Parents use clause types systematically, and the three clause types are predominantly mapped to their canonical functions (declaratives to assertions, interrogatives to questions, imperatives to requests/commands) despite the presence of the theoretically expected exceptions to this mapping. The three clause types also show systematically different formal profiles in the input: compared to declaratives, interrogatives are more likely to have auxiliaries, subject-auxiliary inversion, and clause-initial functional items like \twh{}, which are characteristic of [+int] of $C^{0}$ in English; imperatives are more likely to not have subjects or verb suffixes, which is characteristic of [+imp].
+This chapter investigates how 18-month-olds learn to identify the three matrix clause types in English. Our corpus study provides evidence suggesting that the information that children need to solve the clustering and labeling problems for acquiring clause types is present in their input. Parents use clause types systematically, and the three clause types are predominantly mapped to their canonical functions (declaratives to assertions, interrogatives to questions, imperatives to requests/commands) despite the presence of the theoretically expected exceptions to this mapping. The three clause types also show systematically different formal profiles in the input: compared to declaratives, interrogatives are more likely to have auxiliaries, subject-auxiliary inversion, and clause-initial functional items like \twh{}, which are characteristic of [+int] of $C^{0}$ in English; imperatives are more likely to not have subjects or verb suffixes, which is characteristic of [+imp].
 
 
-I then investigated the extent to which learners need to rely on pragmatic information (i.e., knowing what speech act a given utterance of sentence is conveying), to solve not just labeling, but the clustering itself. I built two Bayesian clustering models simulating a \distlearner{} (\dlearnerabbr{}) and a \praglearner{} (\plearnerabbr{}). I found that morpho-synatctic information is not sufficient for finding the right clause type clustering and a small amount of pragmatic information is necessary, as the \plearnerabbr{} learner outperforms the \dlearnerabbr{} when we ran the two models with the annotated dataset from our corpus study. In addition, a small amount of pragmatics might suffice; even with 80\% noise, the speech act information still helps improve the performance of the model. So even if the speech act information is not perceived veridically for all utterances, learners can still enjoy its benefits.
+I then investigated the extent to which learners need to rely on pragmatic information (i.e., knowing what speech act a given utterance of sentence is conveying), to solve not just labeling, but the clustering itself. I built two Bayesian clustering models simulating a \distlearner{} (\dlearnerabbr{}) and a \praglearner{} (\plearnerabbr{}). I found that morpho-synatctic information is not sufficient for finding the right clause type clustering and a small amount of pragmatic information is necessary, as the \plearnerabbr{} learner outperforms the \dlearnerabbr{} when we ran the two models with the annotated dataset from our corpus study. In addition, a small amount of pragmatics might suffice; even with 70\% noise, the speech act information still helps improve the performance of the model. So even if the speech act information is not perceived veridically for all utterances, learners can still enjoy its benefits.
 
-\subsection{\revise{Implications for learning clause types}}
-\revise{With all of the above results, what conclusion can/can't we draw regarding children's learning of clause types? Here I want to discuss the areas where the models are solving an easier problem than children, where the models are probably given a harder problem.  }
+\subsection{Implications}
+With all of the above results, what conclusion can/can't we draw regarding children's learning of clause types? Here I want to discuss the areas where the models are solving an easier problem than children, where the models are probably given a harder problem.  
 
 \revise{First, our models assume that the learners have \tit{a priori} knowledge regarding the number of clause type categories in their language. While this is a reasonable assumption given the near-universality of declaratives, interrogatives, and imperatives, there are several ways that the actual task that learners have to solve could be more difficult. For one, children might have to figure out the number of clause types in addition to which sentence belongs to which clause type. This additional inference about number might make the learning problem harder for the child. But it is also possible that children start with the assumption that there are three clause types, and gradually expand to include minor clause type categories like exclamatives.  }
 
@@ -1154,7 +1158,7 @@ I then investigated the extent to which learners need to rely on pragmatic infor
 
 \revise{One area that the models are given a disadvantage is the absence of prosodic features. We will come back to these features in Chapter~\ref{chap:prosody}.  }
 
-Now that we have established the importance of pragmatics, and that a small amount of pragmatics might suffice, the question then is, how children may get this pragmatic information. How can children infer speech act independently of clause types?  As we have discussed in Chapter~\ref{chap:introduction}, With the innate knowledge of a set of speech act categories and what speech acts do, and a theory of communication, children might have certain expectations about how each speech acts are performed in the input. If these expectations are met, then they can use these cues to infer which utterance is performed with what speech act. But just as our discussion with clause types, behaviors related to speech acts might be absent or misleading. We therefore need to very empirically whether some of these expectations about speech acts can be met. Specifically, is certain prosodic contours and non-linguistic behavior of parents correlate with the use of questions? We will turn to these questions in Chapter~\ref{chap:eng-sp}.
+Now that we have established the importance of pragmatics, and that a small amount of pragmatics might suffice, the question then is, how children may get this pragmatic information. How can children infer speech act independently of clause types?  As we have discussed in Chapter~\ref{chap:introduction}, With the innate knowledge of a set of speech act categories and what speech acts do, and a theory of communication, children might have certain expectations about how each speech acts are performed in the input. If these expectations are met, then they can use these cues to infer which utterance is performed with what speech act. But just as our discussion with clause types, behaviors related to speech acts might be absent or misleading. We therefore need to verify empirically whether some of these expectations about speech acts can be met. Specifically, do certain prosodic contours and non-linguistic behavior of parents correlate with the use of questions? We will turn to these questions in Chapter~\ref{chap:eng-sp}.
 
 
 
