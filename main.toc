@@ -76,24 +76,23 @@
 \contentsline {subsection}{\numberline {5.1.2}Children's knowledge of prosodic features}{129}{subsection.5.1.2}%
 \contentsline {section}{\numberline {5.2}Corpus study}{131}{section.5.2}%
 \contentsline {subsection}{\numberline {5.2.1}Methods}{131}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Results}{134}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.2}Results}{133}{subsection.5.2.2}%
 \contentsline {section}{\numberline {5.3}Learning clause type categories with prosody}{136}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Disucssion}{142}{section.5.4}%
-\contentsline {chapter}{\chapternumberline {6}Learning speech acts}{144}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Background}{148}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Pauses in conversation}{148}{subsection.6.1.1}%
-\contentsline {subsection}{\numberline {6.1.2}Attentional behavior}{149}{subsection.6.1.2}%
-\contentsline {subsection}{\numberline {6.1.3}Interim Summary}{150}{subsection.6.1.3}%
-\contentsline {section}{\numberline {6.2}Corpus study}{151}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Methods}{151}{subsection.6.2.1}%
-\contentsline {subsection}{\numberline {6.2.2}The correlations we expect}{152}{subsection.6.2.2}%
-\contentsline {subsection}{\numberline {6.2.3}Results}{152}{subsection.6.2.3}%
-\contentsline {subsubsection}{\numberline {6.2.3.1}Pauses}{152}{subsubsection.6.2.3.1}%
-\contentsline {subsubsection}{\numberline {6.2.3.2}Parents' attentional behavior}{153}{subsubsection.6.2.3.2}%
-\contentsline {section}{\numberline {6.3}Conclusion}{154}{section.6.3}%
-\contentsline {chapter}{\chapternumberline {7}Conclusion and discussion}{156}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Summary of findings}{156}{section.7.1}%
-\contentsline {section}{\numberline {7.2}The pragmatic syntactic bootstrapping hypothesis}{159}{section.7.2}%
-\contentsline {subsection}{\numberline {7.2.1}Determining the role of prosody}{160}{subsection.7.2.1}%
-\contentsline {subsection}{\numberline {7.2.2}From matrix to embedded clauses}{162}{subsection.7.2.2}%
-\contentsline {chapter}{Bibliography}{163}{section*.8}%
+\contentsline {section}{\numberline {5.4}Discussion}{141}{section.5.4}%
+\contentsline {chapter}{\chapternumberline {6}Learning speech acts}{143}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Background}{146}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Pauses in conversation}{146}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Attentional behavior}{148}{subsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.1.3}Interim Summary}{148}{subsection.6.1.3}%
+\contentsline {section}{\numberline {6.2}Corpus study}{149}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Methods}{149}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}The correlations we expect}{150}{subsection.6.2.2}%
+\contentsline {subsection}{\numberline {6.2.3}Results}{150}{subsection.6.2.3}%
+\contentsline {subsubsection}{\numberline {6.2.3.1}Pauses}{150}{subsubsection.6.2.3.1}%
+\contentsline {subsubsection}{\numberline {6.2.3.2}Parents' attentional behavior}{152}{subsubsection.6.2.3.2}%
+\contentsline {section}{\numberline {6.3}Conclusion}{153}{section.6.3}%
+\contentsline {chapter}{\chapternumberline {7}Conclusion and discussion}{154}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Summary of findings}{154}{section.7.1}%
+\contentsline {section}{\numberline {7.2}The pragmatic syntactic bootstrapping hypothesis}{157}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Conclusion}{159}{section.7.3}%
+\contentsline {chapter}{Bibliography}{161}{section*.8}%
